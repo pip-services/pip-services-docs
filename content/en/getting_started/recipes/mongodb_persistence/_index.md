@@ -79,7 +79,7 @@ The **MongoDbConnection** class provides MongoDB connectivity using a plain driv
 
 By default, **MongoDbPersistence** tries to establish a local connection on MongoDb's default port - 27017. If the desired MongoDb server is located elsewhere, the persistence should be configured with the corresponding host and port information. Persistence configuration can be performed in a number of ways.
 
-The example below demonstrates how the **ConfigParams** class can be used for persistence configuration. To learn more about this class, and about microservice configuration in general, be sure to read [this](../../../../conceptual/configuration/configurations/).
+The example below demonstrates how the **ConfigParams** class can be used for persistence configuration. To learn more about this class, and about microservice configuration in general, be sure to read [this](../../../../concepts/configuration/configurations/).
 
 {{< tabsection >}}
   {{< include "./__code3_node.md" >}} 
@@ -114,7 +114,7 @@ To perform configuration using a single **MongoDbConnection**, one of the follow
 
 ```pip-services:connection:mongodb:*:1.0 or pip-services3:connection:mongodb:*:1.0.```
 
-To learn more about references, descriptors, and component references, follow [this link](../../../../conceptual/component/component_references/).  
+To learn more about references, descriptors, and component references, follow [this link](../../../../concepts/component/component_references/).  
 First, add an element with the "pip-services" descriptor to the configuration file.
 
 ```yml

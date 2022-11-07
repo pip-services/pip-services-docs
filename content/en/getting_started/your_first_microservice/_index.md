@@ -321,7 +321,7 @@ Parameters will be read by the microservice from the configuration file and pass
   default_name: "World"
 ```
 
-More details on this mechanism can be found in [Component Configuration](../../conceptual/configuration/component_configuration/).
+More details on this mechanism can be found in [Component Configuration](../../concepts/configuration/component_configuration/).
 
 This is all the code of the controller in the file:
 
@@ -376,7 +376,7 @@ Now, the parameters that are read by the microservice from the configuration fil
   default_name: "World"
 ```
 
-More details on this mechanism can be found in [Component Configuration](../../conceptual/configuration/component_configuration/).
+More details on this mechanism can be found in [Component Configuration](../../concepts/configuration/component_configuration/).
 
 This is all the code of the controller in the file:
 
@@ -429,7 +429,7 @@ Parameters will be read by the microservice from the configuration file and pass
   default_name: "World"
 ```
 
-More details on this mechanism can be found in [Component Configuration](../../conceptual/configuration/component_configuration/).
+More details on this mechanism can be found in [Component Configuration](../../concepts/configuration/component_configuration/).
 
 This is all the code of the controller in the file:
 
@@ -492,7 +492,7 @@ Parameters will be read by the microservice from the configuration file and pass
   default_name: "World"
 ```
 
-More details on this mechanism can be found in [Component Configuration](../../conceptual/configuration/component_configuration/).
+More details on this mechanism can be found in [Component Configuration](../../concepts/configuration/component_configuration/).
 
 This is all the code of the controller in the file:
 
@@ -543,7 +543,7 @@ Parameters will be read by the microservice from the configuration file and pass
   default_name: "World"
 ```
 
-More details on this mechanism can be found in [Component Configuration](../../conceptual/configuration/component_configuration/).
+More details on this mechanism can be found in [Component Configuration](../../concepts/configuration/component_configuration/).
 
 This is all the code of the controller in the file:
 
@@ -973,7 +973,7 @@ constructor() {
 }
 ```
 
-For more info on how this works, be sure to check out [Process Container](../../conceptual/containers/process_container).
+For more info on how this works, be sure to check out [Process Container](../../concepts/containers/process_container).
 
 Full listing of the factory's code found in the file:
 
@@ -1021,7 +1021,7 @@ public HelloWorldServiceFactory(){
 }
 ```
 
-For more info on how this works, be sure to check out [Process Container](../../conceptual/containers/process_container).
+For more info on how this works, be sure to check out [Process Container](../../concepts/containers/process_container).
 
 Full listing of the factory's code found in the file:
 
@@ -1075,7 +1075,7 @@ func NewHelloWorldServiceFactory() *HelloWorldServiceFactory {
 }
 ```
 
-For more info on how this works, be sure to check out [Process Container](../../conceptual/containers/process_container).
+For more info on how this works, be sure to check out [Process Container](../../concepts/containers/process_container).
 
 Full listing of the factory's code found in the file:
 
@@ -1129,7 +1129,7 @@ HelloWorldServiceFactory() : super() {
 }
 ```
 
-For more info on how this works, be sure to check out [Process Container](../../conceptual/containers/process_container).
+For more info on how this works, be sure to check out [Process Container](../../concepts/containers/process_container).
 
 The full listing of the factory's code can found in the file:
 
@@ -1171,7 +1171,7 @@ def __init__(self):
 
 ```
 
-For more info on how this works, be sure to check out [Process Container](../../conceptual/containers/process_container).
+For more info on how this works, be sure to check out [Process Container](../../concepts/containers/process_container).
 
 A full listing of the factory's code can be found in the file:
 
@@ -1524,13 +1524,13 @@ When a microservice starts up, the following sequence of events takes place:
 
 2. The container reads the configuration found in config.yaml;
 
-2. Using the factory, the container creates the necessary components in accordance with their descriptors (see [Process Container](../../conceptual/containers/process_container));
+2. Using the factory, the container creates the necessary components in accordance with their descriptors (see [Process Container](../../concepts/containers/process_container));
 
-4. The components are configured. During this step, all components that implement the IConfigurable interface have their configure methods called with the configuration defined in config.yaml passed as a parameter (see [Component Configuration](../../conceptual/configuration/component_configuration/));
+4. The components are configured. During this step, all components that implement the IConfigurable interface have their configure methods called with the configuration defined in config.yaml passed as a parameter (see [Component Configuration](../../concepts/configuration/component_configuration/));
 
-5. Components are linked. All components that implement the IReferenceable interface get their setReferences methods called with a list of components available in the container. With the help of descriptors, objects can find all necessary dependencies (see [The Component References](../../conceptual/component/component_references));
+5. Components are linked. All components that implement the IReferenceable interface get their setReferences methods called with a list of components available in the container. With the help of descriptors, objects can find all necessary dependencies (see [The Component References](../../concepts/component/component_references));
 
-6. Components with active processes are run. A component is considered to contain active processes if it implements the IOpenable interface and has an open method defined (see [The Component Lifecycle](../../conceptual/component/component_lifecycle/)).
+6. Components with active processes are run. A component is considered to contain active processes if it implements the IOpenable interface and has an open method defined (see [The Component Lifecycle](../../concepts/component/component_lifecycle/)).
 
 When the microservice receives a signal to stop the process, the reverse sequence takes place:
 

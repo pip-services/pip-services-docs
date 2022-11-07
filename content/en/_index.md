@@ -108,7 +108,7 @@ This guide will help you to learn Pip.Services and to develop your own microserv
     <div class="card-body">
       <h5 class="card-title"><b>Concepts</b></h5>
       <p class="card-text">Pip.Services is a multi-language, cross-platform toolkit that makes it easy for developers to create long-living microservice systems.</p>
-      <a href="conceptual" class="stretched-link"></a>
+      <a href="concepts" class="stretched-link"></a>
     </div>
   </div>
   <div class="card">

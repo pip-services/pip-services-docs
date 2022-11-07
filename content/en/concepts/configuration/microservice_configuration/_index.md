@@ -128,7 +128,7 @@ With the information gathered from the environment variables and the configurati
 
 (*for more information on default factories, see the default container factory page of Pip.Services Docs for your programming language of choice: [Python](https://pip-services.github.io/pip-services-docs/toolkit_api/python/container/build/default_container_factory/), [Node.js](https://pip-services.github.io/pip-services-docs/toolkit_api/node/container/build/default_container_factory/), [.NET](https://pip-services.github.io/pip-services-docs/toolkit_api/net/container/build/default_container_factory/),  [Golang](https://pip-services.github.io/pip-services-docs/toolkit_api/golang/container/build/default_container_factory/) or [Dart](https://pip-services.github.io/pip-services-docs/toolkit_api/dart/container/build/default_container_factory/))
 
-In our example, we create a factory for ComponentB, ComponentA1, and ComponentA2, and we register these components in it via [descriptors](https://pip-services.github.io/pip-services-docs/conceptual/component/descriptors/). This step provides a link between what was defined in the configuration file (using the same descriptors, just in a colon-separated format) and our components. Note that, even though our config file does not contain descriptors for ComponentB, we still register it in the factory. This is because ComponentB is a dependency for ComponentA1 and ComponentA2 and will be created by the program at a later step, when we start to set references.
+In our example, we create a factory for ComponentB, ComponentA1, and ComponentA2, and we register these components in it via [descriptors](../../concepts/component/descriptors/). This step provides a link between what was defined in the configuration file (using the same descriptors, just in a colon-separated format) and our components. Note that, even though our config file does not contain descriptors for ComponentB, we still register it in the factory. This is because ComponentB is a dependency for ComponentA1 and ComponentA2 and will be created by the program at a later step, when we start to set references.
 
 ![figure 4](./Figure4.png)
 
@@ -136,7 +136,7 @@ In our example, we create a factory for ComponentB, ComponentA1, and ComponentA2
 
 Finally, when creating either ComponentA1 or ComponentA2, the program detects that this class has implemented the IReferenceable interface. Then, from the setReferences() method, it obtains the necessary information to create all required dependencies, which would be ComponentB in our case. This information is obtained from an instance of the References class, which retrieves information from the factory’s registered components.
 
-Additionally, by implementing the [IConfigurable](https://pip-services.github.io/pip-services-docs/conceptual/configuration/component_configuration/) interface, we can set the values of the component’s parameters using the configure() method, which accepts a [ConfigParams](https://pip-services.github.io/pip-services-docs/conceptual/configuration/configurations/) object as a parameter. 
+Additionally, by implementing the [IConfigurable](../../concepts/configuration/component_configuration/) interface, we can set the values of the component’s parameters using the configure() method, which accepts a [ConfigParams](../../concepts/configuration/configurations/) object as a parameter. 
 
 ![figure 5](./Figure5.png)
 

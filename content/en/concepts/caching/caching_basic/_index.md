@@ -29,7 +29,7 @@ description: >-
 
 ### Introduction
 
-Pip.Services offers several basic components for caching. One of the most important ones is the ICache interface, which must be implemented by all cache components and defines a basic set of  methods that all caches must contain. Two other basic components that are worth mentioning are the MemoryCache and NullCache classes. The first stores key-value pairs in-memory, and the second is a dummy cache that can be used to simulate caching. In the following sections, this tutorial explains how to use these components in detail. Other caching tools, such as [Redis](http://docs.pipservices.org/conceptual/caching/redis/) and [Memcached](http://docs.pipservices.org/conceptual/caching/memcached/), are explained in separate tutorials.
+Pip.Services offers several basic components for caching. One of the most important ones is the ICache interface, which must be implemented by all cache components and defines a basic set of  methods that all caches must contain. Two other basic components that are worth mentioning are the MemoryCache and NullCache classes. The first stores key-value pairs in-memory, and the second is a dummy cache that can be used to simulate caching. In the following sections, this tutorial explains how to use these components in detail. Other caching tools, such as [Redis](../../concepts/caching/redis/) and [Memcached](../../concepts/caching/memcached/), are explained in separate tutorials.
 
 ### ICache
 

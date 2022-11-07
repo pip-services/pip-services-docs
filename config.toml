@@ -1,6 +1,6 @@
 # Site Configuration
 baseURL = "/"
-title = ""
+title = "Pip.Services Docs"
 theme = "docsy"
 disableFastRender = true
 
@@ -62,12 +62,10 @@ gzip = true
 
 [languages]
   [languages.en]
-    title = ""
     weight = 1
     contentDir = "content/en"
     languageName = "English"
   # [languages.ru]
-  #   title = ""
   #   weight = 2
   #   contentDir = "content/ru"
   #   languageName = "Russian"

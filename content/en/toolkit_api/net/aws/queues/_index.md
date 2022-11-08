@@ -2,6 +2,7 @@
 type: docs
 title: "Queues"
 linkTitle: "Queues"
+draft: true
 no_list: true
 gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-aws-dotnet"
 description: >

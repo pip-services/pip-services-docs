@@ -42,10 +42,10 @@ Creates a new instance of this logger.
 
 ### Instance methods
 
-#### Close
+#### CloseAsync
 Closes a component and frees used resources.
 
-> `public` close(correlationId: string): Promise\<void\>
+> `public` Task CloseAsync(string correlationId)
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 

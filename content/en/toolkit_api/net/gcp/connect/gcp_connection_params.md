@@ -50,33 +50,32 @@ Creates an new instance of the connection parameters.
 #### AuthToken
 An ID token with the request to authenticate themselves
 
-> `public` **AuthToken**: string
+> `public` string AuthToken { get; set; }
 
 #### Function
 The Google function name.
 
-> `public` **Function**: string
+> `public` string Function { get; set; }
 
 #### Uri
 The Google Platform service uri.
 
-> `public` **Uri**: string
-
+> `public` string Uri { get; set; }
 
 #### Protocol
 The Google function connection protocol.
 
-> `public` **Protocol**: string
+> `public` string Protocol { get; set; }
 
 #### ProjectId
 The Google Cloud Platform project ID.
 
-> `public` **ProjectId**: string
+> `public` string ProjectId { get; set; }
 
 #### Region
 The region where your function is deployed.
 
-> `public` **Region**: string
+> `public` string **Region** { get; set; }
 
 </span>
 

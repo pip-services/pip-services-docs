@@ -50,7 +50,6 @@ Creates an new instance of the connection parameters.
 
 ### Properties
 
-
 #### AccessId
 Gets or sets the AWS access id.
 

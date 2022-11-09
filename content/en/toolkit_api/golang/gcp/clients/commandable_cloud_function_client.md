@@ -64,17 +64,17 @@ to the action parameters.
 ### Examples
 
 ```go
-type MyCommandableGoogleClient struct {
+type MyCommandableCloudFunctionClient struct {
 	*clients.CommandableCloudFunctionClient
 }
 
-func NewMyCommandableGoogleClient() *MyCommandableGoogleClient {
-	return &MyCommandableGoogleClient{
+func NewMyCommandableCloudFunctionClient() *MyCommandableCloudFunctionClient {
+	return &MyCommandableCloudFunctionClient{
 		CommandableCloudFunctionClient: gcpclient.NewCommandableCloudFunctionClient(),
 	}
 }
 
-func (c *MyCommandableGoogleClient) GetData(ctx context.Context, correlationId string, id string) MyData {
+func (c *MyCommandableCloudFunctionClient) GetData(ctx context.Context, correlationId string, id string) MyData {
 	response, err := c.CallCommand(ctx, "dummies.get_dummies", correlationId, cdata.NewAnyValueMapFromTuples("id", id))
 	if err != nil {
 		return MyData{}, err
@@ -84,7 +84,7 @@ func (c *MyCommandableGoogleClient) GetData(ctx context.Context, correlationId s
 }
 
 ...
-client := NewMyCommandableGoogleClient()
+client := NewMyCommandableCloudFunctionClient()
 client.Configure(config.NewConfigParamsFromTuples(
 	"connection.uri", "http://region-id.cloudfunctions.net/myfunction",
 	"connection.protocol", "http",
@@ -98,4 +98,4 @@ result := client.GetData("123", "1")
 ```
 
 ### See also
-- #### [CloudFunction](../../cloud_function/)
+- #### [CloudFunction](../../containers/cloud_function/)

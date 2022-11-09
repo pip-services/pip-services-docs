@@ -62,7 +62,7 @@ to the action parameters.
 ### Examples
 
 ```cs
-class MyCommandableGoogleClient : CommandableCloudFunctionClient, IMyClient
+class MyCommandableCloudFunctionClient : CommandableCloudFunctionClient, IMyClient
 {
 ...
     /// 
@@ -73,7 +73,7 @@ class MyCommandableGoogleClient : CommandableCloudFunctionClient, IMyClient
     /// 
     public async Task Main()
     {
-        var client = new MyCommandableGoogleClient();
+        var client = new MyCommandableCloudFunctionClient();
         client.Configure(ConfigParams.FromTuples(
             "connection.uri", "http://region-id.cloudfunctions.net/myfunction",
             "connection.protocol", "http",
@@ -89,4 +89,4 @@ class MyCommandableGoogleClient : CommandableCloudFunctionClient, IMyClient
 ```
 
 ### See also
-- #### [CloudFunction](../../cloud_function/)
+- #### [CloudFunction](../../containers/cloud_function/)

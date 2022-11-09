@@ -192,5 +192,5 @@ const result = await client.getData("123", "1");
 
 
 ### See also
-- #### [CloudFunction](../../cloud_function/)
-- #### [CommandableGoogleClient](../commandable_google_client)
+- #### [CloudFunction](../../containers/cloud_function/)
+- #### [CommandableCloudFunctionClient](../commandable_cloud_function_client)

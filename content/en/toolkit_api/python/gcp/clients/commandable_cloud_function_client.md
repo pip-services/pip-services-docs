@@ -63,7 +63,7 @@ to the action parameters.
 ### Examples
 
 ```python
-class MyCommandableGoogleClient(CommandableCloudFunctionClient, IMyClient):
+class MyCommandableCloudFunctionClient(CommandableCloudFunctionClient, IMyClient):
     
     def get_data(self, correlation_id, id) -> MyData:
         timing = self._instrument(correlation_id, 'myclient.get_data')
@@ -72,7 +72,7 @@ class MyCommandableGoogleClient(CommandableCloudFunctionClient, IMyClient):
         timing.end_timing()
         return data
 
-client = MyCommandableGoogleClient('mydata')
+client = MyCommandableCloudFunctionClient('mydata')
 
 client.configure(ConfigParams.from_tuples(
     'connection.uri", "http://region-id.cloudfunctions.net/myfunction',
@@ -89,4 +89,4 @@ result = client.get_data("123", "1")
 ```
 
 ### See also
-- #### [CloudFunction](../../cloud_function/)
+- #### [CloudFunction](../../containers/cloud_function/)

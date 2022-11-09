@@ -62,7 +62,7 @@ to the action parameters.
 ### Examples
 
 ```typescript
-class MyCommandableGoogleClient extends CommandableCloudFunctionClient implements IMyClient {
+class MyCommandableCloudFunctionClient extends CommandableCloudFunctionClient implements IMyClient {
     ...
  
     public async getData(correlationId: string, id: string): Promise<any> {
@@ -71,7 +71,7 @@ class MyCommandableGoogleClient extends CommandableCloudFunctionClient implement
     ...
 }
 
-let client = new MyCommandableGoogleClient();
+let client = new MyCommandableCloudFunctionClient();
 
 client.configure(ConfigParams.fromTuples(
      'connection.uri", "http://region-id.cloudfunctions.net/myfunction',
@@ -88,4 +88,4 @@ const result = await client.getData("123", "1");
 ```
 
 ### See also
-- #### [CloudFunction](../../cloud_function/)
+- #### [CloudFunction](../../containers/cloud_function/)

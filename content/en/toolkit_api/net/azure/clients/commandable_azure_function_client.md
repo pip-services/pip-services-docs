@@ -86,4 +86,4 @@ class MyCommandableAzureClient : CommandableAzureFunctionClient, IMyClient
 ```
 
 ### See also
-- #### [AzureFunction](../../azure_function/)
+- #### [AzureFunction](../../containers/azure_function/)

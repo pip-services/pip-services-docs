@@ -79,4 +79,4 @@ result = client.get_data("123", "1")
 ```
 
 ### See also
-- #### [AzureFunction](../../azure_function/)
+- #### [AzureFunction](../../containers/azure_function/)

@@ -202,5 +202,5 @@ class MyAzureFunctionClient: AzureFunctionClient, IMyClient
 
 
 ### See also
-- #### [AzureFunction](../../azure_function/)
+- #### [AzureFunction](../../containers/azure_function/)
 - #### [CommandableAzureClient](../commandable_azure_client)

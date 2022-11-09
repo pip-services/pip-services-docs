@@ -7,7 +7,7 @@ description: >
     Abstract client that calls commandable AWS Lambda Functions.
 ---
 
-**Extends:** [LambdaClient](../lambda_client)
+**Inherits:** [LambdaClient](../lambda_client)
 
 ### Description
 

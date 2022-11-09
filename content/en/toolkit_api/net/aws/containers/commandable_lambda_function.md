@@ -8,7 +8,7 @@ description: >
     and expose them via an external entry point.
 ---
 
-**Extends:** [LambdaFunction](../lambda_function)
+**Inherits:** [LambdaFunction](../lambda_function)
 
 ### Description
 

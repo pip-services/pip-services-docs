@@ -7,7 +7,7 @@ description: >
     Abstract service that receives commands via the AWS Lambda protocol to operations automatically generated for commands defined in [ICommandable components](../../../commons/commands/icommandable). Each command is exposed as an invoke method that receives a command's name and parameters.
 ---
 
-**Extends:** [LambdaService](../lambda_service)
+**Inherits:** [LambdaService](../lambda_service)
 
 ### Description
 The CommandableLambdaService allows you to create abstract services that receive commands via the AWS Lambda protocol to operations automatically generated for commands defined in [ICommandable components](../../../commons/commands/icommandable). Each command is exposed as an invoke method that receives a command's name and parameters.

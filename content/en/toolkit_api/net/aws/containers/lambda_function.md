@@ -8,7 +8,7 @@ description: >
     and expose them via an external entry point. 
 ---
 
-**Extends:** [Container](../../../container/containers/container)
+**Inherits:** [Container](../../../container/containers/container)
 
 ### Description
 The LambdaFunction class allows you to create an abstract AWS Lambda function that acts as a container to instantiate and run components, and expose them via an external entry point.

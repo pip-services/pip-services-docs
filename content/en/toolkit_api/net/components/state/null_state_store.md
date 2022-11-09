@@ -7,7 +7,7 @@ description: >
     Dummy state store implementation that doesn't do anything.
 ---
 
-**Implements:** [IStateStore](../istate_store)
+**Inherits:** [IStateStore](../istate_store)
 
 ### Description
 

@@ -7,7 +7,7 @@ description: >
     State store that keeps states in the process memory.
 ---
 
-**Implements:** [IReconfigurable](../../../commons/config/ireconfigurable), [IStateStore](../istate_store)
+**Inherits:** [IReconfigurable](../../../commons/config/ireconfigurable), [IStateStore](../istate_store)
 
 ### Description
 

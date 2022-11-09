@@ -8,7 +8,7 @@ description: >
     and connect to specific Azure resources.
 ---
 
-**Extends:** [ConfigParams](../../../commons/config/config_params)
+**Inherits:** [ConfigParams](../../../commons/config/config_params)
 
 ### Description
 Contains connection parameters to authenticate against Azure Functions

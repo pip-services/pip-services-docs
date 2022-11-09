@@ -7,7 +7,7 @@ description: >
     Abstract Google Function that acts as a container to instantiate and run components and expose them via an external entry point. 
 ---
 
-**Implements:** [Container](../../../container/containers/container)
+**Inherits:** [Container](../../../container/containers/container)
 
 ### Description
 The CloudFunction class allows you to create an Abstract Google Function that acts as a container to instantiate and run components and expose them via an external entry point. 

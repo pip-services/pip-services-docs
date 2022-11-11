@@ -29,10 +29,10 @@ Gets a command set with all supported commands and events.
 
 ```go
 type MyDataController {
- _commandSet  CommandSet;
+ _commandSet  *CommandSet;
 }
 
-func (dc *MyDataController) getCommandSet() CommandSet {
+func (dc *MyDataController) GetCommandSet() *CommandSet {
   if (dc._commandSet == nil)
     dc._commandSet = NewDataCommandSet();
   return dc._commandSet;

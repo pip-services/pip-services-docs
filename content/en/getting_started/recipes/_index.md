@@ -51,6 +51,11 @@ In this tutorial you will learn how to work with the ElasticSearchLogger compone
 
 In this tutorial, you will learn how to use the FluentdLogger component to send log messages to Fluentd. First, we will describe this component and understand its pre-requisites. Then, we will create a custom component with methods that generate log messages every time they are called, run it and see the messages received by Fluentd. Finally, we will combine the different code sections into one program and summarize what we have learned.
 
+### [Google Cloud Platform](google_cloud_platform)
+
+In this tutorial, you will learn how to create a microservice and package it in a Google Cloud Platform (GCP) container.
+Upon completion of this tutorial, you will gain an understanding of the various possibilities that the containers and services available in the GCP module offer for microservice design.
+
 ### [Logging](logging)
 
 In this tutorial, you will learn how to add logging capacity to a microservice. First, we will understand what logging consists of. Then, we will use the microservice we created in the "Creating a component" tutorial, replace the printed messages with logger messages and create an exception in our business process (my_task). After running the code, we will see the tagged messages from the logger.

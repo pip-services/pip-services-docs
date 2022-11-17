@@ -97,6 +97,7 @@ b.	Serverless
 Choose one of the following:       
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;iii.  AWS Lambda         
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;iv.  Microsoft Azure         
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;v.  [Google Cloud Platform](../../concepts/containers/google_cloud_platform/)         
 7.	Clients:           
 a.	[REST client](../../concepts/communication/rest_client/)            
 _Optional (Self-study)_        

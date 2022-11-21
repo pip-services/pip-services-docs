@@ -47,7 +47,7 @@ This component is part of the RabbitMQ module and represents a message queue tha
 In order to use this component, we need to import it first. The following code shows how to do this:
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code1_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -76,7 +76,7 @@ In order to use this component, we need to import it first. The following code s
 First, and after having imported our component, we create an instance of it:
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code2_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -108,7 +108,7 @@ After creating an instance of our component, we need to configure it. Here, an i
 To configure our object, we use the configure() method, which accepts a ConfigParams object as input. In our example, we define the RabbitMQ exchange, the queue name, the host, and the port. We also assign the value true to auto_create. In this manner, if the queue doesn't exist in RabbitMQ, it is created. Furthermore, for the example's purpose, we consider the guest user. But, if we want to refer to another user, we also need to specify the necessary credentials (username and password). 
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code3_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -137,7 +137,7 @@ To configure our object, we use the configure() method, which accepts a ConfigPa
 To connect to RabbitMQ, we use the OpenAsync() method, which requires the correlation_id as an input parameter. The following example shows how to connect our previously defined queue:
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code4_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -164,7 +164,7 @@ To connect to RabbitMQ, we use the OpenAsync() method, which requires the correl
 
 Once connected, we can send a message to RabbitMQ. For this, we use the SendAsync() method, which accepts the correlation_id and a MessageEnvelope object as inputs. This last object contains the correlation_id, message type, and message content as inputs. The following code shows how to do this:
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code5_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -192,7 +192,7 @@ Once connected, we can send a message to RabbitMQ. For this, we use the SendAsyn
 To receive a message, we use the RecevieAsync() method, which has the correlation_id and the waiting time in milliseconds as input parameters. The following example shows how to use it:
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code6_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -220,7 +220,7 @@ To receive a message, we use the RecevieAsync() method, which has the correlatio
 Now, we assemble all that was learned into one program. The result is:
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code7_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}

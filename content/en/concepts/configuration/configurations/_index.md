@@ -3,7 +3,6 @@ type: docs
 no_list: true
 title: "Configurations"
 linkTitle: "Configurations"
-weight: 40
 description: >-
      How to create and read configuration information.
 ---

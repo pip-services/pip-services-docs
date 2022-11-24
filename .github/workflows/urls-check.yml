@@ -2,8 +2,8 @@ name: check site urls
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron:  '00 05 * * *' # UTC 0 timezone
+  # schedule:
+  #   - cron:  '00 05 * * *' # UTC 0 timezone
 
 jobs:
   deploy:

@@ -231,7 +231,7 @@ See [AnyValueMap](../any_value_map), [AnyValueMap.from_value](../any_value_map/#
 
 #### get_as_nullable_boolean
 Converts map element into a boolean or returns None if conversion is not possible.  
-See [BooleanConverter.to_nullable_boolean](../boolean_converter/#to_nullable_boolean).
+See [BooleanConverter.to_nullable_boolean](../../convert/boolean_converter/#to_nullable_boolean).
 
 > get_as_nullable_boolean(key: str): Optional[bool]
 
@@ -241,7 +241,7 @@ See [BooleanConverter.to_nullable_boolean](../boolean_converter/#to_nullable_boo
 
 #### get_as_nullable_datetime
 Converts map element into a Date or returns None if conversion is not possible.  
-See [DateTimeConverter.to_nullable_datetime](../date_time_converter/#to_nullable_datetime).
+See [DateTimeConverter.to_nullable_datetime](../../convert/date_time_converter/#to_nullable_datetime).
 
 > get_as_nullable_datetime(key: str): Optional[datetime]
 
@@ -251,7 +251,7 @@ See [DateTimeConverter.to_nullable_datetime](../date_time_converter/#to_nullable
 
 #### get_as_nullable_double
 Converts map element into a double or returns None if conversion is not possible.  
-See [DoubleConverter.to_nullable_double](../double_converter/#to_nullable_double).
+See [DoubleConverter.to_nullable_double](../../convert/double_converter/#to_nullable_double).
 
 > get_as_nullable_double(key: str): Optional[float]
 
@@ -261,7 +261,7 @@ See [DoubleConverter.to_nullable_double](../double_converter/#to_nullable_double
 
 #### get_as_nullable_float
 Converts map element into a float or returns None if conversion is not possible.  
-See [FloatConverter.to_nullable_float](../float_converter/#to_nullable_float).
+See [FloatConverter.to_nullable_float](../../convert/float_converter/#to_nullable_float).
 
 > get_as_nullable_float(key: str): Optional[float]
 
@@ -271,7 +271,7 @@ See [FloatConverter.to_nullable_float](../float_converter/#to_nullable_float).
 
 #### get_as_nullable_integer
 Converts map element into an integer or returns None if conversion is not possible.  
-See [IntegerConverter.to_nullable_integer](../integer_converter/#to_nullable_integer).
+See [IntegerConverter.to_nullable_integer](../../convert/integer_converter/#to_nullable_integer).
 
 > get_as_nullable_integer(key: str): Optional[int]
 
@@ -281,7 +281,7 @@ See [IntegerConverter.to_nullable_integer](../integer_converter/#to_nullable_int
 
 #### get_as_nullable_long
 Converts map element into a long or returns None if conversion is not possible.  
-See [LongConverter.to_nullable_long](../long_converter/#to_nullable_long).
+See [LongConverter.to_nullable_long](../../convert/long_converter/#to_nullable_long).
 
 > get_as_nullable_long(key: str): Optional[float]
 
@@ -363,7 +363,7 @@ If conversion is not possible it returns default value for the specified type.
 #### get_as_type_with_default
 Converts map element into a value defined by a specified typecode.
 If conversion is not possible it returns default value for the specified type.  
-See [TypeConverter.to_type_with_default](../type_converter/#to_type_with_default).
+See [TypeConverter.to_type_with_default](../../convert/type_converter/#to_type_with_default).
 
 > get_as_type_with_default(value_type: [TypeCode](../../convert/type_code), key: str, default_value: Any): Any
 

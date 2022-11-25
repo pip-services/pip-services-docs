@@ -68,7 +68,7 @@ to chain additional calls.
 
 #### perform_type_validation
 Validates a given value to match specified type.
-The type can be defined as a Schema, type, a type name or [TypeCode](../convert/type_code)
+The type can be defined as a Schema, type, a type name or [TypeCode](../../convert/type_code)
 When type is a Schema, it executes validation recursively against that Schema.
 
 > _perform_type_validation(path: str, type: Any, value: Any, results: List[[ValidationResult](../validation_result)])

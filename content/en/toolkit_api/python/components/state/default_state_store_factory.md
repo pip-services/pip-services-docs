@@ -21,6 +21,6 @@ Creates a new instance of the factory.
 
 ### See also
 - #### [Factory](../../build/factory)
-- #### [IStateStore](../IStateStore)
+- #### [IStateStore](../istate_store)
 - #### [MemoryStateStore](../memory_state_store)
 - #### [NullStateStore](../null_state_store)

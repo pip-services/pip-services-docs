@@ -26,4 +26,4 @@ Reads the next token
 `@override`
 > [Token?](../../../tokenizers/token) readNextToken()
 
-- **returns**: [Token?](../../tokenizers/token) - next token
+- **returns**: [Token?](../../../tokenizers/token) - next token

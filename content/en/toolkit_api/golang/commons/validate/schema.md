@@ -90,7 +90,7 @@ to chain additional calls.
 
 #### PerformTypeValidation
 Validates a given value to match a specified type.
-The type can be defined as a Schema, type, a type name or [TypeCode](../convert/type_code)
+The type can be defined as a Schema, type, a type name or [TypeCode](../../convert/type_code)
 When type is a Schema, it executes validation recursively against that Schema.
 
 > (c [*Schema]()) PerformTypeValidation(path string, typ any, value any) [][*ValidationResult](../validation_result)

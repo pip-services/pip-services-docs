@@ -17,7 +17,7 @@ The PropertySchema class allows you to create schemas to validate object propert
 
 #### NewPropertySchemaWithRules
 Creates a new validation rule and sets its arguments.
-See [IValidationRule](../ivalidation_rule), [TypeCode](../convert/type_code)
+See [IValidationRule](../ivalidation_rule), [TypeCode](../../convert/type_code)
 
 > NewPropertySchemaWithRules(name string, typ interface{}, required bool, rules [][IValidationRule](../ivalidation_rule)) [*PropertySchema]()
 
@@ -68,7 +68,7 @@ Sets the property name.
 
 #### SetType
 Sets a new property type.
-The type can be defined as type, type name or [TypeCode](../convert/type_code)
+The type can be defined as type, type name or [TypeCode](../../convert/type_code)
 
 > (c [*PropertySchema]()) SetType(value interface{})
 

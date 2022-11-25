@@ -190,4 +190,4 @@ const result = await client.getData("123", "1");
 
 ### See also
 - #### [AzureFunction](../../containers/azure_function/)
-- #### [CommandableAzureClient](../commandable_azure_client)
+- #### [CommandableAzureFunctionClient](../commandable_azure_function_client)

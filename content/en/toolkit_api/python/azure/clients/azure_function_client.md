@@ -36,7 +36,7 @@ other parameters are passed to the action itself.
 
 #### _client
 The HTTP client.
-> **_client**: [requests.Session](https://docs.python-requests.org/en/master/user/advanced/)
+> **_client**: [requests.Session](https://requests.readthedocs.io/en/latest/user/advanced/)
 
 ### _connectTimeout
 The connection timeout in milliseconds.
@@ -186,4 +186,4 @@ result = client.get_data('123', '1')
 
 ### See also
 - #### [AzureFunction](../../containers/azure_function/)
-- #### [CommandableAzureClient](../commandable_azure_client)
+- #### [CommandableAzureFunctionClient](../commandable_azure_function_client)

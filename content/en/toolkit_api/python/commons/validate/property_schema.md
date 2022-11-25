@@ -15,7 +15,7 @@ The PropertySchema class allows you to create schemas to validate object propert
 
 ### Constructors
 Creates a new validation rule and sets its arguments.
-See [IValidationRule](../ivalidation_rule), [TypeCode](../convert/type_code)
+See [IValidationRule](../ivalidation_rule), [TypeCode](../../convert/type_code)
 
 > PropertySchema(name: str, typ: Any, required: bool, rules: List[[IValidationRule](../ivalidation_rule)])
 
@@ -62,7 +62,7 @@ Sets the property name.
 
 #### set_type
 Sets a new property type.
-The type can be defined as type, type name or [TypeCode](../convert/type_code)
+The type can be defined as type, type name or [TypeCode](../../convert/type_code)
 
 > set_type(value: Any)
 

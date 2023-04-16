@@ -32,7 +32,7 @@ d.	[Configurations](../../concepts/configuration/configurations/)
 &nbsp;&nbsp;&nbsp;&nbsp;iv.	[Descriptors](../../concepts/component/descriptors/)     
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;v.	[Discovery services](../../getting_started/recipes/discovery_services/)     
 &nbsp;&nbsp;&nbsp;&nbsp;vi.	[Connection utilities](../../getting_started/recipes/connection_utils/)     
-&nbsp;&nbsp;&nbsp;&nbsp;vii.	[Mustache templates](../../getting_started/recipes/mustache_templates/)
+&nbsp;&nbsp;&nbsp;&nbsp;vii.	[Mustache templates](../../getting_started/recipes/mustache_templates/)     
 &nbsp;&nbsp;&nbsp;viii. [Reflection](../../concepts/reflection/)     
 
 ### Day 2

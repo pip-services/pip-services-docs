@@ -15,7 +15,7 @@ So, let's start developing microservices using the Pip.Services toolkit. As a si
 Pip.Services is a toolkit used to create microservices. This course provides the student with the basic elements necessary to use it efficiently. 
 
 ### [Begginer tutorials](recipes)
-A set of ready-made recipes for solving specific problems
+A set of ready-made tutorials for solving specific problems
 
 ### [Advanced tutorials](tutorials)
 A set of articles describing step by step the steps necessary to create a particular component.

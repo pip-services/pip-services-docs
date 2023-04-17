@@ -132,7 +132,7 @@ This guide will help you to learn Pip.Services and to develop your own microserv
   </div>
   <div class="card">
     <div class="card-body">
-      <h5 class="card-title"><b>Recipes</b></h5>
+      <h5 class="card-title"><b>Beginner Tutorials</b></h5>
       <p class="card-text">Quick, hands-on instructions for solving typical development problems</p>
       <a href="getting_started/recipes" class="stretched-link"></a>
     </div>

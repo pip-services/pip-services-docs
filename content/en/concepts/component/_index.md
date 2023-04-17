@@ -1,7 +1,7 @@
 ---
 type: docs
-title: "Component"
-linkTitle: "Component" 
+title: "Components"
+linkTitle: "Components" 
 weight: 40
 no_list: true
 exclude_from_list: true

@@ -1,7 +1,7 @@
 ---
 type: docs
 title: "Beginner Tutorials"
-linkTitle: "Beginner Tutorial" 
+linkTitle: "Beginner Tutorials" 
 weight: 30
 no_list: true
 exclude_from_list: true

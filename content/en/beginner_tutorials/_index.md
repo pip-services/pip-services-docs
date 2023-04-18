@@ -5,6 +5,7 @@ linkTitle: "Beginner Tutorial"
 weight: 30
 no_list: true
 exclude_from_list: true
+draft: true
 ---
 ---
 

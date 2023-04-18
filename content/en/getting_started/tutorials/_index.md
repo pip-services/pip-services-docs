@@ -2,7 +2,7 @@
 type: docs
 title: "Advanced tutorials"
 linkTitle: "Advanced tutorials" 
-weight: 20
+weight: 40
 no_list: true
 exclude_from_list: true
 ---

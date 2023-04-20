@@ -3,7 +3,7 @@ type: docs
 no_list: true
 title: "Three tier architecture"
 linkTitle: "Three tier architecture"
-weight: 90
+weight: 25
 description: >-
      How to architect a Pip.Services app.
 ---

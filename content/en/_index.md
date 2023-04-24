@@ -106,18 +106,18 @@ This guide will help you to learn Pip.Services and to develop your own microserv
 <div class="card-deck">
   <div class="card">
     <div class="card-body">
-      <h5 class="card-title"><b>Concepts</b></h5>
-      <p class="card-text">Pip.Services is a multi-language, cross-platform toolkit that makes it easy for developers to create long-living microservice systems.</p>
-      <a href="concepts" class="stretched-link"></a>
+      <h5 class="card-title"><b>Getting Started</b></h5>
+      <p class="card-text">So, let's start developing microservices using the Pip.Services toolkit.</p>
+      <a href="getting_started" class="stretched-link"></a>
     </div>
   </div>
   <div class="card">
     <div class="card-body">
-      <h5 class="card-title"><b>Getting Started</b></h5>
+      <h5 class="card-title"><b>Beginner Tutorials</b></h5>
       <p class="card-text">
-        So, let's start developing microservices using the Pip.Services toolkit.
+        Quick, hands-on instructions for solving typical development problems.
       </p>
-      <a href="getting_started" class="stretched-link"></a>
+      <a href="beginner_tutorials" class="stretched-link"></a>
     </div>
   </div>
 </div>
@@ -125,16 +125,16 @@ This guide will help you to learn Pip.Services and to develop your own microserv
 <div class="card-deck">
   <div class="card">
     <div class="card-body">
-      <h5 class="card-title"><b>API documentation</b></h5>
-      <p class="card-text">Detail documentation on the toolkit API</p>
-      <a href="toolkit_api/" class="stretched-link"></a>
+      <h5 class="card-title"><b>Advanced Tutorials</b></h5>
+      <p class="card-text"> Quick, hands-on instructions for solving typical advanced development problems.</p>
+      <a href="advanced_tutorials" class="stretched-link"></a>
     </div>
   </div>
   <div class="card">
     <div class="card-body">
-      <h5 class="card-title"><b>Beginner Tutorials</b></h5>
-      <p class="card-text">Quick, hands-on instructions for solving typical development problems</p>
-      <a href="getting_started/recipes" class="stretched-link"></a>
+      <h5 class="card-title"><b>API Documentation</b></h5>
+      <p class="card-text">Detailed documentation on the toolkit's API</p>
+      <a href="toolkit_api/" class="stretched-link"></a>
     </div>
   </div>
 </div>

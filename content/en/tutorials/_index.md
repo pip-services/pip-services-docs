@@ -331,14 +331,14 @@ The Pip.Services toolkit consists of a set of nine building blocks that can be i
 <table class="table entry-table">
   <tr>
     <td>
-      <a href="./building_blocks/components">
+      <a href="./beginner_tutorials/building_blocks/components">
           <h5>
             Components
           </h5>
       </a>
     </td>
     <td>
-      <a href="./building_blocks/components">
+      <a href="./beginner_tutorials/building_blocks/components">
         <p>
           Pip.Services toolkit is built around components, which can be created from scratch, obtained from existing code via simple augmentation, or selected from a large collection of prebuilt modules. These components are assembled into fully-functional microservices using a number of inversion-of-control containers.
         </p>
@@ -347,14 +347,14 @@ The Pip.Services toolkit consists of a set of nine building blocks that can be i
   </tr>
   <tr>
     <td>
-      <a href="./building_blocks/data_handling">
+      <a href="./beginner_tutorials/building_blocks/data_handling">
         <h5>
           Data handling
         </h5>
       </a>
     </td>
     <td>
-      <a href="./building_blocks/data_handling">
+      <a href="./beginner_tutorials/building_blocks/data_handling">
         <p>
           Pipelines receive data in many different and sometimes incompatible formats. To help facilitate this diversity of data, PIP.Services offers tools for the conversion to common formats, methods for the construction of complex validation rules, and components for filtering, sorting and paging data sets.
         </p>
@@ -363,14 +363,14 @@ The Pip.Services toolkit consists of a set of nine building blocks that can be i
   </tr>
   <tr>
     <td>
-      <a href="./building_blocks/configurations">
+      <a href="./beginner_tutorials/building_blocks/configurations">
         <h5>
           Configurations
         </h5>
       </a>
     </td>
     <td> 
-      <a href="./building_blocks/configurations">
+      <a href="./beginner_tutorials/building_blocks/configurations">
         <p>
           PIP.Services offers the flexibility to configure components at runtime and deployment time.
         </p>
@@ -379,14 +379,14 @@ The Pip.Services toolkit consists of a set of nine building blocks that can be i
   </tr>
   <tr>
     <td>
-      <a href="./building_blocks/connectivity">
+      <a href="./beginner_tutorials/building_blocks/connectivity">
         <h5>
           Connectivity
         </h5>
       </a>
     </td>
     <td>
-      <a href="./building_blocks/connectivity">
+      <a href="./beginner_tutorials/building_blocks/connectivity">
         <p>
           Applications need to work with other apps. For this, PIP.Services offers discovery components and credential stores.
         </p>
@@ -395,14 +395,14 @@ The Pip.Services toolkit consists of a set of nine building blocks that can be i
   </tr>
   <tr>
     <td>
-      <a href="./building_blocks/observability">
+      <a href="./beginner_tutorials/building_blocks/observability">
         <h5>
           Observability
         </h5>
       </a>
     </td>
     <td>
-      <a href="./building_blocks/observability">
+      <a href="./beginner_tutorials/building_blocks/observability">
         <p>
           Applications require an understanding of how the system is behaving through continuous monitoring of their behavior. PIP.Services contains several components that allow for the implementation of logging, tracing and metrics with a few lines of code.
         </p>
@@ -411,14 +411,14 @@ The Pip.Services toolkit consists of a set of nine building blocks that can be i
   </tr>
   <tr>
     <td>
-      <a href="./building_blocks/persistence">
+      <a href="./beginner_tutorials/building_blocks/persistence">
         <h5>
           Persistence
         </h5>
       </a>
     </td>
     <td>
-      <a href="./building_blocks/persistence">
+      <a href="./beginner_tutorials/building_blocks/persistence">
         <p>
           Data needs to be persisted in different storages, such as memory, and relational and NoSQL databases. For this, Pip.Services offers a broad collection of persistent components that support a variety of the most popular databases.
         </p>
@@ -427,14 +427,14 @@ The Pip.Services toolkit consists of a set of nine building blocks that can be i
   </tr>
   <tr>
     <td>
-      <a href="./building_blocks/synchronous_calls">
+      <a href="./beginner_tutorials/building_blocks/synchronous_calls">
         <h5>
           Synchronous calls
         </h5>
       </a>
     </td>
     <td>
-      <a href="./building_blocks/synchronous_calls">
+      <a href="./beginner_tutorials/building_blocks/synchronous_calls">
         <p>
           Microservices need to communicate with each other. The simplest and most widely used method of communication is via synchronous remote procedure calls. For this, Pip.Services offers components for in-process and inter-process communication via a number of technologies like HTTP/REST or GRPC. The implemented Commandable pattern helps to build a reliable fully-featured communication between microservices in minutes.
         </p>
@@ -443,14 +443,14 @@ The Pip.Services toolkit consists of a set of nine building blocks that can be i
   </tr>
   <tr>
     <td>
-      <a href="./building_blocks/asynchronous_messaging">
+      <a href="./beginner_tutorials/building_blocks/asynchronous_messaging">
         <h5>
           Asynchronous messaging
         </h5>
       <a>
     </td>
     <td>
-      <a href="./building_blocks/asynchronous_messaging">
+      <a href="./beginner_tutorials/building_blocks/asynchronous_messaging">
         <p>
           Messaging provides another way to communicate between microservices. Pip.Services offers components that abstract various message brokers like MQTT, Kafka, RabbitMQ and NATS, and provide a portable communication layer to enable event-driven microservices.
         </p>
@@ -459,14 +459,14 @@ The Pip.Services toolkit consists of a set of nine building blocks that can be i
   </tr>
   <tr>
     <td>
-      <a href="./building_blocks/concurrency">
+      <a href="./beginner_tutorials/building_blocks/concurrency">
         <h5>
           Concurrency
         </h5>
       </a>
     </td>
     <td>
-      <a href="./building_blocks/concurrency">
+      <a href="./beginner_tutorials/building_blocks/concurrency">
         <p>
           To achieve a high scale and reliability, microservices need to support horizontal scaling where multiple copies of the same microservice work concurrently. To prevent conflicts and enable complex collaboration scenarios, Pip.Services offers components like distributed caches and locks.
         </p>

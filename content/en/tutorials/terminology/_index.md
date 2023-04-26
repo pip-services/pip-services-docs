@@ -25,7 +25,7 @@ weight: 1000
     <tr>
       <td>Beacon</td>
       <td>A hardware device that enables data transmission to mobile devices within a specific range of the device.</td>
-      <td><a href="../../getting_started/tutorials/data_microservice/">Data microservice</a></td>
+      <td><a href="../../advanced_tutorials/data_microservice/">Data microservice</a></td>
     </tr>
     <tr>
       <td>Benchmark</td>
@@ -55,7 +55,7 @@ weight: 1000
         The process of storing and accessing data from a cache, where a cache is a high-speed data storage. Typically, the storage is transient and is used to speed up the retrieval of data. <br> <br>
         Within Pip.Services, the user can create components for caching. Also, there are two components that offer caching: the MemoryCaching class, which caches in memory, and the NullCache, which is a dummy cache with no real effect. And, Pip.Services includes modules for Redis and Memcached.
       </td>
-      <td><a href="../../getting_started/caching/">Caching</a></td>
+      <td><a href="../../beginner_tutorials/caching/">Caching</a></td>
     </tr>
     <tr>
       <td>Circuit Breaker pattern</td>
@@ -101,7 +101,7 @@ weight: 1000
       <td>
         Within Pip.Services, a component is a class with a lifecycle implemented using interfaces (Code augmentation). Usually, within a microservice, components are organized according to a three-layer architecture.
       </td>
-      <td><a href="../../tutorials/beginner_tutorials/component/creating_a_component/">Command Set</a></td>
+      <td><a href="../../tutorials/beginner_tutorials/component/creating_a_component/">Creating a Component</a></td>
     </tr>	
   <tr>
       <td>Component references / Component linking</td>
@@ -121,7 +121,7 @@ weight: 1000
         A design approach focused on the decomposition of the system into functional or logical components. Its primary goal is component reusability. <br><br>
         The Pip.Services toolkit follows this approach, which allows for creating microservices from loosely coupled components.
       </td>
-      <td><a href="../building_blocks/components/#microservice-componentized-design">microservice-componentized-design</a></td>
+      <td><a href="../beginner_tutorials/building_blocks/#microservice-componentized-design">microservice-componentized-design</a></td>
     </tr>
    <tr>
       <td>Config file</td>
@@ -157,7 +157,7 @@ weight: 1000
         Additionally, the toolkit provides a variety of other containers, which are used to assemble microservices from components and deploy them on different platforms. They include containers for AWS Lambda, Azure Functions, and Google Cloud Functions among others.<br><br>
         Within Pip.Services, containers manage the lifecycle of the packaged components, from creation to destruction. They use the Locator pattern and obtain information about dependencies from a configuration file.
       </td>
-      <td><a href="../../tutorials/beginner_tutorials/containers/">Command Set</a></td>
+      <td><a href="../../tutorials/beginner_tutorials/containers/">Containers</a></td>
     </tr>	
    <tr>
       <td>Controller </td>
@@ -302,7 +302,7 @@ weight: 1000
        Pip.Services provides the MemoryLock component, which is used to synchronize the execution of a process using shared memory. It also has the NullLock, which is a dummy lock with no real effect. 
       </td>
       <td>
-        <a href="../../tutorials/beginner_tutorials/locks/">Component references</a>
+        <a href="../../tutorials/beginner_tutorials/locks/">Locks</a>
       </td>
     </tr>
   <tr>
@@ -345,9 +345,6 @@ weight: 1000
       <td>Microapplication</td>
       <td>
        A super-specialized application designed to perform one task or use case.
-      </td>
-      <td>
-        <a href="../../tutorials/beginner_tutorials/locks/">Component references</a>
       </td>
     </tr>
     <tr>
@@ -414,7 +411,7 @@ weight: 1000
        A performance monitoring and debugging tool that consists of counting the number of actions that both the application and the operating system perform. Examples include the number of exceptions thrown, loading time, and the number of threads. <br><br>
        Performance counters as considered in the Pip.Services toolkit through the Count package available from the Components module. This package contains a set of interfaces and classes used to create these tools.
       </td>
-      <td><a href="../building_blocks/observability">Observability</a></td>
+      <td><a href="../beginner_tutorials/observability">Observability</a></td>
     </tr>
     <tr>
       <td>Persistence</td>

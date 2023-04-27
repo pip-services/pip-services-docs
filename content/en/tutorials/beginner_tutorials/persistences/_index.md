@@ -16,10 +16,6 @@ This tutorial will help you understand how to create a JSON persistence componen
 
 The Pip.Services Toolkit offers a few abstract implementations for developing persistent components. One of them is the MemoryPersistence, which stores all of its data in memory. Its usefulness is limited in production, but very handy in unit tests. This persistence allows us to cut dependencies on external persistent storages and makes tests easy to set up and lighting fast!
 
-### [MongoDB Basic](mongodb_persistence)
-
-Another frequent choice of persistence is Pip.Service's MongoDb persistence. This persistence stores data in MongoDB - a popular document-oriented database. The most basic implementation of this component is the MongoDbPersistence class defined in the MongoDb module. It is capable of storing a collection of documents, opening and closing connections, and performing a few simple CRUD operations.
-
 ### [MySQL persistence](mysql_persistence)
 
 In this tutorial, we will see how to interact with a MySQL database in order to provide persistence to our code. First, we will see the main CRUD methods available in the three persistence components contained in the MySQL module. Then, we will see how to run SQL queries with these components. We will conclude with a summary of all the learned concepts.
@@ -31,3 +27,9 @@ In this tutorial, you will understand how to create persistence components for P
 ### [SQL Server persistence](sqlserver_persistence)
 
 This tutorial will help you understand how to create SQL Server persistence components using Pip.Services. It begins by explaining how to install the sqlserver module and create the data structure used in the tutorial's examples.
+
+### [MongoDB Basic](mongodb_persistence)
+
+Another frequent choice of persistence is Pip.Service's MongoDb persistence. This persistence stores data in MongoDB - a popular document-oriented database. The most basic implementation of this component is the MongoDbPersistence class defined in the MongoDb module. It is capable of storing a collection of documents, opening and closing connections, and performing a few simple CRUD operations.
+
+### [Cassandra](cassandra)

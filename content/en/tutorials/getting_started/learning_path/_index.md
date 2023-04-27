@@ -28,7 +28,7 @@ d.	[Configurations](../../beginner_tutorials/configuration/configurations/)
   
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i.	[Configuring connections](../../beginner_tutorials/configuration/configuring_connections/)                
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ii.	[Configuring credentials](../../beginner_tutorials/configuration/configuring_credentials/)
-&nbsp;&nbsp;&nbsp;&nbsp;iii.	[Config file syntax](../../beginner_tutorials/configuration/config_file_syntax/)     
+&nbsp;&nbsp;&nbsp;&nbsp;iii.	[Config file syntax](../../beginner_tutorials/configuration/config_file_syntax/)              
 &nbsp;&nbsp;&nbsp;&nbsp;iv.	[Descriptors](../../beginner_tutorials/component/descriptors/)     
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;v.	[Discovery services](../../beginner_tutorials/discovery_services/)     
 &nbsp;&nbsp;&nbsp;&nbsp;vi.	[Connection utilities](../../beginner_tutorials/communication/connection_utils/)     
@@ -63,7 +63,7 @@ b.	Observability:
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ii.	Metrics          
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	[Prometheus](../../beginner_tutorials/observability/prometheus/)           
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	[Datadog](../../beginner_tutorials/observability/datadog/)          
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	[Elasticsearch](../../beginner_tutorials/observability/)          
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	[Elasticsearch](../../beginner_tutorials/observability/elasticsearch)          
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	[Fluentd](../../beginner_tutorials/observability/fluentd/)          
 c.	Concurrency          
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i.	[Caching](../../beginner_tutorials/caching/caching_basic/)           

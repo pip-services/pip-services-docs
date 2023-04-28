@@ -33,3 +33,4 @@ This tutorial will help you understand how to create SQL Server persistence comp
 Another frequent choice of persistence is Pip.Service's MongoDb persistence. This persistence stores data in MongoDB - a popular document-oriented database. The most basic implementation of this component is the MongoDbPersistence class defined in the MongoDb module. It is capable of storing a collection of documents, opening and closing connections, and performing a few simple CRUD operations.
 
 ### [Cassandra](cassandra)
+In this tutorial, you will learn how to interact with Cassandra, a NoSQL database, using the CassandraPersistence and IdentifiableCassandraPersistence components.

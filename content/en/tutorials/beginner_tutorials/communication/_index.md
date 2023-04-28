@@ -24,6 +24,10 @@ In this tutorial, you will learn how to create and consume CommandableHttpServic
 
 In order to explain its functionality, this tutorial begins by explaining the necessary pre-requisites to work with this component. Then, it shows how to create a command set and a service that uses it. To complete the service, it describes how to include it in a ProcessContainer.
 
+### [Communication utils](connection_utils)
+
+In this tutorial, you will learn how to use a set of utilities offered by Pip.Services that can be used to simplify the handling of connections. We will start by explaining how to import these components. Then, we will see their syntax and how to use them. Finally, we will explore an example that illustrates the practical application of some of these utilities.
+
 ### [Direct client](direct_client)
 
 A direct client is a component that calls a controller directly in the same memory space. In general, it is used when multiple microservices are deployed in a single container (monolith system) and communication between them can be done by direct calls. Within Pip.Services, the DirectClient component is used to create it. 

@@ -28,3 +28,9 @@ In this tutorial, we will learn how to create a component and how to assemble a 
 ### [Descriptors](descriptors)
 
 This tutorial will help you understand what a descriptor is, how to create one, how to get its properties, how to check its completeness, how to convert it to a string, and how to compare it to other descriptors. Finally, it provides an example of its usage.
+
+### [Factories](factories)
+This tutorial will teach you how to create factories for custom components, and how to use Pip.Service’s default factories to create instances of components already included in the toolkit.
+
+### [Reflection](reflection)
+In this tutorial, you will learn how to use the Reflect package. This package provides different classes that will allow you to develop code with introspection capacity.

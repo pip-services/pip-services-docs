@@ -25,7 +25,7 @@ weight: 1000
     <tr>
       <td>Beacon</td>
       <td>A hardware device that enables data transmission to mobile devices within a specific range of the device.</td>
-      <td><a href="../../advanced_tutorials/data_microservice/">Data microservice</a></td>
+      <td><a href="../../tutorials/advanced_tutorials/data_microservice/">Data microservice</a></td>
     </tr>
     <tr>
       <td>Benchmark</td>
@@ -55,7 +55,7 @@ weight: 1000
         The process of storing and accessing data from a cache, where a cache is a high-speed data storage. Typically, the storage is transient and is used to speed up the retrieval of data. <br> <br>
         Within Pip.Services, the user can create components for caching. Also, there are two components that offer caching: the MemoryCaching class, which caches in memory, and the NullCache, which is a dummy cache with no real effect. And, Pip.Services includes modules for Redis and Memcached.
       </td>
-      <td><a href="../../beginner_tutorials/caching/">Caching</a></td>
+      <td><a href="../../tutorials/beginner_tutorials/caching/">Caching</a></td>
     </tr>
     <tr>
       <td>Circuit Breaker pattern</td>
@@ -121,7 +121,6 @@ weight: 1000
         A design approach focused on the decomposition of the system into functional or logical components. Its primary goal is component reusability. <br><br>
         The Pip.Services toolkit follows this approach, which allows for creating microservices from loosely coupled components.
       </td>
-      <td><a href="../beginner_tutorials/building_blocks/#microservice-componentized-design">microservice-componentized-design</a></td>
     </tr>
    <tr>
       <td>Config file</td>

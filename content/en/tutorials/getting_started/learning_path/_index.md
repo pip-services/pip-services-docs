@@ -33,7 +33,7 @@ d.	[Configurations](../../beginner_tutorials/configuration/configurations/)
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;v.	[Discovery services](../../beginner_tutorials/discovery_services/)     
 &nbsp;&nbsp;&nbsp;&nbsp;vi.	[Connection utilities](../../beginner_tutorials/communication/connection_utils/)     
 &nbsp;&nbsp;&nbsp;&nbsp;vii.	[Mustache templates](../../beginner_tutorials/mustache_templates/)     
-&nbsp;&nbsp;&nbsp;viii. [Reflection](../../beginner_tutorials/reflection/)     
+&nbsp;&nbsp;&nbsp;viii. [Reflection](../../beginner_tutorials/component/reflection/)     
 
 ### Day 2
 

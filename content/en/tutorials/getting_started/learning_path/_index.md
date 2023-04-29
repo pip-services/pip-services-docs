@@ -27,7 +27,7 @@ d.	[Configurations](../../beginner_tutorials/configuration/configurations/)
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_Optional (Self-study)_
   
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i.	[Configuring connections](../../beginner_tutorials/configuration/configuring_connections/)                
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ii.	[Configuring credentials](../../beginner_tutorials/configuration/configuring_credentials/)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ii.	[Configuring credentials](../../beginner_tutorials/configuration/configuring_credentials/)         
 &nbsp;&nbsp;&nbsp;&nbsp;iii.	[Config file syntax](../../beginner_tutorials/configuration/config_file_syntax/)              
 &nbsp;&nbsp;&nbsp;&nbsp;iv.	[Descriptors](../../beginner_tutorials/component/descriptors/)     
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;v.	[Discovery services](../../beginner_tutorials/discovery_services/)     

@@ -9,19 +9,19 @@ exclude_from_list: true
 ---
 
 ### [Toolkit Architecture](toolkit_architecture)
-This tutorial shows the general structure of the Pip.Services toolkit.
+The Pip.Services toolkit is divided into a few dozen modules. A small part of these modules make up the core itself, while the rest are optional add ons.This tutorial explains the structure of the Pip.Services toolkit.
 
 ### [Microservice Structure](microservice_structure)
 This tutorial explains the basic structure of a microservice. However, the Pip.Services toolkit doesn’t impose any restrictions on developers when it comes to structuring a microservice - each developer is free to choose their own path. 
 
 ### [Three Tier Architecture](three_tier_architecture)
-This tutorial teaches how to construct an application using Pip.Services components and having a three-tier structure.
+This tutorial teaches how to construct an application that sends a message to a browserusing Pip.Services components and a three-tier structure.
 
 ### [Building Blocks](building_blocks)
 A set of tutorials that explains the nine building blocks composing Pip.Services.  
 
 ### [Components](component)
-In this set of tutorials, we will explore the fundamentals of microservices and focus specifically on the design and development of microservice components. Whether you are new to microservices or an experienced developer looking to improve your skills, these tutorials will provide you with the knowledge and skills you need to design and build microservice components that are robust, scalable, and maintainable. 
+This set of tutorials explores the fundamentals of microservices and focus specifically on the design and development of microservice components. Whether you are new to microservices or an experienced developer looking to improve your skills, these tutorials will provide you with the knowledge and skills you need to design and build microservice components that are robust, scalable, and maintainable. 
 
 ### [Communication](communication)
 In this set of tutorials, we will focus on one of the most critical aspects of building microservice architectures: communication.  We will explore different communication components and with practical examples we will demonstrate how to implement them. 
@@ -48,10 +48,10 @@ These tutorials esplain how to create and manage memory locks and technologies s
 Observability is critical for monitoring and understanding the behavior of complex microservice architectures. In this set of tutorials, we will explore the various tools and techniques used for observability.
 
 ### [Messaging](messaging)
-A group of tutorials that explain how to handle asynchronous communication with Pip.Services
+A group of tutorials that explain how to handle asynchronous communication using Pip.Services and technologies such as HTTP, gRPC, and command sets.
 
 ### [Discovery Services](discovery_services)
-In this tutorial, you will learn how to create and operate a discovery service that stores connection parameters in memory.
+This tutorial teaches the reader how to create and operate a discovery service that stores connection parameters in memory.
 
 ### [Mustache Templates](mustache_templates)
 PIP.Services offers an implementation of a Mustache engine available in its Expressions module. This implementation of Mustache is enhanced with the addition of some helpers. In this tutorial, you will learn how to use the MustacheTemplate component to evaluate different Mustache templates.

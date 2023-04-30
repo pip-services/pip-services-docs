@@ -38,7 +38,7 @@ description: >-
 
 ### Introduction
 
-In this tutorial, you will learn how to construct an application using Pip.Services components and having a three-tier structure. 
+In this tutorial, you will learn how to construct an application using Pip.Services components and a three-tier structure. 
 
 We will begin with a brief description of the example that we will be constructing and a list of the necessary pre-requisites.
 

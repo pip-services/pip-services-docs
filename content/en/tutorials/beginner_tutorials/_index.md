@@ -48,7 +48,7 @@ These tutorials esplain how to create and manage memory locks and technologies s
 Observability is critical for monitoring and understanding the behavior of complex microservice architectures. In this set of tutorials, we will explore the various tools and techniques used for observability.
 
 ### [Messaging](messaging)
-A group of tutorials that explain how to handle asynchronous communication using Pip.Services and technologies such as HTTP, gRPC, and command sets.
+A group of tutorials that explain  how to handle asynchronous communication using Pip.Services and technologies such as HTTP, gRPC, and command sets.
 
 ### [Discovery Services](discovery_services)
 This tutorial teaches the reader how to create and operate a discovery service that stores connection parameters in memory.

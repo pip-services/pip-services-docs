@@ -24,12 +24,12 @@ jobs:
           extended: true
         
       - name: Pre-Build # Pre-Build with caching data for check is correct markdown
-        run: npm install && hugo --theme=docsy
+        run: npm install && hugo --theme=docsy --minify
         env:
           sidebar_cache_limit: 100
           
       - name: Build
-        run: hugo --theme=docsy
+        run: hugo --theme=docsy --minify
         env:
           HUGO_ENV: production
 

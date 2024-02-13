@@ -1,0 +1,8 @@
+{{ $isMarkdown := .Get "isMarkdown" }}
+<div class="content-tab-section">
+    {{ if  eq $isMarkdown true}}
+        {{ .Inner | markdownify}}
+    {{ else }}
+        {{ .Inner }}
+    {{ end }}
+</div>

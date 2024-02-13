@@ -1,0 +1,66 @@
+name: build and deploy
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron:  '00 22 * * *' # UTC 0 timezone
+
+jobs:
+  deploy:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          submodules: true  # Fetch Hugo themes (true OR recursive)
+          # fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
+      
+      - name: Update submodules
+        run: git submodule update --init --recursive
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: 0.91.2 # 'latest'
+          extended: true
+        
+      - name: Pre-Build # Pre-Build with caching data for check is correct markdown
+        run: npm install && hugo --theme=docsy
+        env:
+          sidebar_cache_limit: 100
+          
+      - name: Build
+        run: hugo --theme=docsy
+        env:
+          HUGO_ENV: production
+
+#       - name: Deploy to GitHub Pages
+#         uses: peaceiris/actions-gh-pages@v3
+#         with:
+#           github_token: ${{ secrets.GITHUB_TOKEN }}
+#           publish_dir: ./public
+
+      # - name: Clean S3 bucket 
+      #   run: aws s3 rm "s3://$AWS_S3_BUCKET" --recursive
+      #   env:
+      #     AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
+      #     AWS_DEFAULT_REGION: ${{ secrets.AWS_DEFAULT_REGION }}
+      #     AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      #     AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+
+      - name: Upload resources artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: resources
+          path: ./resources/
+
+      - name: Upload public artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: public
+          path: ./public/
+
+      - name: Deploy to S3
+        run: hugo deploy --force --maxDeletes -1 --invalidateCDN --verbose
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}

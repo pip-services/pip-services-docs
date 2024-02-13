@@ -1,0 +1,4 @@
+
+```dart
+consoleLogger.configure(config);
+```

@@ -1,0 +1,15 @@
+{
+    "index_name": "pip_docs_test",
+    "start_urls": [
+        "https://pip-services.github.io/pip-services-docs/"
+    ],
+    "selectors": {
+        "lvl0": ".content-title",
+        "lvl1": ".td-content h4",
+        "lvl2": "",
+        "lvl3": "",
+        "lvl4": "",
+        "lvl5": "",
+        "text": ""
+    }
+}

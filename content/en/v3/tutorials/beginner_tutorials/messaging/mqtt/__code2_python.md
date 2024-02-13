@@ -1,0 +1,4 @@
+
+```python
+queue = MqttMessageQueue("mytopic")
+```

@@ -1,0 +1,237 @@
+# Site Configuration
+baseURL = "/"
+title = "Pip.Services Docs"
+theme = "docsy"
+disableFastRender = true
+
+enableRobotsTXT = true
+enableGitInfo = true
+
+relativeURLS = true
+
+# Enable syntax highlighting and copy buttons on code blocks with Prism
+prism_syntax_highlighting = true
+
+# Highlighting config
+# See https://help.farbox.com/pygments.html
+pygmentsStyle = 'monokailight' 
+pygmentsCodeFences = true
+pygmentsUseClasses = false
+# Use the new Chroma Go highlighter in Hugo.
+pygmentsUseClassic = false
+#pygmentsOptions = "linenos=table"
+
+# Language Configuration
+languageCode = "en-us"
+
+# Security configs
+[security]
+  enableInlineShortcodes = true
+  [security.exec]
+    allow = ['^dart-sass-embedded$', '^go$', '^npx$', '^postcss$']
+    osEnv = ['(?i)^(PATH|PATHEXT|APPDATA|TMP|TEMP|TERM)$']
+
+  [security.funcs]
+    getenv = ['^HUGO_', '^sidebar_cache_limit']
+
+  [security.http]
+    methods = ['(?i)GET|POST']
+    urls = ['.*']
+
+
+[deployment]
+[[deployment.targets]]
+name = "docs.pipservices.org"
+URL = "s3://docs.pipservices.org?region=us-east-1"
+
+# If you are using a CloudFront CDN, deploy will invalidate the cache as needed.
+# cloudFrontDistributionID =	"[CLOUDFRONT_DIST_ID]"
+
+[[deployment.matchers]]
+# Cache static assets for 1 year.
+# pattern = "^.+\\.(js|css|png|jpg|gif|svg|ttf)$"
+# cacheControl = "max-age=31536000, no-transform, public"
+gzip = true
+
+[[deployment.matchers]]
+# pattern = "^.+\\.(png|jpg)$"
+# pattern = "^.+\\.(html|xml|json)$"
+gzip = true
+
+
+
+[languages]
+  [languages.en]
+    weight = 1
+    contentDir = "content/en"
+    languageName = "English"
+  # [languages.ru]
+  #   weight = 2
+  #   contentDir = "content/ru"
+  #   languageName = "Russian"
+
+# Disable categories & tags
+disableKinds = ["taxonomy", "term"]
+
+# Google Custom Search Engine ID. Remove or comment out to disable search.
+# gcs_engine_id = "d72aa9b2712488cc3"
+
+# Markdown Engine - Allow inline html
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+  [markup.tableOfContents]
+    endLevel = 4
+    ordered = false
+    startLevel = 1
+
+# Top Navigation
+#[[menu.main]]
+  #  identifier = "Home"
+  #  name = "Home"
+  #  # pre = "<i class='fa fa-heart'></i>"
+  #  url = "http://pipservices.org/"
+  #  weight = 0
+
+
+[[menu.main]]
+    identifier = "Home"
+    name = "Home"
+    url = "/"
+    weight = 1
+[[menu.main]]
+    identifier = "Node"
+    name = "Node.js"
+    url = "toolkit_api/node/"
+    weight = 10
+[[menu.main]]
+    identifier = ".NET"
+    name = ".NET"
+    url = "toolkit_api/net/"
+    weight = 20
+[[menu.main]]
+    identifier = "Golang"
+    name = "Golang"
+    url = "toolkit_api/golang/"
+    weight = 30
+[[menu.main]]
+    identifier = "Dart"
+    name = "Dart"
+    url = "toolkit_api/dart/"
+    weight = 40
+[[menu.main]]
+    identifier = "Python"
+    name = "Python"
+    url = "toolkit_api/python/"
+    weight = 50
+[[menu.main]]
+    identifier = "Java"
+    name = "Java"
+    url = "toolkit_api/java/"
+    weight = 60
+
+# [[menu.main]]
+#     identifier = "Toolkit"
+#     name = "Toolkit"
+#     url = "toolkit/"
+#     weight = 5
+# [[menu.main]]
+#     identifier = "Microservices"
+#     name = "Microservices"
+#     url = "microservices/"
+#     weight = 80
+
+# [[menu.main]]
+#     identifier = "Testing Tools"
+#     name = "Testing Tools"
+#     url = "testing_tools/"
+#     weight = 90
+
+
+[params]
+copyright = "Enterprise Innovation Consulting."
+privacy_policy = "https://policies.google.com/privacy"
+customCSS  = ["css/custom.css", "css/bootstrap.offcanvas.css"]
+customSCSS = ["scss/algolia.scss"]
+
+# Algolia search
+algolia_docsearch = true
+offlineSearch = false
+
+# GitHub Information
+github_repo = "https://github.com/pip-services/pip-services-docs"
+github_branch = "master"
+# github_project_repo = ""
+# github_subdir = ""
+
+
+# Versioning
+version_menu = "v3 (latest)"
+version = "v3"
+archived_version = false
+url_latest_version = "/v3"
+
+[[params.versions]]
+  version = "v3 (latest)"
+  url = "/v3"
+
+[[params.versions]]
+  version = "v4 (pre-release)"
+  url = "/v4"
+
+# User interface configuration
+[params.ui]
+sidebar_menu_compact = true
+breadcrumb_disable = false
+sidebar_search_disable = true
+navbar_logo = true
+footer_about_disable = false
+sidebar_cache_limit = 50000
+sidebar_menu_truncate = 150
+
+[params.links]
+# End user relevant links. These will show up on left side of footer and in the community page if you have one.
+[[params.links.user]]
+	name ="Main Site"
+	url = "http://www.pipservices.org"
+	icon = "fa fa-globe"
+        desc = "Our main Site!"
+[[params.links.user]]
+	name = "Email"
+	url = "mailto:info@entinco.com"
+	icon = "fa fa-envelope"
+        desc = "Suggestions and help"
+[[params.links.user]]
+	name ="YouTube"
+	url = "https://www.youtube.com/channel/UCDXBRWYD1-08BW3miK5LVdg"
+	icon = "fab fa-youtube"
+        desc = "Our YouTube channel!"
+# Developer relevant links. These will show up on right side of footer and in the community page if you have one.
+[[params.links.developer]]
+	name = "Discord"
+	url = "https://discord.com/invite/bcAP7yWxqs"
+	icon = "fab fa-discord"
+        desc = "Our discord community"
+[[params.links.developer]]
+	name = "Stack Overflow"
+	url = "https://stackoverflow.com/questions/tagged/pipservices"
+	icon = "fab fa-stack-overflow"
+        desc = "Practical questions and curated answers"
+[[params.links.developer]]
+	name = "GitHub"
+	url = "http://github.com/pip-services"
+	icon = "fab fa-github"
+        desc = "Development"
+
+[outputFormats.Algolia]
+  baseName = "algolia"
+  isPlainText = true
+  mediaType = "application/json"
+  notAlternative = true
+[params.algolia]
+  vars = ["title", "description", "summary", "date", "lastmod", "permalink"]
+  params = ["categories", "tags"]
+[outputs]
+  home = ["HTML", "RSS", "JSON", "Algolia"]
+  page = ["HTML", "RSS"]

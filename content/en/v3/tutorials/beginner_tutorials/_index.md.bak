@@ -1,0 +1,46 @@
+---
+type: docs
+title: "Beginner Tutorials"
+linkTitle: "Beginner Tutorials" 
+weight: 30
+no_list: true
+exclude_from_list: true
+---
+---
+
+### [Toolkit Architecture](toolkit_architecture)
+This tutorial shows the general structure of the Pip.Services toolkit.
+
+### [Microservice Structure](microservice_structure)
+This tutorial explains the basic structure of a microservice. However, the Pip.Services toolkit doesn’t impose any restrictions on developers when it comes to structuring a microservice - each developer is free to choose their own path. 
+
+### [Three Tier Architecture](three_tier_architecture)
+This tutorial teaches how to construct an application using Pip.Services components and having a three-tier structure.
+### [Building Blocks](building_blocks)
+
+### [Components](component)
+
+### [Communication](communication)
+
+### [Persistences](persistences)
+
+### [Containers](containers)
+Containers have also gained popularity as a means of deploying and managing software applications in a lightweight and portable way.n this set of tutorials, we will explore the fundamentals of microservices and containers, and demonstrate how to create and manage these components 
+### [Configuration](configuration)
+
+### [Caching](caching)
+A set of tutorials aimed at helping you understand different types of caching technologies, such as memory caching, Memcached and Redis.
+
+### [Data Handling]()
+
+### [Locks](locks)
+These tutorials esplain how to create and manage memory locks and technologies such as Memcached and Redis.
+
+### [Observability](observability)
+
+### [Messaging](messaging)
+A group of tutorials that explain how to handle asynchronous communication with Pip.Services
+
+### [Discovery Services](discovery_services)
+
+### [Mustache Templates](mustache_templates)

@@ -1,0 +1,20 @@
+{{ $versionPos := 1 }}
+{{ $active := eq (index (split $.CurrentSection.URL "/") $versionPos) (index (split .URL "/") $versionPos) }}
+{{ $currentVersion := (index (split .URL "/") $versionPos) }}
+
+<!-- TODO: if versions format will be changed from 'vX' need to update this part -->
+<a id="versions-dropdown" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	{{ range .Site.Params.versions }}
+	{{ $activeNavItem := and $active (eq (substr $currentVersion 0 2) (substr .version 0 2)) }}
+		{{if $activeNavItem }} {{ .version }} {{end}}
+	{{ end }}
+</a>
+<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+	{{ range .Site.Params.versions }}
+		{{ $activeNavItem := and $active (eq (substr $currentVersion 0 2) (substr .version 0 2)) }}
+		<a class="dropdown-item version-selector {{if $activeNavItem }} active {{end}}" 
+		href="{{ .url }}">
+			<span class="version-selector-text {{if $activeNavItem }} active {{end}}">{{ .version }}</span>
+		</a>
+	{{ end }}
+</div>

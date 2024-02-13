@@ -1,0 +1,20 @@
+---
+type: docs
+title: "Build"
+linkTitle: "Build"
+no_list: true
+gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-prometheus-dotnet"
+description: >
+    The Build package contains classes used to create Prometheus components.
+---
+---
+<div class="module-body"> 
+
+### Classes
+
+#### [DefaultPrometheusFactory](default_prometheus_factory)
+Creates Prometheus components by their descriptors.
+
+
+</div>
+

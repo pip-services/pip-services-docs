@@ -1,0 +1,6 @@
+<div class="btn-group tab-selector-btn-group" role="group" aria-label="Language selector">
+{{ $paramsCount := len .Params}}
+{{ range $index, $param := .Params }}
+    <button type="button" class="btn lang-select-btn {{ if or (eq $index 0) (eq $index $paramsCount) }} ml-0 {{ end }}">{{ $param }}</button>
+{{ end }}
+</div>

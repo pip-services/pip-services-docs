@@ -1,0 +1,110 @@
+---
+type: docs
+title: "Commons module"
+gitUrl: "https://github.com/pip-services3-dart/pip-services3-commons-dart"
+no_list: true
+weight: 30
+description: > 
+ 
+    Provides a set of tools used in microservices or backend services, and it is designed to facilitate
+    symmetric implementation accross different programming languages.
+
+---
+
+
+### Packages
+
+The module contains the following packages:
+
+* [**Convert**](convert) - portable value converters
+* [**Data**](data) - data patterns
+* [**Errors**](errors) - application errors
+* [**Reflect**](reflect) - portable reflection utilities
+
+### Use
+
+Add this to your package's pubspec.yaml file:
+```yaml
+dependencies:
+  pip_services4_commons: version
+```
+
+Now you can install package from the command line:
+```bash
+pub get
+```
+
+Then you are ready to start using the Pip.Services patterns to augment your backend code.
+
+For instance, here is how you can implement a component, that receives configuration, get assigned references,
+can be opened and closed using the patterns from this module.
+
+
+```dart
+class MyComponentA implements IConfigurable, IReferenceable, IOpenable {
+  MyComponentA();
+
+  String _param1 = 'ABC';
+  int _param2 = 123;
+  MyComponentB _anotherComponent;
+  bool _opened = true;
+
+  @override
+  void configure(ConfigParams config) {
+    this._param1 = config.getAsStringWithDefault('param1', this._param1);
+    this._param2 = config.getAsIntegerWithDefault('param2', this._param2);
+  }
+
+  @override
+  void setReferences(IReferences refs) {
+    this._anotherComponent = refs.getOneRequired<MyComponentB>(
+      Descriptor('myservice', 'mycomponent-b', '*', '*', '1.0')
+    );
+  }
+
+  @override
+  bool isOpen() {
+    return this._opened;
+  }
+
+  @override
+  Future open(IContext? context) {
+    return Future(() {
+      this._opened = true;
+      print('MyComponentA has been opened.');
+    });
+  }
+
+  @override
+  Future close(IContext? context) {
+    return Future(() {
+      this._opened = true;
+      print('MyComponentA has been closed.');
+    });
+  }
+}
+```
+
+Then here is how the component can be used in the code
+
+```dart
+import 'package:pip_services3_commons/src/config/ConfigParams.dart';
+import 'package:pip_services3_commons/src/refer/References.dart';
+import 'package:pip_services3_commons/src/refer/DependencyResolver.dart';
+
+var myComponentA = MyComponentA();
+
+// Configure the component
+myComponentA.configure(ConfigParams.fromTuples([
+  'param1', 'XYZ',
+  'param2', 987
+]));
+
+// Set references to the component
+myComponentA.setReferences(References.fromTuples([
+   Descriptor('myservice', 'mycomponent-b', 'default', 'default', '1.0',) myComponentB
+]));
+
+// Open the component
+myComponentA.open('123');
+```

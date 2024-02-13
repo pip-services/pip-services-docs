@@ -1,0 +1,4 @@
+
+```python
+kc.close(None)
+```

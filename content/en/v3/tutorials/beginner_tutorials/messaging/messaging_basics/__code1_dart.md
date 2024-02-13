@@ -1,0 +1,4 @@
+
+```dart
+import 'package:pip_services3_messaging/pip_services3_messaging.dart';
+```

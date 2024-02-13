@@ -1,0 +1,4 @@
+
+```go
+var persistence IMyDataPersistence
+```

@@ -1,0 +1,4 @@
+
+```go
+template.Clear()
+```

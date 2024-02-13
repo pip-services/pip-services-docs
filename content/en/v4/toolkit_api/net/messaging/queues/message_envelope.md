@@ -1,0 +1,128 @@
+---
+type: docs
+title: "MessageEnvelope"
+linkTitle: "MessageEnvelope"
+gitUrl: "https://github.com/pip-services4/pip-services4-dotnet/tree/main/pip-services4-messaging-dotnet"
+description: >
+    Allows adding additional information to messages. 
+---
+
+### Description
+
+The MessageEnvelope class allows you to add additional information to messages.
+
+**Important points**
+
+- A context, message id, and a message type are added to the data being sent/received. Additionally, a MessageEnvelope can reference a lock token.
+- A MessageEnvelope's message is stored as a buffer, so strings are converted using utf8 conversions.
+
+### Constructors
+Creates a new MessageEnvelope.
+
+> `public` MessageEnvelope()
+
+Creates a new [MessageEnvelope](), which adds a context, message id, and a type to the data being sent/received.
+
+> `public` MessageEnvelope(IContext context, string messageType, byte[] message)
+
+- **context**: [IContext](../../../components/context/icontext) - (optional) a context to trace execution through a call chain.
+- **messageType**: string - string value that defines the message's type.
+- **message**: byte[] - data being sent/received.
+
+Creates a new MessageEnvelop, which adds a context, message id, and a
+type to the data being sent/received.
+
+> `public` MessageEnvelope(IContext context, string messageType, string message)
+
+- **context**: [IContext](../../../components/context/icontext) - (optional) a context to trace execution through a call chain.
+- **messageType**: string - string value that defines the message's type.
+- **message**: string - data being sent/received.
+
+
+Creates a new MessageEnvelop, which adds a context, message id, and a
+type to the data being sent/received.
+
+> `public` MessageEnvelope(IContext context, string messageType, object message)
+
+- **context**: [IContext](../../../components/context/icontext) - (optional) a context to trace execution through a call chain.
+- **messageType**: string - string value that defines the message's type.
+- **message**: object - data being sent/received.
+
+### Properties
+
+
+#### TraceId
+Unique business transaction id that is used to trace calls across components.
+
+> `public` string TraceId { get; set; }
+
+#### Message
+Stored message.
+
+> `public` byte[] Message { get; set; }
+
+#### MessageId
+Message's auto-generated ID.
+
+> `public` string MessageId { get; set; }
+
+#### MessageType
+String value that defines the stored message's type.
+
+> `public` string MessageType { get; set; }
+
+#### SentTime
+Time at which the message was sent.
+
+> `public` DateTime SentTime { get; set; }
+
+#### MessageBase64
+Used for serialization { get; set; }
+
+> `public` string MessageBase64
+
+</span>
+
+### Instance methods
+
+#### GetMessageAs
+Returns any the value that was stored in this message as a JSON string.  
+See also [SetMessageAsObject](#setmessageasobject)
+
+> `public` T GetMessageAs\<T\>()
+
+- **returns**: T - value that was stored in this message as a JSON string.
+
+#### GetMessageAsString
+Returns the information stored in this message as a UTF-8 encoded string.
+
+> `public` string GetMessageAsString()
+
+- **returns**: string - information stored in this message as a UTF-8 encoded string.
+
+#### SetMessageAsObject
+Stores the given value as an object.
+See also [GetMessageAs](#getmessageas)
+
+> `public` void SetMessageAsObject(object message)
+
+- **message**: object -  value to convert to JSON and store in this message.
+
+#### SetMessageAsString
+Stores the given string.
+
+> `public` void SetMessageAsString(string message)
+
+- **message**: string - string to set. It will be converted to a buffer using UTF-8 encoding.
+
+
+#### ToString
+Converts this [MessageEnvelope]() to a string, using the following format:  
+*"[<traceId>,<message_type>,<message.toString>]"*.
+
+If any of the values are *null*, they will be replaced with \-\-\-.
+
+> `public override` string ToString()
+
+- **returns**: string - generated string.
+

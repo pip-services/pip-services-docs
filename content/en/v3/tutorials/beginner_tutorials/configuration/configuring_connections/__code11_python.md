@@ -1,0 +1,4 @@
+
+```python
+connection.get('uri')
+```

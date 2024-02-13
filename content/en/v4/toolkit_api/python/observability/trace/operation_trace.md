@@ -1,0 +1,66 @@
+---
+type: docs
+title: "OperationTrace"
+linkTitle: "OperationTrace"
+gitUrl: "https://github.com/pip-services4/pip-services4-python/tree/main/pip-services4-observability-python"
+description: >
+    Data object to store captured operation traces.
+    
+---
+
+### Description
+
+The OperationTrace class allows you to create a data object used to store captured operation traces.
+
+Important points
+
+- This object is used by [CachedTracer](../cached_tracer). 
+
+### Constructors
+Create new instance of OperationTrace
+
+> OperationTrace(time: datetime, source: str, component: str, operation: str, trace_id: str, duration: float, error: [ErrorDescription](../../../commons/errors/error_description))
+
+- **time**: datetime - The time when operation was executed
+- **source**: str - source (context name)
+- **component**: str - name of the component
+- **operation**: str - name of the executed operation
+- **trace_id**: str - transaction id to trace execution through call chain. 
+- **duration**: float - duration of the operation in milliseconds
+- **error**: [ErrorDescription](../../../commons/errors/error_description) - The description of the captured error
+- 
+
+### Fields
+
+<span class="hide-title-link">
+
+#### time
+The time when operation was executed
+> **time**: datetime
+
+#### source
+The source (context name)
+> **source**: str 
+
+#### component
+ The name of the component
+> **component**: str
+
+#### operation
+The name of the executed operation
+> **operation**: str
+
+#### trace_id
+The transaction id to trace execution through call chain. 
+> **trace_id**: str
+
+#### duration
+The duration of the operation in milliseconds
+> **duration**: float
+
+#### error
+The description of the captured error.  
+See also [ErrorDescription](../../../commons/errors/error_description), [ApplicationException](../../../commons/errors/application_exception)
+> **error**: [ErrorDescription](../../../commons/errors/error_description)
+
+</span>

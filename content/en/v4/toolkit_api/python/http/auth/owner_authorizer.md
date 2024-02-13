@@ -1,0 +1,32 @@
+---
+type: docs
+title: "OwnerAuthorizer"
+linkTitle: "OwnerAuthorizer"
+gitUrl: "https://github.com/pip-services4/pip-services4-python/tree/main/pip-services4-http-python"
+description: >
+    Access granting methods for owners and administrators.
+---
+
+### Description
+
+The OwnerAuthorizer class provides access granting methods for owners and administrators.
+
+### Instance methods
+
+#### owner
+Access is granted only for the session owner.  
+Throws [UnauthorizedException](../../../commons/errors/unauthorized_exception) exception if not authorized or not owner.
+
+> owner(id_param: str = 'user_id'): Callable
+
+- **id_param**: str - id of the current owner.
+- **returns**: Callable - returns owner handler.
+
+#### owner_or_admin
+Access is granted only to authorized users.   
+Throws [UnauthorizedException](../../../commons/errors/unauthorized_exception) exception if not authorized or not owner.
+
+> owner_or_admin(id_param: str = 'user_id'): Callable
+
+- **id_param**: str - id of the current owner.
+- **returns**: Callable - returns owner or admin handler.

@@ -1,0 +1,33 @@
+---
+type: docs
+title: "CallbackMessageReceiver"
+linkTitle: "CallbackMessageReceiver"
+gitUrl: "https://github.com/pip-services4/pip-services4-python/tree/main/pip-services4-messaging-python"
+description: >
+    Wraps a message callback into [IMessageReceiver](../imessage_receiver)
+---
+
+**Implements:** [IMessageReceiver](../imessage_receiver)
+
+### Description
+
+The CallbackMessageReceiver class allows you to wrap message callbacks into [IMessageReceiver](../imessage_receiver). 
+
+### Constructors
+Creates an instance of the CallbackMessageReceiver.
+
+> CallbackMessageReceiver(callback: Callable[[[MessageEnvelope](../message_envelope), [IMessageQueue](../imessage_queue)], None])
+    
+
+- **callback**: Callable[[[MessageEnvelope](../message_envelope), [IMessageQueue](../imessage_queue)], None] - a callback function that shall be wrapped into [IMessageReceiver](../imessage_receiver)
+
+### Instance methods
+
+#### receive_message
+Receives an incoming message from the queue.  
+See also [MessageEnvelope](../message_envelope), [IMessageQueue](../imessage_queue)
+
+> receive_message(envelope: [MessageEnvelope](../message_envelope), queue: [IMessageQueue](../imessage_queue))
+
+- **envelope**: [MessageEnvelope](../message_envelope) - incoming message
+- **queue**: [IMessageQueue](../imessage_queue) - queue where the message comes from

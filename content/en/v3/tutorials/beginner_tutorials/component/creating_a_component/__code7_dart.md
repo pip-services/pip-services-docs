@@ -1,0 +1,28 @@
+
+```dart
+import 'package:pip_services3_commons/pip_services3_commons.dart';
+
+class MyComponentB {
+  // ...
+}
+
+class MyComponentA implements IConfigurable, IReferenceable, IOpenable, IUnreferenceable {
+  String _param1 = 'ABC';
+  int _param2 = 123;
+  bool _open = false;
+  String? _status;
+  MyComponentB? _anotherComponent;
+
+  String? dummyVariable;
+
+  // ...
+
+  @override
+  void unsetReferences() {
+    _anotherComponent = null;
+    _status = 'Un-referenced';
+    print('References cleared');
+  }
+}
+
+```

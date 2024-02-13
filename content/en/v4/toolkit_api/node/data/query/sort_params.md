@@ -1,0 +1,35 @@
+---
+type: docs
+title: "SortParams"
+linkTitle: "SortParams"
+gitUrl: "https://github.com/pip-services4/pip-services4-node/tree/main/pip-services4-data-node"
+description: > 
+    Defines a list of field names used to sort query results.
+---
+
+**Extends:** Array\<[SortField](../sort_field)\>
+
+### Description
+
+The SortParams class allows you to define a list of field names used to sort query results. In addition, it allows you to specify the type of order as ascending or descending.
+
+### Constructors
+Creates a new instance and initializes it with specified sort fields.
+
+> `public` constructor(...fields: [SortField](../sort_field)[])
+
+- **fields**: [SortField](../sort_field)[] - list of fields to sort by.
+
+
+### Examples
+```typescript
+let filter = FilterParams.fromTuples("type", "Type1");
+let paging = new PagingParams(0, 100);
+let sorting = new SortingParams(new SortField("create_time", true));
+
+let result = await myDataClient.getDataByFilter(filter, paging, sorting);
+
+```
+
+### See also
+- #### [SortField](../sort_field)

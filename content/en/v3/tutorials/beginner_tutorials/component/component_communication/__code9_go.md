@@ -1,0 +1,4 @@
+
+```go
+references.GetOneOptional(service)
+```

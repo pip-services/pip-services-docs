@@ -1,0 +1,4 @@
+
+```cs
+consoleLogger.Configure(config);
+```

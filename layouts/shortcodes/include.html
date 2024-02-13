@@ -1,0 +1,10 @@
+{{ $path := .Get 0 }}
+{{ $fullPath := .Page.RelPermalink }}
+{{ $isRelative := or (eq (substr $path 0 2) "./") (eq (substr $path 0 3) "../")}}
+
+{{ if $isRelative }}
+    {{ $path = path.Join $fullPath $path }}
+{{ end }}
+{{ $file := readFile $path }}
+{{ $lang := .Get "language" }}
+{{ (print "" $lang "\n" $file "\n") | markdownify }}

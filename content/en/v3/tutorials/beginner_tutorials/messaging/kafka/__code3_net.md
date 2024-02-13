@@ -1,0 +1,4 @@
+
+```cs
+kc.CheckOpen();
+```

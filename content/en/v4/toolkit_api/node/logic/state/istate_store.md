@@ -1,0 +1,55 @@
+---
+type: docs
+title: "IStateStore"
+linkTitle: "IStateStore"
+gitUrl: "https://github.com/pip-services4/pip-services4-node/tree/main/pip-services4-logic-node"
+description: >
+    Interface for state storages that are used to store and retrieve transaction states.
+---
+
+### Description
+
+TODO: add description
+
+### Instance methods
+
+#### delete
+Deletes a state from the store by its key.
+
+> delete\<T\>(context: [IContext](../../../components/context/icontext), key: string): Promise\<T\>
+
+- **context**: [IContext](../../../components/context/icontext) - (optional) a context to trace execution through call chain.
+- **key**: string - a unique value key.
+- **return**: Promise\<T\> - removed item
+
+
+#### load
+Loads state from the store using its key.
+If value is missing in the store it returns null.
+
+> load\<T\>(context: [IContext](../../../components/context/icontext), key: string): Promise\<T\>
+
+- **context**: [IContext](../../../components/context/icontext) - (optional) a context to trace execution through call chain.
+- **key**: string - a unique state key.
+- **return**: Promise\<T\> - the state value or `null` if value wasn't found.
+
+
+#### loadBulk
+Loads an array of states from the store using their keys.
+
+> loadBulk\<T\>(context: [IContext](../../../components/context/icontext), keys: string[]): Promise<[StateValue](../state_value)\<T\>[]>
+
+- **context**: [IContext](../../../components/context/icontext) - (optional) a context to trace execution through call chain.
+- **keys**: string[] - unique state keys.
+- **returns**: Promise<[StateValue](../state_value)\<T\>[]> - an array with state values and their corresponding keys.
+
+
+#### save
+Saves state into the store.
+
+> save\<T\>(context: [IContext](../../../components/context/icontext), key: string, value: any): Promise\<T\>
+
+- **context**: [IContext](../../../components/context/icontext) - (optional) a context to trace execution through call chain.
+- **key**: string - a unique state key.
+- **value**: any - a state value.
+- **returns**: Promise\<T\> - execution duration in milliseconds.

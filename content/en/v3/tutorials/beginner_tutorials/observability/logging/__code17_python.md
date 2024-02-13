@@ -1,0 +1,4 @@
+
+```python
+logger = CompositeLogger()
+```

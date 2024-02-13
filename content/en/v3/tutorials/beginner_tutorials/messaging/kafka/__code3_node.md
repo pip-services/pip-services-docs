@@ -1,0 +1,4 @@
+
+```ts
+kc.checkOpen();
+```

@@ -1,0 +1,4 @@
+
+```dart
+logger.setReferences(references);
+```

@@ -1,0 +1,4 @@
+
+```go
+connection.Get("uri")
+```

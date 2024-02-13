@@ -1,0 +1,112 @@
+{{ with .Site.Params.algolia_docsearch }}
+<script>
+  // fix docsearch bug with inputSelector
+  function delHiddenLgSearch() {
+    for (var navEl of document.getElementsByClassName('navbar-nav')) {
+      if (navEl.getElementsByClassName('td-search-input').length > 0) {
+        for (var search of navEl.getElementsByClassName('td-search-input')) {
+          var style = window.getComputedStyle(navEl)
+          if (navEl.classList.contains('d-md-block') && style['display'] === 'none') {
+            search.remove();
+          }
+        }
+      }
+    }
+  }
+
+  delHiddenLgSearch();
+
+  docsearch({
+    algoliaOptions: {
+      // hitsPerPage: 10,
+      // See https://www.algolia.com/doc/api-reference/api-parameters/
+    },
+
+    // Your apiKey and indexName will be given to you once
+    // we create your config
+    apiKey: 'eb7c6c3d6ab7cfb5e4d5b5f92e521816', // 6974095177303d4ec7cb2a2d7c6f051a
+    indexName: 'pipservices_org', // isGitRepo > 0 ? 'pip_docs_test' : 'pip_docs_s3', //'pipservices',
+    appId: 'BOFDVSCA5E',
+    // Replace inputSelector with a CSS selector
+    // matching your search input
+    inputSelector: '.td-search-input',
+
+    transformData: function(hits) {
+      // Filter by language
+
+      hits = hits.filter((item, index) => {
+        
+        // hide included pages
+        if ((item.url.split('#').at(-1) != undefined && item.url.split('#').at(-2) != undefined && item.url.split('#').at(-2).startsWith('__')) 
+            || (item.url.split('/').at(-1).startsWith('__') 
+            || item.url.split('/').at(-2).startsWith('__'))) {
+          
+          return false;
+        }
+
+        // Add current menuSection and module to hits
+        let menuSection = item.url.split('/')[4];
+        let module = item.url.split('/')[5];
+
+        // capitalize
+        menuSection = menuSection.charAt(0).toUpperCase() + menuSection.slice(1);
+        module = module!=undefined && module != '' ? module.charAt(0).toUpperCase() + module.slice(1) : null;
+
+        if (localStorage['currentMenuActiveItem'].toLowerCase() != 'home'){
+          let hitLangPage = item['url'].split('/')[4].toLowerCase();
+          let isCorrectHit = localStorage['currentMenuActiveItem'].toLowerCase().replace('.', '/').split('/').indexOf(hitLangPage) > -1;
+          
+          if (module != null) {
+            item.hierarchy.lvl0 = module;
+            item._highlightResult.hierarchy.lvl0 = module;
+          }
+
+          return isCorrectHit;
+        } else if (module != null){
+          item.hierarchy.lvl0 = menuSection + ' → ' + module;
+          item._highlightResult.hierarchy.lvl0 = menuSection + ' → ' + module;
+        }
+        
+        return true
+        
+      });
+
+      return hits;
+      
+    },
+    
+    handleSelected: function (input, event, suggestion, datasetNumber, context) {
+      // Prevents the default behavior on click and rather opens the suggestion
+      // in a new tab.
+
+      if (context.selectionMethod === 'enterKey' || context.selectionMethod === 'click') {
+
+        if(document.getElementsByClassName('algolia-autocomplete')[0].getElementsByClassName('ds-cursor')[0] != undefined) {
+          window.open(suggestion.url, "_self");
+        } else {
+          let searchUrl = isGitRepo ? "{{ "pip-services-docs/search/" | absURL }}?q=" : "{{ "/search/" | absURL }}?q=";
+          window.open(searchUrl + input.getVal());
+        }
+      }
+
+      input.setVal('');
+    },
+
+    // Set debug to true to inspect the dropdown
+    debug: true,
+  });
+
+  function copy(obj){
+    if (obj != undefined)
+      return JSON.parse(JSON.stringify(obj));
+    return undefined;
+  }
+
+  function is_touch_screen() {
+      return ('ontouchstart' in window) ||
+        (navigator.maxTouchPoints > 0) ||
+        (navigator.msMaxTouchPoints > 0);
+    }
+
+</script>
+{{ end }}

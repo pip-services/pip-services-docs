@@ -1,0 +1,4 @@
+
+```python
+client.open(None)
+```

@@ -1,0 +1,32 @@
+{
+  "name": "pip-docs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "algolia": "atomic-algolia",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "hugo server -F -D",
+    "build:algolia": "hugo && npm run algolia",
+    "build:docker": "hugo && docker run -it --env-file=.env -e \"CONFIG=$(cat ./docsearch.json | jq -r tostring)\" algolia/docsearch-scraper "
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pip-services/pip-services-docs.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pip-services/pip-services-docs/issues"
+  },
+  "homepage": "https://github.com/pip-services/pip-services-docs#readme",
+  "devDependencies": {
+    "atomic-algolia": "^0.3.19",
+    "autoprefixer": "^10.2.5",
+    "postcss-cli": "^8.3.1"
+  },
+  "dependencies": {
+    "autoprefixer": "^10.2.5",
+    "postcss": "^8.3.0"
+  }
+}

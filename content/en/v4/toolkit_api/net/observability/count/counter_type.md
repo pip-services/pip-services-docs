@@ -1,0 +1,23 @@
+---
+type: docs
+title: "CounterType"
+linkTitle: "CounterType"
+gitUrl: "https://github.com/pip-services4/pip-services4-dotnet/tree/main/pip-services4-observability-dotnet"
+description: >
+    Counter type enumeration containing the types of counters that measure different types of metrics.
+---
+
+### Description
+
+The CounterType class enumerates the types of counters that measure different types of metrics.
+
+### Enumeration members
+
+- **Interval** = 0 - Counters that measure execution time intervals
+- **LastValue** = 1 - Counters that keep the latest measured value
+- **Statistics** = 2 - Counters that measure min/average/max statistics
+- **Timestamp** = 3 - Counter that record timestamps
+- **Increment** = 4 - Counter that increment counters
+
+</span>
+

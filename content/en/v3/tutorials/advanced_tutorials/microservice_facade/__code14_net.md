@@ -1,0 +1,4 @@
+
+```bash
+dotnet test
+```

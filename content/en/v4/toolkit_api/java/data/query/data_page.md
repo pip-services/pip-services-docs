@@ -42,16 +42,53 @@ Total amount of items in a request.
 > `private` Long **_total**
 
 </span>
+### Instance methods
 
+#### getTotal
+Total.
+
+> `public` Long getTotal()
+
+- **returns**: Long - total.
+
+#### SetTotal
+Total.
+
+> `public` setTotal(Long value)
+
+- **value**: Long - total.
+
+#### getData
+Data.
+
+> `public` List<T> getData() 
+
+- **returns**: List<T> - data.
+
+#### SetData
+Data.
+
+> `public` setData(List<T> value)
+
+- **value**: List<T> - total.  
 
 ### Examples
 
-```typescript
-let page = await myDataClient.getDataByFilter(
+```java
+{
+  myDataClient.getDataByFilter(
     "123",
-    FilterParams.fromTuples("completed": true),
-    new PagingParams(0, 100, true)
-);
+    FilterParams.fromTuples("completed", true),
+    new PagingParams(0, 100, true),
+    (DataPage<MyData> page) -> {
+        System.out.println("Items: ");
+        for (MyData item : page.getData()) {
+          System.out.println(item);
+        }
+        System.out.println("Total items: " + page.getTotal());
+    };
+  );
+  }
 
 ```
 

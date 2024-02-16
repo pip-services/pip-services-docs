@@ -1,7 +1,7 @@
 ---
 type: docs
-title: "RandomInteger"
-linkTitle: "RandomInteger"
+title: "RandomLong"
+linkTitle: "RandomLong"
 gitUrl: "https://github.com/pip-services4/pip-services4-java/tree/main/pip-services4-data-java"
 description: >
     Random generator for integer values.

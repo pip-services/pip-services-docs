@@ -19,6 +19,10 @@ The SyntaxErrorCode class defines general syntax errors.
 Error near.
 > `public static final` String **ERROR_NEAR** = "ERROR_NEAR"
 
+#### ErrorAt
+Error at.
+> `public static final` String **ERROR_AT** = "ERROR_AT"
+
 #### Internal
 Internal error.
 > `public static final` String **INTERNAL** = "INTERNAL"

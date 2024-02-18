@@ -12,4 +12,11 @@ description: >
 
 The FunctionCalculator is an interface for expression functions.
 
+### Instance methods
+
+#### setName
+Function's name.
+> Variant apply(List<Variant> params, IVariantOperations variantOperations) throws ExpressionException
+
+**returns**
 

@@ -14,9 +14,10 @@ The FunctionCalculator is an interface for expression functions.
 
 ### Instance methods
 
-#### setName
-Function's name.
+#### apply
+
 > Variant apply(List<Variant> params, IVariantOperations variantOperations) throws ExpressionException
 
-**returns**
+
+**returns**: [Variant](../../../variants/variant) - returned function's result.
 

@@ -1,7 +1,7 @@
 ---
 type: docs
-title: "Function calculator"
-linkTitle: "Function calculator"
+title: "FunctionCalculator"
+linkTitle: "FunctionCalculator"
 gitUrl: "https://github.com/pip-services4/pip-services4-java/tree/main/pip-services4-expressions-java"
 description: > 
     An interface for expression functions.

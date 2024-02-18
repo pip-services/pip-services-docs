@@ -18,6 +18,7 @@ The FunctionCalculator is an interface for expression functions.
 
 > Variant apply(List<Variant> params, IVariantOperations variantOperations) throws ExpressionException
 
-
-**returns**: [Variant](../../../variants/variant) - returned function's result.
+- **variantOperations**: IVariantOperations - list of parameters.
+- **variantOperations**: List<[Variant](../../../variants/variant)> - list of parameters.
+- **returns**: [Variant](../../../variants/variant) - returned function's result.
 

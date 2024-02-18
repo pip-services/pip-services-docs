@@ -10,18 +10,33 @@ description: >
 ### Description
 
 The IVariable interface allows you to define a variable.
-
-
-### Fields
-
-<span class="hide-title-link">
-
-#### name
-The variable name.
-> **name**: string
-
-#### value
-The variable value.
-> **value**: [Variant](../../../variants/variant)
-
 </span>
+### Instance methods
+
+#### getName
+Gets the variable name.
+
+> `public` String getName()
+
+- **returns**: String - the variable name.
+
+#### setName
+Sets the variable name.
+
+> `public`  void setName(String value)
+
+- **value**: String - the variable name.
+
+#### getValue
+Gets the variable value.
+
+> `public` void setValue(Variant value)
+
+- **returns**: Variant - the variable value.
+
+#### setValue
+Sets the variable value.
+
+> `public`   Variant getValue()
+
+- **value**: Variant - the variable name.

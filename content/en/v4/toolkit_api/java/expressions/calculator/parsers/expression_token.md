@@ -49,5 +49,28 @@ Value of the token.
 
 > `private final` [Variant](../../../variants/variant) _value
 
+### Instance methods
 
+#### getType
+Gets the type.
+> `public` ExpressionTokenType getType()
 
+- **returns**: ExpressionTokenType - type
+
+#### getValue
+Gets the value.
+> `public` Variant getValue()
+
+- **returns**: Variant - value
+
+#### getLine
+Gets the type.
+> `public` ExpressionTokenType getLine()
+
+- **returns**: ExpressionTokenType - line
+
+#### getColumn
+Gets the type.
+> `public` int getColumn()
+
+- **returns**: int - line

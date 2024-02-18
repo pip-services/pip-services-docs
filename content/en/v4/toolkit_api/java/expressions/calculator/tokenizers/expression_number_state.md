@@ -34,7 +34,6 @@ Represents an 'E' symbol.
 ### Instance methods
 
 
-
 #### nextToken
 Gets the next token from the stream started from the character linked to this state.
 

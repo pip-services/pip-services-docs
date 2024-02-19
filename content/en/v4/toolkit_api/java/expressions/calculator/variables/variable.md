@@ -31,4 +31,28 @@ Name of the variable
 Gets the variable's value.
 > `private` Variant _value
 
+### Instance methods
 
+#### getName
+Gets the name of the variable.
+> `public` String getName()
+
+- **returns**: String - name of the variable
+
+#### setName
+Sets the name of the variable.
+> `public` void setName(String value)
+
+- **value**: String - name of the variable
+
+#### getValue
+Gets the value of the variable.
+> `public` Variant getValue()
+
+- **returns**: Variant - value of the variable
+
+#### setValue
+Sets the value of the variable.
+> `public` void setValue(Variant value)
+
+- **value**: String - value of the variable

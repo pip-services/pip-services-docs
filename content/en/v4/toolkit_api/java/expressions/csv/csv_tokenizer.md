@@ -35,3 +35,41 @@ Character to quote strings.
 
 > `private` List<Integer> _quoteSymbols = List.of("\"".codePointAt(0))
 
+
+### Instance methods
+
+#### getFieldSeparators
+Gets a list of field separators.
+> `public` List<Integer> getFieldSeparators()
+
+- **returns**: List<Integer> - list of field separators
+  
+#### setFieldSeparators
+Sets the field separators.
+> `public` void setFieldSeparators(List<Integer> value) throws Exception
+
+- **value**: List<Integer> - list of field separators.
+
+#### getEndOfLine
+Gets the separator for rows in CSV stream.
+> `public` String getEndOfLine()
+
+- **returns**: String - separator for rows in CSV stream
+  
+#### setEndOfLine
+Gets the separator for rows in CSV stream.
+> `public` void setEndOfLine(String value)
+
+- **value**: String - separator for rows in CSV stream.
+
+#### getQuoteSymbols
+Gets the characters to quote strings.
+> `public` List<Integer> getQuoteSymbols()
+
+- **returns**: List<Integer> - list of characters to quote strings
+  
+#### setQuoteSymbols
+Sets the characters to quote strings.
+> `public` void setQuoteSymbols(List<Integer> value) throws Exception
+
+- **value**: List<Integer> - list of characters to quote strings

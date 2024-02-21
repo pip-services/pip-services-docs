@@ -115,6 +115,65 @@ A token state to process words or indentifiers.
 
 ### Instance methods
 
+#### getSkipUnknown
+Skip unknown characters
+Boolean getSkipUnknown()
+#### setSkipUnknown
+void setSkipUnknown(boolean value)
+#### getSkipWhitespaces
+Boolean getSkipWhitespaces()
+#### setSkipWhitespaces
+void setSkipWhitespaces(boolean value)
+#### setSkipWhitespaces
+void setSkipWhitespaces(boolean value)
+#### setSkipComments
+void setSkipComments(boolean value)
+#### getSkipEof
+ Boolean getSkipEof()
+#### setSkipEof
+ void setSkipEof(boolean value)
+#### getMergeWhitespaces
+ Boolean getMergeWhitespaces()
+#### setMergeWhitespaces
+ void setMergeWhitespaces(boolean value)
+#### getUnifyNumbers
+ Boolean getUnifyNumbers()
+#### setUnifyNumbers
+  void setUnifyNumbers(boolean value)
+#### getDecodeStrings
+  Boolean getDecodeStrings()
+#### setDecodeStrings
+  void setDecodeStrings(boolean value)
+#### getCommentState
+  ICommentState getCommentState()
+#### setCommentState
+  void setCommentState(ICommentState value)
+#### getNumberState
+  INumberState getNumberState()
+#### setNumberState
+>  void setNumberState(INumberState value)
+#### getQuoteState
+> IQuoteState getQuoteState()
+#### setQuoteState
+> void setQuoteState(IQuoteState value)
+#### getSymbolState
+> ISymbolState getSymbolState()
+#### setSymbolState
+> void setSymbolState(ISymbolState value)
+#### getWhitespaceState
+> IWhitespaceState getWhitespaceState()
+#### setWhitespaceState
+> void setWhitespaceState(IWhitespaceState value)
+#### getWordState
+> IWordState getWordState()
+#### setWordState
+> void setWordState(IWordState value)
+#### getScanner
+> IScanner getScanner()
+
+#### setScanner
+  void setScanner(IScanner scanner)
+
 #### hasNextToken
 Checks if there is a next token.
 > Boolean hasNextToken() throws Exception

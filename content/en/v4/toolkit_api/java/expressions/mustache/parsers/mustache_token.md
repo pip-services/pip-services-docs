@@ -50,3 +50,42 @@ Gets the token value or variable name.
 
 > `public` String _value
 
+### Instance methods
+
+#### getType
+Gets the token type.
+
+> `public` MustacheTokenType getType() 
+
+- **returns**: [MustacheTokenType](../mustache_token_type) - token type.
+
+#### getValue
+Gets the token value or variable name.
+
+> `public` String getValue() 
+
+- **returns**: String - token value or variable name.
+
+#### getTokens
+Gets a list of subtokens.
+
+> `public` List<[MustacheToken]()> getTokens() 
+
+- **returns**: List<[MustacheToken]()> - a list of subtokens.
+
+#### getLine
+Gets the line number where the token is.
+
+> `public` int getLine()
+
+- **returns**: int - line number wher the token is.
+
+#### getColumn
+Gets the column number where the token is.
+
+> `public` int getColumn()
+
+- **returns**: int - column number wher the token is.
+
+
+

@@ -43,27 +43,6 @@ From    To        State
 
 <span class="hide-title-link">
 
-
-#### commentState
-A token state to process comments.
-> **commentState**: [ICommentState](../icomment_state)
-
-
-#### decodeStrings
-Decodes quoted strings.
-> **decodeStrings**: boolean
-
-
-#### mergeWhitespaces
-Merges whitespaces.
-> **mergeWhitespaces**: boolean
-
-
-#### numberState
-A token state to process numbers.
-> **numberState**: [INumberState](../inumber_state)
-
-
 #### quoteState
 A token state to process quoted strings.
 > **quoteState**: [IQuoteState](../iquote_state)
@@ -80,10 +59,6 @@ Skips comments.
 #### skipEof
 Skips End-Of-File token at the end of stream.
 > **skipEof**: boolean
-
-#### skipUnknown
-Skip unknown characters.
-> **skipUnknown**: boolean
 
 
 #### skipWhitespaces
@@ -118,56 +93,93 @@ A token state to process words or indentifiers.
 #### getSkipUnknown
 Skip unknown characters
 Boolean getSkipUnknown()
+
 #### setSkipUnknown
 void setSkipUnknown(boolean value)
+
 #### getSkipWhitespaces
+Skips whitespaces
 Boolean getSkipWhitespaces()
+
 #### setSkipWhitespaces
+Skips whitespaces
 void setSkipWhitespaces(boolean value)
+
 #### setSkipWhitespaces
+Skips whitespaces
 void setSkipWhitespaces(boolean value)
+
 #### setSkipComments
 void setSkipComments(boolean value)
+
 #### getSkipEof
  Boolean getSkipEof()
+
 #### setSkipEof
  void setSkipEof(boolean value)
+
 #### getMergeWhitespaces
+Merges whitespaces.
  Boolean getMergeWhitespaces()
+
 #### setMergeWhitespaces
  void setMergeWhitespaces(boolean value)
+
 #### getUnifyNumbers
  Boolean getUnifyNumbers()
+
 #### setUnifyNumbers
   void setUnifyNumbers(boolean value)
+
 #### getDecodeStrings
+Decodes quoted strings.
   Boolean getDecodeStrings()
+
 #### setDecodeStrings
+Decodes quoted strings.
   void setDecodeStrings(boolean value)
+
 #### getCommentState
+A token state to process comments.
   ICommentState getCommentState()
+
 #### setCommentState
+A token state to process comments.
   void setCommentState(ICommentState value)
+
 #### getNumberState
-  INumberState getNumberState()
+A token state to process numbers
+[INumberState](../inumber_state) getNumberState()
+  
+**returns**:[INumberState](../inumber_state)
 #### setNumberState
+A token state to process numbers
 >  void setNumberState(INumberState value)
+
 #### getQuoteState
 > IQuoteState getQuoteState()
+
 #### setQuoteState
 > void setQuoteState(IQuoteState value)
+
 #### getSymbolState
 > ISymbolState getSymbolState()
+
 #### setSymbolState
 > void setSymbolState(ISymbolState value)
+
 #### getWhitespaceState
 > IWhitespaceState getWhitespaceState()
+
 #### setWhitespaceState
 > void setWhitespaceState(IWhitespaceState value)
+
 #### getWordState
 > IWordState getWordState()
+
 #### setWordState
 > void setWordState(IWordState value)
+
 #### getScanner
 > IScanner getScanner()
 

@@ -39,54 +39,6 @@ From    To        State
 
 - In addition to allowing modification of the state table, this class makes each of the states above available. Some of these states are customizable. For example, wordState allows customization of what characters can be part of a word, after the first character.
 
-### Fields
-
-<span class="hide-title-link">
-
-#### quoteState
-A token state to process quoted strings.
-> **quoteState**: [IQuoteState](../iquote_state)
-
-#### scanner
-The stream scanner to tokenize.
-> **scanner**: [IScanner](../../io/iscanner)
-
-#### skipComments
-Skips comments.
-> **skipComments**: boolean
-
-
-#### skipEof
-Skips End-Of-File token at the end of stream.
-> **skipEof**: boolean
-
-
-#### skipWhitespaces
-Skips whitespaces.
-> **skipWhitespaces**: boolean
-
-
-#### symbolState
-A token state to process symbols (single like "=" or muti-character like "<>")
-> **symbolState**: [ISymbolState](../isymbol_state)
-
-#### unifyNumbers
-Unifies numbers: "Integers" and "Floats" makes just "Numbers".
-> **unifyNumbers**: boolean
-
-
-#### whitespaceState
-A token state to process white space delimiters.
-> **whitespaceState**: [IWhitespaceState](../iwhitespace_state)
-
-
-#### wordState
-A token state to process words or indentifiers.
-> **wordState**: [IWordState](../iword_state)
-
-
-</span>
-
 
 ### Instance methods
 
@@ -110,13 +62,16 @@ Skips whitespaces
 void setSkipWhitespaces(boolean value)
 
 #### setSkipComments
+Skips comments.
 void setSkipComments(boolean value)
 
 #### getSkipEof
- Boolean getSkipEof()
+Skips End-Of-File token at the end of stream.
+Boolean getSkipEof()
 
 #### setSkipEof
- void setSkipEof(boolean value)
+Skips End-Of-File token at the end of stream.
+void setSkipEof(boolean value)
 
 #### getMergeWhitespaces
 Merges whitespaces.
@@ -126,10 +81,12 @@ Merges whitespaces.
  void setMergeWhitespaces(boolean value)
 
 #### getUnifyNumbers
- Boolean getUnifyNumbers()
+Unifies numbers: "Integers" and "Floats" makes just "Numbers".
+Boolean getUnifyNumbers()
 
 #### setUnifyNumbers
-  void setUnifyNumbers(boolean value)
+Unifies numbers: "Integers" and "Floats" makes just "Numbers".
+void setUnifyNumbers(boolean value)
 
 #### getDecodeStrings
 Decodes quoted strings.
@@ -157,34 +114,44 @@ A token state to process numbers
 >  void setNumberState(INumberState value)
 
 #### getQuoteState
-> IQuoteState getQuoteState()
+A token state to process quoted strings.
+> [IQuoteState](../iquote_state) getQuoteState()
 
 #### setQuoteState
-> void setQuoteState(IQuoteState value)
+A token state to process quoted strings.
+> void setQuoteState([IQuoteState](../iquote_state) value)
 
 #### getSymbolState
-> ISymbolState getSymbolState()
+A token state to process symbols (single like "=" or muti-character like "<>")
+> [ISymbolState](../isymbol_state) getSymbolState()
 
 #### setSymbolState
-> void setSymbolState(ISymbolState value)
+A token state to process symbols (single like "=" or muti-character like "<>")
+> void setSymbolState([ISymbolState](../isymbol_state) value)
 
 #### getWhitespaceState
+A token state to process white space delimiters.
 > IWhitespaceState getWhitespaceState()
 
 #### setWhitespaceState
+A token state to process white space delimiters.
 > void setWhitespaceState(IWhitespaceState value)
 
 #### getWordState
-> IWordState getWordState()
+Gets a token state to process words or indentifiers
+> [IWordState](../iword_state) getWordState()
 
 #### setWordState
-> void setWordState(IWordState value)
+Sets a token state to process words or indentifiers
+> void setWordState([IWordState](../iword_state) value)
 
 #### getScanner
-> IScanner getScanner()
+The stream scanner to tokenize.
+> [IScanner](../../io/iscanner) getScanner()
 
 #### setScanner
-  void setScanner(IScanner scanner)
+The stream scanner to tokenize.
+  void setScanner([IScanner](../../io/iscanner) scanner)
 
 #### hasNextToken
 Checks if there is a next token.

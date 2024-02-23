@@ -44,7 +44,7 @@ Clears definitions of word chars.
 #### nextToken
 Ignores a word (such as blanks and tabs), and returns the tokenizer's next token.
 
-> `public` nextToken(scanner: [IScanner](../../../io/iscanner), tokenizer: [ITokenizer](../../itokenizer)): [Token](../../token)
+> `public` [Token](../../token) nextToken([IScanner](../../../io/iscanner) scanner, [ITokenizer](../../itokenizer) tokenizer) throws Exception
 
 - **scanner**: [IScanner](../../../io/iscanner) - textual string to be tokenized.
 - **tokenizer**: [ITokenizer](../../itokenizer) - tokenizer class that controls the process.

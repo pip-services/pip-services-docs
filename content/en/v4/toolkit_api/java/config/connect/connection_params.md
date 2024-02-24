@@ -194,17 +194,21 @@ then it returns a list with only one ConnectionParams.
 
 ### Examples
 
-```typescript
-let connection = ConnectionParams.fromTuples(
-    "protocol", "http",
-    "host", "10.1.1.100",
-    "port", "8080",
-    "cluster", "mycluster"
-);
-   
-let host = connection.getHost();                             // Result: "10.1.1.100"
-let port = connection.getPort();                             // Result: 8080
-let cluster = connection.getAsNullableString("cluster");     // Result: "mycluster"   
+```java
+{
+  Example ConnectionParams object usage:
+ 
+  ConnectionParams connection = ConnectionParams.fromTuples(
+   "protocol", "http",
+   "host", "10.1.1.100",
+   "port", "8080",
+   "cluster", "mycluster"
+  );
+ 
+  String host = connection.getHost();                             // Result: "10.1.1.100"
+  int port = connection.getPort();                             // Result: 8080
+  String cluster = connection.getAsNullableString("cluster");     // Result: "mycluster"
+  } 
 ```
 
 ### See also

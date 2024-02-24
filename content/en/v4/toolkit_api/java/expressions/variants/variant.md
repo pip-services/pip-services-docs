@@ -197,7 +197,7 @@ Gets a type of the variant value
 #### assign
 Assignes a new value to this object.
 
-> `public` assign(value: [Variant]()): void
+> `public` void assign([Variant]() value)
 
 - **value**: [Variant]() - new value to be assigned.
 
@@ -205,13 +205,13 @@ Assignes a new value to this object.
 #### clear
 Clears this object and assignes a [VariantType.Null](../variant_type) type.
 
-> `public` clear(): void 
+> `public` void clear() 
 
 
 #### clone
 Clones the variant value
 
-> `public` clone(): [Variant]()
+> `public` [Variant]() clone()
 
 - **value**: [Variant]() - cloned value of this variant
 
@@ -219,25 +219,25 @@ Clones the variant value
 #### equals
 Compares this object to the specified one.
 
-> `public` equals(obj: any): boolean
+> `public` boolean equals(Object obj)
 
-- **obj**: any - object to be compared.
+- **obj**: Object - object to be compared.
 - **returns**: boolean - *true* if the objects are equal.
 
 
 #### getByIndex
 Gets an array element by its index.
 
-> `public` getByIndex(index: number): [Variant]()
+> `public` [Variant]() getByIndex(int index) throws Exception
 
-- **index**: number - element's index.
+- **index**: int - element's index.
 - **returns**: [Variant]() - requested array element.
 
 
 #### isEmpty
 Checks is this variant value is empty.
 
-> `public` isEmpty(): boolean
+> `public` boolean isEmpty()
 
 - **returns**: boolean - *true* is this variant value is empty.
 
@@ -245,7 +245,7 @@ Checks is this variant value is empty.
 #### isNull
 Checks is this variant value is Null.
 
-> `public` isNull(): boolean
+> `public` boolean isNull()
 
 - **returns**: boolean - *true* if this variant value is Null.
 
@@ -253,34 +253,34 @@ Checks is this variant value is Null.
 #### setByIndex
 Sets an array element by its index.
 
-> `public` setByIndex(index: number, element: [Variant]()): void
+> `public` void setByIndex(int index, [Variant]() element) throws Exception
 
-- **index**: number - element index.
+- **index**: int - element index.
 - **element**: [Variant]() - element value.
 
 
 #### toString
 Returns a string value for this object.
 
-> `public` toString(): string
+> `public` String toString()
 
-- **returns**: string - string value for this object.
+- **returns**: String - string value for this object.
 
 ### Static methods
 
 #### fromArray
 Creates a new variant from Array value.
 
-> `public static` fromArray(value: [Variant[]]()): [Variant]()
+> `public static` [Variant]() fromArray(List<[Variant]()> value)
 
-- **value**: [Variant[]]() - variant value.
+- **value**: [Variant]() - variant value.
 - **returns**: [Variant]() - created variant object.
 
 
 #### fromBoolean
 Creates a new variant from a Boolean value.
 
-> `public static` fromBoolean(value: boolean): [Variant]()
+> `public static` [Variant]() fromBoolean(boolean value)
 
 - **value**: boolean - variant value.
 - **returns**: [Variant]() - created variant object.
@@ -289,70 +289,154 @@ Creates a new variant from a Boolean value.
 #### fromDateTime
 Creates a new variant from a DateTime value.
 
-> `public static` fromDateTime(value: Date): [Variant]()
+> `public static` [Variant]() fromDateTime(ZonedDateTime value)
 
-- **value**: Date - variant value.
+- **value**: ZonedDateTime - variant value.
 - **returns**: [Variant]() - created variant object.
 
 
 #### fromDouble
 Creates a new variant from a Double value.
 
-> `public static` fromDouble(value: number): [Variant]()
+> `public static` [Variant]() fromDouble(Double value)
 
-- **value**: number - variant value.
+- **value**: Double - variant value.
 - **returns**: [Variant]() - created variant object.
 
 
 #### fromFloat
 Creates a new variant from a Float value.
 
-> `public static` fromFloat(value: number): [Variant]()
+> `public static` [Variant]() fromFloat(Float value)
 
-- **value**: number - variant value.
+- **value**: Float - variant value.
 - **returns**: [Variant]() - created variant object.
 
 
 #### fromInteger
 Creates a new variant from an Integer value.
 
-> `public static` fromInteger(value: number): [Variant]()
+> `public static` [Variant]() fromInteger(Integer value)
 
-- **value**: number - variant value.
+- **value**: Integer - variant value.
 - **returns**: [Variant]() - created variant object.
 
 
 #### fromLong
 Creates a new variant from a Long value.
 
-> `public static` fromLong(value: number): [Variant]()
+> `public static` [Variant]() fromLong(Long value)
 
-- **value**: number - variant value.
+- **value**: Long - variant value.
 - **returns**: [Variant]() - created variant object.
 
 
 #### fromObject
 Creates a new variant from an Object value.
 
-> `public static` fromObject(value: any): [Variant]()
+> `public static` [Variant]() fromObject(Object value)
 
-- **value**: any - variant value.
+- **value**: Object - variant value.
 - **returns**: [Variant]() - created variant object.
 
 
 #### fromString
 Creates a new variant from a String value.
 
-> `public static` fromString(value: string): [Variant]()
+> `public static` [Variant]() fromString(String value)
 
-- **value**: string - variant value.
+- **value**: String - variant value.
 - **returns**: [Variant]() - created variant object.
 
 
 #### fromTimeSpan
 Creates a new variant from a TimeSpan value.
 
-> `public static` fromTimeSpan(value: number): [Variant]()
+> `public static` [Variant]() fromTimeSpan(Long value)
 
-- **value**: number - variant value.
+- **value**: Long - variant value.
 - **returns**: [Variant]() - created variant object.
+
+#### getAsInteger
+Gets a variant value as Integer
+> `public` Integer getAsInteger()
+
+- **returns**: Integer - variant value as Integer
+
+#### setAsInteger
+Sets a variant value as Integer
+> `public` void setAsInteger(Integer value)
+
+- **value**: Integer - variant value as Integer.
+
+#### getAsLong
+Gets a variant value as Long
+> `public` Long getAsLong()
+
+- **returns**: Long - variant value as Long.
+  
+#### setAsLong
+Sets a variant value as Long
+> `public` void setAsLong(Long value)
+
+- **value**: Long - variant value as Long.
+
+#### getAsBoolean
+Gets a variant value as Boolean.
+> `public` Boolean getAsBoolean()
+
+- **returns**: Boolean - variant value as Boolean.
+
+#### setAsBoolean
+Sets a variant value as Boolean.
+> `public` void setAsBoolean(Boolean value)
+
+- **value**: Boolean - variant value as Boolean.
+
+#### getAsFloat
+Sets a variant value as Float.
+> `public` Float getAsFloat()
+
+- **returns**: Long - variant value as Float.
+
+#### setAsFloat
+Sets a variant value as Float.
+> `public` void setAsFloat(Float value)
+
+- **value**: Long - variant value as Float.
+
+#### getAsDouble
+Gets a variant value as Double.
+> `public` Double getAsDouble()
+
+- **returns**: Double - vvariant value as Double.
+
+#### setAsDouble
+Sets a variant value as Double.
+> `public` void setAsDouble(Double value)
+
+- **value**: Double - vvariant value as Double.
+
+#### getAsString
+Gets a variant value as String.
+> `public` String getAsString()
+
+- **returns**: String - variant value as String.
+
+#### setAsString
+Sets a variant value as String.
+> `public` void setAsString(String value)
+
+- **value**: String - variant value as String.
+
+#### getAsObject
+Gets a variant value as Object
+> `public` Object getAsObject()
+
+- **returns**: Object - created variant object.
+
+#### setAsObject
+Sets variant value as Object
+> `public` void setAsObject(Object value)
+
+- **value**: Object - created variant object.

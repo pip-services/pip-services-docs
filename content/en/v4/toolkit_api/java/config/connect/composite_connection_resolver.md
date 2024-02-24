@@ -1,0 +1,182 @@
+---
+type: docs
+title: "CompositeConnectionResolver"
+linkTitle: "CompositeConnectionResolver"
+gitUrl: "https://github.com/pip-services4/pip-services4-java/tree/main/pip-services4-config-java"
+description: >
+    Helper class that resolves connection and credential parameters,
+    validates them and generates connection options.
+---
+
+**Implements**: [IConfigurable](../../../components/config/iconfigurable), [IReferenceable](../../../components/refer/ireferenceable)
+
+### Description
+
+The CompositeConnectionResolver class allows you to resolve connection and credential parameters, validate them and generate connection options.
+
+#### Configuration parameters
+
+**connection(s)**:
+  - **discovery_key**: (optional) a key to retrieve the connection from [IDiscovery](../idiscovery)
+  - **protocol**: communication protocol
+  - **host**: host name or IP address
+  - **port**: port number
+  - **uri**: resource URI or connection string with all parameters in it
+  
+**credential(s)**:
+  - **store_key**: (optional) a key to retrieve the credentials from [ICredentialStore](../../auth/icredential_store)
+  - **username**: user name
+  - **password**: user password
+
+#### References
+- **\*:discovery:\*:\*:1.0** - (optional) [IDiscovery](../idiscovery) services to resolve connections
+- **\*:credential-store:\*:\*:1.0** - (optional) Credential stores to resolve credentials [ICredentialStore](../../auth/icredential_store)
+
+
+### Fields
+
+<span class="hide-title-link">
+
+#### _options
+The connection options
+> `protected` **_options**: [ConfigParams](../../../components/config/config_params)
+
+#### _connectionResolver
+The connections resolver.
+> `protected` **_connectionResolver**: [ConnectionResolver](../connection_resolver)
+
+#### _credentialResolver
+The credentials resolver.
+> `protected` **_credentialResolver**: [CredentialResolver](../../auth/credential_resolver)
+
+#### _clusterSupported
+The cluster support (multiple connections)
+> `protected` **_clusterSupported**: boolean
+
+#### _defaultProtocol
+The default protocol
+> `protected` **_defaultProtocol**: string
+
+#### _defaultPort
+The default port
+> `protected` **_defaultPort**: number
+
+#### _supported_protocols
+The list of supported protocols
+> `protected` **_supportedProtocols**: string[]
+
+
+</span>
+
+### Instance methods
+
+#### compose
+Composes Composite connection options from connection and credential parameters.
+
+> `public` [ConfigParams](../../../components/config/config_params) compose([IContext](../../../components/context/icontext) context, List<[ConnectionParams](../connection_params)> connections, [CredentialParams](../../auth/credential_params) credential, [ConfigParams](../../../components/config/config_params) parameters) throws ConfigException
+
+- **context**: [IContext](../../../components/context/icontext) - (optional) a context to trace execution through call chain.
+- **connections**: List<[ConnectionParams](../connection_params)> connections - connection parameters
+- **credential**: [CredentialParams](../../auth/credential_params) - credential parameters
+- **parameters**: [ConfigParams](../../../components/config/config_params) - optional parameters
+- **returns**: [ConfigParams](../../../components/config/config_params) - resolved options or error.
+
+
+#### composeOptions
+A composite of several merger options
+
+> `protected` [ConfigParams](../../../components/config/config_params) composeOptions(List<[ConnectionParams](../connection_params)> connections, [CredentialParams](../../auth/credential_params) credential, [ConfigParams](../../../components/config/config_params) parameters)
+
+- **connections**: List<[ConnectionParams](../connection_params)> - connection parameters
+- **credential**: [CredentialParams](../../auth/credential_params) - credential parameters
+- **parameters**: [ConfigParams](../../../components/config/config_params) - optional parameters
+- **returns**: [ConfigParams](../../../components/config/config_params) - resolved options or error
+
+
+#### configure
+Configures component by passing configuration parameters.
+
+> `public` void configure([ConfigParams](../../../components/config/config_params) configParams) throws ConfigException
+
+- **config**: [ConfigParams](../../../components/config/config_params) - configuration parameters to be set.
+
+
+#### finalizeOptions
+Finalize merged options.
+This method can be overriden in child classes.
+
+> `protected` [ConfigParams](../../../components/config/config_params) finalizeOptions([ConfigParams](../../../components/config/config_params) options)
+
+- **options**: [ConfigParams](../../../components/config/config_params) - options: connection options
+- **returns**: [ConfigParams](../../../components/config/config_params) - finalized connection options
+
+
+#### mergeConnection
+Merges connection options with connection parameters. 
+This method can be overriden in child classes.
+
+> `protected` [ConfigParams](../../../components/config/config_params) mergeConnection([ConfigParams](../../../components/config/config_params) options, [ConnectionParams](../connection_params) connection)
+
+- **options**: [ConfigParams](../../../components/config/config_params) - connection options
+- **connection**: [ConnectionParams](../connection_params) - connection parameters to be merged
+- **returns**: [ConfigParams](../../../components/config/config_params) - merged connection options.
+
+
+#### mergeCredential
+Merges connection options with credential parameters.
+This method can be overriden in child classes.
+
+> `protected` [ConfigParams](../../../components/config/config_params) mergeCredential([ConfigParams](../../../components/config/config_params) options, [CredentialParams](../../auth/credential_params) credential)
+
+- **options**: [ConfigParams](../../../components/config/config_params) - connection options
+- **credential**: [CredentialParams](../../auth/credential_params) - credential parameters to be merged
+- **returns**: [ConfigParams](../../../components/config/config_params) - merged connection options.
+
+
+#### mergeOptional
+Merges connection options with optional parameters.
+This method can be overriden in child classes.
+
+> `protected` [ConfigParams](../../../components/config/config_params) mergeOptional([ConfigParams](../../../components/config/config_params) options, [ConfigParams](../../../components/config/config_params) parameters)
+
+- **options**: [ConfigParams](../../../components/config/config_params) - connection options
+- **parameters**: [ConfigParams](../../../components/config/config_params) - optional parameters to be merged
+- **returns**: [ConfigParams](../../../components/config/config_params) - merged connection options.
+
+
+#### resolve
+Resolves connection options from connection and credential parameters.
+
+> `public` [ConfigParams](../../../components/config/config_params) resolve([IContext](../../../components/context/icontext) context) throws ApplicationException
+
+- **context**: [IContext](../../../components/context/icontext) - (optional) a context to trace execution through call chain.
+- **returns**: [ConfigParams](../../../components/config/config_params) - resolved options or error
+
+
+#### setReferences
+Sets references to dependent components.
+
+> `public` void setReferences([IReferences](../../../commons/refer/ireferences) references) throws ReferenceException, ConfigException
+
+- **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component dependencies.
+
+
+#### validateConnection
+Validates connection parameters. 
+Throws error if validation failed.
+This method can be overriden in child classes.
+
+> `protected` void validateConnection([IContext](../../../components/context/icontext) context, [ConnectionParams](../connection_params) connection) throws ConfigException
+
+- **context**: [IContext](../../../components/context/icontext) - (optional) a context to trace execution through call chain.
+- **connection**: [ConnectionParams](../connection_params) - connection parameters to be validated
+
+
+#### validateCredential
+Validates credential parameters.
+This method can be overriden in child classes.
+
+> `protected` void validateCredential([IContext](../../../components/context/icontext) context, [CredentialParams](../../auth/credential_params) credential)
+
+- **context**: [IContext](../../../components/context/icontext) - (optional) a context to trace execution through call chain.
+- **credential**: [CredentialParams](../../auth/credential_params) - credential parameters to be validated

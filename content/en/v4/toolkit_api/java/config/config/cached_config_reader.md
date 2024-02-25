@@ -7,7 +7,7 @@ description: >
     Creates a cached configuration reader.
 ---
 
-**Inherits**: [IConfigurable](../../../components/config/iconfigurable), [IReconfigurable](../../../components/config/ireconfigurable), [IConfigReader](../iconfig_reader)
+**Inherits**: [IReconfigurable](../../../components/config/ireconfigurable), [IConfigReader](../iconfig_reader)
 
 ### Description
 
@@ -39,26 +39,28 @@ Gets the timeout.
 #### configure
 Gets the timeout.
 
-> `public` void configure(ConfigParams config)
+> `public` void configure([ConfigParams](../../../components/config/config_params) config)
 
-- **config** ConfigParams - configuration params.
+- **config** [ConfigParams](../../../components/config/config_params) - configuration params.
 
 #### performReadConfig
 
-> `protected abstract` ConfigParams performReadConfig(IContext context, ConfigParams parameters) throws ApplicationException
+> `protected abstract` [ConfigParams](../../../components/config/config_params) performReadConfig([IContext](../../../components/context/icontext) context, [ConfigParams](../../../components/config/config_params) parameters) throws ApplicationException
 
-- **config:** ConfigParams - configuration params.
+- **context**: [IContext](../../../components/context/icontext) - (optional) a context to trace execution through a call chain.
+- **config:** [ConfigParams](../../../components/config/config_params) - configuration params.
 
 #### readConfig
-Gets the timeout.
 
-> `public` ConfigParams readConfig(IContext context, ConfigParams parameters) throws ApplicationException
+> `public` [ConfigParams](../../../components/config/config_params) readConfig([IContext](../../../components/context/icontext) context, [ConfigParams](../../../components/config/config_params) parameters) throws ApplicationException
 
-- **config** ConfigParams - configuration params.
+- **context**: [IContext](../../../components/context/icontext) - (optional) a context to trace execution through a call chain.
+- **returns** [ConfigParams](../../../components/config/config_params) - configuration params.
 
 #### readConfigSection
-Gets the timeout.
+Reads a configuration section.
 
-> `public` ConfigParams readConfigSection(IContext context, ConfigParams parameters, String section) throws ApplicationException
+> `public` ConfigParams readConfigSection([IContext](../../../components/context/icontext) context, [ConfigParams](../../../components/config/config_params) parameters, String section) throws ApplicationException
 
-- **config** ConfigParams - configuration params.
+- **context**: [IContext](../../../components/context/icontext) - (optional) a context to trace execution through a call chain.
+- **returns** [ConfigParams](../../../components/config/config_params) - configuration params.

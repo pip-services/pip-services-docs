@@ -34,9 +34,9 @@ Creates a new instance of the config reader.
 #### readConfig
 Reads a configuration and parameterizes it with given values.
 
-> `public` readConfig(correlationId: string, parameters: [ConfigParams](../../../commons/config/config_params)): Promise<[ConfigParams](../../../commons/config/config_params)>
+> `public` readConfig(context: IContext, parameters: [ConfigParams](../../../commons/config/config_params)): Promise<[ConfigParams](../../../commons/config/config_params)>
 
-- **correlationId**: string - (optional) transaction id to trace execution through a call chain.
+- **context**: [IContext](../../../components/context/icontext) - (optional) a context to trace execution through a call chain.
 - **parameters**: [ConfigParams](../../../commons/config/config_params) - values of the configuration parameters or null to skip parameterization.
 - **returns**: Promise<[ConfigParams](../../../commons/config/config_params)> - ConfigParams configuration.
 
@@ -44,9 +44,9 @@ Reads a configuration and parameterizes it with given values.
 #### readObject
 Reads a configuration file, parameterizes its content and converts it into a YAML object.
 
-> `public` readObject(correlationId: string, parameters: [ConfigParams](../../../commons/config/config_params)): any
+> `public` readObject(context: IContext, parameters: [ConfigParams](../../../commons/config/config_params)): any
 
-- **correlationId**: string - (optional) transaction id to trace execution through a call chain.
+- **context**: [IContext](../../../components/context/icontext) - (optional) a context to trace execution through a call chain.
 - **parameters**: [ConfigParams](../../../commons/config/config_params) - values of the configuration parameters.
 - **returns**: any - a YAML object with a configuration.
 
@@ -55,9 +55,9 @@ Reads a configuration file, parameterizes its content and converts it into a YAM
 #### readConfig
 Reads a configuration from a file, parameterizes it with given values and returns a new ConfigParams object.
 
-> `public static` readConfig(correlationId: string, path: string, parameters: [ConfigParams](../../../commons/config/config_params)): [ConfigParams](../../../commons/config/config_params)
+> `public static` readConfig(context: IContext, path: string, parameters: [ConfigParams](../../../commons/config/config_params)): [ConfigParams](../../../commons/config/config_params)
 
-- **correlationId**: string - (optional) transaction id to trace the execution through a call chain.
+- **context**: [IContext](../../../components/context/icontext) - (optional) a context to trace execution through a call chain.
 - **path**: string - a path to configuration file.
 - **parameters**: [ConfigParams](../../../commons/config/config_params) - values of the configuration parameters.
 - **returns**: [ConfigParams](../../../commons/config/config_params) - ConfigParams configuration.
@@ -66,9 +66,9 @@ Reads a configuration from a file, parameterizes it with given values and return
 #### readObject
 Reads a configuration file, parameterizes its content and converts it into a YAML object.
 
-> `public static` readObject(correlationId: string, path: string, parameters: [ConfigParams](../../../commons/config/config_params)): any
+> `public static` readObject(context: IContext, path: string, parameters: [ConfigParams](../../../commons/config/config_params)): any
 
-- **correlationId**: string - (optional) transaction id to trace the execution through a call chain.
+- **context**: [IContext](../../../components/context/icontext) - (optional) a context to trace execution through a call chain.
 - **path**: string - a path to configuration file.
 - **parameters**: [ConfigParams](../../../commons/config/config_params) - values of the configuration parameters.
 - **returns**: any - a YAML object containing a configuration.

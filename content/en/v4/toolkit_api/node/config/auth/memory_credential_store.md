@@ -47,9 +47,9 @@ Configures component by passing configuration parameters.
 #### lookup
 Lookups credential parameters by its key.
 
-> `public` lookup(correlationId: string, key: string): Promise<[CredentialParams](../credential_params)>
+> `public` lookup(context: [IContext](../../../components/context/icontext), key: string): Promise<[CredentialParams](../credential_params)>
 
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
+- **context**: [IContext](../../../components/context/icontext) - (optional) a context to trace execution through a call chain.
 - **key**: string - a key to uniquely identify the credential.
 - **returns**: Promise<[CredentialParams](../credential_params)> - found credential parameters or null if nothing was found
 
@@ -66,9 +66,9 @@ Each section represents an individual CredentialParams.
 #### store
 Stores credential parameters into the store.
 
-> `public` store(correlationId: string, key: string, credential: [CredentialParams](../credential_params)): Promise\<void\>
+> `public` store(context: [IContext](../../../components/context/icontext), key: string, credential: [CredentialParams](../credential_params)): Promise\<void\>
 
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
+- **context**: [IContext](../../../components/context/icontext) - (optional) a context to trace execution through a call chain.
 - **key**: string - a key to uniquely identify the credential parameters.
 - **credential**: [CredentialParams](../credential_params) - a credential parameters to be stored.
 

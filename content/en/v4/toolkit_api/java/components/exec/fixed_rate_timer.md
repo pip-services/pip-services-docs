@@ -2,7 +2,7 @@
 type: docs
 title: "FixedRateTimer"
 linkTitle: "FixedRateTimer"
-gitUrl: "https://github.com/pip-services4/pip-services4-node/tree/main/pip-services4-components-node"
+gitUrl: "https://github.com/pip-services4/pip-services4-java/tree/main/pip-services4-components-java"
 description: >
     Timer that is triggered in equal time intervals.
 
@@ -21,11 +21,11 @@ Important points
 ### Constructors
 Creates new instance of the timer and sets its values.
 
-> `public` constructor(taskOrCallback: any = null, interval: number = null, delay: number = null)
+> `public` FixedRateTimer([INotifiable](../inotifiable) task, long interval, long delay)
 
-- **taskOrCallback**: any - (optional) Notifiable object or callback function to call when timer is triggered.
-- **interval**: number - (optional) interval to trigger timer in milliseconds.
-- **delay**: number - (optional) delay before the first triggering in milliseconds.
+- **task**: [INotifiable](../inotifiable) - (optional) a Notifiable object to call when timer is triggered
+- **interval**: long - (optional) an interval to trigger timer in milliseconds.
+- **delay**: long - (optional) delay before the first triggering in milliseconds.
 
 ### Instance methods
 
@@ -35,75 +35,60 @@ Closes the timer.
 This is required by the [IClosable](../iclosable) interface,
 but besides that it is identical to [stop()](#stop).
 
-> `public` close(context: [IContext](../../context/context)): Promise\<void\>
+> `public` void close([IContext](../../context/context) context)
 
 - **context**: [IContext](../../context/context) - (optional) execution context to trace execution through call chain.
 
-#### getCallback
-Gets the callback function that is called when this timer is triggered.
+#### getTask
+Gets the INotifiable object that receives notifications from this timer.
 
-> `public` getCallback(): () => void
+> `public` [INotifiable](../inotifiable) getTask()
 
-- **returns**: function - callback function or null if it is not set. 
+- **returns**: [INotifiable](../inotifiable) - the INotifiable object or null if it is not set. 
 
 
 #### getDelay
 Gets an initial delay before the timer is triggered for the first time.
 
-> `public` getDelay(): number
+> `public` long getDelay()
 
-- **returns**: number - delay in milliseconds.
+- **returns**: long - delay in milliseconds.
 
 #### getInterval
 Gets a periodic timer triggering interval.
 
-> `public` getInterval(): number
+> `public` long getInterval()
 
-- **returns**: number - interval in milliseconds
-
-
-#### getTask
-Gets the INotifiable object that receives notifications from this timer.
-
-> `public` getTask(): [INotifiable](../inotifiable)
-
-- **returns**: [INotifiable](../inotifiable) - INotifiable object or null if it is not set.
+- **returns**: long - interval in milliseconds
 
 
 #### setTask
 Sets a new INotifiable object to receive notifications from this timer.
 
-> `public` setTask(value: [INotifiable](../inotifiable)): void
+> `public` void setTask([INotifiable](../inotifiable) task)
 
 - **value**: [INotifiable](../inotifiable) - INotifiable object to be triggered.
 
 #### isStarted
 Checks if the timer is started.
 
-> `public` isStarted(): boolean
+> `public` boolean isStarted()
 
 - **returns**: boolean - true if the timer is started and false if it is stopped.
-
-#### setCallback
-Sets the callback function that is called when this timer is triggered.
-
-> `public` setCallback(value: () => void)
-
-- **value**: function - callback function to be called.
 
 #### setDelay
 Sets an initial delay before the timer is triggered for the first time.
 
-> `public` setDelay(value: number): void
+> `public` void setDelay(long delay)
 
-- **value**: number - delay in milliseconds. 
+- **value**: long - delay in milliseconds. 
 
 #### setInterval
 Sets a periodic timer triggering interval.
 
-> `public` setInterval(value: number): void
+> `public` void setInterval(long interval)
 
-- **value**: number - interval in milliseconds.
+- **value**: long - interval in milliseconds.
 
 
 #### start
@@ -112,36 +97,38 @@ Starts the timer.
 Initially. the timer is triggered after delay.
 After that, it is triggered after interval until it is stopped.
 
-> `public` start(): void
+> `public` void start()
 
 
 #### stop
 Stops the timer.
 
-> `public` stop(): void
+> `public` void stop()
 
 ### Examples
-```typescript
-class MyComponent {
-    private timer: FixedRateTimer = new FixedRateTimer(() => { this.cleanup }, 60000);
+```java
+ {
+  class MyComponent {
+    FixedRateTimer timer = new FixedRateTimer(() -> { this.cleanup }, 60000, 0);
     ...
-    public async open(context: IContext): Promise<void> {
-        ...
-        timer.start();
-        ...
+    public void open(IContext context) {
+      ...
+      timer.start();
+      ...
     }
-    
-    public async close(context: IContext): Promise<void> {
-        ...
-        timer.stop();
-        ...
+ 
+    public void open(IContext context) {
+      ...
+      timer.stop();
+      ...
     }
-    
-    private cleanup(): void {
-        ...
+  
+    private void cleanup() {
+      ...
     }
     ...
-}
+  }
+  }
 
 ```
 

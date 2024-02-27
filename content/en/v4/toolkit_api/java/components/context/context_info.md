@@ -74,6 +74,66 @@ Configures component by passing configuration parameters.
 
 - **config**: [ConfigParams](../../../commons/config/config_params) - configuration parameters to be set.
 
+
+
+#### getName
+Gets the context name.
+> `public` String getName()
+
+- **returns**: [ContextInfo]() - a newly created ContextInfo
+
+#### setName
+Sets the context name.
+> `public` void setName(String _name)
+
+#### getDescription
+Gets the human-readable description of the context.
+> `public` String getDescription()
+
+- **returns**: [ContextInfo]() - a newly created ContextInfo
+
+#### setDescription(String
+Sets the human-readable description of the context.
+> `public` void setDescription(String _description)
+
+#### getContextId
+Gets the unique context id. Usually it is the current host name.
+> `public` String getContextId()
+
+- **returns**: [ContextInfo]() - a newly created ContextInfo
+
+#### setContextId(String
+Sets the unique context id.
+> `public` void setContextId(String contextId)
+
+#### getStartTime
+Gets the context start time.
+> `public` ZonedDateTime getStartTime()
+
+- **returns**: [ContextInfo]() - a newly created ContextInfo
+
+#### setStartTime
+Sets the context start time.
+> `public` void setStartTime(ZonedDateTime startTime)
+
+- **returns**: [ContextInfo]() - a newly created ContextInfo
+
+#### getUptime
+Calculates the context uptime as from the start time.
+> `public` long getUptime() 
+
+- **returns**: [ContextInfo]() - a newly created ContextInfo
+
+#### getProperties
+Gets context additional parameters.
+> `public` StringValueMap getProperties()
+
+- **returns**: StringValueMap - a newly created ContextInfo
+
+#### setProperties
+Sets context additional parameters.
+> `public` void setProperties(StringValueMap _properties)
+
 ### Static methods
 
 #### fromConfig
@@ -83,28 +143,6 @@ Creates a new ContextInfo and sets its configuration parameters.
 
 - **config**: [ConfigParams](../../../commons/config/config_params) - configuration parameters for the new ContextInfo.
 - **returns**: [ContextInfo]() - a newly created ContextInfo
-
-String getName()
-
-void setName(String _name)
-
-String getDescription()
-
-void setDescription(String _description)
-
- String getContextId()
-
- void setContextId(String contextId)
-
- ZonedDateTime getStartTime()
-
-  void setStartTime(ZonedDateTime startTime)
-
-  long getUptime() 
-
-  StringValueMap getProperties()
-
-  void setProperties(StringValueMap _properties)
 
 ### Examples
 

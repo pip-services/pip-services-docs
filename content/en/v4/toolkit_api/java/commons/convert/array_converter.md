@@ -15,8 +15,6 @@ The ArrayConverter class provides methods to create an array from a set of value
 #### listToArray
 Converts a list into an array object with an empty array as default.
 Strings with comma-delimited values are split into array of strings.
-
-
 > `public static` List<Object> listToArray(Object value)
 
 - **value**: Object - list to convert.

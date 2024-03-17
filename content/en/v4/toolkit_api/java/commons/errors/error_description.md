@@ -55,6 +55,116 @@ Stack trace of the exception.
 
 </span>
 
+### Instance methods
+
+#### getType
+Gets the type.
+
+> `public` String getType()
+
+- **returns**: string - type.
+
+#### setType
+Sets the type.
+> `public` void setType(String value)
+
+- **value**: String - type.
+  
+#### getCategory
+Gets the category.
+> `public` String getCategory()
+
+- **returns**: String - category.
+  
+#### setCategory
+Sets the category.
+> `public` void setCategory(String value)
+
+- **value**: String - category.
+
+#### getStatus
+Gets the status.
+> `public` int getStatus()
+
+- **returns**: String - status.
+  
+#### setStatus
+Sets the status.
+> `public` void setStatus(int value)
+
+- **value**: int - status.
+
+#### getCode
+Gets the code.
+> `public` String getCode()
+
+- **returns**: String - code.
+  
+#### setCode
+Sets the code.
+> `public` void setCode(String value)
+
+- **value**: String - code.
+
+#### getMessage
+Gets the message.
+> `public` String getMessage()
+
+- **returns**: String - message.
+  
+#### setMessage
+Sets the message.
+> `public` void setMessage(String value)
+
+- **value**: String - message.
+
+#### getDetails
+Gets the details.
+> `public` StringValueMap getDetails()
+
+- **returns**: String - detais.
+  
+#### setDetails
+Sets the details.
+> `public` void setDetails(StringValueMap value)
+
+- **value**: StringValueMap - details.
+
+#### getTraceId
+Gest the traceID.
+> `public` String getTraceId()
+
+- **returns**: String - traceId.
+  
+#### setTraceId
+Sets the traceId.
+> `public` void setTraceId(String value)
+
+- **value**: String - traceId.
+
+#### getCause
+Gets the cause.
+> `public` String getCause()
+
+- **returns**: String - cause.
+  
+#### setCause
+Sets the cause.
+> `public` void setCause(String value)
+
+- **value**: String - cause.
+
+#### getStackTrace
+Gets the stackTrace.
+> `public` String getStackTrace()
+
+- **returns**: String - stackTrace.
+  
+#### setStackTrace
+Sets the stackTrace.
+> `public` void setStackTrace(String value)
+
+- **value**: String - stackTrace.
 
 ### See also
 - #### [ApplicationException](../application_exception)

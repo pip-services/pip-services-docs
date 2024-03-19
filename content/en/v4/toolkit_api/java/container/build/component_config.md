@@ -43,6 +43,44 @@ Component's configuration parameters.
 
 </span>
 
+### Instance methods
+
+#### getDescriptor
+Gets a descriptor.
+
+> `public` Descriptor getDescriptor()
+
+- **returns**: Descriptor - descriptor.
+
+#### setDescriptor
+Sets a descriptor.
+> `public` void setDescriptor(Descriptor value)
+
+- **value**: Descriptor - descriptor.
+
+#### getType
+Gets a descriptor's type.
+> `public` TypeDescriptor getType()
+
+- **returns**: TypeDescriptor - type.
+####  setType
+Sets a descriptor's type.
+> `public` void setType(TypeDescriptor value)
+
+- **value**: TypeDescriptor - type.
+
+#### getConfig
+Gets configuration parameters.
+> `public` ConfigParams getConfig()
+
+- **returns**: [ConfigParams](../../../commons/config/config_params) - configuration parameters.
+
+####  setConfig
+Sets configuration parameters.
+> `public` void setConfig(ConfigParams value)
+
+- **value**: [ConfigParams](../../../commons/config/config_params) - configuration parameters.
+
 ### Static methods
 
 #### fromConfig

@@ -51,23 +51,23 @@ Creates a new instance of the container.
 
 #### _config
 Configuration of the container
-> `protected` **_config**: [ContainerConfig](../../config/container_config)
+> `protected` [ContainerConfig](../../config/container_config) **_config**
 
 #### _references
 Container's references
-> `protected` **_references**: [ContainerReferences](../../refer/container_references)
+> `protected` [ContainerReferences](../../refer/container_references) **_references**
 
 #### _logger
 Logger.
-> `protected` **_logger**: [ILogger](../../../obesrvability/log/ilogger)
+> `protected` [ILogger](../../../obesrvability/log/ilogger) **_logger** = new NullLogger()
 
 #### _info
 Container's information.
-> `protected` **_info**: [ContextInfo](../../../components/context/context_info)
+> `protected` [ContextInfo](../../../components/context/context_info) **_info**
 
 #### _factories
 Default factories.
-> `protected` **_factories**: [DefaultContainerFactory](../../build/default_container_factory)
+> `protected` [DefaultContainerFactory](../../build/default_container_factory) **_factories** = new DefaultContainerFactory()
 
 </span>
 

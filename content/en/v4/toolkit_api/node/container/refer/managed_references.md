@@ -57,8 +57,8 @@ Runner
 #### close
 Closes the component and frees used resources.
 
-> `public` close(correlationId: string): Promise\<void\>
-- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
+> `public` close(context: [IContext](../../../components/context/icontext)): Promise\<void\>
+- **context**: [IContext](../../../components/context/icontext) - (optional) a context to trace execution through a call chain.
 
 #### isOpen
 Checks if the component is open.
@@ -69,8 +69,8 @@ Checks if the component is open.
 #### open
 Opens the component.
 
-> `public` open(correlationId: string): Promise\<void\>
-- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
+> `public` open(context: [IContext](../../../components/context/icontext)): Promise\<void\>
+- **context**: [IContext](../../../components/context/icontext) - (optional) a context to trace execution through a call chain.
 
 ### Static methods
 

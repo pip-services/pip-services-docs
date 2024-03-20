@@ -37,7 +37,6 @@ That allows to get a more complete descriptor that includes all possible fields.
 Creates a component identified by the given locator.
 
 > `public` Object create(Object locator)
-
 - **locator**: Object - locator used to identify the component to be created.
 - **returns**: Object - created component.
 
@@ -46,7 +45,6 @@ Gets all component references that match the specified locator.
 Throws a [ReferenceException](../../../components/refer/reference_exception) when required is set to True but no references are found.
 
 > `public` <T> List<T> find(Class<T> type, Object locator, boolean required) throws ReferenceException
-
 - **type**: Class<T> - type.
 - **locator**: Object - locator to find a reference by.
 - **required**: boolean - it True, it forces to raise an exception when no reference is found.
@@ -58,6 +56,5 @@ Finds a factory capable creating a component by given descriptor
 from the components registered in the references.
 
 > `public` [IFactory](../../../components/build/ifactory) findFactory(Object locator)
-
 - **locator**: Object - locator of the component to be created.
 - **returns**: [IFactory](../../../components/build/ifactory) - found factory or null if no factory was found.

@@ -17,9 +17,9 @@ The Command class allows you to call a method or a function.
 
 Creates a new command object and assigns it's parameters.
 
-> `public` constructor(name: string, schema: [Schema](../../../data/validate/schema), action: [IExecutable](../../../components/exec/iexecutable) | (context: [IContext](../../../components/context/icontext), args: Parameters) => Promise<any>)
+> `public` Command(String name, [Schema](../../../data/validate/schema) schema, [IExecutable](../../../components/exec/iexecutable) function)
 
-- **name**: string - command name.
+- **name**: String - command name.
 - **schema**: [Schema](../../../data/validate/schema) - schema to validate command arguments.
 - **action**:  [IExecutable](../../../components/exec/iexecutable) - function to be executed by this command.
 
@@ -31,46 +31,49 @@ Executes the command. Before execution it validates [args](../../../components/e
 Raise [ApplicationException](../../../commons/errors/application_exception) when execution fails for whatever reason.  
 See [Parameters](../../../components/exec/parameters)
 
-> `public` execute(context: [IContext](../../../components/context/icontext), args: [Parameters](../../../components/exec/parameters)): Promise\<any\>
+> `public` Object execute([IContext](../../../components/context/icontext) context, [Parameters](../../../components/exec/parameters) args) throws ApplicationException
 
 - **context**: [IContext](../../../components/context/icontext) - (optional) a context to trace execution through a call chain.
 - **args**: [Parameters](../../../components/exec/parameters) - parameters (arguments) to pass to this command for execution.
-- **returns**: Promise\<any\> - execution result
+- **returns**: Object - execution result
 
 #### getName
 Gets the command name.
 
-> `public` getName(): string
+> `public` String getName()
 
-- **returns**: string - name of this command. 
+- **returns**: String - name of this command. 
 
 #### validate
 Validates the command [args](../../../components/exec/parameters) before execution using the defined schema.
 
-> `public` validate(args: [Parameters](../../../components/exec/parameters)): [ValidationResult](../../../data/validate/validation_result)[]
+> `public` List<[ValidationResult](../../../data/validate/validation_result)> validate([Parameters](../../../components/exec/parameters) args)
 
 - **args**: [Parameters](../../../components/exec/parameters) - parameters (arguments) to validate using this command's schema.
-- **returns**: [ValidationResult](../../../data/validate/validation_result)[] - array of ValidationResults or an empty array (if no schema is set).
+- **returns**: List<[ValidationResult](../../../data/validate/validation_result)> - array of ValidationResults or an empty array (if no schema is set).
 
 ### Examples
 
-```typescript
-let command = new Command("add", null, async (context, args) => {
-    let param1 = args.getAsFloat("param1");
-    let param2 = args.getAsFloat("param2");
-    let result = param1 + param2;
-    return result;
-});
- *     
-result = await command.execute(
-  "123",
-  Parameters.fromTuples(
-    "param1", 2,
-    "param2", 2
-  )
-);
-console.log("2 + 2 = " + result);
-// Console output: 2 + 2 = 4
+```java
+{
+  Command command = new Command("add", null, (args) -> {
+      float param1 = args.getAsFloat("param1");
+      float param2 = args.getAsFloat("param2");
+      return param1 + param2;
+  });
+ 
+  Object result = command.execute(
+    "123",
+    Parameters.fromTuples(
+      "param1", 2,
+      "param2", 2
+    )
+  );
+ 
+  System.out.println(result.toString());
+ 
+  // Console output: 4
+  }
 
 ```
 

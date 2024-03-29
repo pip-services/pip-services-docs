@@ -369,25 +369,25 @@ Pip.Services uses the locator pattern to create the bindings between the differe
 # Performance counter that post values to log
 - descriptor: "pip-services:counters:log:default:1.0"
 
-# Controller
-- descriptor: "hello-friend:controller:default:default:1.0"
+# Service
+- descriptor: "hello-friend:service:default:default:1.0"
   default_name: "Friend"
 
 # Shared HTTP Endpoint
-- descriptor: "pip-services:endpoint:http:default:1.0"
+- descriptor: "pip-controller:endpoint:http:default:1.0"
   connection:
     protocol: http
     host: 0.0.0.0
-    port: 8080
+    port: {{HTTP_PORT}}{{#unless HTTP_PORT}}8085{{/unless}}
 
 # HTTP Service V1
-- descriptor: "hello-friend:service:http:default:1.0"
+- descriptor: "hello-friend:controller:http:default:1.0"
 
 # Heartbeat service
-- descriptor: "pip-services:heartbeat-service:http:default:1.0"
+- descriptor: "pip-controller:heartbeat-controller:http:default:1.0"
 
 # Status service
-- descriptor: "pip-services:status-service:http:default:1.0"
+- descriptor: "pip-controller:status-controller:http:default:1.0"
 
 # Persistnece - MySQL
 - descriptor: "hello-friend:persistence:mysql:default:1.0"

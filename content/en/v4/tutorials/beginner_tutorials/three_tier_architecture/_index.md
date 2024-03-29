@@ -205,7 +205,7 @@ This table contains three columns of type varchar, namely id, type, and name. Th
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   {{< include "./__code5_net.md" >}}
+  Not available
 {{< /tabsection >}}
 
 {{< tabsection >}}

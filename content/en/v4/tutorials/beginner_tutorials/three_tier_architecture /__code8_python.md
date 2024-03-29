@@ -1,8 +1,8 @@
 
 ```python
 
-from pip_services3_mysql.persistence import IdentifiableMySqlPersistence
-from pip_services3_commons.data import FilterParams
+from pip_services4_mysql.persistence import IdentifiableMySqlPersistence
+from pip_services4_data.query import FilterParams
 
 class HelloFriendPersistence(IdentifiableMySqlPersistence):
 
@@ -28,6 +28,6 @@ class HelloFriendPersistence(IdentifiableMySqlPersistence):
         return filter_condition
 
     def get_one_random(self, correlation_id: str, filter: FilterParams) -> MyFriend:
-        return super().get_one_random(correlation_id, self._compose_filter(filter))
+        return super().get_one_random(trace_id, self._compose_filter(filter))
  
 ```

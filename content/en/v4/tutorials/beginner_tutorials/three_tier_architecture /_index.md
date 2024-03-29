@@ -457,7 +457,7 @@ Once our app is running, we can see the results by calling the previously define
 
 And, if everything went right, we will see something similar to:
 
-![figure 1](./figure1.png)
+![figure 1](./images/figure1.png)
 
 ### Complete code
 

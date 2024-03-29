@@ -1,19 +1,19 @@
 
 ```python
-from pip_services3_commons.refer import Descriptor
-from pip_services3_components.build import Factory
+from pip_services4_components.refer import Descriptor
+from pip_services4_components.build import Factory
 
 
-class HelloFriendServiceFactory(Factory):
+class HelloFriendControllerFactory(Factory):
     def __init__(self):
-        super(HelloFriendServiceFactory, self).__init__()
+        super(HelloFriendControllerFactory, self).__init__()
 
-        HttpServiceDescriptor = Descriptor('hello-friend', 'service', 'http', '*', '1.0')  # View
-        ControllerDescriptor = Descriptor('hello-friend', 'controller', 'default', '*', '1.0')  # Controller
+        HttpControllerDescriptor = Descriptor('hello-friend', 'controller', 'http', '*', '1.0')  # View
+        ServiceDescriptor = Descriptor('hello-friend', 'service', 'default', '*', '1.0')  # Service
         PersistenceDescriptor = Descriptor('hello-friend', 'persistence', 'mysql', '*', '1.0')  # Persistence
 
-        self.register_as_type(HttpServiceDescriptor, HelloFriendRestService)  # View
-        self.register_as_type(ControllerDescriptor, HelloFriendController)  # Controller
+        self.register_as_type(HttpControllerDescriptor, HelloFriendRestController)  # View
+        self.register_as_type(ServiceDescriptor, HelloFriendService)  # Controller
         self.register_as_type(PersistenceDescriptor, HelloFriendPersistence)  # Persistence
 
 ```

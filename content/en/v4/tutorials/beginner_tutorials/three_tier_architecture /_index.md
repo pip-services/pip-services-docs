@@ -55,6 +55,30 @@ The example in this tutorial consists of an application that sends a message to 
 
 In order to achieve this, we divide our app into three tiers. The first is the presentation or view layer, which consists of a REST service that will provide information to the browser. The second is the application layer. This tier contains a controller that connects the REST service to the database and extracts a random name from it. The last one is the data or persistence layer, which is created by using a MySQL database. The following table summarizes this and the concepts behind.
 
+<table class="full-width-table">
+  <tr>
+    <td>Name(s) of the tier</td>
+    <td>Software application architecture that organizes applications into three logical tiers.</td>
+  </tr>
+  <tr>
+    <td>Inversion of control</td>
+    <td>Design principle used to invert control in OO programming to achieve loose coupling.</td>
+  </tr>
+  <tr>
+    <td>Factory</td>
+    <td>A method used to define a separate operation for object creation.</td>
+  </tr>
+  <tr>
+    <td>Locator pattern</td>
+    <td>A pattern that considers a registry known as the "service locator", which stores the information necessary to perform a certain task.</td>
+  </tr>
+  <tr>
+    <td>Configuration file</td>
+    <td>A YAML file containing information about the different components and their configurations.</td>
+  </tr>
+     
+</table>
+
 ![Table 1](./Table1.png)
 
 ### Pre-requisites

@@ -1,10 +1,11 @@
 
 ```python
-from pip_services3_commons.config import IConfigurable
-from pip_services3_commons.refer import IReferences, IReferenceable
+from pip_services4_components.config import IConfigurable
+from pip_services4_components.refer import IReferences, IReferenceable
+from typing import Optional
 
 
-class HelloFriendController(IConfigurable, IReferenceable):
+class HelloFriendService(IConfigurable, IReferenceable):
     __defaultName = None
     __persistence: 'HelloFriendPersistence' = None
 
@@ -24,7 +25,7 @@ class HelloFriendController(IConfigurable, IReferenceable):
 
         return f"Hello, {name2} !"
 
-    def create(self, correlation_id: Optional[str], item: MyFriend) -> MyFriend:
-        res = self.__persistence.create(correlation_id, item)
+    def create(self, trace_id: Optional[str], item: MyFriend) -> MyFriend:
+        res = self.__persistence.create(trace_id, item)
         return res
 ```

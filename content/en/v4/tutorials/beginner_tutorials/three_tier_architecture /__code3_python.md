@@ -1,4 +1,4 @@
 
 ```bash
-pip install pip-services3-mysql
+pip install pip-services4-http
 ```

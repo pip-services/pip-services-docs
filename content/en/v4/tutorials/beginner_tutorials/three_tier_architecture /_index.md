@@ -15,7 +15,8 @@ description: >-
 |Name(s) of the tier|Function|Example
 |---|---|---|
 |- Presentation layer <br>- View<br>- Controller|- Endpoints: expose the microservice to external consumers <br> - There can be more than one endpoint|HTTP/-  Controller<br>- Presents the message "Hello {name}"|
-
+|- Application layer<br>- Service|- Core business logic|- Obtains a random name from the database|
+|- Data layer<br>|- Persistence layer| - Data storage| - Stores different names|
 ### Introduction
 
 In this tutorial,  you will learn how to construct an application using Pip.Services components and a three-tier structure. 

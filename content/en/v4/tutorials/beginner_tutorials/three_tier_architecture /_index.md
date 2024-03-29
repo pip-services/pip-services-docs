@@ -86,6 +86,29 @@ Before creating this app, we need to install several modules that contain the ne
 {{< /tabsection >}}
 
 
+{{< tabsection >}}
+   {{< include "./__code1b_node.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+   {{< include "./__code1b_net.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+   {{< include "./__code1b_go.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code1b_python.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
 
 
 {{< tabsection >}}

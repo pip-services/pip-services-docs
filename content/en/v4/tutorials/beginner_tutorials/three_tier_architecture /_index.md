@@ -14,7 +14,7 @@ description: >-
 
 |Name(s) of the tier|Function|Example
 |---|---|---|
-|- Presentation layer|Endpoints: expose the microservice to external consumers|HTTP/REST Controller|
+|- Presentation layer|- Endpoints: expose the microservice to external consumers - There can be more than one endpoint|HTTP/REST Controller|
 
 ### Introduction
 

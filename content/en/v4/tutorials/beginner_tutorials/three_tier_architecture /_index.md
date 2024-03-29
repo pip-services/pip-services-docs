@@ -61,7 +61,6 @@ In order to achieve this, we divide our app into three tiers. The first is the p
 |- Application layer<br>- Service|- Core business logic|- Obtains a random name from the database|
 |- Data layer<br>|- Persistence layer| - Data storage| - Stores different names|
 
-![Table 1](./Table1.png)
 
 ### Pre-requisites
 

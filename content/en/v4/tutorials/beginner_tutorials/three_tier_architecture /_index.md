@@ -67,15 +67,15 @@ In order to achieve this, we divide our app into three tiers. The first is the p
 Before creating this app, we need to install several modules that contain the necessary components. They are:
 
 {{< tabsection >}}
-   {{< include "./__code1_node.md" >}}
+   Not available 
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   {{< include "./__code1_net.md" >}}
+ Not available 
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   {{< include "./__code1_go.md" >}}
+ Not available 
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -92,15 +92,15 @@ Before creating this app, we need to install several modules that contain the ne
 
 
 {{< tabsection >}}
-   {{< include "./__code1b_node.md" >}}
+ Not available 
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   {{< include "./__code1b_net.md" >}}
+ Not available 
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   {{< include "./__code1b_go.md" >}}
+ Not available 
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -117,15 +117,15 @@ Before creating this app, we need to install several modules that contain the ne
 
 
 {{< tabsection >}}
-   {{< include "./__code2_node.md" >}}
+ Not available 
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   {{< include "./__code2_net.md" >}}
+ Not available 
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   {{< include "./__code2_go.md" >}}
+ Not available 
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -144,15 +144,15 @@ Before creating this app, we need to install several modules that contain the ne
 
 
 {{< tabsection >}}
-   {{< include "./__code3_node.md" >}}
+ Not available 
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   {{< include "./__code3_net.md" >}}
+ Not available 
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   {{< include "./__code3_go.md" >}}
+ Not available 
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -170,15 +170,15 @@ Before creating this app, we need to install several modules that contain the ne
 
 
 {{< tabsection >}}
-   {{< include "./__code4_node.md" >}}
+ Not available 
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   {{< include "./__code4_net.md" >}}
+ Not available 
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   {{< include "./__code4_go.md" >}}
+ Not available 
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -200,7 +200,7 @@ In order to use the data obtained from the database, we define a data structure 
 This table contains three columns of type varchar, namely id, type, and name. Thus, our data structure looks like this:
 
 {{< tabsection >}}
-   {{< include "./__code5_node.md" >}}
+ Not available 
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -208,7 +208,7 @@ This table contains three columns of type varchar, namely id, type, and name. Th
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   {{< include "./__code5_go.md" >}}
+ Not available 
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -228,15 +228,15 @@ This table contains three columns of type varchar, namely id, type, and name. Th
 This layer is used to show the result of our app on the browser. It is constructed as a subclass of the RestService class. In it, we set a reference to the controller to create the connection between the two and be able to use the greetings() method. We also define the elements of the URL to the resulting webpage.
 
 {{< tabsection >}}
-   {{< include "./__code6_node.md" >}}
+ Not available 
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   {{< include "./__code6_net.md" >}}
+ Not available 
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   {{< include "./__code6_go.md" >}}
+ Not available 
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -260,15 +260,15 @@ Thus, it sets a reference to the database. This reference is not to a specific d
 This class also defines the greeting method, which selects a random name from the database and then passes it to the view. It also defines a default name, which will be used if no name is obtained from the database query.
 
 {{< tabsection >}}
-   {{< include "./__code7_node.md" >}}
+ Not available 
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   {{< include "./__code7_net.md" >}}
+ Not available 
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   {{< include "./__code7_go.md" >}}
+ Not available 
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -292,15 +292,15 @@ The class also contains the defineSchema() method, which ensures that if our tab
 Next, it contains the composeFilter() method, which customizes a filter to the needs of the database, and the getOneRandom() method, which is an override of the parent class.
 
 {{< tabsection >}}
-   {{< include "./__code8_node.md" >}}
+  Not available 
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   {{< include "./__code8_net.md" >}}
+ Not available 
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   {{< include "./__code8_go.md" >}}
+ Not available 
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -328,15 +328,15 @@ Pip.Services uses the Inversion of Control principle to create different objects
 In our example, we create the HelloFriendServiceFactory, which is a subclass of Factory and registers the HelloFriendRestService, HelloFriendController, and HelloFriendPersistence components as classes to be instantiated.
 
 {{< tabsection >}}
-   {{< include "./__code9_node.md" >}}
+ Not available 
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   {{< include "./__code9_net.md" >}}
+ Not available 
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   {{< include "./__code9_go.md" >}}
+ Not available 
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -405,15 +405,15 @@ Pip.Services uses the locator pattern to create the bindings between the differe
 Now that our support structure has been created, we add the components to a process container. This container will allow us to run our code as a sole app.
 
 {{< tabsection >}}
-   {{< include "./__code10_node.md" >}}
+ Not available 
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   {{< include "./__code10_net.md" >}}
+ Not available 
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   {{< include "./__code10_go.md" >}}
+  Not available 
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -432,15 +432,15 @@ Now that our support structure has been created, we add the components to a proc
 Our final step is to execute the app via the container's run() command. The following example shows how to do this.
 
 {{< tabsection >}}
-   {{< include "./__code11_node.md" >}}
+ Not available 
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   {{< include "./__code11_net.md" >}}
+ Not available 
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   {{< include "./__code11_go.md" >}}
+ Not available 
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -469,19 +469,19 @@ And, if everything went right, we will see something similar to:
 Below, we can see the complete code of our example.
 {{< tabsection >}}
   {{< collapse >}}
-  {{< include "./__code12_node.md" >}}
+  Not available 
   {{< /collapse >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
   {{< collapse >}}
-  {{< include "./__code12_net.md" >}}
+   Not available 
   {{< /collapse >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
   {{< collapse >}}
-  {{< include "./__code12_go.md" >}}
+ Not available 
   {{< /collapse >}}
 {{< /tabsection >}}
 

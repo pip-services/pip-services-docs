@@ -1,4 +1,4 @@
 
 ```bash
-pip install pip-services3-postgres
+pip install pip-services4-data
 ```

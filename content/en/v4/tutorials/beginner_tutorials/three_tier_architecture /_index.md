@@ -12,33 +12,9 @@ description: >-
 
 ### Key takeaways
 
-|Name(s) of the tier|Function|Example|
-|---|---|---|
-|- Presentation layer <br>- View<br>- Controller|- Endpoints: expose the microservice to external consumers <br> - There can be more than one endpoint|HTTP/-  Controller<br>- Presents the message "Hello {name}"|
-|- Application layer<br>- Service|- Core business logic|- Obtains a random name from the database|
-|- Data layer<br>|- Persistence layer| - Data storage| - Stores different names|
-### Introduction
-
-In this tutorial,  you will learn how to construct an application using Pip.Services components and a three-tier structure. 
-
-We will begin with a brief description of the example that we will be constructing and a list of the necessary pre-requisites.
-
-Then, we will see a detailed description of the three tiers with code examples for each of them. We will continue by explaining how two important concepts are applied in Pip.Services: inversion of control and locator pattern, and how to construct a process container for our program.
-
-Next, we will see how to run our app by selecting a specific database, and how the results obtained from its execution are presented on our browser.
-
-We will finish by showing the complete code of our example and summarizing what was learned.
-
-
-### Brief description of the example
-
-The example in this tutorial consists of an application that sends a message to a browser. The message has the format "Hello {name}!" where name is the random name of a person that was selected from a database.
-
-In order to achieve this, we divide our app into three tiers. The first is the presentation or view layer, which consists of a REST service that will provide information to the browser. The second is the application layer. This tier contains a controller that connects the REST service to the database and extracts a random name from it. The last one is the data or persistence layer, which is created by using a MySQL database. The following table summarizes this and the concepts behind.
-
 <table class="full-width-table">
   <tr>
-    <td>Name(s) of the tier</td>
+    <td>Three-tier architecture</td>
     <td>Software application architecture that organizes applications into three logical tiers.</td>
   </tr>
   <tr>
@@ -59,6 +35,31 @@ In order to achieve this, we divide our app into three tiers. The first is the p
   </tr>
      
 </table>
+
+### Introduction
+
+In this tutorial,  you will learn how to construct an application using Pip.Services components and a three-tier structure. 
+
+We will begin with a brief description of the example that we will be constructing and a list of the necessary pre-requisites.
+
+Then, we will see a detailed description of the three tiers with code examples for each of them. We will continue by explaining how two important concepts are applied in Pip.Services: inversion of control and locator pattern, and how to construct a process container for our program.
+
+Next, we will see how to run our app by selecting a specific database, and how the results obtained from its execution are presented on our browser.
+
+We will finish by showing the complete code of our example and summarizing what was learned.
+
+
+### Brief description of the example
+
+The example in this tutorial consists of an application that sends a message to a browser. The message has the format "Hello {name}!" where name is the random name of a person that was selected from a database.
+
+In order to achieve this, we divide our app into three tiers. The first is the presentation or view layer, which consists of a REST service that will provide information to the browser. The second is the application layer. This tier contains a controller that connects the REST service to the database and extracts a random name from it. The last one is the data or persistence layer, which is created by using a MySQL database. The following table summarizes this and the concepts behind.
+
+|Name(s) of the tier|Function|Example|
+|---|---|---|
+|- Presentation layer <br>- View<br>- Controller|- Endpoints: expose the microservice to external consumers <br> - There can be more than one endpoint|HTTP/-  Controller<br>- Presents the message "Hello {name}"|
+|- Application layer<br>- Service|- Core business logic|- Obtains a random name from the database|
+|- Data layer<br>|- Persistence layer| - Data storage| - Stores different names|
 
 ![Table 1](./Table1.png)
 

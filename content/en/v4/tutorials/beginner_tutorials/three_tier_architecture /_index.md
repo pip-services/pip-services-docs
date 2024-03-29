@@ -67,15 +67,15 @@ In order to achieve this, we divide our app into three tiers. The first is the p
 Before creating this app, we need to install several modules that contain the necessary components. They are:
 
 {{< tabsection >}}
-   Not available 
+   {{< include "./__code1_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
- Not available 
+   {{< include "./__code1_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
- Not available 
+   {{< include "./__code1_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -83,12 +83,13 @@ Before creating this app, we need to install several modules that contain the ne
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "../three_tier_architecture/__code1_python.md" >}}
+  {{< include "./__code1_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
   Not available  
 {{< /tabsection >}}
+
 
 
 {{< tabsection >}}

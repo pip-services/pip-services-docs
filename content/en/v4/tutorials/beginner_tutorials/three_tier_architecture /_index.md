@@ -12,29 +12,9 @@ description: >-
 
 ### Key takeaways
 
-<table class="full-width-table">
-  <tr>
-    <td>Three-tier architecture</td>
-    <td>Software application architecture that organizes applications into three logical tiers.</td>
-  </tr>
-  <tr>
-    <td>Inversion of control</td>
-    <td>Design principle used to invert control in OO programming to achieve loose coupling.</td>
-  </tr>
-  <tr>
-    <td>Factory</td>
-    <td>A method used to define a separate operation for object creation.</td>
-  </tr>
-  <tr>
-    <td>Locator pattern</td>
-    <td>A pattern that considers a registry known as the "service locator", which stores the information necessary to perform a certain task.</td>
-  </tr>
-  <tr>
-    <td>Configuration file</td>
-    <td>A YAML file containing information about the different components and their configurations.</td>
-  </tr>
-     
-</table>
+|Name(s) of the tier|Function|Example
+|---|---|---|
+|- Presentation layer|Endpoints: expose the microservice to external consumers|HTTP/REST Controller|
 
 ### Introduction
 

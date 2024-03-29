@@ -1,4 +1,4 @@
 
 ```bash
-pip install pip-services3-rpc
+pip install pip-services4-components
 ```

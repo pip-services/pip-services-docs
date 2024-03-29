@@ -67,15 +67,15 @@ In order to achieve this, we divide our app into three tiers. The first is the p
 Before creating this app, we need to install several modules that contain the necessary components. They are:
 
 {{< tabsection >}}
-   {{< include "./__code1_node.md" >}}
+  Not available
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   {{< include "./__code1_net.md" >}}
+  Not available
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   {{< include "./__code1_go.md" >}}
+  Not available
 {{< /tabsection >}}
 
 {{< tabsection >}}

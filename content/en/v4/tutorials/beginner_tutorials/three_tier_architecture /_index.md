@@ -14,7 +14,7 @@ description: >-
 
 |Name(s) of the tier|Function|Example
 |---|---|---|
-|- Presentation layer <br>- View<br>- Controller|- Endpoints: expose the microservice to external consumers <br> - There can be more than one endpoint|HTTP/REST Controller|
+|- Presentation layer <br>- View<br>- Controller|- Endpoints: expose the microservice to external consumers <br> - There can be more than one endpoint|HTTP/-  Controller<br>- Presents the message "Hello {name}"|
 
 ### Introduction
 

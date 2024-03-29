@@ -1,4 +1,4 @@
 
 ```bash
-pip install pip-services3-commons
+pip install pip-services4-container
 ```

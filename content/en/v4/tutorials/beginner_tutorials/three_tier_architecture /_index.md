@@ -83,7 +83,7 @@ Before creating this app, we need to install several modules that contain the ne
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code1_python.md" >}}
+  {{< include "__code1_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}

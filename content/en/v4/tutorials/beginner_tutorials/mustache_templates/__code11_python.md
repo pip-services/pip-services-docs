@@ -1,0 +1,4 @@
+
+```python
+template.clear()
+```

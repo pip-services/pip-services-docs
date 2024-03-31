@@ -38,7 +38,7 @@ The RandomArray class provides a way to randomly choose an element from an array
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code1_go.md" >}}
+  Not available
 {{< /tabsection >}}
 
 {{< tabsection >}}

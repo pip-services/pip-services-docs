@@ -65,19 +65,19 @@ There is a big variety of data validation frameworks. Some of them are part of t
 A simple object validator check that checks properties for proper values may look the following way:
 
 {{< tabsection >}}
-  {{< include "./__code1_node.md" >}}
+  Not available
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code1_net.md" >}} 
+  Not available
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code1_go.md" >}}
+  Not available
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code1_dart.md" >}}
+  Not available
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -109,19 +109,19 @@ To enable even more complex validation scenarios using a basic set of rules, the
 Pip.Services offers a simple yet effective filtering pattern that is universal and very simple to implement. It uses a FilterParams object that contains a set of key-value pairs used to filter the data. An example of its usage is:
 
 {{< tabsection >}}
-  {{< include "./__code2_node.md" >}}
+  Not available
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code2_net.md" >}}
+  Not available
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code2_go.md" >}}
+  Not available
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code2_dart.md" >}}
+  Not available
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -137,19 +137,19 @@ Pip.Services offers a simple yet effective filtering pattern that is universal a
 Sorting is another common pattern that is often used in combination with filters. It uses the SortParams object in the following way:
 
 {{< tabsection >}}
-  {{< include "./__code3_node.md" >}}
+  Not available
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code3_net.md" >}}
+  Not available
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code3_go.md" >}}
+  Not available
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code3_dart.md" >}}
+  Not available
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -165,19 +165,19 @@ Sorting is another common pattern that is often used in combination with filters
 Data collections containing thousands, hundreds of thousands or even millions of querying results in a single call may not work properly, as the size of responses is often limited to a few megabytes. A common pattern is to split data into pages and retrieve them sequentially by sending PagingParams that contain some objects to skip and a number of objects to take (return). An optional total parameter may direct the service to return the total number of objects in the result DataPage. The code may look the following way:
 
 {{< tabsection >}}
-  {{< include "./__code4_node.md" >}}
+  Not available
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code4_net.md" >}}
+  Not available
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code4_go.md" >}}
+  Not available
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code4_dart.md" >}}
+  Not available
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -196,19 +196,19 @@ In complex use cases when the data is retrieved from multiple collections or sha
  
  
 {{< tabsection >}}
-  {{< include "./__code5_node.md" >}}
+  Not available
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code5_net.md" >}}
+  Not available
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code5_go.md" >}}
+  Not available
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code5_dart.md" >}}
+  Not available
 {{< /tabsection >}}
 
 {{< tabsection >}}

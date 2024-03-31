@@ -30,11 +30,11 @@ In this section, we will see how to use each of the methods available in the Ran
 The RandomArray class provides a way to randomly choose an element from an array via its **pick** method. The following example shows how to use it.
 
 {{< tabsection >}}
-  {{< include "./__code1_node.md" >}}
+  Not available
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code1_net.md" >}}
+  Not available
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -42,7 +42,7 @@ The RandomArray class provides a way to randomly choose an element from an array
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code1_dart.md" >}}
+  Not available
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -72,19 +72,19 @@ The RandomBoolean class offers two methods namely chance and nextBoolean. The fo
 </table>
 
 {{< tabsection >}}
-  {{< include "./__code2_node.md" >}}
+  Not available
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code2_net.md" >}}
+  Not available
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code2_go.md" >}}
+  Not available
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code2_dart.md" >}}
+  Not available
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -114,19 +114,19 @@ The RandomDateTime class contains two methods: **nextDate** and **updateDatetime
 </table>
 
 {{< tabsection >}}
-  {{< include "./__code3_node.md" >}}
+  Not available
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code3_net.md" >}}
+  Not available
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code3_go.md" >}}
+  Not available
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code3_dart.md" >}}
+  Not available
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -156,19 +156,19 @@ The RandomDouble class has two methods that can be used to generate random doubl
 </table>
 
 {{< tabsection >}}
-  {{< include "./__code4_node.md" >}}
+  Not available
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code4_net.md" >}}
+  Not available
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code4_go.md" >}}
+  Not available
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code4_dart.md" >}}
+  Not available
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -198,19 +198,19 @@ The **RandomFloat** class contains two methods that can be used to obtain random
 </table>
 
 {{< tabsection >}}
-  {{< include "./__code5_node.md" >}}
+  Not available
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code5_net.md" >}}
+  Not available
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code5_go.md" >}}
+  Not available
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code5_dart.md" >}}
+  Not available
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -240,19 +240,19 @@ The **RandomInteger** class has two methods for generating random integers. Thei
 </table>
 
 {{< tabsection >}}
-  {{< include "./__code6_node.md" >}}
+  Not available
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code6_net.md" >}}
+  Not available
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code6_go.md" >}}
+  Not available
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code6_dart.md" >}}
+  Not available
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -295,19 +295,19 @@ The **RandomString** class presents methods that can be used to create random st
 </table>
 
 {{< tabsection >}}
-  {{< include "./__code7_node.md" >}}
+  Not available
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code7_net.md" >}}
+  Not available
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code7_go.md" >}}
+  Not available
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code7_dart.md" >}}
+  Not available
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -373,19 +373,19 @@ The **RandomText** class can be used to generate different types of random texts
 </table>
 
 {{< tabsection >}}
-  {{< include "./__code8_node.md" >}}
+  Not available
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code8_net.md" >}}
+  Not available
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code8_go.md" >}}
+  Not available
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code8_dart.md" >}}
+  Not available
 {{< /tabsection >}}
 
 {{< tabsection >}}

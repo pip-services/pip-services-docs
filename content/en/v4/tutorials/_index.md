@@ -25,7 +25,7 @@ Symmetric implementation means that for every programming language it is impleme
 <div class="card-group intro-cards">
   <div class="card">
     <div class="card-body text-center">
-      <img class="card-img-top" src="/images/icons/nodejs-icon.png" alt="Node.js icon">
+      <img class="card-img-top" src="images/icons/nodejs-icon.png" alt="Node.js icon">
       <a href="../toolkit_api/node" class="stretched-link"></a>
     </div>
     <div class="card-footer text-center">
@@ -34,7 +34,7 @@ Symmetric implementation means that for every programming language it is impleme
   </div>
   <div class="card">
     <div class="card-body text-center ">
-      <img class="card-img-top" src="/images/icons/dotnet-icon.png" alt="Dotnet icon">
+      <img class="card-img-top" src="images/icons/dotnet-icon.png" alt="Dotnet icon">
       <a href="../toolkit_api/net" class="stretched-link"></a>
     </div>
     <div class="card-footer text-center">
@@ -43,7 +43,7 @@ Symmetric implementation means that for every programming language it is impleme
   </div>
   <div class="card">
     <div class="card-body text-center">
-      <img class="card-img-top" src="/images/icons/golang-icon.png" alt="Golang icon">
+      <img class="card-img-top" src="images/icons/golang-icon.png" alt="Golang icon">
       <a href="../toolkit_api/golang" class="stretched-link"></a>
     </div>
     <div class="card-footer text-center">
@@ -52,7 +52,7 @@ Symmetric implementation means that for every programming language it is impleme
   </div>
   <div class="card">
     <div class="card-body text-center">
-      <img class="card-img-top" src="/images/icons/dart-icon.png" alt="Dart icon">
+      <img class="card-img-top" src="images/icons/dart-icon.png" alt="Dart icon">
       <a href="../toolkit_api/dart" class="stretched-link"></a>
     </div>
     <div class="card-footer text-center">
@@ -61,7 +61,7 @@ Symmetric implementation means that for every programming language it is impleme
   </div>
   <div class="card">
     <div class="card-body text-center">
-      <img class="card-img-top" src="/images/icons/python-icon.png" alt="Python icon">
+      <img class="card-img-top" src="images/icons/python-icon.png" alt="Python icon">
       <a href="../toolkit_api/python" class="stretched-link"></a>
     </div>
     <div class="card-footer text-center">

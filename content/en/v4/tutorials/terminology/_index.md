@@ -161,8 +161,7 @@ weight: 1000
    <tr>
       <td>Controller </td>
       <td>
-        Within Pip.Services' three-tier architecture, the controller is the class where the business logic of the microservice is implemented. From this component, methods can call other components.<br><br>
-        This approach differs from other frameworks such as Spring Boot, where the controller is used to implement communication functions.
+	Within Pip.Services, a controller is the component in the first layer of the three-layer design model. It is used to communicate with clients by using protocols such as HTTP and gRPC.
       </td>
       <td><a href="../../tutorials/beginner_tutorials/three_tier_architecture/">Three tier architecture</a></td>
     </tr>
@@ -452,8 +451,7 @@ weight: 1000
     <tr>
       <td>Service</td>
       <td>
-       Within Pip.Services, a service is the component in the first layer of the three-layer design model. It is used to communicate with clients by using protocols such as HTTP and gRPC. <br><br>
-       This approach is different from other frameworks such as Spring Boot, where a service is used to implement the logic of a microservice.
+     Within Pip.Services' three-tier architecture, the service is the class where the business logic of the microservice is implemented. From this component, methods can call other components.<br><br>  
       </td>
     </tr>
 	<tr>

@@ -85,7 +85,7 @@ Moreover, to support the big number of existing deployment platforms, Pip.Servic
 
 <div class="card-group intro-cards technology-cards">
   <div class="card">
-    <img class="card-img-top" src="/images/icons/system_processes.svg" alt="System process icon">
+    <img class="card-img-top" src="images/icons/system_processes.svg" alt="System process icon">
     <div class="card-footer text-center">
       <b>System Processes</b>
     </div>
@@ -97,19 +97,19 @@ Moreover, to support the big number of existing deployment platforms, Pip.Servic
     </div>
   </div>
    <div class="card">
-    <img class="card-img-top" src="/images/icons/aws_lambda.svg" alt="AWS icon">
+    <img class="card-img-top" src="images/icons/aws_lambda.svg" alt="AWS icon">
     <div class="card-footer text-center">
       <b>AWS Lambda</b>
     </div>
   </div>
   <div class="card">
-    <img class="card-img-top" src="/images/icons/azure_functions.svg" alt="Azure icon">
+    <img class="card-img-top" src="images/icons/azure_functions.svg" alt="Azure icon">
     <div class="card-footer text-center">
       <b>Azure Functions</b>
     </div>
   </div>
   <div class="card">
-    <img class="card-img-top" src="/images/icons/google_cloud_functions.svg" alt="GCP icon">
+    <img class="card-img-top" src="images/icons/google_cloud_functions.svg" alt="GCP icon">
     <div class="card-footer text-center">
       <b>Cloud Functions</b>
     </div>

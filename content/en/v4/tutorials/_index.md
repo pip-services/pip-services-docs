@@ -91,7 +91,7 @@ Moreover, to support the big number of existing deployment platforms, Pip.Servic
     </div>
   </div>
    <div class="card">
-    <img class="card-img-top" src="/images/icons/docker.svg" alt="Docker icon">
+    <img class="card-img-top" src="images/icons/docker.svg" alt="Docker icon">
     <div class="card-footer text-center">
       <b>Docker</b>
     </div>

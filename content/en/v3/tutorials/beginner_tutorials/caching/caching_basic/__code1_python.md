@@ -1,4 +1,4 @@
 
 ```python
-from pip_services3_components.cache import MemoryCache
+from pip_services4_logic.cache import MemoryCache
 ```

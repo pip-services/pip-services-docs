@@ -110,7 +110,7 @@ We can create a memory cache by creating an instance of the cache class. The fol
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code2_go.md" >}}
+  Not available  
 {{< /tabsection >}}
 
 {{< tabsection >}}

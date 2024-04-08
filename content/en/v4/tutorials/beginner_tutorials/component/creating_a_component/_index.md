@@ -415,6 +415,9 @@ We have a service, and to use it, we just need to create an instance of our cont
 
 After running our service, we should see the following output, which confirms that components A and B have been created and linked:
 
+```{include} config2.md
+```
+
 <img src="figure4.png" alt="Console logger messages" style="width:100%">
      
 As our component is complete and fully functional, this step marks the end of our task.

@@ -384,6 +384,9 @@ Once our factory is ready, we can proceed to create our container. First, we wil
 
 Our configuration file must declare our component's descriptor and the values we want to assign to our parameters. We will use YAML syntax for this purpose. Below is an example of this type of declaration.
 
+```{include} config.md
+```
+
 <img src="figure3.png" alt="Console logger messages" style="width:50%;text-align: center" >
 
 ### Using our component
@@ -414,9 +417,6 @@ We have a service, and to use it, we just need to create an instance of our cont
 {{< /tabsection >}}
 
 After running our service, we should see the following output, which confirms that components A and B have been created and linked:
-
-```{include} config2.md
-```
 
 <img src="figure4.png" alt="Console logger messages" style="width:100%">
      

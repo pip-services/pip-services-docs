@@ -1,7 +1,5 @@
 
 ```python
-from pip_services4_commons.data import AnyValueMap
-
 # Constructor
 value1 = AnyValueMap({ 'key1': 1, 'key2': "123.456", 'key3': "2018-01-01" })    # Returns {'key1': 1, 'key2': '123.456', 'key3': '2018-01-01'}
 

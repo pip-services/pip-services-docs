@@ -217,7 +217,7 @@ The code below summarizes the steps learned in the previous sections.
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code7_go.md" >}}
+ Not available 
 {{< /tabsection >}}
 
 {{< tabsection >}}

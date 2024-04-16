@@ -179,7 +179,7 @@ Note: the HEAD method produces no output.
 
 
 {{< tabsection >}}
-  {{< include "./__code6_node.md" >}}
+ Not available 
 {{< /tabsection >}}
 
 {{< tabsection >}}

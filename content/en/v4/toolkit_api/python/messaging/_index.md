@@ -20,7 +20,7 @@ The module contains the following packages:
 
 Install the Python package as
 ```bash
-pip install pip-services3-messaging
+pip install pip-services4-messaging
 ```
 
 TODO: add example

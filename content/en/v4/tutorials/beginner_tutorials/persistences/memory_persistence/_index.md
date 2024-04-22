@@ -1,4 +1,4 @@
-![image](https://github.com/pip-services/pip-services-docs/assets/68734409/75f3b604-5a41-42c3-a0db-538823eea3c6)---
+---
 type: docs
 no_list: true
 title: "Creating a memory persistence component"

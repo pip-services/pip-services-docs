@@ -17,19 +17,19 @@ When a microservice is created to be stateful, it needs to save its state in a d
 The following is an example of state management in a stateful microservice:
 
 {{< tabsection >}}
-  {{< include "./__code1_node.md" >}} 
+  Not available  
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code1_net.md" >}} 
+  Not available  
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code1_go.md" >}} 
+  Not available  
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code1_dart.md" >}} 
+  Not available  
 {{< /tabsection >}}
 
 {{< tabsection >}}

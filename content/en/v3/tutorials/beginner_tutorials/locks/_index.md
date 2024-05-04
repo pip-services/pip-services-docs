@@ -1,7 +1,7 @@
 ---
 type: docs
-title: "Locks new name"
-linkTitle: "Locks another name" 
+title: "Locks"
+linkTitle: "Locks" 
 weight: 130
 no_list: true
 exclude_from_list: true

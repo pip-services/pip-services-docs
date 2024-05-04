@@ -1,5 +1,5 @@
 
-See: [ConfigParams](../../../toolkit_api/python/commons/config/config_params/)
+See: [ConfigParams](../../../toolkit_api/python/components/config/config_params/)
 
 ```python
 config = ConfigParams.from_tuples(

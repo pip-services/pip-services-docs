@@ -1,5 +1,5 @@
 
-See: [IConfigurable](../../../toolkit_api/python/commons/config/iconfigurable/)
+See: [IConfigurable](../../../toolkit_api/python/components/config/iconfigurable/)
 ```python
 from abc import ABC
 from pip_services4_components.config import ConfigParams

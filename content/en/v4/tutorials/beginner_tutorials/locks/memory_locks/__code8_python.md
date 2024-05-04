@@ -1,4 +1,4 @@
 
 ```python
-
+lock = NullLock()
 ```

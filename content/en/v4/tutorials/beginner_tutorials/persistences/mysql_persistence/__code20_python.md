@@ -1,4 +1,4 @@
 
 ```python
-from pip_services3_mysql.persistence import IdentifiableMySqlPersistence
+from pip_services4_mysql.persistence import IdentifiableMySqlPersistence
 ```

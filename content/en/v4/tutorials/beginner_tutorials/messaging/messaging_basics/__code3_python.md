@@ -1,9 +1,13 @@
 
 ```python
-from pip_services4_components.context import IContext
+from pip_services4_components.context import Context
 
-my_context = IContext()
+context_data = {
+  "traceId": "123",
+}
+
+my_context = Context(context_data)
 
 messageQueue = MemoryMessageQueue()
-messageQueue.open(my_context)   
+messageQueue.open(my_context) 
 ```

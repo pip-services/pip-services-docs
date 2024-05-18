@@ -18,7 +18,7 @@ Although there is a large variety of design possibilities, practice shows that b
 
 The typical structure of a microservice and its independent components is shown in the diagram below:
 
-![Toolkit structure diagram](/images/getting_started/microservice_structure/structure_diagram.svg)
+![Toolkit structure diagram](structure_diagram.svg)
 
 Basically, a microservice is a container that is composed of components, essential to that specific service. Components can generally be classified into the following groups:
 

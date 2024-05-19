@@ -122,7 +122,7 @@ After that, we define a component that inherits from the IdentifiableMySqlPersis
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code4_net.md" >}}
+  Not available  
 {{< /tabsection >}}
 
 {{< tabsection >}}

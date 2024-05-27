@@ -20,6 +20,5 @@ class MyComponent:
                 print("Bonjour mon ami")
         finally:
             timing.end_timing()
-        self.counters.dump()
 
 ```

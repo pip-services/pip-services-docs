@@ -55,8 +55,8 @@ a.	Choose one of the following:
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - [Cassandra](../../beginner_tutorials/persistences/cassandra/)                 
 b.	[Designing persistence components](../../beginner_tutorials/persistences/designing_persistence/) 
 
-4.	Business Logic: Controllers, Observability, Synchronization, Caching, States...
-a.	Controllers         
+4.	Business Logic: Services, Observability, Synchronization, Caching, States...       
+a.	Services         
 b.	Observability:              
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i.	[Logging](../../beginner_tutorials/observability/logging/)            
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_Optional (Self-study)_          

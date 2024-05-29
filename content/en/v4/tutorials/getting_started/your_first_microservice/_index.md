@@ -76,6 +76,10 @@ go version
 
 If everything was installed successfully, the screen will display the latest version of the Go programming language.
 
+{{< tabsection >}}
+  {{< include "./__code2_go.md" >}}
+{{< /tabsection >}}
+
 {{< /tabsection >}}
 
 {{< tabsection isMarkdown=true >}}

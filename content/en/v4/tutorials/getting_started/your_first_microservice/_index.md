@@ -84,33 +84,28 @@ Create a folder for the project and within it, add a requirements.txt file with 
 ### Step 3. Service
 The service will be a simple class that implements a single business method, which receives a name and generates a greeting. In general, business methods can call other built-in controllers or work with a database.
 
-{{< tabsection isMarkdown=true >}}
-
-
+{{< tabsection >}}
+  {{< include "./__code4_dart.md" >}}
 {{< /tabsection >}}
 
-{{< tabsection isMarkdown=true >}}
-
+{{< tabsection >}}
+  {{< include "./__code4_dart.md" >}}
 {{< /tabsection >}}
 
-
-{{< tabsection isMarkdown=true >}}
-
+{{< tabsection >}}
+  {{< include "./__code4_go.md" >}}
 {{< /tabsection >}}
 
-{{< tabsection isMarkdown=true >}}
-
+{{< tabsection >}}
+  {{< include "./__code4_dart.md" >}}
 {{< /tabsection >}}
 
-{{< tabsection isMarkdown=true >}}
-
-
+{{< tabsection >}}
+  {{< include "./__code4_python.md" >}}
 {{< /tabsection >}}
 
-{{< tabsection isMarkdown=true >}}
-
-**TODO: add language**
-
+{{< tabsection >}}
+  Not available  
 {{< /tabsection >}}
 
 ### Step 4. REST controller

@@ -4,3 +4,4 @@ Once installed, check that the installation was completed successfully by runnin
 
 ```bash
 python
+```

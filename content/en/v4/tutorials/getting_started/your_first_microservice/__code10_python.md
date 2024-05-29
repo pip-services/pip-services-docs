@@ -1,1 +1,4 @@
 
+```bash
+python ./run.py
+```

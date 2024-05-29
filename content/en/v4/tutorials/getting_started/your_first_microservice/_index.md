@@ -111,32 +111,31 @@ The service will be a simple class that implements a single business method, whi
 ### Step 4. REST controller
 One of the most popular ways of transferring data between microservices is using the synchronous HTTP REST protocol. The HelloWorldRestController will be used to implement an external REST interface. This component extends the abstract RestController of the Pip.Services toolkit, which implements all the necessary functionality for processing REST HTTP requests.
 
-{{< tabsection isMarkdown=true >}}
 
+{{< tabsection >}}
+  {{< include "./__code5_dart.md" >}}
 {{< /tabsection >}}
 
-{{< tabsection isMarkdown=true >}}
-
+{{< tabsection >}}
+  {{< include "./__code5_dart.md" >}}
 {{< /tabsection >}}
 
-{{< tabsection isMarkdown=true >}}
-
+{{< tabsection >}}
+  {{< include "./__code5_go.md" >}}
 {{< /tabsection >}}
 
-{{< tabsection isMarkdown=true >}}
-
+{{< tabsection >}}
+  {{< include "./__code5_dart.md" >}}
 {{< /tabsection >}}
 
-{{< tabsection isMarkdown=true >}}
-
-
+{{< tabsection >}}
+  {{< include "./__code5_python.md" >}}
 {{< /tabsection >}}
 
-{{< tabsection isMarkdown=true >}}
-
-**TODO: add language**
-
+{{< tabsection >}}
+  Not available  
 {{< /tabsection >}}
+
 
 Using this descriptor, the base class will be able to find a reference to the service during component linking. Check out [The Locator Pattern](https://www.geeksforgeeks.org/service-locator-pattern/) for more on how this mechanism works.
 

@@ -159,64 +159,9 @@ Full listing for the REST controller can be found in the following file:
 
 {{< tabsection isMarkdown=true >}}
 
-**/lib/src/HelloWorldRestService.dart**
-```dart
-import 'package:pip_services3_rpc/pip_services3_rpc.dart';
-import 'package:pip_services3_commons/pip_services3_commons.dart';
-import 'package:shelf/shelf.dart';
-import './HelloWorldController.dart';
-
-class HelloWorldRestService extends RestService {
-  HelloWorldController? controller;
-
-  HelloWorldRestService() : super() {
-    baseRoute = '/hello_world';
-    dependencyResolver.put(
-        'controller', Descriptor('hello-world', 'controller', '*', '*', '1.0'));
-  }
-
-  @override
-  void setReferences(references) {
-    super.setReferences(references);
-    controller =
-        dependencyResolver.getOneRequired<HelloWorldController>('controller');
-  }
-
-  @override
-  void register() {
-    registerRoute('get', '/greeting', null, (Request req) async {
-      var name = req.url.queryParameters['name'];
-      return sendResult(req, await controller!.greeting(name));
-    });
-  }
-}
-
-```
 {{< /tabsection >}}
 
 {{< tabsection isMarkdown=true >}}
-
-**/HelloWorldRestService.py**
-```python
-class HelloWorldRestService(RestService):
-
-    def __init__(self):
-        super(HelloWorldRestService, self).__init__()
-        self._base_route = "/hello_word"
-        ControllerDescriptor = Descriptor('hello-world', 'controller', '*', '*', '1.0')
-        self._dependency_resolver.put('controller', ControllerDescriptor)
-
-    def set_references(self, references):
-        super(HelloWorldRestService, self).set_references(references)
-        self._controller = self._dependency_resolver.get_one_required('controller')
-
-    def register(self):
-        self.register_route(method="GET", route=self._route, handler=self.greeting, schema=None)
-
-    def greeting(self, name):
-        result = self._controller.greeting(name)
-        self.send_result(result)
-```
 
 {{< /tabsection >}}
 

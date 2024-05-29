@@ -346,10 +346,6 @@ To start the microservice, run the following command from a terminal:
 
 {{< tabsection isMarkdown=true >}}
 
-```bash
-node ./run.js
-```
-
 {{< /tabsection >}}
 
 {{< tabsection isMarkdown=true >}}

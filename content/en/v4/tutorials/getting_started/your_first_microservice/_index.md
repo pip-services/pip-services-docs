@@ -313,22 +313,6 @@ We'll need a special file to run the microservice. All this file does is creates
 
 {{< tabsection isMarkdown=true >}}
 
-**/bin/main.dart.**
-
-```dart
-import 'package:pip_quickstart/pip_quickstart.dart';
-
-void main(List<String> argv) {
-  try {
-    var proc = HelloWorldProcess();
-    proc.run(argv);
-  } catch (ex) {
-    print(ex);
-  }
-}
-
-```
-
 {{< /tabsection >}}
 
 {{< tabsection isMarkdown=true >}}

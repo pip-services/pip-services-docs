@@ -1,1 +1,5 @@
 
+```bash
+dotnet run
+```
+

@@ -26,52 +26,28 @@ Before we can start writing-up some microservices, we'll need to install:
 First and foremost - we'll need a compiler for your programming language of choice, as well as some sort of code editor. In our examples, we usually use Visual Studio Code, but any fitting IDE will do.
 
 
-{{< tabsection isMarkdown=true >}}
-
-
-{{< tabsection >}}
-  {{< include "./__code2_dart.md" >}}
-{{< /tabsection >}}
-{{< /tabsection >}}
-
-{{< tabsection isMarkdown=true >}}
-
-
-
 {{< tabsection >}}
   {{< include "./__code2_dart.md" >}}
 {{< /tabsection >}}
 
-
+{{< tabsection >}}
+  {{< include "./__code2_dart.md" >}}
 {{< /tabsection >}}
-
-{{< tabsection isMarkdown=true >}}
-
 
 {{< tabsection >}}
   {{< include "./__code2_go.md" >}}
 {{< /tabsection >}}
 
-{{< /tabsection >}}
-
-{{< tabsection isMarkdown=true >}}
-
-
 {{< tabsection >}}
   {{< include "./__code2_dart.md" >}}
-{{< /tabsection >}}
-
 {{< /tabsection >}}
 
 {{< tabsection >}}
   {{< include "./__code2_python.md" >}}
 {{< /tabsection >}}
 
-
-{{< tabsection isMarkdown=true >}}
-```
-TODO: add language
-```
+{{< tabsection >}}
+  Not available  
 {{< /tabsection >}}
 
 

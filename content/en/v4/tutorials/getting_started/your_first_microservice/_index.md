@@ -317,22 +317,6 @@ We'll need a special file to run the microservice. All this file does is creates
 
 {{< tabsection isMarkdown=true >}}
 
-**/main.py**
-
-```python
-
-# -*- coding: utf-8 -*- 
-from HelloWorldProcess import HelloWorldProcess
-
-if __name__ == '__main__':
-    runner = HelloWorldProcess()
-    print("run")
-    try:
-        runner.run()
-    except Exception as ex:
-        print(ex)
-
-```
 
 {{< /tabsection >}}
 

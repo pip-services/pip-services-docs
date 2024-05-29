@@ -144,6 +144,7 @@ We also need to set a base route in the controller's constructor using the _base
 ```GET /hello_world/greeting?name=John```
 
 Full listing for the REST controller can be found in the following file:
+
 {{< tabsection >}}
   {{< include "./__code6_dart.md" >}}
 {{< /tabsection >}}
@@ -171,32 +172,29 @@ Full listing for the REST controller can be found in the following file:
 ### Step 5. Component factory
 When a microservice is being populated by components based on the configuration being used, it requires a special factory to create components in accordance with their descriptors. The HelloWorldControllerFactory class is used for just that, as it extends the Factory class of the Pip.Services toolkit.
 
-{{< tabsection isMarkdown=true >}}
 
+{{< tabsection >}}
+  {{< include "./__code7_dart.md" >}}
 {{< /tabsection >}}
 
-{{< tabsection isMarkdown=true >}}
-
-
+{{< tabsection >}}
+  {{< include "./__code7_dart.md" >}}
 {{< /tabsection >}}
 
-{{< tabsection isMarkdown=true >}}
-
+{{< tabsection >}}
+  {{< include "./__code7_go.md" >}}
 {{< /tabsection >}}
 
-{{< tabsection isMarkdown=true >}}
-
+{{< tabsection >}}
+  {{< include "./__code7_dart.md" >}}
 {{< /tabsection >}}
 
-{{< tabsection isMarkdown=true >}}
-
-
+{{< tabsection >}}
+  {{< include "./__code7_python.md" >}}
 {{< /tabsection >}}
 
-{{< tabsection isMarkdown=true >}}
-
-**TODO: add language**
-
+{{< tabsection >}}
+  Not available  
 {{< /tabsection >}}
 
 ### Step 6. Container

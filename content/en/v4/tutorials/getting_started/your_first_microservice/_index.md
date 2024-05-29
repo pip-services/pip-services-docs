@@ -204,35 +204,28 @@ Although containers can be populated by components manually, we'll be using dyna
 
 The full listing of the container's code can be found in the file:
 
-{{< tabsection isMarkdown=true >}}
-
-
+{{< tabsection >}}
+  {{< include "./__code8_dart.md" >}}
 {{< /tabsection >}}
 
-
-{{< tabsection isMarkdown=true >}}
-
+{{< tabsection >}}
+  {{< include "./__code8_dart.md" >}}
 {{< /tabsection >}}
 
-{{< tabsection isMarkdown=true >}}
-
+{{< tabsection >}}
+  {{< include "./__code8_go.md" >}}
 {{< /tabsection >}}
 
-{{< tabsection isMarkdown=true >}}
-
-
+{{< tabsection >}}
+  {{< include "./__code8_dart.md" >}}
 {{< /tabsection >}}
 
-
-{{< tabsection isMarkdown=true >}}
-
+{{< tabsection >}}
+  {{< include "./__code8_python.md" >}}
 {{< /tabsection >}}
 
-
-{{< tabsection isMarkdown=true >}}
-
-**TODO: add language**
-
+{{< tabsection >}}
+  Not available  
 {{< /tabsection >}}
 
 The dynamic configuration is defined in the file:

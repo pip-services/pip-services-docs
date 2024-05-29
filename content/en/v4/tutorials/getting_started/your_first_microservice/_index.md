@@ -362,9 +362,6 @@ To start the microservice, run the following command from a terminal:
 
 {{< tabsection isMarkdown=true >}}
 
-```bash
-python ./run.py
-```
 {{< /tabsection >}}
 
 {{< tabsection isMarkdown=true >}}

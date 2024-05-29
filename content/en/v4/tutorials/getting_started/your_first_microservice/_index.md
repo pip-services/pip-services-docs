@@ -299,21 +299,6 @@ We'll need a special file to run the microservice. All this file does is creates
 
 {{< tabsection isMarkdown=true >}}
 
-**/run.js**
-
-```typescript
-"use strict";
-
-const proc = require("./HelloWorldProcess");
-
-try {
-   new proc.HelloWorldProcess().run(process.argv);
-} catch (ex) {
-   console.error(ex);
-}
-
-```
-
 {{< /tabsection >}}
 
 {{< tabsection isMarkdown=true >}}

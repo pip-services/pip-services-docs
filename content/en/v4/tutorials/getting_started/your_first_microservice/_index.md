@@ -358,10 +358,6 @@ To start the microservice, run the following command from a terminal:
 
 {{< tabsection isMarkdown=true >}}
 
-```bash
-dart./bin/run.dart
-```
-
 {{< /tabsection >}}
 
 {{< tabsection isMarkdown=true >}}

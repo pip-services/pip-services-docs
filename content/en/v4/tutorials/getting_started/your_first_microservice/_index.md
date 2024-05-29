@@ -308,22 +308,6 @@ We'll need a special file to run the microservice. All this file does is creates
 
 {{< tabsection isMarkdown=true >}}
 
-**/bin/main.go**
-
-```go
-package main
-
-import (
-	"context"
-	"os"
-	"quickstart"
-)
-
-func main() {
-	proc := quickstart.NewHelloWorldProcess()
-	proc.Run(context.Background(), os.Args)
-}
-```
 
 {{< /tabsection >}}
 

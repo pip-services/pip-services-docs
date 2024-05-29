@@ -344,30 +344,28 @@ Components are unlinked. All components that implement the IUnreferenceable inte
 
 To start the microservice, run the following command from a terminal:
 
-{{< tabsection isMarkdown=true >}}
-
+{{< tabsection >}}
+  {{< include "./__code10_dart.md" >}}
 {{< /tabsection >}}
 
-{{< tabsection isMarkdown=true >}}
-
+{{< tabsection >}}
+  {{< include "./__code10_dart.md" >}}
 {{< /tabsection >}}
 
-{{< tabsection isMarkdown=true >}}
-
+{{< tabsection >}}
+  {{< include "./__code10_go.md" >}}
 {{< /tabsection >}}
 
-{{< tabsection isMarkdown=true >}}
-
+{{< tabsection >}}
+  {{< include "./__code10_dart.md" >}}
 {{< /tabsection >}}
 
-{{< tabsection isMarkdown=true >}}
-
+{{< tabsection >}}
+  {{< include "./__code10_python.md" >}}
 {{< /tabsection >}}
 
-{{< tabsection isMarkdown=true >}}
-
-**TODO: add language**
-
+{{< tabsection >}}
+  Not available  
 {{< /tabsection >}}
 
 If the microservice started up successfully, you should see the following result in the terminal:

@@ -54,30 +54,32 @@ First and foremost - we'll need a compiler for your programming language of choi
 ### Step 2. Project setup
 Create a folder for the project and within it, add a requirements.txt file with the name of your microservice and a list of dependencies for your necessary components. For editing, you can use any text editor or IDE of your choice.
 
-{{< tabsection isMarkdown=true >}}
-
-
+{{< tabsection >}}
+  {{< include "./__code3_dart.md" >}}
 {{< /tabsection >}}
 
-{{< tabsection isMarkdown=true >}}
-
+{{< tabsection >}}
+  {{< include "./__code3_dart.md" >}}
 {{< /tabsection >}}
 
-{{< tabsection isMarkdown=true >}}
-
-
+{{< tabsection >}}
+  {{< include "./__code3_go.md" >}}
 {{< /tabsection >}}
 
-{{< tabsection isMarkdown=true >}}
-
-
+{{< tabsection >}}
+  {{< include "./__code3_dart.md" >}}
 {{< /tabsection >}}
 
-{{< tabsection isMarkdown=true >}}
-
-**TODO: add language**
-
+{{< tabsection >}}
+  {{< include "./__code3_python.md" >}}
 {{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+
+
 
 ### Step 3. Service
 The service will be a simple class that implements a single business method, which receives a name and generates a greeting. In general, business methods can call other built-in controllers or work with a database.

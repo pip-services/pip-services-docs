@@ -9,6 +9,7 @@ pip_services4_components
 pip_services4_container
 pip_services4_data
 pip_services4_rpc
+pip_services4_http
 ```
 
 To install these dependencies use the following command:

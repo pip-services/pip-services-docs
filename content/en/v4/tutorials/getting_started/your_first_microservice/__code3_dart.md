@@ -12,10 +12,11 @@ environment:
   sdk: ">=2.0.0 <3.0.0"
 
 dependencies:
-  pip_services4_commons: ">=1.0.5 <2.0.0"
-  pip_services4_components: ">=1.0.2 <2.0.0"
-  pip_services4_rpc: ">=1.0.2 <2.0.0"
-  pip_services4_container: ">=1.0.3 <2.0.0"
+  pip_services4_commons
+  pip_services4_components
+  pip_services4_rpc
+  pip_services4_container
+  pip_services4_http
   angel_framework: ^2.1.1
 
 dev_dependencies:

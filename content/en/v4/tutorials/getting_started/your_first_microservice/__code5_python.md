@@ -1,6 +1,6 @@
 
 ```python
-class HelloWorldRestService(RestService):
+class HelloWorldRestController(RestController):
 ```
 
 Next, we'll need to register the REST operations that we'll be using in the class's register method. In this microservice, we'll only be needing to implement a single GET command: "/greeting". This command receives a "name" parameter, calls the service's "greeting" method, and returns the generated result to the client.
@@ -22,8 +22,8 @@ To get a reference to the service, we'll add its descriptor to the _dependency_r
 ```python
 def __init__(self):
     super(HelloWorldRestService, self).__init__()
-    self._base_route = "/hello_world"
-    ControllerDescriptor = Descriptor('hello-world', 'controller', '*', '*', '1.0')
-    self._dependency_resolver.put('controller', ControllerDescriptor)
+    self._route = "/hello_world"
+    ServiceDescriptor = Descriptor('hello-world', 'service', '*', '*', '1.0')
+    self._dependency_resolver.put('service', ServiceDescriptor)
 
 ```

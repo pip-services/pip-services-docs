@@ -27,19 +27,19 @@ First and foremost - we'll need a compiler for your programming language of choi
 
 
 {{< tabsection >}}
-  {{< include "./__code2_dart.md" >}}
+  Not available  
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code2_dart.md" >}}
+  Not available  
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code2_go.md" >}}
+  Not available  
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code2_dart.md" >}}
+  Not available  
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -55,19 +55,19 @@ First and foremost - we'll need a compiler for your programming language of choi
 Create a folder for the project and within it, add a requirements.txt file with the name of your microservice and a list of dependencies for your necessary components. For editing, you can use any text editor or IDE of your choice.
 
 {{< tabsection >}}
-  {{< include "./__code3_dart.md" >}}
+  Not available  
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code3_dart.md" >}}
+  Not available  
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code3_go.md" >}}
+  Not available  
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code3_dart.md" >}}
+  Not available  
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -85,19 +85,19 @@ Create a folder for the project and within it, add a requirements.txt file with 
 The service will be a simple class that implements a single business method, which receives a name and generates a greeting. In general, business methods can call other built-in controllers or work with a database.
 
 {{< tabsection >}}
-  {{< include "./__code4_dart.md" >}}
+  Not available  
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code4_dart.md" >}}
+  Not available  
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code4_go.md" >}}
+  Not available  
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code4_dart.md" >}}
+  Not available  
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -113,19 +113,19 @@ One of the most popular ways of transferring data between microservices is using
 
 
 {{< tabsection >}}
-  {{< include "./__code5_dart.md" >}}
+  Not available  
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code5_dart.md" >}}
+  Not available  
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code5_go.md" >}}
+  Not available  
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code5_dart.md" >}}
+  Not available  
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -146,19 +146,19 @@ We also need to set a base route in the controller's constructor using the _base
 Full listing for the REST controller can be found in the following file:
 
 {{< tabsection >}}
-  {{< include "./__code6_dart.md" >}}
+  Not available  
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code6_dart.md" >}}
+  Not available  
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code6_go.md" >}}
+  Not available  
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code6_dart.md" >}}
+  Not available  
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -174,19 +174,19 @@ When a microservice is being populated by components based on the configuration 
 
 
 {{< tabsection >}}
-  {{< include "./__code7_dart.md" >}}
+  Not available  
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code7_dart.md" >}}
+  Not available  
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code7_go.md" >}}
+  Not available  
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code7_dart.md" >}}
+  Not available  
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -205,19 +205,19 @@ Although containers can be populated by components manually, we'll be using dyna
 The full listing of the container's code can be found in the file:
 
 {{< tabsection >}}
-  {{< include "./__code8_dart.md" >}}
+  Not available  
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code8_dart.md" >}}
+  Not available  
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code8_go.md" >}}
+  Not available  
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code8_dart.md" >}}
+  Not available  
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -269,19 +269,19 @@ The dynamic configuration is defined in the file:
 ```
 
 {{< tabsection >}}
-  {{< include "./__code1_node.md" >}}
+  Not available  
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code1_net.md" >}}
+  Not available  
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code1_go.md" >}}
+  Not available  
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code1_dart.md" >}}
+  Not available  
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -298,19 +298,19 @@ As you may have noticed, more than half of the components are being taken from P
 We'll need a special file to run the microservice. All this file does is creates a container instance and runs it with the parameters provided from the command line.
 
 {{< tabsection >}}
-  {{< include "./__code9_dart.md" >}}
+  Not available  
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code9_dart.md" >}}
+  Not available  
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code9_go.md" >}}
+  Not available  
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code9_dart.md" >}}
+  Not available  
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -345,19 +345,19 @@ Components are unlinked. All components that implement the IUnreferenceable inte
 To start the microservice, run the following command from a terminal:
 
 {{< tabsection >}}
-  {{< include "./__code10_dart.md" >}}
+  Not available  
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code10_dart.md" >}}
+  Not available  
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code10_go.md" >}}
+  Not available  
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code10_dart.md" >}}
+  Not available  
 {{< /tabsection >}}
 
 {{< tabsection >}}

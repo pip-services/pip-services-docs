@@ -14,8 +14,8 @@ def configure(config):
 Parameters will be read by the microservice from the configuration file and passed to the "configure" method of the corresponding component. Here's an example of the configuration:
 
 ```yml
-# Controller
-- descriptor: "hello-world:controller:default:default:1.0"
+# Service
+- descriptor: "hello-world:service:default:default:1.0"
   default_name: "World"
 ```
 

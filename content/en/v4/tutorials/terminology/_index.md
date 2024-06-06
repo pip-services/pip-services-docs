@@ -156,7 +156,7 @@ weight: 1000
         Additionally, the toolkit provides a variety of other containers, which are used to assemble microservices from components and deploy them on different platforms. They include containers for AWS Lambda, Azure Functions, and Google Cloud Functions among others.<br><br>
         Within Pip.Services, containers manage the lifecycle of the packaged components, from creation to destruction. They use the Locator pattern and obtain information about dependencies from a configuration file.
       </td>
-      <td><a href="../../tutorials/beginner_tutorials/containers/">Containers</a></td>
+      <td><a href="../../tutorials/beginner_tutorials/containers/" target="_blank">Containers</a></td>
     </tr>	
    <tr>
       <td>Controller </td>

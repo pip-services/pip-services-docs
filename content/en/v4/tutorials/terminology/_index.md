@@ -112,7 +112,7 @@ weight: 1000
     <tr>
       <td>Component types</td>
       <td>
-        Components can be classified according to their functionality into data, persistence, logic, services, containers, etc. Pip.Services uses this classification to organize the different components in modules, which are in turn internally arranged in packages.
+        Components can be classified according to their functionality into data, persistence, logic, controllers, containers, etc. Pip.Services uses this classification to organize the different components in modules, which are in turn internally arranged in packages.
       </td>
     </tr>
     <tr>

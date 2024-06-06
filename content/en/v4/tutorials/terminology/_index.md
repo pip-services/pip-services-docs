@@ -196,7 +196,7 @@ weight: 1000
 	<tr>
       <td>Direct Client</td>
       <td>
-        A client that calls a controller directly in the same memory space. It is used when multiple microservices are deployed in a single container (monolith) and communication between them can be done by direct calls rather than through the network.
+        A client that calls a service directly in the same memory space. It is used when multiple microservices are deployed in a single container (monolith) and communication between them can be done by direct calls rather than through the network.
       </td>
     </tr>
     <tr>

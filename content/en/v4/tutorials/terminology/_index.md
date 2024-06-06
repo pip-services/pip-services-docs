@@ -401,7 +401,7 @@ weight: 1000
       <td>Performance Counters</td>
       <td>
        A performance monitoring and debugging tool that consists of counting the number of actions that both the application and the operating system perform. Examples include the number of exceptions thrown, loading time, and the number of threads. <br><br>
-       Performance counters as considered in the Pip.Services toolkit through the Count package available from the Components module. This package contains a set of interfaces and classes used to create these tools.
+       Performance counters are considered in the Pip.Services toolkit through the Count package available from the Observability module. This package contains a set of interfaces and classes used to create these tools.
       </td>
       <td><a href="../beginner_tutorials/observability">Observability</a></td>
     </tr>

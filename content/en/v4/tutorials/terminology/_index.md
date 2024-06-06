@@ -165,13 +165,7 @@ weight: 1000
       </td>
       <td><a href="../../tutorials/beginner_tutorials/three_tier_architecture/">Three tier architecture</a></td>
     </tr>
-	    <tr>
-      <td>Correlation ID</td>
-      <td>
-        A transaction id used to trace execution through a call chain. It can be a number, a string, or a combination of both.<br><br>
-        Correlation ids are important for tracing errors, debugging, and logging. 
-      </td>
-    </tr>
+
     <tr>
       <td>Counters</td>
       <td>
@@ -471,6 +465,13 @@ weight: 1000
       <td>Toolkit</td>
       <td>
        A set of software utilities used to develop or maintain a software system.
+      </td>
+    </tr>
+    	    <tr>
+      <td>Trace ID</td>
+      <td>
+        A transaction id used to trace execution through a call chain. It can be a number, a string, or a combination of both.<br><br>
+        Trace ids are important for tracing errors, debugging, and logging. 
       </td>
     </tr>
     <tr>

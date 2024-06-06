@@ -211,7 +211,7 @@ weight: 1000
       <td>Endpoint</td>
       <td>
         An endpoint represents a connection point for an API. Typically, it is a uniform resource locator (URL) that provides the location of a resource on a server. <br><br>
-        Endpoints are used by services and clients to locate each other. Pip.Services contains an HTTP endpoint component, which is used by those components that communicate via this protocol including REST services, Swagger, Prometheus, and health services. Similarly, it has a gRPC endpoint that allows for components to communicate via the gRPC protocol. 
+        Endpoints are used by controllers and clients to locate each other. Pip.Services contains an HTTP endpoint component, which is used by those components that communicate via this protocol including REST services, Swagger, Prometheus, and health services. Similarly, it has a gRPC endpoint that allows for components to communicate via the gRPC protocol. 
       </td>
     </tr>
     <tr>

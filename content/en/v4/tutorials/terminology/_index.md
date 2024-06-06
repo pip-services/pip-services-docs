@@ -258,7 +258,7 @@ weight: 1000
       <td>
        A set of activities undertaken to maintain a system in operable condition.<br><br>
        Within Pip.Services, this is done via tracing, logging and performance metrics. Once the information has been created, it can be sent to an external tool, such as Prometheus or Elasticsearch, for analysis.<br><br>
-       The toolkit provides several components such as HeartbeatService for heartbeat operations, InstrumentTiming to create logs, counters and timings, and the Count library that includes several useful components to create performance counters.
+       The toolkit provides several components such as HeartbeatController for heartbeat operations, InstrumentTiming to create logs, counters and timings, and the Count library that includes several useful components to create performance counters.
       </td>
       <td>
         <a href="../../tutorials/beginner_tutorials/observability/prometheus/">Prometheus</a>

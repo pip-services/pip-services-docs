@@ -356,7 +356,7 @@ weight: 1000
 	<tr>
       <td>Mock Client</td>
       <td>
-        A dummy client that simulates the work of a service in memory. It is used for testing or demonstration purposes.
+        A dummy client that simulates the work of a controller in memory. It is used for testing or demonstration purposes.
       </td>
     </tr>
     <tr>

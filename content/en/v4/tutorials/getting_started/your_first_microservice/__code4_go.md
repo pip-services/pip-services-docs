@@ -1,6 +1,6 @@
 
 ```go
-func (c *HelloWorldController) Greeting(ctx context.Context, name string) (result string, err error) {
+func (c *HelloWorldService) Greeting(ctx context.Context, name string) (result string, err error) {
 	if name == "" {
 		name = c.defaultName
 	}
@@ -11,7 +11,7 @@ func (c *HelloWorldController) Greeting(ctx context.Context, name string) (resul
 To demonstrate the dynamic configuration of a component, the recipient name will be specified by the parameter "default_name". To get the configuration, the component must implement the interface "IConfigurable" with the method "configure".
 
 ```go
-func (c *HelloWorldController) Configure(ctx context.Context, config *cconf.ConfigParams) {
+func (c *HelloWorldService) Configure(ctx context.Context, config *cconf.ConfigParams) {
 	c.defaultName = config.GetAsStringWithDefault("default_name", c.defaultName)
 }
 ```
@@ -19,8 +19,8 @@ func (c *HelloWorldController) Configure(ctx context.Context, config *cconf.Conf
 Parameters will be read by the microservice from the configuration file and passed to the "configure" method of the corresponding component. Here's an example of the configuration:
 
 ```yml
-# Controller
-- descriptor: "hello-world:controller:default:default:1.0"
+# Service
+- descriptor: "hello-world:service:default:default:1.0"
   default_name: "World"
 ```
 
@@ -28,7 +28,7 @@ More details on this mechanism can be found in [Component Configuration](../../t
 
 This is all the code of the controller in the file:
 
-**/HelloWorldController.go**
+**/HelloWorldService.go**
 
 ```go
 package quickstart
@@ -36,24 +36,24 @@ package quickstart
 import (
 	"context"
 
-	cconf "github.com/pip-services3-gox/pip-services3-commons-gox/config"
+	cconf "github.com/pip-services4/pip-services4-go/pip-services4-components-go/config"
 )
 
-type HelloWorldController struct {
+type HelloWorldService struct {
 	defaultName string
 }
 
-func NewHelloWorldController() *HelloWorldController {
-	c := HelloWorldController{}
+func NewHelloWorldService() *HelloWorldService {
+	c := HelloWorldService{}
 	c.defaultName = "Pip User"
 	return &c
 }
 
-func (c *HelloWorldController) Configure(ctx context.Context, config *cconf.ConfigParams) {
+func (c *HelloWorldService) Configure(ctx context.Context, config *cconf.ConfigParams) {
 	c.defaultName = config.GetAsStringWithDefault("default_name", c.defaultName)
 }
 
-func (c *HelloWorldController) Greeting(ctx context.Context, name string) (result string, err error) {
+func (c *HelloWorldService) Greeting(ctx context.Context, name string) (result string, err error) {
 	if name == "" {
 		name = c.defaultName
 	}

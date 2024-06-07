@@ -23,11 +23,11 @@ More details on this mechanism can be found in [Component Configuration](../../t
 
 This is all the code of the controller in the file:
 
-**/HelloWorldController.py**
+**/HelloWorldService.py**
 
 ```python
 # -*- coding: utf-8 -*- 
-class HelloWorldController:
+class HelloWorldService:
     __default_name = None
 
     def __init__(self):
@@ -38,5 +38,4 @@ class HelloWorldController:
 
     def greeting(name):
         return f"Hello, {name if name is not None else self.__default_name} !"
-
 ```

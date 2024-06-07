@@ -371,9 +371,9 @@ To start the microservice, run the following command from a terminal:
 If the microservice started up successfully, you should see the following result in the terminal:
 
 ```
-[echo:INFO:2018-09-25T15:15:30.284Z] Press Control-C to stop the microservice...
-[echo:DEBUG:2018-09-25T15:15:30.542Z] Opened REST service at http://0.0.0.0:8080
-[echo:INFO:2018-09-25T15:15:30.542Z] Container hello-world started.
+[echo:INFO:2024-04-26T15:15:30.284Z] Press Control-C to stop the microservice...
+[echo:DEBUG:2024-04-26T15:15:30.542Z] Opened REST service at http://0.0.0.0:8080
+[echo:INFO:2024-04-26T15:15:30.542Z] Container hello-world started.
 ```
 
 Test the microservice by requesting the following URL in a browser:

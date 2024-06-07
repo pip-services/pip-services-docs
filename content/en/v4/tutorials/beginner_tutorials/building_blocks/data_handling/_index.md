@@ -239,4 +239,4 @@ In some function test scenarios, and especially in non-functional tests, develop
 For more information on data handling see:
 - #### [Data validation](../../data_handling/data_validation/)
 - #### [Dynamic data types](../../data_handling/dynamic_data_types/)
-- #### [Designing persistence](../../../tutorials/beginner_tutorials/persistences/designing_persistence/)
+- #### [Designing persistence](../../../beginner_tutorials/persistences/designing_persistence/)

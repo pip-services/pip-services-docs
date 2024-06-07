@@ -1,6 +1,6 @@
 
 ```python
-from pip_services3_commons.data import ProjectionParams
+from pip_services4_data.query import ProjectionParams
 
 projection = ProjectionParams(['field1', 'field2'])
 

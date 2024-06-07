@@ -1,6 +1,6 @@
 
 ```python
-from pip_services3_commons.data import FilterParams
+from pip_services4_data.query import FilterParams
 
 filter = FilterParams.from_tuples(
     'key1', 'ABC',

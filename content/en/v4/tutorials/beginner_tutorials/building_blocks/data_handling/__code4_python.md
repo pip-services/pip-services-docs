@@ -1,6 +1,6 @@
 
 ```python
-from pip_services3_commons.data import PagingParams
+from pip_services4_data.query import PagingParams
 
 paging = PagingParams(0, 100, True)
 

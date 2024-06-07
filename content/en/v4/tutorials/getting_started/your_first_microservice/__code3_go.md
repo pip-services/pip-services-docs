@@ -10,23 +10,31 @@ Update the generated /go.mod file to add there dependencies to Pip.Services tool
 ```
 module quickstart
 
-go 1.18
+go 1.22
 
 require (
-	github.com/pip-services3-gox/pip-services3-commons-gox v1.0.6
-	github.com/pip-services3-gox/pip-services3-components-gox v1.0.6
-	github.com/pip-services3-gox/pip-services3-container-gox v1.0.6
-	github.com/pip-services3-gox/pip-services3-rpc-gox v1.0.2
+	github.com/pip-services4/pip-services4-go/pip-services4-components-go v0.0.1-2
+	github.com/pip-services4/pip-services4-go/pip-services4-container-go v0.0.1-3
 )
 
 require (
-	github.com/felixge/httpsnoop v1.0.1 // indirect
-	github.com/google/uuid v1.3.0 // indirect
-	github.com/gorilla/handlers v1.5.1 // indirect
-	github.com/gorilla/mux v1.8.0 // indirect
-	github.com/pip-services3-gox/pip-services3-expressions-gox v1.0.1 // indirect
+	github.com/pip-services4/pip-services4-go/pip-services4-config-go v0.0.0-20240325121312-3b0195749a25 // indirect
+	github.com/pip-services4/pip-services4-go/pip-services4-data-go v0.0.1-2 // indirect
+	github.com/pip-services4/pip-services4-go/pip-services4-expressions-go v0.0.1-2 // indirect
+	github.com/pip-services4/pip-services4-go/pip-services4-logic-go v0.0.1-3 // indirect
+	github.com/pip-services4/pip-services4-go/pip-services4-observability-go v0.0.1-3 // indirect
+	github.com/pip-services4/pip-services4-go/pip-services4-rpc-go v0.0.0-20240304141352-928143cb0946 // indirect
+	github.com/rs/cors v1.9.0 // indirect
+	goji.io v2.0.2+incompatible // indirect
 	gopkg.in/yaml.v2 v2.4.0 // indirect
 )
+
+require (
+	github.com/google/uuid v1.6.0 // indirect
+	github.com/pip-services4/pip-services4-go/pip-services4-commons-go v0.0.1-2 // indirect
+	github.com/pip-services4/pip-services4-go/pip-services4-http-go v0.0.1-4
+)
+
 
 ```
 

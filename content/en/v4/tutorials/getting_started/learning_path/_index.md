@@ -15,8 +15,8 @@ Pip.Services is a toolkit used to create microservices. This course provides the
 ### Day 1
 1.	Introduction: Concepts, History, Architecture, Building Blocks       
 a.	Brief introduction to Pip.Services         
-b.	[Building blocks: a brief description](../../beginner_tutorials/building_blocks/)         
-c.	[Toolkit architecture](../../beginner_tutorials/toolkit_architecture/) 
+b.	[Building blocks: a brief description](../../beginner_tutorials/building_blocks/){target="_blank"}         
+c.	[Toolkit architecture](../../beginner_tutorials/toolkit_architecture/){target="_blank"} 
 
 2.	Basic Patterns: Components, Configurations, Reflection, ...    
 a.	[Three-tier architecture](../../beginner_tutorials/three_tier_architecture/)        

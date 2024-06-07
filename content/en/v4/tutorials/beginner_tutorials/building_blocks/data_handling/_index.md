@@ -100,7 +100,7 @@ To enable even more complex validation scenarios using a basic set of rules, the
 
 - NotRule: Negates another rule.
 - OrRule: Checks combinations of rules created with OR logical operations.
-- AndRole: Checks combinations of rules created with AND logical operations.
+- AndRule: Checks combinations of rules created with AND logical operations.
 
 ### Filtering
 

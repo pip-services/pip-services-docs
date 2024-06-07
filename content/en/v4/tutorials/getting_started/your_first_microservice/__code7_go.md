@@ -1,6 +1,6 @@
 
 ```go
-type HelloWorldServiceFactory struct {
+type HelloWorldControllerFactory struct {
 	*cbuild.Factory
 }
 ```
@@ -8,16 +8,16 @@ type HelloWorldServiceFactory struct {
 Next, in the factory's constructor, we'll be registering descriptors and their corresponding component types.
 
 ```go
-func NewHelloWorldServiceFactory() *HelloWorldServiceFactory {
-	c := HelloWorldServiceFactory{}
+func NewHelloWorldControllerFactory() *HelloWorldControllerFactory {
+	c := HelloWorldControllerFactory{}
 	c.Factory = cbuild.NewFactory()
 	c.RegisterType(
-		cref.NewDescriptor("hello-world", "controller", "default", "*", "1.0"),
-		NewHelloWorldController,
+		cref.NewDescriptor("hello-world", "service", "default", "*", "1.0"),
+		NewHelloWorldService,
 	)
 	c.RegisterType(
-		cref.NewDescriptor("hello-world", "service", "http", "*", "1.0"),
-		NewHelloWorldRestService,
+		cref.NewDescriptor("hello-world", "controller", "http", "*", "1.0"),
+		NewHelloWorldRestController,
 	)
 	return &c
 }
@@ -27,30 +27,30 @@ For more info on how this works, be sure to check out [Process Container](../../
 
 Full listing of the factory's code found in the file:
 
-**‍/HelloWorldServiceFactory.go**
+**‍/HelloWorldControllerFactory.go**
 
 ```go
 package quickstart
 
 import (
-	cref "github.com/pip-services3-gox/pip-services3-commons-gox/refer"
-	cbuild "github.com/pip-services3-gox/pip-services3-components-gox/build"
+	cbuild "github.com/pip-services4/pip-services4-go/pip-services4-components-go/build"
+	cref "github.com/pip-services4/pip-services4-go/pip-services4-components-go/refer"
 )
 
-type HelloWorldServiceFactory struct {
+type HelloWorldControllerFactory struct {
 	*cbuild.Factory
 }
 
-func NewHelloWorldServiceFactory() *HelloWorldServiceFactory {
-	c := HelloWorldServiceFactory{}
+func NewHelloWorldControllerFactory() *HelloWorldControllerFactory {
+	c := HelloWorldControllerFactory{}
 	c.Factory = cbuild.NewFactory()
 	c.RegisterType(
-		cref.NewDescriptor("hello-world", "controller", "default", "*", "1.0"),
-		NewHelloWorldController,
+		cref.NewDescriptor("hello-world", "service", "default", "*", "1.0"),
+		NewHelloWorldService,
 	)
 	c.RegisterType(
-		cref.NewDescriptor("hello-world", "service", "http", "*", "1.0"),
-		NewHelloWorldRestService,
+		cref.NewDescriptor("hello-world", "controller", "http", "*", "1.0"),
+		NewHelloWorldRestController,
 	)
 	return &c
 }

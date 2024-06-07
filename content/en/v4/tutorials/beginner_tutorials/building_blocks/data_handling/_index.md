@@ -223,7 +223,7 @@ The returned objects may be of the same type as the original data, with null fie
 
 ### Random Data
 
-In some function test scenarios, and especially in non-functional tests, developers get to create random, yet realistic data sets. To support that, Pip.Services includes a random package in the commons module that contains the following helper classes:
+In some function test scenarios, and especially in non-functional tests, developers get to create random, yet realistic data sets. To support that, Pip.Services includes a random package in the data module that contains the following helper classes:
 
 - RandomString: Random generator for string values.
 - RandomText: Random generator for various text types such as names, addresses or phone numbers.

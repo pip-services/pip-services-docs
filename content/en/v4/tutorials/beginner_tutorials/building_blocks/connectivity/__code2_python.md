@@ -6,7 +6,7 @@ from pip_services4_config.auth import CredentialResolver
 
 
 class MyPersistence(IConfigurable, IReferenceable):
-    #...
+    # ... 
     _credential_resolver = CredentialResolver()
     _username: str
     _password: str

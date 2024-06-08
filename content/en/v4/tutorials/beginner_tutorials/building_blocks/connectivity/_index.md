@@ -194,5 +194,5 @@ Similar to standard ConnectionResolver and CredentialResolver, different modules
 ### References
 
 For more information about connectivity see:
-- #### [Connection utils](../../../tutorials/beginner_tutorials/communications/connection_utils/)
-- #### [Configuring connections](../../../tutorials/beginner_tutorials/configuration/configuring_connections/)
+- #### [Connection utils](../../../beginner_tutorials/communications/connection_utils/)
+- #### [Configuring connections](../../../beginner_tutorials/configuration/configuring_connections/)

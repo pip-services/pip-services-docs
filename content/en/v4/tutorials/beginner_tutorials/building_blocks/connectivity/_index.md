@@ -183,7 +183,7 @@ credential:
 ### Specialized connection resolvers
 Similar to standard ConnectionResolver and CredentialResolver, different modules contain specialized resolvers that can provide both connection and credential information, check for completeness and generate technology-specific connection URLs. Some examples are:
 
-- HttpConnectionResolver defined in RPC module
+- HttpConnectionResolver defined in HTTP module
 - AwsConnectionResolver defined in AWS module
 - AzureFunctionConnectionResolver defined in the Azure module
 - MongoDbConnectionResolver defined in Mongo module

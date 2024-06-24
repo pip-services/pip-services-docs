@@ -19,7 +19,7 @@ Last but not least are the additional (optional) modules, shown in red. These mo
 - [Azure](../../../toolkit_api/python/azure) - components for working with the Azure cloud.
 - [AWS](../../../toolkit_api/python/aws) - components for working with the AWS cloud.
 - [MongoDB](../../../toolkit_api/python/mongodb) - components for storing data in MongoDB.
-- [GRPC](../../../toolkit_api/python/grpc) - components for synchronous communication via GRPC.
+- [GRPC](../../../toolkit_api/python/grcp) - components for synchronous communication via GRPC.
 - ActiveMQ - components for asynchronous communication via ActiveMQ.
 - [MQTT](../../../toolkit_api/python/mqtt) - components for asynchronous communication via the MQTT protocol.
 - [Memcached](../../../toolkit_api/python/memcached) - components for caching and synchronizing with Memcached.

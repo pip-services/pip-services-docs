@@ -72,7 +72,7 @@ The MethodReflector class allows us to examine an object's methods and to execut
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code1_go.md" >}}   
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -106,7 +106,7 @@ This class helps us to investigate the properties of an object. Its get_property
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code2_go.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -136,7 +136,7 @@ The methods in this component can also be used with maps and arrays to find out 
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code3_go.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -167,7 +167,7 @@ This component helps us to dynamically set the properties of an object. Its set_
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code4_go.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -200,7 +200,7 @@ This class allows us to examine an object's properties and to dynamically get an
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code5_go.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -233,7 +233,7 @@ The example below shows how to use this component. As we can see from the result
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code6_go.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -262,7 +262,7 @@ This class is used to dynamically set the properties of an object recursively us
 {{< /tabsection >}}
 
 {{< tabsection >}}
-    Not available 
+  {{< include "./__code7_go.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -293,7 +293,7 @@ This class stores a reference to a type represented by the type name and library
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code8_go.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -325,7 +325,7 @@ This class allows us to match values based on equality. The match_type method ma
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code9_go.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -357,7 +357,7 @@ The example below shows how to create an object of classA and verify that the va
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code10_go.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}

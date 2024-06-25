@@ -1,4 +1,6 @@
 
+See [PrometheusMetricsService](../../../toolkit_api/golang/prometheus/controllers/prometheus_metrics_controller.md)
+
 ```go
 // SetReferences is sets references to dependent components.
 //

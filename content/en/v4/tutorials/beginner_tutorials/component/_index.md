@@ -33,4 +33,4 @@ This tutorial will help you understand what a descriptor is, how to create one, 
 This tutorial will teach you how to create factories for custom components, and how to use Pip.Service’s default factories to create instances of components already included in the toolkit.
 
 ### [Reflection](reflection)
-In this tutorial, you will learn how to use the Reflect package. This package provides different classes that will allow you to develop code with introspection capacity.
+In this tutorial, you will learn how to use the Reflect package, which provides different classes that will allow you to develop code with introspection capacity.

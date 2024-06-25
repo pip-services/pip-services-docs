@@ -1,4 +1,4 @@
 
 ```go
-
+references := refer.NewEmptyReferences()
 ```

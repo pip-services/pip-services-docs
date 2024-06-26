@@ -60,7 +60,7 @@ To use this component, we must first import it. This can be done with the follow
 {{< /tabsection >}}
 
 #### Creation
-In order to create a References object, we need to create a component that can be added to it. Following the Prometheus example, we create a PrometheusMetricsService object. The code below shows how to do this:
+In order to create a References object, we need to create a component that can be added to it. Following the Prometheus example, we create a PrometheusMetricsController object. The code below shows how to do this:
 
 {{< tabsection >}}
   Not available 
@@ -86,7 +86,7 @@ In order to create a References object, we need to create a component that can b
   Not available  
 {{< /tabsection >}}
 
-There are three main ways to create a References component. The first is to use the fromTuples() method. This static method allows us to add one or more references to our component. In the example below, we create a References component and add the service object previously created.
+There are three main ways to create a References component. The first is to use the fromTuples() method. This static method allows us to add one or more references to our component. In the example below, we create a References component and add the controller previously created.
 
 {{< tabsection >}}
   Not available 
@@ -138,7 +138,7 @@ The second way is to create an instance of the References class and later on add
   Not available  
 {{< /tabsection >}}
 
-Lastly, we can use the constructor with a tuple that includes a list of references, where odd elements are locators and even elements are component references. The following example shows how to create a References object that contains a reference to the previously created service object.
+Lastly, we can use the constructor with a tuple that includes a list of references, where odd elements are locators and even elements are component references. The following example shows how to create a References object that contains a reference to the previously created controller.
 
 {{< tabsection >}}
   Not available 
@@ -168,7 +168,7 @@ Lastly, we can use the constructor with a tuple that includes a list of referenc
 The References class has several methods that allow us to store and retrieve data from an instance of it. They are:
 
 ##### find()
-This method obtains all the component references that match a specific locator. In the example below, we ask for all those references that relate to our service object, and we obtain a reference to this component.
+This method obtains all the component references that match a specific locator. In the example below, we ask for all those references that relate to our controller, and we obtain a reference to this component.
 
 {{< tabsection >}}
   Not available 
@@ -441,7 +441,7 @@ This method removes all component references that match a specified locator. For
 
 
 ### Example 1
-In order to explain how the References component can help us to create communication channels for different components, we will use the example created in the Prometheus tutorial. There, we created a custom component named MyComponentA, a PrometheusCounters component that was used to create different counters, and a PrometheusMetricsService object that was used to create a webpage containing the counters' information under /metrics.
+In order to explain how the References component can help us to create communication channels for different components, we will use the example created in the Prometheus tutorial. There, we created a custom component named MyComponentA, a PrometheusCounters component that was used to create different counters, and a PrometheusMetricsController object that was used to create a webpage containing the counters' information under /metrics.
 
 In the tutorial's example, these three components are added to the References object via the setReferences() method. When needed, they are called via a get method. The figure below summarizes this structure. 
 
@@ -526,7 +526,7 @@ Similarly, if we check the source code for the **PrometheusCounters** class, we 
   Not available  
 {{< /tabsection >}}
 
-And the **PrometheusMetricsService** component obtains the context information via the getOneRequired() method:
+And the **PrometheusMetricsController** component obtains the context information via the getOneRequired() method:
 
 {{< tabsection >}}
   Not available 

@@ -20,7 +20,7 @@ description: >-
   </tr>
   <tr>
     <td>setReferences()</td>
-    <td>Method available from the PrometheusCounters and PrometheusMetricsService classes and used to store component references in a References object.</td>
+    <td>Method available from the PrometheusCounters and PrometheusMetricsController classes and used to store component references in a References component.</td>
   </tr>
 </table>
 

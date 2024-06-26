@@ -10,27 +10,27 @@ exclude_from_list: true
 
 ### [JSON persistence](json_persistence)
 
-This tutorial will help you understand how to create a JSON persistence component. It starts by explaining the pre-requisites. Then it continues with an explanation on how to create a JSON persistence object, save data to it, and extract stored data from it. In the end, it provides an example where all the explained methods are included.
+This tutorial will guide you through creating a JSON persistence component. It begins by outlining the prerequisites. Then, it explains how to create a JSON persistence object, store data in it, and retrieve stored data. Finally, it includes an example that demonstrates the use of these methods.
 
 ### [Memory persistence](memory_persistence)
 
-The Pip.Services Toolkit offers a few abstract implementations for developing persistent components. One of them is the MemoryPersistence, which stores all of its data in memory. Its usefulness is limited in production, but very handy in unit tests. This persistence allows us to cut dependencies on external persistent storages and makes tests easy to set up and lighting fast!
+The Pip.Services Toolkit provides abstract implementations for developing persistent components, including MemoryPersistence. This component stores all data in memory, making it particularly useful for unit tests where cutting dependencies on external persistent storage is crucial. Although limited in production use, MemoryPersistence facilitates quick setup and efficient testing.
 
 ### [MySQL persistence](mysql_persistence)
 
-In this tutorial, we will see how to interact with a MySQL database in order to provide persistence to our code. First, we will see the main CRUD methods available in the three persistence components contained in the MySQL module. Then, we will see how to run SQL queries with these components. We will conclude with a summary of all the learned concepts.
+In this tutorial, you will learn how to integrate a MySQL database using Pip.Services to introduce persistence into your code. Initially, you'll delve into the fundamental CRUD methods offered by the three persistence components within the MySQL module. Following this, you'll learn how to effectively execute SQL queries using these components. To conclude, the tutorial provides a summary of the main concepts.
 
 ### [PostgreSQL persistence](postgre_persistence)
 
-In this tutorial, you will understand how to create persistence components for PostgreSQL databases. First, we will see the necessary prerequisites. Then, we will move to each of the three components available in Pip.Services for this purpose. Finally, we will summarize all the explained concepts.
+In this tutorial, you will learn how to create persistence components for PostgreSQL databases using Pip.Services. You will begin by covering the necessary prerequisites. Then, you will explore each of the three components available in Pip.Services for this purpose. To wrap up, the tutorial offers a summary of the key concepts covered. 
 
 ### [SQL Server persistence](sqlserver_persistence)
 
-This tutorial will help you understand how to create SQL Server persistence components using Pip.Services. It begins by explaining how to install the sqlserver module and create the data structure used in the tutorial's examples.
+This tutorial will guide you through creating SQL Server persistence components using Pip.Services. It starts with instructions on installing the sqlserver module and setting up the data structure for the tutorial examples. Next, it explains each of the three persistence classes available in the module: SqlServerPersistence, IdentifiableSqlServerPersistence, and IdentifiableJsonSqlServerPersistence. Finally, it concludes with a summary of the main concepts learned throughout the tutorial.
 
 ### [MongoDB Basic](mongodb_persistence)
 
-Another frequent choice of persistence is Pip.Service's MongoDb persistence. This persistence stores data in MongoDB - a popular document-oriented database. The most basic implementation of this component is the MongoDbPersistence class defined in the MongoDb module. It is capable of storing a collection of documents, opening and closing connections, and performing a few simple CRUD operations.
+This tutorial will guide you through creating persistence components for MongoDB. Specifically, you will learn how to use two key components: MongoDbPersistence and IdentifiableMongoDbPersistence. Each explanation will include practical examples to illustrate their usage effectively.
 
 ### [Cassandra](cassandra)
 In this tutorial, you will learn how to interact with Cassandra, a NoSQL database, using the CassandraPersistence and IdentifiableCassandraPersistence components.

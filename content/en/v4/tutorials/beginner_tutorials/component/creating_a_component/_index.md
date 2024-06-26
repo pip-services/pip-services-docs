@@ -44,7 +44,7 @@ A component can be seen as a class that has a default constructor. Thus, we will
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code1_go.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -72,7 +72,7 @@ Now that we have a component, we will add configuration capabilities to it. For 
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code2_go.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -100,7 +100,7 @@ After configuring our component, we want to link MyComponentA to another compone
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code3_go.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -132,7 +132,7 @@ Now, our code expands to this:
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code4_go.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -159,7 +159,7 @@ We will now define a function that will be used to perform business tasks, and w
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code5_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -190,7 +190,7 @@ As our component already has access to this interface, we will define the **clos
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code6_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -218,7 +218,7 @@ Once our component has been closed, we need to clear the component's previously 
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code7_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -245,7 +245,7 @@ Finally, to complete the process, we need to dispose of the component. For this,
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code8_go.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -277,7 +277,7 @@ The complete code for our example is:
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code9_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -305,7 +305,7 @@ Now, we can execute our code step-by-step. Our program will look something like 
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code10_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -341,7 +341,7 @@ As this container uses a factory to create the contained components, we will cre
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code11_go.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -367,7 +367,7 @@ Once our factory is ready, we can proceed to create our container. First, we wil
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code12_go.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -401,7 +401,7 @@ We have a service, and to use it, we just need to create an instance of our cont
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code13_go.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}

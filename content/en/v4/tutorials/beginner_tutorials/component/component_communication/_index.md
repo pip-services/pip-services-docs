@@ -195,7 +195,7 @@ This method obtains all the component references that match a specific locator. 
 {{< /tabsection >}}
 
 ##### getAll()
-This method retrieves all the stored component references in the form of a list. In our example, it returns a list with a reference to the service object.
+This method retrieves all the stored component references in the form of a list. In our example, it returns a list with a reference to the controller object.
 
 {{< tabsection >}}
   Not available 
@@ -222,7 +222,7 @@ This method retrieves all the stored component references in the form of a list.
 {{< /tabsection >}}
 
 ##### getAllLocators()
-This method obtains the locators corresponding to all the registered component references. In the example below, we get a Descriptor object containing information about the service object.
+This method obtains the locators corresponding to all the registered component references. In the example below, we get a Descriptor object containing information about the controller object.
 
 {{< tabsection >}}
    Not available 
@@ -249,7 +249,7 @@ This method obtains the locators corresponding to all the registered component r
 {{< /tabsection >}}
 
 ##### getOneOptional()
-This method retrieves an optional component reference that matches a specified locator. In the example below, we obtain a reference to the stored service object.
+This method retrieves an optional component reference that matches a specified locator. In the example below, we obtain a reference to the stored controller object.
 
 {{< tabsection >}}
   Not available 
@@ -276,7 +276,7 @@ This method retrieves an optional component reference that matches a specified l
 {{< /tabsection >}}
 
 ##### getOneRequired()
-This method gets a required component reference that matches a specified locator and throws a ReferenceException when no reference is found. In the following example, we request and obtain the service component.
+This method gets a required component reference that matches a specified locator and throws a ReferenceException when no reference is found. In the following example, we request and obtain the controller component.
 
 {{< tabsection >}}
   Not available 
@@ -303,7 +303,7 @@ This method gets a required component reference that matches a specified locator
 {{< /tabsection >}}
 
 ##### getOptional()
-This method obtains all component references that match a specified locator. In the example below, we ask for the service component and obtain a list with it.
+This method obtains all component references that match a specified locator. In the example below, we ask for the controller component and obtain a list with it.
 
 {{< tabsection >}}
   Not available 
@@ -330,7 +330,7 @@ This method obtains all component references that match a specified locator. In 
 {{< /tabsection >}}
 
 ##### getRequired()
-This method gets all component references that match a specified locator. If no reference is found, it throws a ReferenceException. In our example, it returns a reference to the stored service component.
+This method gets all component references that match a specified locator. If no reference is found, it throws a ReferenceException. In our example, it returns a reference to the stored controller component.
 
 {{< tabsection >}}
   Not available 
@@ -357,7 +357,7 @@ This method gets all component references that match a specified locator. If no 
 {{< /tabsection >}}
 
 ##### put()
-This method adds a reference to the Reference component. In the example below, we add a reference to the service object defined earlier.
+This method adds a reference to the Reference component. In the example below, we add a reference to the controller object defined earlier.
 
 {{< tabsection >}}
   Not available 
@@ -385,7 +385,7 @@ This method adds a reference to the Reference component. In the example below, w
 
 
 ##### remove()
-This method removes a previously added reference that matches a specified locator. If many references match the locator, it removes only the first one. In the example below, it removes the reference to the service object previously added.
+This method removes a previously added reference that matches a specified locator. If many references match the locator, it removes only the first one. In the example below, it removes the reference to the controller object previously added.
 
 {{< tabsection >}}
   Not available 
@@ -413,7 +413,7 @@ This method removes a previously added reference that matches a specified locato
 
 
 ##### removeAll()
-This method removes all component references that match a specified locator. For example, the code below removes all references to the service component.
+This method removes all component references that match a specified locator. For example, the code below removes all references to the controller component.
 
 {{< tabsection >}}
   Not available 
@@ -584,9 +584,9 @@ For example, let's assume that we have created the following References object:
 
 Then, we can generate different types of queries, such as:
 
-#### a.	Get all service objects
+#### a.	Get all controller objects
 
-If we want to obtain all objects of a specific type, such as all our service objects, we can create this query by specifying the name of the type and considering all other fields generic. Generic fields are specified by using a star to indicate "any". For example, to obtain the two services, we can do the following query:
+If we want to obtain all objects of a specific type, such as all our controller objects, we can create this query by specifying the name of the type and considering all other fields generic. Generic fields are specified by using a star to indicate "any". For example, to obtain the two controllers, we can do the following query:
 
 
 {{< tabsection >}}
@@ -613,8 +613,8 @@ If we want to obtain all objects of a specific type, such as all our service obj
   Not available  
 {{< /tabsection >}}
 
-#### b.	Get a specific service object
-The Reference object also allows us to work with several versions of a component. For example, in our Reference object, we have defined two versions of the service. Therefore, if we want to choose version 2.0, we just need to create a reference to it. The example below shows how to do this.
+#### b.	Get a specific controller object
+The Reference object also allows us to work with several versions of a component. For example, in our Reference object, we have defined two versions of the controller. Therefore, if we want to choose version 2.0, we just need to create a reference to it. The example below shows how to do this.
 
 
 {{< tabsection >}}
@@ -670,7 +670,7 @@ If we need to obtain all the components in a group, we can specify the group's n
 {{< /tabsection >}}
 
 #### d.	Get a specific component
-To get a specific component outside the references object, we just need to specify its name. The following example shows how to obtain the service component defined earlier.
+To get a specific component outside the references object, we just need to specify its name. The following example shows how to obtain the controller component defined earlier.
 
 
 {{< tabsection >}}

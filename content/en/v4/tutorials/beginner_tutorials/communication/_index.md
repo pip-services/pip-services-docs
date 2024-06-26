@@ -23,7 +23,7 @@ In this tutorial, you will learn how to create and use CommandableHttpController
 
 To explain its functionality, the tutorial begins by outlining the necessary prerequisites for working with this component. Then, it demonstrates how to create a command set and a controller that uses it. Finally, it describes how to include the controller in a ProcessContainer to complete the setup.
 
-### [Communication utils](connection_utils)
+### [Connection utils](connection_utils)
 
 In this tutorial, you will learn how to use a set of utilities offered by Pip.Services to simplify the handling of connections. We will start by explaining how to import these components. Next, we will cover their syntax and how to use them. Finally, we will explore an example that illustrates the practical application of some of these utilities.
 

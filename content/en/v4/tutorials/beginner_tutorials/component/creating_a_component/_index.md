@@ -117,7 +117,7 @@ After configuring our component, we want to link MyComponentA to another compone
 
 #### Step 4 – Opening
 
-To help define those components that require opening, PIP.services offers the **IOpenable** interface. This interface is part of the Commons module and offers two methods: **open** and **isOpen**. In our example, we will use the first one to create the code that will open the component, and the second one to verify whether the component is open or not.
+To help define those components that require opening, Pip.Services offers the **IOpenable** interface. This interface is part of the Commons module and offers two methods: **open** and **isOpen**. In our example, we will use the first one to create the code that will open the component, and the second one to verify whether the component is open or not.
 
 Moreover, as the opening of the component marks the start of its usage, we will add an optional parameter called **correlation_id**. This parameter is used to trace the execution of the component through the call chain. It can be any string, such as "123". 
 

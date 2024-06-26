@@ -44,7 +44,7 @@ To use this component, we must first import it. This can be done with the follow
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code1_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -71,7 +71,7 @@ In order to create a References object, we need to create a component that can b
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code2_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -97,7 +97,7 @@ There are three main ways to create a References component. The first is to use 
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code3_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -123,7 +123,7 @@ The second way is to create an instance of the References class and later on add
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code4_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -149,7 +149,7 @@ Lastly, we can use the constructor with a tuple that includes a list of referenc
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code5_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -179,7 +179,7 @@ This method obtains all the component references that match a specific locator. 
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code6_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -206,7 +206,7 @@ This method retrieves all the stored component references in the form of a list.
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code7_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -233,7 +233,7 @@ This method obtains the locators corresponding to all the registered component r
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code8_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -260,7 +260,7 @@ This method retrieves an optional component reference that matches a specified l
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code9_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -287,7 +287,7 @@ This method gets a required component reference that matches a specified locator
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code10_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -314,7 +314,7 @@ This method obtains all component references that match a specified locator. In 
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code11_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -341,7 +341,7 @@ This method gets all component references that match a specified locator. If no 
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code12_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -368,7 +368,7 @@ This method adds a reference to the Reference component. In the example below, w
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code13_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -396,7 +396,7 @@ This method removes a previously added reference that matches a specified locato
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code14_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -424,7 +424,7 @@ This method removes all component references that match a specified locator. For
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code15_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -458,7 +458,7 @@ In that example, and in order to add the three components to the References obje
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code16_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -485,7 +485,7 @@ Once we have our components in the References object, we can obtain them via any
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code17_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -511,7 +511,7 @@ Similarly, if we check the source code for the **PrometheusCounters** class, we 
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code18_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -537,7 +537,7 @@ And the **PrometheusMetricsService** component obtains the context information v
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code19_go.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -567,7 +567,7 @@ For example, let's assume that we have created the following References object:
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code20_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -598,7 +598,7 @@ If we want to obtain all objects of a specific type, such as all our service obj
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code21_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -626,7 +626,7 @@ The Reference object also allows us to work with several versions of a component
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code22_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -654,7 +654,7 @@ If we need to obtain all the components in a group, we can specify the group's n
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code23_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -682,7 +682,7 @@ To get a specific component outside the references object, we just need to speci
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code24_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}

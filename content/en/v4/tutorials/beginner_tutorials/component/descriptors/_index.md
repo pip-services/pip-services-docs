@@ -47,7 +47,7 @@ In order to create and use a descriptor, we first need to import this component.
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+   {{< include "./__code1_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -81,7 +81,7 @@ Based on this syntax, descriptors allow for the implementation of many different
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+   {{< include "./__code2_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -109,7 +109,7 @@ The values of an instance of a descriptor can be obtained via get_xxx() methods,
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+   {{< include "./__code3_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -137,7 +137,7 @@ A string version of a descriptor can be obtained via the to_string() method. The
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available  
+   {{< include "./__code4_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -167,7 +167,7 @@ A descriptor is complete when all its fields have a specific value, that is, a v
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+   {{< include "./__code5_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -195,7 +195,7 @@ There are three matching methods namely match, exact_match and equals. The first
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+   {{< include "./__code6_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -227,7 +227,7 @@ Factories are used to automate component creation. They work by registering comp
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+   {{< include "./__code7_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}

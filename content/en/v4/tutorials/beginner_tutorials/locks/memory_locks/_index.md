@@ -135,7 +135,7 @@ Once we have an instance of a lock, we can configure the timeout (in millisecond
 
 #### Lock acquisition
 
-After creation, a lock can be acquired through the acquireLock() method. This method accepts the correlationId, a key that identifies the lock, a lock timeout (milliseconds), and a lock acquisition timeout (milliseconds) as inputs. In the following example, we define the correlationId equal to “123”, a key with the value “mykey”, and we set both timeouts to 1000 milliseconds:
+After creation, a lock can be acquired through the acquireLock() method. This method accepts the traceId, a key that identifies the lock, a lock timeout (milliseconds), and a lock acquisition timeout (milliseconds) as inputs. In the following example, we define the traceId equal to “123”, a key with the value “mykey”, and we set both timeouts to 1000 milliseconds:
 
 {{< tabsection >}}
    Not available  
@@ -163,7 +163,7 @@ After creation, a lock can be acquired through the acquireLock() method. This me
 
 #### Lock release
 
-Once done with, a lock can be released via the releaseLock() method. This method accepts the correlationId and the key of a previously acquired lock as inputs. In the following example, we use the same correlationId and key as in the previous example. In this manner, we can keep track of the process and identify the previously acquired lock.
+Once done with, a lock can be released via the releaseLock() method. This method accepts the traceId and the key of a previously acquired lock as inputs. In the following example, we use the same traceId and key as in the previous example. In this manner, we can keep track of the process and identify the previously acquired lock.
 
 {{< tabsection >}}
   Not available  

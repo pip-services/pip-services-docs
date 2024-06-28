@@ -38,7 +38,7 @@ The RandomArray class provides a way to randomly choose an element from an array
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code1_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -80,7 +80,7 @@ The RandomBoolean class offers two methods namely chance and nextBoolean. The fo
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code2_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -122,7 +122,7 @@ The RandomDateTime class contains two methods: **nextDate** and **updateDatetime
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code3_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -164,7 +164,7 @@ The RandomDouble class has two methods that can be used to generate random doubl
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code4_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -206,7 +206,7 @@ The **RandomFloat** class contains two methods that can be used to obtain random
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code5_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -248,7 +248,7 @@ The **RandomInteger** class has two methods for generating random integers. Thei
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code6_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -303,7 +303,7 @@ The **RandomString** class presents methods that can be used to create random st
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code7_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -381,7 +381,7 @@ The **RandomText** class can be used to generate different types of random texts
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code8_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}

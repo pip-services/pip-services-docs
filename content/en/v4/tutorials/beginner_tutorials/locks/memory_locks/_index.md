@@ -107,7 +107,7 @@ To create a lock, we just need to instantiate the MemoryLock class. The followin
 
 #### Lock configuration
 
-Once we have an instance of a lock, we can configure the timeout (in milliseconds) to retry the lock acquisition via the configure() method. The default value is 100 (milliseconds), so, in the following example, we are overriding the default with a value of 200 (milliseconds):
+Once we have an instance of a lock, we can configure the timeout (in milliseconds) to retry the lock acquisition via the configure() method. The default timeout is 100 milliseconds. In the following example, we override this default by setting the timeout to 200 milliseconds:
 
 {{< tabsection >}}
   Not available  

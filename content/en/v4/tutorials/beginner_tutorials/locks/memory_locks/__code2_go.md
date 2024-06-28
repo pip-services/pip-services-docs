@@ -1,4 +1,4 @@
 
 ```go
-
+lock := clock.NewMemoryLock()
 ```

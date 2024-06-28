@@ -65,7 +65,7 @@ In order to create a JSON persistence component, we need to import the JsonFileP
 {{< /tabsection >}}
 
 #### Creating the JSON persistence component
-There are two ways to ways to create a JSON persistence component. The first consists of declaring an instance of the JsonFilePersister class and passing the JSON file's path to the constructor. Our code will be as follows:
+There are two ways to create a JSON persistence component. The first consists of declaring an instance of the JsonFilePersister class and passing the JSON file's path to the constructor. Our code will be as follows:
 
 {{< tabsection >}}
   Not available  

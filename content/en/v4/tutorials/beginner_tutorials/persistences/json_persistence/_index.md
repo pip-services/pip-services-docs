@@ -119,7 +119,7 @@ The second uses a config object to define the JSON file path. In this case, we n
 
 #### Saving data on a JSON file
 
-To store data in a JSON file we use the save method. The first parameter is the correlation_id, which is used to trace execution through the call chain. The second one is the JSON value we want to save. The following example shows how to use it.
+To store data in a JSON file we use the save method. The first parameter is the trace_id, which is used to trace execution through the call chain. The second one is the JSON value we want to save. The following example shows how to use it.
 
 {{< tabsection >}}
    Not available  
@@ -147,7 +147,7 @@ To store data in a JSON file we use the save method. The first parameter is the 
 
 #### Loading data from a JSON file
 
-To load data from a JSON file we use the load method, which returns the loaded items. This method has the correlation_id   parameter as input. The code below explains its usage.
+To load data from a JSON file we use the load method, which returns the loaded items. This method has the trace_id   parameter as input. The code below explains its usage.
 
 {{< tabsection >}}
   Not available  

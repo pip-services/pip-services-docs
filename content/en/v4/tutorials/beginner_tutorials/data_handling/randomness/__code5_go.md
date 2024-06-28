@@ -5,12 +5,13 @@ import (
 )
 
 func main() {
-	value1 := rand.Double.Next(5, 10) // Possible result: 7.3252274575446155
+	// Random value between 5 and 10
+	value1 := rand.Float.Next(5, 10) // Possible result: 8.109282778264653
 
 	// Random value lower than 10
-	value2 := rand.Double.Next(10, 11) // Possible result: 10.104104435251225
+	value2 := rand.Float.Next(10, 15) // Possible result: 14.281760648272185
 
 	// Random value
-	value3 := rand.Double.Update(10, 5) // Possible result: 8.051623143638789
+	value3 := rand.Float.Update(10, 3) // Possible result: 7.73187440584417
 }
 ```

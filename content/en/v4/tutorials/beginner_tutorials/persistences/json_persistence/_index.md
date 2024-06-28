@@ -49,7 +49,7 @@ In order to create a JSON persistence component, we need to import the JsonFileP
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code1_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -76,7 +76,7 @@ There are two ways to ways to create a JSON persistence component. The first con
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code2_go.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -102,7 +102,7 @@ The second uses a config object to define the JSON file path. In this case, we n
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code3_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -130,7 +130,7 @@ To store data in a JSON file we use the save method. The first parameter is the 
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code4_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -158,7 +158,7 @@ To load data from a JSON file we use the load method, which returns the loaded i
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available  
+  {{< include "./__code5_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -185,7 +185,7 @@ In the following example, we put everything together. First, we create a JSON pe
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+   {{< include "./__code6_go.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}

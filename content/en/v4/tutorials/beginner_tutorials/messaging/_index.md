@@ -18,7 +18,7 @@ This tutorial will help you understand how and when to use the MemoryMessageQueu
 
 ### [MQTT](mqtt)
 
-In this tutorial, we will see how to create a message queue with MqttMessageQueue, which is a component available in the mqtt module. First, we will see the necessary pre-requisites and how to create a basic message queue.
+In this tutorial, we will see how to create a message queue with MqttMessageQueue, which is a component available in the mqtt module.
 
 ### [NATS](nats)
 

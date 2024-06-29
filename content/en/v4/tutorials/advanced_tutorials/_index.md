@@ -24,7 +24,7 @@ This tutorial explains how to create a client library in five easy-to-follow ste
 
 ### [Microservice Facade](microservice_facade)
 
-A Facade is a microservice that serves as a point of entry to a system for external clients. The facade provides a stable external interface and hides the inner workings of a system. All requests made by external clients first arrive at the facade, which then forwards them to the appropriate microservices. The facade can also implement additional functionality, such as: authenticating and authorizing users, caching and aggregating requests, logging, etc.
+A Facade is a microservice that serves as a point of entry to a system for external clients. The facade provides a stable external interface and hides the inner workings of a system. All requests made by external clients first arrive at the facade, which then forwards them to the appropriate microservices. The facade can also implement additional functionality, such as: authenticating and authorizing users, caching and aggregating requests, logging, etc. how to implement a simple facade that will provide a versioned external API for the microservice implemented in [the Data Microservice](data_microservice) tutorial.
 
 ### [MongoDB Persistence](mongodb_persistence)
 A frequent choice of persistence is Pip.Services' MongoDb persistence. This persistence stores data in MongoDB - a popular document-oriented database. The most basic implementation of this component is the MongoDbPersistence class defined in the MongoDb module. It is capable of storing a collection of documents, opening and closing connections, and performing a few simple CRUD operations.

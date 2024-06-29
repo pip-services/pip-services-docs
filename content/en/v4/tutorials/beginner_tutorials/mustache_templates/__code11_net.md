@@ -1,4 +1,4 @@
 
 ```cs
-template.Clear();
+
 ```

@@ -1,6 +1,4 @@
 
 ```go
-import (
-	mustache "github.com/pip-services3-gox/pip-services3-expressions-gox/mustache"
-)
+
 ```

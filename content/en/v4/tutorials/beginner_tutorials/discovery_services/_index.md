@@ -52,7 +52,7 @@ To create a discovery service, we can use the MemoryDiscovery class, which model
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+ {{< include "./__code1_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -80,7 +80,7 @@ In order to create our discovery service, we need to create an instance of the M
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+ {{< include "./__code1_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -106,7 +106,7 @@ or we add them after instantiation via the configure() method.
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+ {{< include "./__code1_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -134,7 +134,7 @@ Once we have created our component, we can use the register() method to add conn
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+ {{< include "./__code1_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -162,7 +162,7 @@ We can obtain a connection with the resolveOne() method, which considers as inpu
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+ {{< include "./__code1_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -188,7 +188,7 @@ Alternatively, we can use the resolveAll() method, which asks for the same input
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+ {{< include "./__code1_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -222,7 +222,7 @@ In this section, we have an example that illustrates the use of a memory discove
 
 {{< tabsection >}}
   {{< collapse >}}
-  Not available  
+ {{< include "./__code1_go.md" >}} 
   {{< /collapse >}}
 {{< /tabsection >}}
 

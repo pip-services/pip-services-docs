@@ -14,8 +14,7 @@ Pip.Services offers two components for caching a value. The first is MemoryCache
 ### [Memcached](memcached)
 In this tutorial, you will understand how to create and manage a cache and a distributed lock, both based on a Memcached store. 
 
-First, we will look at the pre-requisites. Then, we will see how to create and perform relevant operations through examples. We will finalize the tutorial with a practical example of how to use distributed locks.
-
+First, we will look at the pre-requisites. Then, we will see how to create and perform relevant operations through examples. We will conclude the tutorial with a practical example demonstrating how to use distributed locks.
 ### [Redis](redis)
 
 In this tutorial, you will see how to use two components related to the Redis database. The first is the RedisCache class, which can be used to create distributed caches that store values in Redis. The second is RedisLock, a component that allows us to create a distributed lock based on the Redis database.

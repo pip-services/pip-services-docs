@@ -123,7 +123,7 @@ or we add them after instantiation via the configure() method.
 
 ### Adding connections
 
-Once we have created our component, we can use the register() method to add connections to our discovery service. This method takes the correlationId, a key, and the connection parameters to be registered as inputs. The following example shows how to use this method.
+Once we have created our component, we can use the register() method to add connections to our discovery service. This method takes the connection parameters to be registered as inputs. The following example shows how to use this method.
 
 {{< tabsection >}}
   Not available  

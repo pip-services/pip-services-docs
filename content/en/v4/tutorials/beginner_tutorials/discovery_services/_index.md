@@ -37,7 +37,7 @@ description: >-
 
 ### Introduction
 
-In this tutorial, you will learn how to create and operate a discovery service that stores connection parameters in memory. We will begin by explaining the necessary pre-requisites. Then, we will continue by showing how to create the service and add and extract connection parameters from it. We will finish with a comprehensive example that illustrates all the learned concepts.
+In this tutorial, you will learn how to create and operate a discovery service that stores connection parameters in memory. We will begin by explaining the necessary pre-requisites. Then, we will continue by showing how to create the service, as well as add and extract connection parameters from it. We will finish with a comprehensive example that illustrates all the learned concepts.
 
 ### Pre-requisites
 

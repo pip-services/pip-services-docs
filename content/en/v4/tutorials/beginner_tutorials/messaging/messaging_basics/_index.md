@@ -178,7 +178,7 @@ Now, we need to create a listener that waits for messages to arrive in the queue
 
 #### Sending a message
 
-After creating a listener, we send a message to the queue. For this, we use a MessageEnvelope component, which allows us to add extra information to the message, such as a message type. The following code explains how this can be done:
+After creating a listener, we send a message to the queue using a MessageEnvelope component. This component allows us to add extra information to the message, such as a message type. The following code explains how this can be done:
 
 {{< tabsection >}}
   Not available 

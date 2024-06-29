@@ -80,7 +80,7 @@ In order to create our discovery service, we need to create an instance of the M
 {{< /tabsection >}}
 
 {{< tabsection >}}
- {{< include "./__code1_go.md" >}}
+ {{< include "./__code2_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -106,7 +106,7 @@ or we add them after instantiation via the configure() method.
 {{< /tabsection >}}
 
 {{< tabsection >}}
- {{< include "./__code1_go.md" >}}
+ {{< include "./__code3_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -134,7 +134,7 @@ Once we have created our component, we can use the register() method to add conn
 {{< /tabsection >}}
 
 {{< tabsection >}}
- {{< include "./__code1_go.md" >}}
+ {{< include "./__code4_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -162,7 +162,7 @@ We can obtain a connection with the resolveOne() method, which considers as inpu
 {{< /tabsection >}}
 
 {{< tabsection >}}
- {{< include "./__code1_go.md" >}}
+ {{< include "./__code5_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -222,7 +222,7 @@ In this section, we have an example that illustrates the use of a memory discove
 
 {{< tabsection >}}
   {{< collapse >}}
- {{< include "./__code1_go.md" >}} 
+ {{< include "./__code6_go.md" >}} 
   {{< /collapse >}}
 {{< /tabsection >}}
 

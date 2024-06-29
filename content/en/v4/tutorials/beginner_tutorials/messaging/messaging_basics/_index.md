@@ -52,7 +52,7 @@ description: >-
 This tutorial will help you understand how and when to use the MemoryMessageQueue component. First, it explains two interfaces, namely, IMessageQueue and IMessageReceiver, which have to be implemented by message queues and message receivers, respectively. Next, it describes the basics of the MemoryMessageQueue component and its prerequisites. Following this, it explains how to create a message receiver and an instance of the MemoryMessageQueue, add a listener to the queue, send and receive a message, and close the component. It ends by grouping the various pieces into a single program and wrapping up the concepts seen in this tutorial.
 
 ### IMessageQueue and IMessageReceiver
-The IMessageQueue interface defines the basic methods for a message queue and needs to be implemented by all components of this type. The MemoryMessageQueue class implements it via its parent class - MessageQueue. 
+The IMessageQueue interface defines the basic methods for a message queue and needs to be implemented by all components of this type. The MemoryMessageQueue class implements it via its parent class **MessageQueue**. 
 
 The IMessageReceiver interface defines the receiveMessage() method, and must be implemented by all message receiver components. In the example presented in the following sections, we define a class named MyMessageReciever, which implements this interface.
 

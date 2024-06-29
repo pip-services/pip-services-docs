@@ -1,4 +1,4 @@
 
 ```ts
-template.clear();
+
 ```

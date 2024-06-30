@@ -27,7 +27,7 @@ In this tutorial, you will learn how to configure connections with the Connectio
 In this tutorial, you will understand how to operate with the CredentialParams component by performing CRUD operations. We will begin by learning to create an instance of this component using its constructor, a tuple, a string, and the ConfigParam class. Then, we will understand how to extract and update the values of credential parameters stored in the component, and delete those parameters.
 
 ### [Deployment Time Configuration](deployment_configuration)
-How to set up and change your configurations at deployment time. In this tutorial, you will learn how to configure at deployment time an application based on Pip.Services components
+In this tutorial, you will learn how to configure an application based on Pip.Services components at deployment time. 
 
 ### [Microservice configuration](microservice_configuration)
 

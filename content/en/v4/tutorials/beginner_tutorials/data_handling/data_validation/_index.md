@@ -67,7 +67,7 @@ In order to perform validations, we need to import the Schema class and the diff
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+   {{< include "./__code1_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -97,7 +97,7 @@ There are two ways to create a validation schema. The first is to create an inst
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+   {{< include "./__code2_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -123,7 +123,7 @@ Alternatively, we can first create an instance and define our rule using the wit
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+   {{< include "./__code3_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -155,7 +155,7 @@ In the example below, we examine two cases based on the rule that the value must
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+   {{< include "./__code4_go.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -191,7 +191,7 @@ The NotRule class allows us to negate a given rule. The examples below show how 
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+   {{< include "./__code5_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -223,7 +223,7 @@ The AndRule class allows us to validate combinations of rules created with AND l
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+   {{< include "./__code6_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -255,7 +255,7 @@ The OrRule class allows us to validate combinations of rules created with OR log
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+   {{< include "./__code7_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -287,7 +287,7 @@ The InclidedRule class allows us to check that a value is included in a given se
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+   {{< include "./__code8_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -319,7 +319,7 @@ The ExcludedRule allows us to verify that a value is not included in a given set
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+   {{< include "./__code9_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -351,7 +351,7 @@ The AtLeastOneExistsRule class allows us to check that given a set of properties
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+   {{< include "./__code10_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -383,7 +383,7 @@ The ValueComparisonRule class allows us to create a validation rule that compare
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+   {{< include "./__code11_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}

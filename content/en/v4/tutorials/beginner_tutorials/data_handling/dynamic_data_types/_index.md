@@ -132,7 +132,7 @@ This component presents several methods that can be used to convert a value to d
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code5_go.md" >}}
+  {{< include "./__code4_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}

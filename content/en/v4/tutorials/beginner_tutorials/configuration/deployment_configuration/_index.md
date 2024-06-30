@@ -28,7 +28,7 @@ description: >-
 
 ### Introduction
 
-In this tutorial, you will learn how to configure at deployment time an application based on Pip.Services components. For this, we will use the example already developed in [Three tier architecture](../../../tutorials/beginner_tutorials/three_tier_architecture/) and expand it to consider two different databases. Then, we will see how to select one of these databases at deployment time.
+In this tutorial, you will learn how to configure an application based on Pip.Services components at deployment time. For this, we will use the example already developed in [Three tier architecture](../../../tutorials/beginner_tutorials/three_tier_architecture/) and expand it to consider two different databases. Then, we will see how to select one of these databases at deployment time.
 
 ### Basic concepts
 

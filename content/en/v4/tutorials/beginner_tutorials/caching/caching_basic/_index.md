@@ -55,7 +55,7 @@ In order to use the MemoryCache component, we need to import it. This can be don
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code1_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -81,7 +81,7 @@ Similarly, for the NullCache:
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code6_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -110,7 +110,7 @@ We can create a memory cache by creating an instance of the cache class. The fol
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code2_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -136,7 +136,7 @@ And, for the NullCache:
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code7_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -164,7 +164,7 @@ We can cache a value by using the store() method. This method accepts four param
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code3_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -192,7 +192,7 @@ To retrieve a cached value from memory, we can use the retrieve() method, which 
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code4_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -220,7 +220,7 @@ To remove a value from a cache, we can use the remove() method, which takes the 
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code5_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -247,7 +247,7 @@ Moreover, if we want to retrieve the removed value:
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code8_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}

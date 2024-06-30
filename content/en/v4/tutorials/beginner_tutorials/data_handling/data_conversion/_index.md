@@ -133,7 +133,7 @@ This class can be used to convert different values to Boolean values using exten
   </tr>
   <tr>
     <td>Number</td>
-    <td><>0 are true, =0 are false.</td>
+    <td><> 0 are true, = 0 are false.</td>
   </tr> 
   <tr>
     <td>String</td>
@@ -141,7 +141,7 @@ This class can be used to convert different values to Boolean values using exten
   </tr>      
   <tr>
     <td>DateTime</td>
-    <td><>0 total milliseconds are true, =0 are false.</td>
+    <td><>0 total milliseconds are true, = 0 are false.</td>
   </tr> 
 </table>
 

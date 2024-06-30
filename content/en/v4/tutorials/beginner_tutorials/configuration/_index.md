@@ -14,7 +14,7 @@ The Pip.Services Toolkit offers a simple but very flexible mechanism for compone
 
 ### [Config File Syntax](config_file_syntax)
 
-In this tutorial you will learn how to create yml configuration files. First, we will see a general case. Then, we will show examples of the most common components in PIP.Services. These examples are valid for any of the six languages used by the toolkit.
+In this tutorial you will learn how to create yml configuration files. First, we will see a general case. Then, we will show configuration examples for the most common components in Pip.Services. These examples are valid for any of the six languages used by the toolkit.
 
 ### [Configurations](configurations)
 

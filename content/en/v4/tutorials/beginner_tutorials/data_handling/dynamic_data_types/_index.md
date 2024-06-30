@@ -48,7 +48,7 @@ This component provides a cross-language implementation of a dynamic object that
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code1_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -76,7 +76,7 @@ In order to create an AnyValue object, we need to import the corresponding class
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code2_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -104,7 +104,7 @@ To create an AnyValue object we need to use its constructor with the value as in
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code3_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -132,7 +132,7 @@ This component presents several methods that can be used to convert a value to d
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code5_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -160,7 +160,7 @@ This class offers the set_as_object() method to change a value. The following ex
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code5_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -188,7 +188,7 @@ The method to_string() provides a way to create a string representation of an An
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code6_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -216,7 +216,7 @@ The method equals and equals_as_type offer a way to compare two different AnyVal
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code7_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -244,7 +244,7 @@ This component provides a cross-language implementation of a dynamic array objec
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code8_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -271,7 +271,7 @@ To work with this class, we need to import it first. This can be done with the f
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code9_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -298,7 +298,7 @@ There are several ways to create an AnyValueArray. First, we can create an insta
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code10_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -325,7 +325,7 @@ This class has the methods contains() and contains_as_type() that can be used to
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code11_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -353,7 +353,7 @@ This class offers several methods to transform the stored values into several we
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code12_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -381,7 +381,7 @@ We can either append a value or a list of values to an AnyValueArray with the ap
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code13_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -408,7 +408,7 @@ To delete an element included in an AnyValueArray, we can use the remove method.
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code14_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -436,7 +436,7 @@ The AnyValueMap class provides a cross-language implementation of a dynamic map 
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code15_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -464,7 +464,7 @@ To use this component, we need to import its class first. The following code sho
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code16_go.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -492,7 +492,7 @@ There are several ways to create an AnyValueMap object. It can be created by def
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code17_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -520,7 +520,7 @@ This class offers several methods to extract the value of an element specified b
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code18_go.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -548,7 +548,7 @@ The method set_as_object() allows us to change the value of an element according
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code19_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -576,7 +576,7 @@ To remove an element, we can use the remove method. This method accepts the key 
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code20_go.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}

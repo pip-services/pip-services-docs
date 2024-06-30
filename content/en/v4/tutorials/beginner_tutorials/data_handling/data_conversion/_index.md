@@ -109,7 +109,7 @@ This class provides methods to create an array from a set of values. Its methods
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code1_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -175,7 +175,7 @@ This class can be used to convert different values to Boolean values using exten
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code2_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -237,7 +237,7 @@ This class can be used to convert arbitrary values into Date values using extend
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code3_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -301,7 +301,7 @@ This class is used to convert arbitrary values into doubles using extended conve
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code4_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -365,7 +365,7 @@ This class can be used to convert arbitrary values into floats using extended co
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code5_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -430,7 +430,7 @@ This class is used to convert arbitrary values into integers using extended conv
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code6_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -495,7 +495,7 @@ This class is used to convert arbitrary values into longs using extended convers
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code7_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -568,7 +568,7 @@ This class is used to convert arbitrary values into strings. Its methods and con
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code8_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -623,7 +623,7 @@ This class is used to convert arbitrary values (e.g. a JSON object) from and to 
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code9_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -687,7 +687,7 @@ Both classes are used to convert arbitrary values into map objects using extende
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code10_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -732,7 +732,7 @@ Both classes are used to convert arbitrary values into map objects using extende
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code11_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -787,7 +787,7 @@ This class is used to convert arbitrary values into objects specified by a TypeC
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code12_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}

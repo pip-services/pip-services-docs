@@ -14,7 +14,6 @@ The Pip.Services Toolkit offers a simple but very flexible mechanism for compone
 
 ### [Config File Syntax](config_file_syntax)
 
-Page description for heading and indexes.
 In this tutorial you will learn how to create yml configuration files. First, we will see a general case. Then, we will show examples of the most common components in PIP.Services. These examples are valid for any of the six languages used by the toolkit.
 
 ### [Configurations](configurations)
@@ -28,7 +27,7 @@ In this tutorial, you will learn how to configure connections with the Connectio
 In this tutorial, you will understand how to operate with the CredentialParams component by performing CRUD operations. We will begin by learning to create an instance of this component using its constructor, a tuple, a string, and the ConfigParam class. Then, we will understand how to extract and update the values of credential parameters stored in the component, and delete those parameters.
 
 ### [Deployment Time Configuration](deployment_configuration)
-How to set up and change your configurations at deployment time. In this tutorial, you will learn how to configure at deployment time an application based on Pip.Services components
+In this tutorial, you will learn how to configure an application based on Pip.Services components at deployment time,
 
 ### [Microservice configuration](microservice_configuration)
 

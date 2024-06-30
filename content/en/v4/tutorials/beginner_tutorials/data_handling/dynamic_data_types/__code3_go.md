@@ -1,6 +1,8 @@
 
 ```go
-import (
-	data "github.com/pip-services4/pip-services4-go/pip-services4-commons-go/data"
-)
+// Constructor
+value := data.NewAnyValue("123.456")
+
+// Cloning
+value2 := value.Clone() // Returns an object of type AnyValue with value 123.456
 ```

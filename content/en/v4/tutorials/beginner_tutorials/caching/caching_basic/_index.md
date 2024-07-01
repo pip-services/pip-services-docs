@@ -153,7 +153,7 @@ And, for the NullCache:
 
 #### Store
 
-We can cache a value by using the store() method. This method accepts four parameters. First, the correlation_id, which is a value that can be used to track executions throughout the call chain. Second, a key that can be used to uniquely identify the stored value. Third, the value to be stored. Lastly, the duration (in milliseconds) for which this value should be kept in the cache. The code below shows how to use this method for both components.
+We can cache a value by using the store() method. This method accepts four parameters. First, the context (trace_id), which is a value that can be used to track executions throughout the call chain. Second, a key that can be used to uniquely identify the stored value. Third, the value to be stored. Lastly, the duration (in milliseconds) for which this value should be kept in the cache. The code below shows how to use this method for both components.
 
 {{< tabsection >}}
   Not available
@@ -181,7 +181,7 @@ We can cache a value by using the store() method. This method accepts four param
 
 #### Retrieve
 
-To retrieve a cached value from memory, we can use the retrieve() method, which takes the correlation_id and the cached value’s key as parameters. The code below shows how this method can be used.
+To retrieve a cached value from memory, we can use the retrieve() method, which takes the context (trace_id) and the cached value’s key as parameters. The code below shows how this method can be used.
 
 {{< tabsection >}}
   Not available
@@ -209,7 +209,7 @@ To retrieve a cached value from memory, we can use the retrieve() method, which 
 
 #### Remove
 
-To remove a value from a cache, we can use the remove() method, which takes the correlation_id and the key of the value to be removed as input parameters. The example below shows how to use this method.
+To remove a value from a cache, we can use the remove() method, which takes the context (trace_id) and the key of the value to be removed as input parameters. The example below shows how to use this method.
 
 {{< tabsection >}}
   Not available

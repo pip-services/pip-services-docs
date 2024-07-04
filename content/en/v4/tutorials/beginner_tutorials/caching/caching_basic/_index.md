@@ -47,7 +47,7 @@ The two basic cache components offered by the toolkit are the MemoryCache and th
 In order to use the MemoryCache component, we need to import it. This can be done with the following import statement:
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code1_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -73,7 +73,7 @@ In order to use the MemoryCache component, we need to import it. This can be don
 Similarly, for the NullCache:
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code2_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -102,7 +102,7 @@ Similarly, for the NullCache:
 We can create a memory cache by creating an instance of the cache class. The following code shows how this can be done for the Memory Cache:
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code3_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -128,7 +128,7 @@ We can create a memory cache by creating an instance of the cache class. The fol
 And, for the NullCache:
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code4_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -156,7 +156,7 @@ And, for the NullCache:
 We can cache a value by using the store() method. This method accepts four parameters. First, the context (trace_id), which is a value that can be used to track executions throughout the call chain. Second, a key that can be used to uniquely identify the stored value. Third, the value to be stored. Lastly, the duration (in milliseconds) for which this value should be kept in the cache. The code below shows how to use this method for both components.
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code5_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -184,7 +184,7 @@ We can cache a value by using the store() method. This method accepts four param
 To retrieve a cached value from memory, we can use the retrieve() method, which takes the context (trace_id) and the cached value’s key as parameters. The code below shows how this method can be used.
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code6_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -212,7 +212,7 @@ To retrieve a cached value from memory, we can use the retrieve() method, which 
 To remove a value from a cache, we can use the remove() method, which takes the context (trace_id) and the key of the value to be removed as input parameters. The example below shows how to use this method.
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code7_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}

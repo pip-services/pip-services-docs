@@ -1,4 +1,4 @@
 
 ```ts
-
+logger.setReferences(references);
 ```

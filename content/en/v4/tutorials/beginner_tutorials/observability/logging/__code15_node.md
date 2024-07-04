@@ -1,4 +1,4 @@
 
 ```ts
-
+consoleLogger.configure(config);
 ```

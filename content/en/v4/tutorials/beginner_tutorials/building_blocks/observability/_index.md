@@ -3,14 +3,14 @@ type: docs
 no_list: true
 title: "Observability"
 linkTitle: "Observabiity"
-weight: 40   
+weight: 40
 ---
-
 {{< tabselector "Node" ".NET" "Golang" "Dart" "Python" "Java" >}}
 
 Microservices, in addition to great strengths, have a few shortcomings. One of them is the difficulty to understand what is going on in a highly distributed system. To address this issue, microservices get to collect information about their operations in the form of logs, traces, and performance metrics in specialized storages. Then, that information can be used for health monitoring, troubleshooting, security protection, and other important maintenance scenarios.
 
 ### Correlation (trace) ids
+
 It is not sufficient just to collect logs and traces across multiple microservices. It is critical to connect that information in a logical sequence within the transaction context. To do that Pip.Services employs correlationIds, which are rigorously used as first parameters in all business methods across all microservice components and sent over via all synchronous calls and asynchronous messages. When errors are thrown, logs or traces recorded, correlationIds are always included there.
 
 A correlationId is any value that can uniquely identify business transactions in a system. One way to generate correlationIds is to use natural keys, like "transaction name + timestamp". Another common way to generate correlationIds is to use string GUIDs. Although, they could be too long and lack meaning, they are unique in the universe and very easy to generate.
@@ -18,17 +18,18 @@ A correlationId is any value that can uniquely identify business transactions in
 ### Logging
 
 There are myriads of logging libraries in all known programming languages. But Pip.Services includes its own abstractions for logging. Why? There are several reasons for that:
-1.	To achieve consistency and symmetry across all languages, as it is the key goal for the toolkit
-2.	To use the Pip.Services component model and easily integrate with common patterns like inversion of control or configurations
-3.	To enforce the use of correlationIds, as without them the collected information has less value for analysis
+
+1. To achieve consistency and symmetry across all languages, as it is the key goal for the toolkit
+2. To use the Pip.Services component model and easily integrate with common patterns like inversion of control or configurations
+3. To enforce the use of correlationIds, as without them the collected information has less value for analysis
 
 The ILogger interface looks pretty standard. It allows logging messages at different levels: FATAL, ERROR, WARNING, INFO, DEBUG and TRACE. The interface is defined in the log package of the components module. In addition to that, Pip.Services includes a variety of loggers:
 
-- NullLogger: Dummy implementation of a logger with no real effect. 
+- NullLogger: Dummy implementation of a logger with no real effect.
 - ConsoleLogger: Logger that writes log messages to console.
 - FluentdLogger: Logger that dumps execution logs to a Fluentd service.
 - ElasticSearchLogger: Logger that dumps execution logs to ElasticSearch service.
-- CloudWatchLogger: Logger that writes log messages to AWS CloudWatch Log. 
+- CloudWatchLogger: Logger that writes log messages to AWS CloudWatch Log.
 - AppInsightsLogger
 
 It is common in microservices to log simultaneously into several destinations - to console for debugging as well into a distributed logging system. To support this scenario the toolkit includes the CompositeLogger, which is used by components to collect messages and then distribute them across all loggers included in the microservice.
@@ -46,30 +47,31 @@ connection:
 ```
 
 {{< tabsection >}}
-  Not available  
+{{< include "./__code1_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+Not available
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+Not available
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+Not available
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code1_python.md" >}}
+{{< include "./__code1_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+Not available
 {{< /tabsection >}}
 
 ### Performance monitoring
+
 While logs tell "what" the system is doing, performance metrics (or counters) tell "how" it's being done: how much, how fast, how reliable, and so on. They represent the state of the system from a non-functional perspective and are critical to measure and analyze performance, scalability, and reliability characteristics.
 
 The ICounters from the count package in the components module is the standard interface for all performance monitoring components. It allows to increment counters, record values of self-calculated metrics, record timestamps, calculate min/average/max statistics and measure time intervals. In addition, there are several implementations available out-of-the-box:
@@ -96,27 +98,27 @@ descriptor: "pip-services:metrics-service:prometheus:default:1.0"
 ```
 
 {{< tabsection >}}
-  Not available  
+{{< include "./__code2_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+Not available
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+Not available
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+Not available
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code2_python.md" >}}
+{{< include "./__code2_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+Not available
 {{< /tabsection >}}
 
 ### Traces
@@ -143,32 +145,33 @@ connection:
 ```
 
 {{< tabsection >}}
-  Not available  
+{{< include "./__code3_node.md" >}}Not available
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+Not available
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+Not available
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+Not available
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code3_python.md" >}}
+{{< include "./__code3_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+Not available
 {{< /tabsection >}}
 
 ### References
 
 For more information about observability see:
+
 - #### [Logging](../../../tutorials/beginner_tutorials/observability/logging/)
 - #### [Metrics](../../../tutorials/beginner_tutorials/observability/metrics/)
 - #### [Prometheus](../../../tutorials/beginner_tutorials/observability/prometheus/)

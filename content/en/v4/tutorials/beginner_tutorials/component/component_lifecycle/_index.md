@@ -242,18 +242,18 @@ For example:
 {{< tabsection isMarkdown=true >}}
 
 ```typescript
-import { ConfigParams, FixedRateTimer, Parameters } from "pip-services3-commons-nodex";
-import { IReconfigurable, IReferenceable, IExecutable, IOpenable, IReferences } from "pip-services3-commons-nodex";
-import { CompositeLogger, LogLevel } from "pip-services3-components-nodex";
+import { ConfigParams, FixedRateTimer, Parameters, Context } from "pip-services4-components-node";
+import { IReconfigurable, IReferenceable, IExecutable, IOpenable, IReferences } from "pip-services4-components-node";
+import { CompositeLogger, LogLevel } from "pip-services4-observability-node";
 
 class CounterController implements IReferenceable, IReconfigurable, IOpenable, IExecutable {
-    
+  
 
     private logger = new CompositeLogger();
     private timer = new FixedRateTimer();
     private parameters = new Parameters();
     private counter = 0;
-    
+  
     public constructor(){
         this.logger.setLevel(LogLevel.Debug);
     }
@@ -261,41 +261,41 @@ class CounterController implements IReferenceable, IReconfigurable, IOpenable, I
     public configure(config: ConfigParams){
         this.parameters = Parameters.fromConfig(config);
     }
-        
+    
 
     public setReferences(references: IReferences){
         this.logger.setReferences(references);
     }
-        
+    
 
     public isOpen(): boolean{
         return this.timer.isStarted();
     }
 
-    public async open(correlationId: string): Promise<void> {
+    public async open(ctx: Context): Promise<void> {
         if (this.isOpen()) {
             return;
         }
 
-        this.timer.setCallback(() => this.execute(correlationId, this.parameters))
+        this.timer.setCallback(() => this.execute(ctx, this.parameters))
         this.timer.setInterval(1000)
         this.timer.setDelay(1000)
         this.timer.start()
-        this.logger.trace(correlationId, "Counter controller opened")
+        this.logger.trace(ctx, "Counter controller opened")
 
     }
-        
-    public async close(correlationId: string): Promise<void> {
+    
+    public async close(ctx: Context): Promise<void> {
         this.timer.stop()
-        this.logger.trace(correlationId, "Counter controller closed")
+        this.logger.trace(ctx, "Counter controller closed")
     }
-        
+    
 
-    public execute(correlationId: string, args: Parameters): Promise<any> {
+    public execute(ctx: Context, args: Parameters): Promise<any> {
         this.counter += 1;
 
         this.logger.info(
-            correlationId,
+            ctx,
             this.counter + " - " + this.parameters.getAsStringWithDefault('message', 'Hello World!')
         )
 

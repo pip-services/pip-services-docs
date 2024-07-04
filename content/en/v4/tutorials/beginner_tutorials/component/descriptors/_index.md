@@ -39,7 +39,7 @@ Within the Pip.Services toolkit, a descriptor is a component's locator that is b
 In order to create and use a descriptor, we first need to import this component. This can be done with the following command:
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code1_node.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -73,7 +73,7 @@ where each field can contain a specific value, *, or None.
 Based on this syntax, descriptors allow for the implementation of many different scenarios. Some examples are:
 
 {{< tabsection >}}
-   Not available  
+   {{< include "./__code2_node.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -101,7 +101,7 @@ Based on this syntax, descriptors allow for the implementation of many different
 The values of an instance of a descriptor can be obtained via get_xxx() methods, where xxx stands for group, kind, name, or version respectively. The example below shows how to use each of them.
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code3_node.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -129,7 +129,7 @@ The values of an instance of a descriptor can be obtained via get_xxx() methods,
 A string version of a descriptor can be obtained via the to_string() method. The following example explains it.
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code4_node.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -159,7 +159,7 @@ A string version of a descriptor can be obtained via the to_string() method. The
 A descriptor is complete when all its fields have a specific value, that is, a value different from * or None. The method is_complete() can be used to check the completeness of a descriptor. It returns true if the descriptor is complete and false otherwise. The example below explains its usage.
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code5_node.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -187,7 +187,7 @@ A descriptor is complete when all its fields have a specific value, that is, a v
 There are three matching methods namely match, exact_match and equals. The first partially matches a descriptor to another descriptor. If any field contains * or None, this field will be excluded from the match. The second method matches two descriptors by all fields. Finally, the equals() method compares a descriptor to a value. If the value is a Descriptor, it tries to match them. Otherwise, the method returns false. The following example shows how to use them.
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code6_node.md" >}}   
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -219,7 +219,7 @@ Now that we know how to handle a descriptor, we will see an example of its appli
 Factories are used to automate component creation. They work by registering components based on their descriptors. In the following example, we first define a custom component, then we register it in a factory previously created, and finally we create an instance of the class. The code is:
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code7_node.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}

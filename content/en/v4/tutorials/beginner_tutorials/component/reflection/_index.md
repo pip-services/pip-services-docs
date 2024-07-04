@@ -64,7 +64,7 @@ This package belongs to the commons module and contains several classes used to 
 The MethodReflector class allows us to examine an object's methods and to execute them dynamically. The get_method_names method returns a list with all the methods in a class. The has_method method returns a boolean indicating whether or not a method belongs to a class. And, the invoke_method provides a way to invoke the execution of a method at runtime. The example below shows how to obtain the names of all methods in an object, find out if a method belongs to that object, and invoke its execution.
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code1_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -98,7 +98,7 @@ This class helps us to investigate the properties of an object. Its get_property
 
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code2_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -128,7 +128,7 @@ Once the code above is executed, we will get the following result:
 The methods in this component can also be used with maps and arrays to find out if they contain certain elements and their values.
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code3_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -159,7 +159,7 @@ This component helps us to dynamically set the properties of an object. Its set_
 
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code4_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -192,7 +192,7 @@ This class allows us to examine an object's properties and to dynamically get an
 
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code5_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -225,7 +225,7 @@ This class helps us to examine the properties of an object and to dynamically re
 The example below shows how to use this component. As we can see from the results obtained, when we apply the get_properties method to my_classB, we also obtain the parameters inherited from my_classA and their values.
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code6_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -254,7 +254,7 @@ The example below shows how to use this component. As we can see from the result
 This class is used to dynamically set the properties of an object recursively using dot notation. Its set_property method allows us to set the value of a property. The set_properties method is used to set the values of some or all the properties in an object and accepts a dictionary as input. The copy_properties method copies the properties of one object into another one. This code shows examples of their usage:
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code7_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -285,7 +285,7 @@ After running, this code produces the following output:
 This class stores a reference to a type represented by the type name and library (module) where the type is defined. This class has three methods. The equals method compares a descriptor to a value. The get_library method gets the library or module of a descriptor.  The get_name method obtains the name of the object type. The to_string method returns a string representation of the descriptor with the format name[,library]. And, the static method from_string transforms a string into a Descriptor object. Below are some examples of these methods' usage.
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code8_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -317,7 +317,7 @@ This class allows us to match values based on equality. The match_type method ma
 
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code9_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -349,7 +349,7 @@ This class is used to examine the type of an object and create instances based o
 The example below shows how to create an object of classA and verify that the values of its parameters are the ones defined in the class.
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code10_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}

@@ -24,7 +24,7 @@ The main distinction is that our implementation of Inversion of Control uses the
 The **IReferences** interface can be used to pass a so-called **References** object to a component. This **References** object can be used by the component to retrieve any and all required dependencies. **IReferences** is defined as follows:
 
 {{< tabsection >}}
-   Not available   
+   {{< include "./__code1_node.md" >}}   
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -55,7 +55,7 @@ The **put** method is used to add a component and its locator/key to the list of
 A component must implement the **IReferenceable** interface to be able to receive dependencies. Dependencies are set in the component's **setReferences** method, which is called with a link to a **References** object (described in the previous section).
 
 {{< tabsection >}}
-   Not available  
+   {{< include "./__code2_node.md" >}}     
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -85,7 +85,7 @@ Dependencies can be set and removed either manually, or automatically by the com
 Let's take a look at a simple example of setting dependencies between components using the Pip.Services Toolkit's References pattern. Suppose we have 2 services, Worker1 and Worker2, which are defined as follows:
 
 {{< tabsection >}}
-   Not available    
+   {{< include "./__code3_node.md" >}}      
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -112,7 +112,7 @@ Now let's add a **SimpleController** component with a **greeting()** method. Thi
 
 
 {{< tabsection >}}
-   Not available   
+   {{< include "./__code4_node.md" >}}      
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -138,7 +138,7 @@ Now let's add a **SimpleController** component with a **greeting()** method. Thi
 We will be using the **References** class to pass dependencies into our components. This class is defined in the **Commons** module and implements the **IReferenceable** interface. We can use the **References.from_tuples** method to populate our list of dependencies using locator-reference pairs.
 
 {{< tabsection >}}
-   Not available  
+   {{< include "./__code5_node.md" >}}    
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -175,7 +175,7 @@ For such complex cases, the Pip.Services Toolkit includes a special locator that
 The **Descriptor** class's definition is as follows:
 
 {{< tabsection >}}
-   Not available  
+   {{< include "./__code6_node.md" >}}     
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -232,7 +232,7 @@ my_library:*:*:*:*
 Returning to our "worker" example, we could use **Descriptors** in the following manner: 
 
 {{< tabsection >}}
-   Not available    
+   {{< include "./__code7_node.md" >}}       
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -261,7 +261,7 @@ In complex systems, which often contain a number of components of the same type,
 The **DependencyResolver** class:
 
 {{< tabsection >}}
-   Not available   
+   {{< include "./__code8_node.md" >}}    
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -287,7 +287,7 @@ The **DependencyResolver** class:
 Below is the final version of our **"worker"** example, which now utilizes the **DependencyResolver**. By default, the **SimpleController** is capable of working with either of the worker services. However, once we configure **SimpleController** and, in turn, the **DependencyResolver** - the component is re-configured to work with just Worker1.
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code9_node.md" >}}   
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -331,7 +331,7 @@ When creating such a configuration for a container, the configuration file might
 The **Referencer** helper class can be used as well for setting and removing dependencies:
 
 {{< tabsection >}}
-   Not available    
+   {{< include "./__code10_node.md" >}}       
 {{< /tabsection >}}
 
 {{< tabsection >}}

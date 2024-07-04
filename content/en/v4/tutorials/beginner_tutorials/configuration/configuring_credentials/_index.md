@@ -38,7 +38,7 @@ In this tutorial, you will understand how to operate with the CredentialParams c
 In order to use the CredentialParams component, we need to import it first. This can be done with the following command:
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code1_node.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -74,7 +74,7 @@ Pip.Services offers several ways to create a CredentialParams object. Each of th
 One method used to create a CredentialParams object is via its constructor. This can be done in two different manners. The first is by inputting a ConfigParams object containing the credential parameters and their values. The second consists of creating a CredentialParams object and using the set methods available for the most common credentials such as username and password, or the put() method from its parent class. The following examples show how to do this.
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code2_node.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -102,7 +102,7 @@ One method used to create a CredentialParams object is via its constructor. This
 We can also define our credential parameters in the form of a tuple by using the fromTuple() method. For example:
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code3_node.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -134,7 +134,7 @@ Similar to the previous option, we can also use a string to define our credentia
 An example of this approach is:
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code4_node.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -166,7 +166,7 @@ Also, we can create a ConfigParams object and use the fromConfig() method. In th
 And, the following example explains how to use this method:
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code5_node.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -199,7 +199,7 @@ Then, at instantiation, the CredentialParams object will take all credentials be
 The following example shows how to do this. As we can see from it, the ConfigParams object contains both credential and connection parameters. However, the CredentialParams object distinguishes between them and only takes the credential sets in the form of a list.
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code6_node.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -226,7 +226,7 @@ The following example shows how to do this. As we can see from it, the ConfigPar
 We can add a section by using the addSection() method inherited from the ConfigParams class. This method accepts the name of the section and a ConfigParams object containing the fields of the section and their values as inputs.  The following example shows how to do this:
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code7_node.md" >}}   
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -253,7 +253,7 @@ We can add a section by using the addSection() method inherited from the ConfigP
 To extract the values of the different credential parameters, we can use the get methods available for the most common credential parameters such as username, password, and access key. The following examples show how to use them:
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code8_node.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -279,7 +279,7 @@ To extract the values of the different credential parameters, we can use the get
 Additionally, we can use the get method, which takes the name of the credential parameter as its input. 
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code9_node.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -307,7 +307,7 @@ Additionally, we can use the get method, which takes the name of the credential 
 There are several ways to update a parameter's value. One of them is to use the set method for the parameter with the new value as input. For example:
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code10_node.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -335,7 +335,7 @@ will reset the value of the password to 'password2'.
 Another way is to use the put() method, which asks for the name of the parameter and its new value as inputs:
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code11_node.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -361,7 +361,7 @@ Another way is to use the put() method, which asks for the name of the parameter
 Or, to use the setAsObject() method, which also takes the name of the credential parameter and its value as inputs.
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code12_node.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -387,7 +387,7 @@ Or, to use the setAsObject() method, which also takes the name of the credential
 Finally, we can use the override() method, which returns a new instance of CredentialParams with the old and updated values. The following example explains how to use it:
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code13_node.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -415,7 +415,7 @@ Finally, we can use the override() method, which returns a new instance of Crede
 To delete a credential parameter from a CredentialParams object, we can use the remove() method, which takes the parameter's name as input. This example explains how to use it:
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code14_node.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -447,7 +447,7 @@ The MemoryCredentialStore component is used to create a store for credential par
 In order to create a MemoryCredentialStore component, we need to import this class first. This can be done with the following command:
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code15_node.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -475,7 +475,7 @@ In order to create a MemoryCredentialStore component, we need to import this cla
 To create a MemoryCredentialStore, we need to instantiate this class. This presents us with two different options: we can create a ConfigParams object containing the configuration parameters and call it from the constructor
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code16_node.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -501,7 +501,7 @@ To create a MemoryCredentialStore, we need to instantiate this class. This prese
 or we can instantiate the store without any input parameter and use the readCredentials() method to add the credentials:
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code17_node.md" >}}   
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -529,7 +529,7 @@ or we can instantiate the store without any input parameter and use the readCred
 To add new credentials to a store, we use the store() method. This method accepts the correlationId, the identification key and a CredentialParams object containing the set of credentials as inputs. In the example below, we add a new set of credentials identified by a key with value "key3".
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code18_node.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -557,7 +557,7 @@ To add new credentials to a store, we use the store() method. This method accept
 The lookup() method is used to retrieve stored credentials. It takes a correlationId and a key as input parameters and returns a ConfigParams object containing the retrieved credentials. If no credentials were found, it returns an empty ConfigParams object.
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code19_node.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -585,7 +585,7 @@ The lookup() method is used to retrieve stored credentials. It takes a correlati
 Credentials can be updated with the store() method. This method requires the correlationId, the key of the set we want to update and a CredentialParams object containing the updated parameters as inputs. In the following example, we change the value of the user to "joeve3V2". 
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code20_node.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -611,7 +611,7 @@ Credentials can be updated with the store() method. This method requires the cor
 Alternatively, we can change all the stored values with the readCredentials() method. In this case, all the stored sets will be deleted and the new ones stored. In the example below, we replace the set identified by "key1" with new values, delete the sets identified by "key2" and "key3", and add a new set identified by "key4".
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code21_node.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -639,7 +639,7 @@ Alternatively, we can change all the stored values with the readCredentials() me
 We can delete a set of credentials identified by a common key by placing a Null/None value as the CredentialParams object in the store method. The following example shows how to do this:
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code22_node.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}

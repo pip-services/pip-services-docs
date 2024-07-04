@@ -20,7 +20,7 @@ The Pip.Services Toolkit offers a simple but very flexible mechanism for compone
 A component can be made configurable by adding the **IConfigurable** interface and implementing its **configure** method. This method will be called by the container right after container creation, with the loaded configuration being passed as a parameter.
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code1_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -48,7 +48,7 @@ A component can be made configurable by adding the **IConfigurable** interface a
 The only parameter that is passed to the configure method is **ConfigParams** object. Simply put - this is a map that allows us to get a configuration parameter value by its corresponding key. Although various programming languages have unique syntax for initializing maps and objects, **ConfigParams** support initialization that is independent of the language being used.
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code2_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -75,7 +75,7 @@ The only parameter that is passed to the configure method is **ConfigParams** ob
 
 
 {{< tabsection >}}
-  Not available    
+  {{< include "./__code3_node.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -101,7 +101,7 @@ The only parameter that is passed to the configure method is **ConfigParams** ob
 The parameter kets can have a complex structure, grouped by sections using dot notation. **ConfigParams** can be used to work with entire sections as well.
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code4_node.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -129,7 +129,7 @@ The parameter kets can have a complex structure, grouped by sections using dot n
 Another helpful option is the ability to set a default configuration.
 
 {{< tabsection >}}
-  Not available   
+  {{< include "./__code5_node.md" >}}   
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -157,7 +157,7 @@ Another helpful option is the ability to set a default configuration.
 Lastly, **ConfigParams** objects can be serialized/deserialized to/from JSON, YAML, or a plain string.
 
 {{< tabsection >}}
-  Not available   
+  {{< include "./__code6_node.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -187,7 +187,7 @@ To read more about what functionality is available through **ConfigParams**, be 
 Below is an example of a configurable component:
 
 {{< tabsection >}}
-  Not available   
+  {{< include "./__code7_node.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -215,7 +215,7 @@ Below is an example of a configurable component:
 Manual configuration can be done in the following manner:
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code8_node.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -260,7 +260,7 @@ The **NameResolver** and **OptionsResolver** classes are helper classes that sim
 Below is a simple example of how it can be used:
 
 {{< tabsection >}}
-   Not available   
+   {{< include "./__code9_node.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -288,7 +288,7 @@ Below is a simple example of how it can be used:
 **OptionsResolver** is a helper class that extracts parameters from the "options" configuration section.
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code10_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -316,7 +316,7 @@ Below is a simple example of how it can be used:
 Configuration parameters can be stored in microservice configurations, configuration files, or in configuration services. To help with configuration extraction, the Pip.Services Toolkit offers two special **ConfigReader** components. The interface for these components is defined in the **Components** module.
 
 {{< tabsection >}}
-  Not available   
+  {{< include "./__code11_node.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -344,7 +344,7 @@ Configuration parameters can be stored in microservice configurations, configura
 The **MemoryConfigReader** is a **ConfigReader** that stores configuration data in memory.
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code12_node.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -376,7 +376,7 @@ The **JsonConfigReader** is a **ConfigReader** that can read configurations from
 ```
 
 {{< tabsection >}}
-  Not available   
+  {{< include "./__code13_node.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -409,7 +409,7 @@ key2: "ABCD"
 ```
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code14_node.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}

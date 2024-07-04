@@ -1,0 +1,4 @@
+
+```ts
+overriden.remove('uri');
+```

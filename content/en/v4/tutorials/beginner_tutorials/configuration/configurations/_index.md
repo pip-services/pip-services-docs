@@ -39,7 +39,7 @@ This class provides a container for configuration parameters in the form of a di
 To use the ConfigParams class we need to import it with the following command.
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code1_node.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -67,7 +67,7 @@ To use the ConfigParams class we need to import it with the following command.
 There are several ways to create a ConfigParams object such as from the class' constructor, a tuple, a string, or an object containing key:value pairs. The examples below show how to do this.
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code2_node.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -95,7 +95,7 @@ There are several ways to create a ConfigParams object such as from the class' c
 Once we have created a ConfigParams object, we can add a new section with the add_section() method. This method takes two parameters: the name of the new section and a ConfigParams object containing the key:value pairs for the added section. The example below shows how to use this method.
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code3_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -127,7 +127,7 @@ As a result, the config object will now contain the following items:
 We can get a section's parameters with the get_section() method, which requires the section's name as input parameter. The following example shows how to use it.
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code4_node.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -155,7 +155,7 @@ We can get a section's parameters with the get_section() method, which requires 
 To list the names of all the sections contained in a ConfigParams object, we can use the get_section_names() method. The following example shows how to use it.
 
 {{< tabsection >}}
-   Not available  
+   {{< include "./__code5_node.md" >}}   
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -183,7 +183,7 @@ To list the names of all the sections contained in a ConfigParams object, we can
 We can also merge different configuration sets via the mergeConfigs() method, which accepts two or more ConfigParams objects as input, and merges them into one ConfigParams object. In the following example, we merge three different ConfigParams objects into one containing the configuration sets stored in the three merged objects.
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code6_node.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -221,7 +221,7 @@ This is a helper class that can be used to extract the value related to a parame
 In order to use this class, we must first import it. The following command shows how to do this.
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code7_node.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -249,7 +249,7 @@ In order to use this class, we must first import it. The following command shows
 This class has only one method named resolve(), which returns the value of a parameter called "named" or "id" from a ConfigParams object. If both parameters exist in the same object, it returns the value of the "name" parameter. In addition, given a parameter named "descriptor" containing a string with a Descriptor form, it returns the value of the "name" parameter of such descriptor. Examples of its usage are:
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code8_node.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -281,7 +281,7 @@ This is a helper class that can be used to obtain all the names of the parameter
 In order to use this class, we must first import it. The following command shows how to do this.
 
 {{< tabsection >}}
-   Not available  
+   {{< include "./__code9_node.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -309,7 +309,7 @@ In order to use this class, we must first import it. The following command shows
 This class has only one method named resolve. This method returns the names of the parameters belonging to the "options" section. If the ConfigParams object doesn't contain an options section and the config_as_defaul parameter is set to False (default value), it returns an empty ConfigParams object. And, if the config_as_default parameter is set to True, it returns the entire parameter set. The examples below show how to use it.
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code10_node.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}

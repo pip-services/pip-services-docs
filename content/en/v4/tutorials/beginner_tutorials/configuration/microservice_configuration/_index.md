@@ -49,7 +49,7 @@ Each of these features will be explained in detail in the analysis section.
 #### Part 1: Components
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code1_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -76,7 +76,7 @@ Each of these features will be explained in detail in the analysis section.
 #### Part 2: Container
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code2_node.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}

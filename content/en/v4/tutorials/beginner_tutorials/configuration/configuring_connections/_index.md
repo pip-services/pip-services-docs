@@ -35,7 +35,7 @@ In this tutorial, you will learn how to configure connections with the Connectio
 In order to use the ConnectionParams component, we must first import it. This can be done with the following command:
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code1_node.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -71,7 +71,7 @@ There are several ways to create a ConnectionParams object, such as using a cons
 A ConnectionParams object can be created via its constructor in two different ways. The first is by creating an instance of the ConnectionParams class using as input a ConfigParams object that has the connection parameters and their values. The following example explains how to do this:
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code2_node.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -97,7 +97,7 @@ A ConnectionParams object can be created via its constructor in two different wa
 In the second approach, we instantiate this class without any input and then we set the values of the most common parameters via their respective set methods. For example:
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code3_node.md" >}}   
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -123,7 +123,7 @@ In the second approach, we instantiate this class without any input and then we 
 Or, we can add new parameters and their values using the put() method from the StringValueMap class.
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code4_node.md" >}}   
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -151,7 +151,7 @@ Or, we can add new parameters and their values using the put() method from the S
 In this case, we declare our parameters and their values in a tuple and use the fromTuples() method. The following example shows how to do this:
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code5_node.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -187,7 +187,7 @@ where different parameters are separated by commas.
 An example is:
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code6_node.md" >}}   
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -221,7 +221,7 @@ The syntax is
 And, an example of its usage is: 
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code7_node.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -251,7 +251,7 @@ Similar to the above, the manyFromConfig() method allows us to manage more than 
 As we can see in the next example, the ConfigParam object can also include other types of parameters, such as credentials. Once, instantiated, the ConnectionParams object only takes the parameters under the connections section and creates a list containing them and their values.
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code8_node.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -279,7 +279,7 @@ As we can see in the next example, the ConfigParam object can also include other
 We can add different sections to our ConnectionParamter object by using the addSection() method, which takes the name of the new section and its components as inputs.
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code9_node.md" >}}   
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -307,7 +307,7 @@ We can add different sections to our ConnectionParamter object by using the addS
 Once our connection parameters have been defined, we can read them via the get methods. Pip.Services offers specific get methods for the most common parameters such as host and port. The examples below show how to use them:
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code10_node.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -333,7 +333,7 @@ Once our connection parameters have been defined, we can read them via the get m
 As the ConnectionParams object has the form of a StringValueMap, we can also use the get('paramterName') method, which can be used with any parameter.
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code11_node.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -359,7 +359,7 @@ As the ConnectionParams object has the form of a StringValueMap, we can also use
 Furthermore, we can get all the parameters from a section and their values by using the getSeccion() method. The following example illustrates how to obtain the values from  "sectionA".
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code12_node.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -385,7 +385,7 @@ Furthermore, we can get all the parameters from a section and their values by us
 And, to get all the section names, we have the getSectionNames() method:
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code13_node.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -413,7 +413,7 @@ And, to get all the section names, we have the getSectionNames() method:
 There are three main ways to update the value of a parameter previously defined. The first is to use any of the set methods available for the most common parameters with the new value as its input. For example, for the host, we could do:
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code14_node.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -439,7 +439,7 @@ There are three main ways to update the value of a parameter previously defined.
 The second is to use the put() method from the StringValueMap class with the updated value as its input.
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code15_node.md" >}}   
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -466,7 +466,7 @@ Finally, we can use the override() method, which returns a new instance of Conne
 
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code16_node.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -493,7 +493,7 @@ Finally, we can use the override() method, which returns a new instance of Conne
 We can remove a parameter and its value from the ConnectionParams object via the remove() method inherited from StringValueMap. The following example shows how to do this:
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code17_node.md" >}}   
 {{< /tabsection >}}
 
 {{< tabsection >}}

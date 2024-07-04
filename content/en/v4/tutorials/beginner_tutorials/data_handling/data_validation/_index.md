@@ -144,7 +144,7 @@ To perform a validation based on a specified schema, we need to use the validate
 
 This method returns an empty list if the validation was successful, and a list with result information if it wasn't. As a result, we need to differentiate between both cases, and for the unsuccessful option, we need to invoke the method get_message() and/or get_code() to obtain the reason for failure and/or the result code. 
 
-In the example below, we examine two cases based on the rule that the value must be between one and ten. In the first case, we evaluate the value 0, which results in a BAD_VALUE code and the message "must GTE 1 but found 0". In the second case, we evaluate 5, which results in an empty list.
+In the example below, we examine two cases based on the rule that the value must be between one and ten. In the first case, we evaluate the value 0, which results in a BAD_VALUE code and the message "must GTE 1 but found 0". In the second case, we evaluate 5, which results in an empty list and the message "Value within range".
 
 {{< tabsection >}}
   Not available  

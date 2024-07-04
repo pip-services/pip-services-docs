@@ -276,7 +276,7 @@ After running the above code, we get the following output:
 
 ##### IncludedRule
 
-The InclidedRule class allows us to check that a value is included in a given set of constants. The examples below show how to use it.
+The IncludedRule class allows us to check that a value is included in a given set of constants. The examples below show how to use it.
 
 {{< tabsection >}}
   Not available  

@@ -263,7 +263,7 @@ Finally, to complete the process, we need to dispose of the component. For this,
 #### Important note
 In this example, we have created a component that accepts configuration parameters, links to other components, opens and executes a process, closes, deletes the links to other components, and destroys itself. 
 
-However, the PIP.services toolkit provides many other components that can be used to add extra functionality, such as connectivity to other services, observability, and other types of persistence. 
+However, the Pip.Services toolkit provides many other components that can be used to add extra functionality, such as connectivity to other services, observability, and other types of persistence. 
 
 #### Final code
 The complete code for our example is:

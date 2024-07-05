@@ -207,7 +207,7 @@ As our component already has access to this interface, we will define the **clos
 
 #### Step 7 – Un-referencing
 
-Once our component has been closed, we need to clear the component's previously defined references. PIP.services provides the **IUnreferenceable** interface, which defines the **unset_references** method. In our example this method will be coded as:
+Once our component has been closed, we need to clear the component's previously defined references. Pip.Services provides the **IUnreferenceable** interface, which defines the **unset_references** method. In our example this method will be coded as:
 
 {{< tabsection >}}
   Not available  

@@ -18,7 +18,7 @@ class MyComponentA(IReferenceable, IConfigurable, IOpenable):
     
     # ...
 
-    def my_task(self, correlation_id):
+    def my_task(self, context):
         print("Doing my business task")
         dummy_variable = "dummy value"
 

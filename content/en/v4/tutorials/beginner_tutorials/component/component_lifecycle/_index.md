@@ -67,11 +67,11 @@ export interface IExecutable {
 
 {{< tabsection isMarkdown=true >}}
 
-- [IConfigurable](../../../net/components/config/iconfigurable/) – component configuration.
-- [IReferenceable](../../../net/components/refer/ireferenceable/) and [IUnreferenceable](../../../net/commons/refer/iunreferenceable/) – setting and destroying references to other components.
-- [IOpenable](../../../net/components/run/iopenable) and [IClosable](../../../net/commons/run/iclosable) – starting and stopping internal functional processes.
-- [IExecutable](../../../net/components/exec/iexecutable) – execution of functional processes.
-- [INotifiable](../../../net/components/exec/inotifiable) - sending event notifications.
+- [IConfigurable](../../../../toolkit_api/net/components/config/iconfigurable/) – component configuration.
+- [IReferenceable](../../../../toolkit_api/net/components/refer/ireferenceable/) and [IUnreferenceable](../../../net/commons/refer/iunreferenceable/) – setting and destroying references to other components.
+- [IOpenable](../../../../toolkit_api/net/components/run/iopenable) and [IClosable](../../../net/commons/run/iclosable) – starting and stopping internal functional processes.
+- [IExecutable](../../../../toolkit_api/net/components/exec/iexecutable) – execution of functional processes.
+- [INotifiable](../../../../toolkit_api/net/components/exec/inotifiable) - sending event notifications.
 
 ```cs
 

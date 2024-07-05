@@ -119,7 +119,7 @@ After configuring our component, we want to link MyComponentA to another compone
 
 To help define those components that require opening, Pip.Services offers the **IOpenable** interface. This interface is part of the Commons module and offers two methods: **open** and **isOpen**. In our example, we will use the first one to create the code that will open the component, and the second one to verify whether the component is open or not.
 
-Moreover, as the opening of the component marks the start of its usage, we will add an optional component called **context**. This component is used to trace the execution of the component through the call chain. It can be any string, such as "123". 
+Moreover, as the opening of the component marks the start of its usage, we will add an optional component called **context**. This component is used to trace the execution of the component through the call chain. It can be a string, such as "123". 
 
 Now, our code expands to this:
 

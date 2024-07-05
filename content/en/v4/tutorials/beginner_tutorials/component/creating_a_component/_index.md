@@ -328,7 +328,7 @@ Which, after running, results in the following output:
 
 At present, we have a component that is capable of connecting to another component and can execute some actions defined by us. This component is ready for use. However, running it step-by-step can be laborious and inefficient. 
 
-To solve this problem, we can use a container. PIP.Services offers the **ProcessContainer**, which is an Inversion of control (IoC) container that runs as a system process. 
+To solve this problem, we can use a container. Pip.Services offers the **ProcessContainer**, which is an Inversion of control (IoC) container that runs as a system process. 
 
 As this container uses a factory to create the contained components, we will create one via the **Factory** class. Once again, we will use **Descriptor** objects to locate each component, and we will use the method **register_as_type** to register the component in our factory. This method requires the locator and the component's type. Our updated code is:
 
@@ -419,7 +419,8 @@ We have a service, and to use it, we just need to create an instance of our cont
 After running our service, we should see the following output, which confirms that components A and B have been created and linked:
 
 <img src="figure4.png" alt="Console logger messages" style="width:100%">
-     
+
+     <br>
 As our component is complete and fully functional, this step marks the end of our task.
 
 ### Wrapping up

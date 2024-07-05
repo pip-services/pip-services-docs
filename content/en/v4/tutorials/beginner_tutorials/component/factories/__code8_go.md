@@ -1,4 +1,4 @@
 
 ```go
-
+reflect.TypeOf(lock)
 ```

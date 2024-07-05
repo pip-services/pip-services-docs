@@ -1,4 +1,4 @@
 
 ```go
-
+compositeFactory := cbuild.NewCompositeFactory()
 ```

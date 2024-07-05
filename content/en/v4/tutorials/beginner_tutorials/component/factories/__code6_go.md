@@ -1,4 +1,4 @@
 
 ```go
-
+logicFactory := clogic.NewDefaultLogicFactory()
 ```

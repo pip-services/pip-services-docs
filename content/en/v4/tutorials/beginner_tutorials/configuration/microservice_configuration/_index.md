@@ -136,7 +136,7 @@ In our example, we create a factory for ComponentB, ComponentA1, and ComponentA2
 
 Finally, when creating either ComponentA1 or ComponentA2, the program detects that this class has implemented the IReferenceable interface. Then, from the setReferences() method, it obtains the necessary information to create all required dependencies, which would be ComponentB in our case. This information is obtained from an instance of the References class, which retrieves information from the factory’s registered components.
 
-Additionally, by implementing the [IConfigurable](../../tutorials/beginner_tutorials/configuration/component_configuration/) interface, we can set the values of the component’s parameters using the configure() method, which accepts a [ConfigParams](../../tutorials/beginner_tutorials/configuration/configurations/) object as a parameter. 
+Additionally, by implementing the IConfigurable interface, we can set the values of the component’s parameters using the configure() method, which accepts a ConfigParams object as a parameter. 
 
 ![figure 5](./Figure5.png)
 

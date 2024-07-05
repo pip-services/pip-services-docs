@@ -69,7 +69,7 @@ This component provides an in-memory implementation of a message queue that can 
 In order to use this component, we need to import it first. The following command shows how to do this:
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code1_node.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -97,7 +97,7 @@ In order to use this component, we need to import it first. The following comman
 Following this, we create a message receiver that prints a customized message once a message is received.  
 
 {{< tabsection >}}
-   Not available 
+   {{< include "./__code2_node.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -125,7 +125,7 @@ Following this, we create a message receiver that prints a customized message on
 The next step is to create an instance of the MemoryMessageQueue class and open it. The following code shows how to do this:
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code3_node.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -153,7 +153,7 @@ The next step is to create an instance of the MemoryMessageQueue class and open 
 Now, we need to create a listener that waits for messages to arrive in the queue. In order for this process not to collide with the message sending, we create it in a separate thread. The following code does just that:
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code4_node.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -181,7 +181,7 @@ Now, we need to create a listener that waits for messages to arrive in the queue
 After creating a listener, we send a message to the queue using a MessageEnvelope component. This component allows us to add extra information to the message, such as a message type. The following code explains how this can be done:
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code5_node.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -215,7 +215,7 @@ After sending the message, the listener receives it and the message receiver pri
 Once we’re done using the memory queue, we close it to free resources. The following code shows how to do this:
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code6_node.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -243,7 +243,7 @@ Once we’re done using the memory queue, we close it to free resources. The fol
 Now, let’s put all of these concepts together into a single program. The code below shows what the end results looks like:
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code7_node.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}

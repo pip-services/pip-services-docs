@@ -47,7 +47,7 @@ In this tutorial, we will create a ProcessContainer component that packages a cu
 In order to use the ProcessContainer component, we need to import it first. This can be done with the following command:
 
 {{< tabsection >}}
- Not available  
+ {{< include "./__code1_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -75,7 +75,7 @@ In order to use the ProcessContainer component, we need to import it first. This
 Now, we create a component that will operate in a ProcessContainer. In our example, this is a mock component, that only prints a message once an operation is called. Moreover, to see how the container manages the lifecycle of this component, we want this class to be openable and configurable. An example of what this class looks like is:
 
 {{< tabsection >}}
- Not available  
+ {{< include "./__code2_node.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -103,7 +103,7 @@ Now, we create a component that will operate in a ProcessContainer. In our examp
 The next step is to create a factory for our component. For this, we create a class that extends the Factory class and registers our previously defined custom component. The following code shows how to do this:
 
 {{< tabsection >}}
- Not available  
+ {{< include "./__code3_node.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -153,7 +153,7 @@ Once our container and factory are ready, we create a configuration file that wi
 The final step is to create the ProcessContainer. To do this, we create a class that extends the ProcessContainer component. In it, we add our previously created factory and specify the path to our configuration file (The default path is ./config/config.yml). The following code shows how to do this:
 
 {{< tabsection >}}
- Not available  
+ {{< include "./__code4_node.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -181,7 +181,7 @@ The final step is to create the ProcessContainer. To do this, we create a class 
 Now that our code is ready, we can run our container. This is done via its run() method. For example, in the code below, we create an instance of our container and call this method.
 
 {{< tabsection >}}
- Not available  
+ {{< include "./__code5_node.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -228,7 +228,7 @@ Once the process is stopped, the container:
 Finally, we merge the code from the previous sections into one program:
 
 {{< tabsection >}}
- Not available  
+ {{< include "./__code6_node.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}

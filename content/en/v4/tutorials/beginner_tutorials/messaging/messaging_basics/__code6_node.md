@@ -1,0 +1,4 @@
+
+```ts
+messageQueue.close(ctx) 
+```

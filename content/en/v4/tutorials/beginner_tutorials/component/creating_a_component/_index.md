@@ -420,11 +420,10 @@ After running our service, we should see the following output, which confirms th
 
 <img src="figure4.png" alt="Console logger messages" style="width:100%">
 
-     <br>
 As our component is complete and fully functional, this step marks the end of our task.
 
 ### Wrapping up
 
 In this tutorial, we have created a component, defined all the necessary methods for managing its lifecycle, and assembled a service from it. We also saw that containers offer a more efficient way to run components.
 
-More complex components will follow a similar structure, but with added functionality. For example, we can add things like different forms of persistence, connectivity to other services, observability, caching, and more. You can find an example of this in the [Data Microservice](../../../getting_started/tutorials/data_microservice/) tutorial.
+More complex components will follow a similar structure, but with added functionality. For example, we can add things like different forms of persistence, connectivity to other services, observability, caching, and more. You can find an example of this in the [Data Microservice](../../../advanced_tutorials/data_microservice/) tutorial.

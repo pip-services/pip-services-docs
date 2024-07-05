@@ -1,4 +1,3 @@
-See [PrometheusMetricsService](../../../toolkit_api/python/prometheus/controllers/prometheus_metrics_controller.md)
 
 ```python
  def set_references(self, references: IReferences):

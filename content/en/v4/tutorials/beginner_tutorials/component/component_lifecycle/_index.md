@@ -75,27 +75,6 @@ export interface IExecutable {
 
 ```cs
 
-public interface IConfigurable
-{
-    void Configure(ConfigParams config);
-}
-public interface IReferenceable
-{
-    void SetReferences(IReferences references);
-}
-public interface IOpenable : IClosable
-{
-    bool IsOpen();
-    Task OpenAsync(string correlationId);
-}
-public interface IClosable
-{
-    Task CloseAsync(string correlationId);
-}
-public interface IExecutable
-{
-    Task<object> ExecuteAsync(string correlationId, Parameters args);
-}
 
 ```
 
@@ -111,7 +90,6 @@ public interface IExecutable
 - [INotifiable](../../../golang/components/exec/inotifiable) - sending event notifications.
 
 ```go
-
 type IConfigurable interface {
 	Configure(ctx context.Context, config *ConfigParams)
 }
@@ -125,17 +103,17 @@ type IOpenable interface {
 
 	IsOpen() bool
 
-	Open(ctx context.Context, correlationId string) error
+	Open(ctx context.Context) error
 }
 
 
 type IClosable interface {
-	Close(ctx context.Context, correlationId string) error
+	Close(ctx context.Context) error
 }
 
 
 type IExecutable interface {
-	Execute(ctx context.Context, correlationId string, args *Parameters) (result interface{}, err error)
+	Execute(ctx context.Context, args *Parameters) (result interface{}, err error)
 }
 
 ```
@@ -152,26 +130,6 @@ type IExecutable interface {
 
 ```dart
 
-abstract class IConfigurable {
-  void configure(ConfigParams config);
-}
-
-abstract class IReferenceable {
-  void setReferences(IReferences references);
-}
-
-abstract class IOpenable implements IClosable {
-  bool isOpen();
-  Future open(String? correlationId);
-}
-
-abstract class IClosable {
-    Future close(String? correlationId);
-}
-
-abstract class IExecutable {
-   Future<dynamic> execute(String? correlationId, Parameters args);
-}
 ```
 
 {{< /tabsection >}}
@@ -311,46 +269,6 @@ class CounterController implements IReferenceable, IReconfigurable, IOpenable, I
 {{< tabsection isMarkdown=true >}}
 
 ```cs
-public sealed class CounterController : IReferenceable, IReconfigurable, IOpenable, IExecutable
-{
-    private readonly CompositeLogger _logger = new CompositeLogger();
-    private FixedRateTimer Timer { get; set; } = new FixedRateTimer();
-    private Parameters Parameters { get; set; } = new Parameters();
-    private long Counter { get; set; } = 0;
-    public void Configure(ConfigParams config)
-    {
-        Parameters = Parameters.FromConfig(config);
-    }
-    public void SetReferences(IReferences references)
-    {
-        _logger.SetReferences(references);
-    }
-    public bool IsOpen()
-    {
-        return Timer.IsStarted;
-    }
-    public Task OpenAsync(string correlationId)
-    {
-        Timer.Task = new Action(async () => await ExecuteAsync(correlationId, Parameters));
-        Timer.Interval = 1000;
-        Timer.Delay = 1000;
-        Timer.Start();
-        _logger.Trace(correlationId, "Counter controller opened");
-        return Task.CompletedTask;
-    }
-    public Task CloseAsync(string correlationId)
-    {
-        Timer.Stop();
-        _logger.Trace(correlationId, "Counter controller closed");
-        return Task.CompletedTask;
-    }
-    public async Task<object> ExecuteAsync(string correlationId, Parameters parameters)
-    {
-        _logger.Info(correlationId, "{0} - {1}", Counter++,
-        Parameters.GetAsStringWithDefault("message", "Hello World!"));
-        return await Task.FromResult(Counter);
-    }
-}
 
 ```
 
@@ -359,22 +277,30 @@ public sealed class CounterController : IReferenceable, IReconfigurable, IOpenab
 {{< tabsection isMarkdown=true >}}
 
 ```go
+import (
+	"context"
+
+	cexec "github.com/pip-services4/pip-services4-go/pip-services4-components-go/exec"
+	crefer "github.com/pip-services4/pip-services4-go/pip-services4-components-go/refer"
+	clog "github.com/pip-services4/pip-services4-go/pip-services4-observability-go/log"
+)
+
 type CounterController struct {
 	logger     *clog.CompositeLogger
-	timer      *crun.FixedRateTimer
-	parameters *crun.Parameters
+	timer      *cexec.FixedRateTimer
+	parameters *cexec.Parameters
 	counter    int
 }
 
 func NewCounterController() *CounterController {
 	instance := &CounterController{
 		logger:     clog.NewCompositeLogger(),
-		timer:      crun.NewFixedRateTimer(),
-		parameters: crun.NewEmptyParameters(),
+		timer:      cexec.NewFixedRateTimer(),
+		parameters: cexec.NewEmptyParameters(),
 		counter:    0,
 	}
 
-	instance.logger.SetLevel(clog.Debug)
+	instance.logger.SetLevel(clog.LevelDebug)
 
 	return instance
 }
@@ -387,29 +313,33 @@ func (c *CounterController) IsOpen() bool {
 	return c.timer.IsStarted()
 }
 
-func (c *CounterController) Open(ctx context.Context, correlationId string) error {
+func (c *CounterController) Open(ctx context.Context) error {
 	if c.IsOpen() {
 		return nil
 	}
 
-	c.timer.SetCallback(func(ctx context.Context) { c.Execute(correlationId, c.parameters) })
+	c.timer.SetCallback(func(ctx context.Context) { c.Execute(context.Background(), *c.parameters) })
 	c.timer.SetInterval(1000)
 	c.timer.SetDelay(1000)
 	c.timer.Start(context.Background())
-	c.logger.Trace(context.Background(), correlationId, "Counter controller opened")
+	c.logger.Trace(context.Background(), "Counter controller opened")
 
 	return nil
 }
 
-func (c *CounterController) Close(ctx context.Context, correlationId string) error {
+func (c *CounterController) Close(ctx context.Context) error {
 	c.timer.Stop(ctx)
-	c.logger.Trace(context.Background(), correlationId, "Counter controller closed")
+	c.logger.Trace(context.Background(), "Counter controller closed")
 
 	return nil
 }
 
-func (c *CounterController) Execute(ctx context.Background(), correlationId string, args crun.Parameters) (result interface{}, err error) {
-	return args.GetAsObject("message"), nil
+func (c *CounterController) Execute(ctx context.Context, args cexec.Parameters) (result interface{}, err error) {
+	message, ok := args.GetAsObject("message")
+	if !ok {
+		return nil, nil
+	}
+	return message, nil
 }
 ```
 
@@ -418,58 +348,7 @@ func (c *CounterController) Execute(ctx context.Background(), correlationId stri
 {{< tabsection isMarkdown=true >}}
 
 ```dart
-import 'package:pip_services3_commons/pip_services3_commons.dart';
-import 'package:pip_services3_components/pip_services3_components.dart';
 
-class CounterController
-    implements IReferenceable, IReconfigurable, IOpenable, IExecutable {
-  final CompositeLogger _logger = CompositeLogger();
-  final FixedRateTimer timer = FixedRateTimer();
-  Parameters parameters = Parameters();
-  int counter = 0;
-
-  @override
-  void configure(ConfigParams config) {
-    parameters = Parameters.fromConfig(config);
-  }
-
-  @override
-  void setReferences(IReferences references) {
-    _logger.setReferences(references);
-  }
-
-  @override
-  bool isOpen() {
-    return timer.isStarted();
-  }
-
-  @override
-  Future open(String? correlationId) async {
-    timer.setCallback(() async {
-      return await execute(correlationId, parameters);
-    });
-    timer.setInterval(1000);
-    timer.setDelay(1000);
-    timer.start();
-    _logger.trace(correlationId, 'Counter controller opened');
-  }
-
-  @override
-  Future close(String? correlationId) async {
-    timer.stop();
-    _logger.trace(correlationId, 'Counter controller closed');
-  }
-
-  @override
-  Future<int> execute(String? correlationId, Parameters parameters) async {
-    _logger.debug(correlationId, '%s - %s', [
-      counter++,
-      parameters.getAsStringWithDefault('message', 'Hello World!')
-    ]);
-    return counter;
-  }
-}
-    
 ```
 
 {{< /tabsection >}}
@@ -502,22 +381,22 @@ class CounterController(IReferenceable, IReconfigurable, IOpenable, IExecutable)
     def is_open(self) -> bool:
         return self.__timer.is_started()
 
-    def open(self, correlation_id: Optional[str]):
-        self.__timer.set_callback(lambda: self.execute(correlation_id, self.__parameters))
+    def open(self, context: Optional[IContext]):
+        self.__timer.set_callback(lambda: self.execute(context, self.__parameters))
         self.__timer.set_interval(1000)
         self.__timer.set_delay(1000)
         self.__timer.start()
-        self.__logger.trace(correlation_id, "Counter controller opened")
+        self.__logger.trace(context, "Counter controller opened")
 
-    def close(self, correlation_id: Optional[str]):
+    def close(self, context: Optional[IContext]):
         self.__timer.stop()
-        self.__logger.trace(correlation_id, "Counter controller closed")
+        self.__logger.trace(context, "Counter controller closed")
 
-    def execute(self, correlation_id: Optional[str], args: Parameters):
+    def execute(self, context: Optional[IContext], args: Parameters):
         self.__counter += 1
 
         self.__logger.info(
-            correlation_id,
+            trace_id,
             f"{self.__counter} - {self.__parameters.get_as_string_with_default('message', 'Hello World!')}"
         )
 

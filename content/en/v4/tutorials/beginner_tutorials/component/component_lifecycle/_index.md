@@ -28,11 +28,11 @@ A flexible and, at the same time, standardized approach was developed in the Pip
 
 {{< tabsection isMarkdown=true >}}
 
-- [IConfigurable](../../../toolkit_api/node/commons/config/iconfigurable/) – component configuration.
-- [IReferenceable](../../../toolkit_api/node/commons/refer/ireferenceable/) and [IUnreferenceable](../../../toolkit_api/node/commons/refer/iunreferenceable/) – setting and destroying references to other components.
-- [IOpenable](../../../toolkit_api/node/commons/run/iopenable) and [IClosable](../../../toolkit_api/node/commons/run/iclosable) – starting and stopping internal functional processes.
-- [IExecutable](../../../toolkit_api/node/commons/run/iexecutable) – execution of functional processes.
-- [INotifiable](../../../toolkit_api/node/commons/run/inotifiable) - sending event notifications.
+- [IConfigurable](../../../toolkit_api/node/components/config/iconfigurable/) – component configuration.
+- [IReferenceable](../../../toolkit_api/node/components/refer/ireferenceable/) and [IUnreferenceable](../../../toolkit_api/node/commons/refer/iunreferenceable/) – setting and destroying references to other components.
+- [IOpenable](../../../toolkit_api/node/components/run/iopenable) and [IClosable](../../../toolkit_api/node/commons/run/iclosable) – starting and stopping internal functional processes.
+- [IExecutable](../../../toolkit_api/node/components/exec/iexecutable) – execution of functional processes.
+- [INotifiable](../../../toolkit_api/node/components/exec/inotifiable) - sending event notifications.
 
 ```typescript
 
@@ -67,11 +67,11 @@ export interface IExecutable {
 
 {{< tabsection isMarkdown=true >}}
 
-- [IConfigurable](../../../net/commons/config/iconfigurable/) – component configuration.
-- [IReferenceable](../../../net/commons/refer/ireferenceable/) and [IUnreferenceable](../../../net/commons/refer/iunreferenceable/) – setting and destroying references to other components.
-- [IOpenable](../../../net/commons/run/iopenable) and [IClosable](../../../net/commons/run/iclosable) – starting and stopping internal functional processes.
-- [IExecutable](../../../net/commons/run/iexecutable) – execution of functional processes.
-- [INotifiable](../../../net/commons/run/inotifiable) - sending event notifications.
+- [IConfigurable](../../../net/components/config/iconfigurable/) – component configuration.
+- [IReferenceable](../../../net/components/refer/ireferenceable/) and [IUnreferenceable](../../../net/commons/refer/iunreferenceable/) – setting and destroying references to other components.
+- [IOpenable](../../../net/components/run/iopenable) and [IClosable](../../../net/commons/run/iclosable) – starting and stopping internal functional processes.
+- [IExecutable](../../../net/components/exec/iexecutable) – execution of functional processes.
+- [INotifiable](../../../net/components/exec/inotifiable) - sending event notifications.
 
 ```cs
 
@@ -104,11 +104,11 @@ public interface IExecutable
 
 {{< tabsection isMarkdown=true >}}
 
-- [IConfigurable](../../../golang/commons/config/iconfigurable/) – component configuration.
-- [IReferenceable](../../../golang/commons/refer/ireferenceable/) and [IUnreferenceable](../../../golang/commons/refer/iunreferenceable/) – setting and destroying references to other components.
-- [IOpenable](../../../golang/commons/run/iopenable) and [IClosable](../../../golang/commons/run/iclosable) – starting and stopping internal functional processes.
-- [IExecutable](../../../golang/commons/run/iexecutable) – execution of functional processes.
-- [INotifiable](../../../golang/commons/run/inotifiable) - sending event notifications.
+- [IConfigurable](../../../golang/components/config/iconfigurable/) – component configuration.
+- [IReferenceable](../../../golang/components/refer/ireferenceable/) and [IUnreferenceable](../../../golang/commons/refer/iunreferenceable/) – setting and destroying references to other components.
+- [IOpenable](../../../golang/components/run/iopenable) and [IClosable](../../../golang/commons/run/iclosable) – starting and stopping internal functional processes.
+- [IExecutable](../../../golang/components/exec/iexecutable) – execution of functional processes.
+- [INotifiable](../../../golang/components/exec/inotifiable) - sending event notifications.
 
 ```go
 
@@ -144,11 +144,11 @@ type IExecutable interface {
 
 {{< tabsection isMarkdown=true >}}
 
-- [IConfigurable](../../../dart/commons/config/iconfigurable/) – component configuration.
-- [IReferenceable](../../../dart/commons/refer/ireferenceable/) and [IUnreferenceable](../../../dart/commons/refer/iunreferenceable/) – setting and destroying references to other components.
-- [IOpenable](../../../dart/commons/run/iopenable) and [IClosable](../../../dart/commons/run/iclosable) – starting and stopping internal functional processes.
-- [IExecutable](../../../dart/commons/run/iexecutable) – execution of functional processes.
-- [INotifiable](../../../dart/commons/run/inotifiable) - sending event notifications.
+- [IConfigurable](../../../dart/components/config/iconfigurable/) – component configuration.
+- [IReferenceable](../../../dart/components/refer/ireferenceable/) and [IUnreferenceable](../../../dart/commons/refer/iunreferenceable/) – setting and destroying references to other components.
+- [IOpenable](../../../dart/components/run/iopenable) and [IClosable](../../../dart/commons/run/iclosable) – starting and stopping internal functional processes.
+- [IExecutable](../../../dart/components/exec/iexecutable) – execution of functional processes.
+- [INotifiable](../../../dart/components/exec/inotifiable) - sending event notifications.
 
 ```dart
 
@@ -178,11 +178,11 @@ abstract class IExecutable {
 
 {{< tabsection isMarkdown=true >}}
 
-- [IConfigurable](../../../python/commons/config/iconfigurable/) – component configuration.
-- [IReferenceable](../../../python/commons/refer/ireferenceable/) and [IUnreferenceable](../../../python/commons/refer/iunreferenceable/) – setting and destroying references to other components.
-- [IOpenable](../../../python/commons/run/iopenable) and [IClosable](../../../python/commons/run/iclosable) – starting and stopping internal functional processes.
-- [IExecutable](../../../python/commons/run/iexecutable) – execution of functional processes.
-- [INotifiable](../../../python/commons/run/inotifiable) - sending event notifications.
+- [IConfigurable](../../../python/components/config/iconfigurable/) – component configuration.
+- [IReferenceable](../../../python/components/refer/ireferenceable/) and [IUnreferenceable](../../../python/commons/refer/iunreferenceable/) – setting and destroying references to other components.
+- [IOpenable](../../../python/components/run/iopenable) and [IClosable](../../../python/components/run/iclosable) – starting and stopping internal functional processes.
+- [IExecutable](../../../python/components/exec/iexecutable) – execution of functional processes.
+- [INotifiable](../../../python/components/exec/inotifiable) - sending event notifications.
 
 ```python
 from abc import ABC
@@ -538,11 +538,11 @@ The Pip.Service's Toolkit also includes a few utilities that can be used during 
 
 {{< tabsection isMarkdown=true >}}
 
-- [Opener](../../../toolkit_api/node/commons/run/opener/) – initiates the functional processes of selected components.
-- [Closer](../../../toolkit_api/node/commons/run/closer/) – stops the functional processes of selected components.
-- [Executor](../../../toolkit_api/node/commons/run/executor/) – runs the functional processes of selected components.
-- [Notifier](../../../toolkit_api/node/commons/run/notifier/) - sends event notifications for selected components.
-- [Cleaner](../../../toolkit_api/node/commons/run/cleaner/) – cleans the current state of selected components.
+- [Opener](../../../toolkit_api/node/components/run/opener/) – initiates the functional processes of selected components.
+- [Closer](../../../toolkit_api/node/components/run/closer/) – stops the functional processes of selected components.
+- [Executor](../../../toolkit_api/node/components/exec/executor/) – runs the functional processes of selected components.
+- [Notifier](../../../toolkit_api/node/components/exec/notifier/) - sends event notifications for selected components.
+- [Cleaner](../../../toolkit_api/node/components/run/cleaner/) – cleans the current state of selected components.
 
 For example:
 
@@ -556,11 +556,11 @@ await Closer.close(correlationId, references.getAll());
 
 {{< tabsection isMarkdown=true >}}
 
-- [Opener](../../../toolkit_api/net/commons/run/opener/) – initiates the functional processes of selected components.
-- [Closer](../../../toolkit_api/net/commons/run/closer/) – stops the functional processes of selected components.
-- [Executor](../../../toolkit_api/net/commons/run/executor/) – runs the functional processes of selected components.
-- [Notifier](../../../toolkit_api/net/commons/run/notifier/) - sends event notifications for selected components.
-- [Cleaner](../../../toolkit_api/net/commons/run/cleaner/) – cleans the current state of selected components.
+- [Opener](../../../toolkit_api/net/components/run/opener/) – initiates the functional processes of selected components.
+- [Closer](../../../toolkit_api/net/components/run/closer/) – stops the functional processes of selected components.
+- [Executor](../../../toolkit_api/net/components/exec/executor/) – runs the functional processes of selected components.
+- [Notifier](../../../toolkit_api/net/components/exec/notifier/) - sends event notifications for selected components.
+- [Cleaner](../../../toolkit_api/net/components/run/cleaner/) – cleans the current state of selected components.
 
 
 For example:
@@ -575,11 +575,11 @@ await Closer.CloseAsync(correlationId, _references.GetAll());
 
 {{< tabsection isMarkdown=true >}}
 
-- [Opener](../../../toolkit_api/golang/commons/run/opener/) – initiates the functional processes of selected components.
-- [Closer](../../../toolkit_api/golang/commons/run/closer/) – stops the functional processes of selected components.
-- [Executor](../../../toolkit_api/golang/commons/run/executor/) – runs the functional processes of selected components.
-- [Notifier](../../../toolkit_api/golang/commons/run/notifier/) - sends event notifications for selected components.
-- [Cleaner](../../../toolkit_api/golang/commons/run/cleaner/) – cleans the current state of selected components.
+- [Opener](../../../toolkit_api/golang/components/run/opener/) – initiates the functional processes of selected components.
+- [Closer](../../../toolkit_api/golang/components/run/closer/) – stops the functional processes of selected components.
+- [Executor](../../../toolkit_api/golang/components/exec/executor/) – runs the functional processes of selected components.
+- [Notifier](../../../toolkit_api/golang/components/exec/notifier/) - sends event notifications for selected components.
+- [Cleaner](../../../toolkit_api/golang/components/run/cleaner/) – cleans the current state of selected components.
 
 
 For example:
@@ -594,11 +594,11 @@ err = crun.Closer.Close(context.Background(), correlationId, references.GetAll()
 
 {{< tabsection isMarkdown=true >}}
 
-- [Opener](../../../toolkit_api/dart/commons/run/opener/) – initiates the functional processes of selected components.
-- [Closer](../../../toolkit_api/dart/commons/run/closer/) – stops the functional processes of selected components.
-- [Executor](../../../toolkit_api/dart/commons/run/executor/) – runs the functional processes of selected components.
-- [Notifier](../../../toolkit_api/dart/commons/run/notifier/) - sends event notifications for selected components.
-- [Cleaner](../../../toolkit_api/dart/commons/run/cleaner/) – cleans the current state of selected components.
+- [Opener](../../../toolkit_api/dart/components/run/opener/) – initiates the functional processes of selected components.
+- [Closer](../../../toolkit_api/dart/components/run/closer/) – stops the functional processes of selected components.
+- [Executor](../../../toolkit_api/dart/components/exec/executor/) – runs the functional processes of selected components.
+- [Notifier](../../../toolkit_api/dart/components/exec/notifier/) - sends event notifications for selected components.
+- [Cleaner](../../../toolkit_api/dart/components/run/cleaner/) – cleans the current state of selected components.
 
 
 For example:
@@ -613,11 +613,11 @@ await Closer.close(correlationId, references.getAll());
 
 {{< tabsection isMarkdown=true >}}
 
-- [Opener](../../../toolkit_api/python/commons/run/opener/) – initiates the functional processes of selected components.
-- [Closer](../../../toolkit_api/python/commons/run/closer/) – stops the functional processes of selected components.
-- [Executor](../../../toolkit_api/python/commons/run/executor/) – runs the functional processes of selected components.
-- [Notifier](../../../toolkit_api/python/commons/run/notifier/) - sends event notifications for selected components.
-- [Cleaner](../../../toolkit_api/python/commons/run/cleaner/) – cleans the current state of selected components.
+- [Opener](../../../toolkit_api/python/components/run/opener/) – initiates the functional processes of selected components.
+- [Closer](../../../toolkit_api/python/components/run/closer/) – stops the functional processes of selected components.
+- [Executor](../../../toolkit_api/python/components/exec/executor/) – runs the functional processes of selected components.
+- [Notifier](../../../toolkit_api/python/components/exec/notifier/) - sends event notifications for selected components.
+- [Cleaner](../../../toolkit_api/python/components/run/cleaner/) – cleans the current state of selected components.
 
 
 For example:

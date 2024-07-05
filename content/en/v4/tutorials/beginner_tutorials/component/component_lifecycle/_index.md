@@ -435,7 +435,7 @@ await Closer.close(correlationId, references.getAll());
 
 {{< tabsection isMarkdown=true >}}
 
-- [Opener](../../../toolkit_api/net/components/run/opener/) – initiates the functional processes of selected components.
+- [Opener](../../../../toolkit_api/net/components/run/opener/) – initiates the functional processes of selected components.
 - [Closer](../../../toolkit_api/net/components/run/closer/) – stops the functional processes of selected components.
 - [Executor](../../../toolkit_api/net/components/exec/executor/) – runs the functional processes of selected components.
 - [Notifier](../../../toolkit_api/net/components/exec/notifier/) - sends event notifications for selected components.

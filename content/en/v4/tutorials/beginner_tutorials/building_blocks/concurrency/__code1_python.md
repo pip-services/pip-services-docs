@@ -14,6 +14,6 @@ class MyComponent:
         if state is not None: state = MyState()
         ...
 
-        self._store.save(correlation_id, "mycomponent:" + object_id, state)
+        self._store.save(context, "mycomponent:" + object_id, state)
 
 ```

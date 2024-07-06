@@ -112,7 +112,7 @@ Components are driven by configurations that can be stored in JSON or YAML files
   swagger:
     enable: true
 
-# Swagger controller
+# Swagger service
 - descriptor: "pip-services:swagger-controller:http:default:1.0"
 {{/if}}
 
@@ -124,7 +124,7 @@ Components are driven by configurations that can be stored in JSON or YAML files
     host: 0.0.0.0
     port: {{GRPC_PORT}}{{#unless GRPC_PORT}}8090{{/unless}}
 
-# GRPC controllerversion 1.0
+# GRPC controller version 1.0
 - descriptor: "pip-service-data:controller:grpc:default:1.0"
 {{/if}}
 ```

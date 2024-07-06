@@ -1,7 +1,7 @@
 
 ```python
 from pip_services4_logic.state import IStateStore
-
+from pip_services4_components.context import IContext
 
 class MyComponent:
     _store: IStateStore = None

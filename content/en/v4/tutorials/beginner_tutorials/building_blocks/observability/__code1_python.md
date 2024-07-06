@@ -10,7 +10,7 @@ class MyComponent(IReferenceable):
     def set_references(self, refs: IReferences):
         self._logger.set_references(refs)
 
-    def do_something(self, correlation_id: str):
-        self._logger.debug(correlation_id, "Did something...")
+    def do_something(self, context: IContext):
+        self._logger.debug(context, "Did something...")
 
 ```

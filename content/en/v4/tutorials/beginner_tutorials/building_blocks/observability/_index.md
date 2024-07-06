@@ -125,7 +125,7 @@ Not available
 
 The most common observability scenario consists of monitoring the invocation of microservice operations. This can be done via a combination of logs and counters: logs will record what operations are executed and errors when they happen, and counters will calculate how often operations were called and what's their execution time and error rate. However, some monitoring systems like Datadog or Splank have started offering APIs to collect traces separately, enabling rich visualizations and analytics around them.
 
-The Pip.Services toolkit includes the ITraces interface for tracing components defined in the trace package in the components module. There are a few ready-to-use tracing components available in the toolkit:
+The Pip.Services toolkit includes the ITracer interface for tracing components defined in the trace package in the components module. There are a few ready-to-use tracing components available in the toolkit:
 
 - NullTracer: Dummy implementation of tracer that doesn't do anything.
 - LogTracer: Tracer that dumps recorded traces to a logger.
@@ -172,7 +172,7 @@ Not available
 
 For more information about observability see:
 
-- #### [Logging](../../../tutorials/beginner_tutorials/observability/logging/)
-- #### [Metrics](../../../tutorials/beginner_tutorials/observability/metrics/)
-- #### [Prometheus](../../../tutorials/beginner_tutorials/observability/prometheus/)
-- #### [Elasticsearch](../../../tutorials/beginner_tutorials/observability/elasticsearch/)
+- #### [Logging](../../../beginner_tutorials/observability/logging/)
+- #### [Metrics](../../../beginner_tutorials/observability/metrics/)
+- #### [Prometheus](../../../beginner_tutorials/observability/prometheus/)
+- #### [Elasticsearch](../../../beginner_tutorials/observability/elasticsearch/)

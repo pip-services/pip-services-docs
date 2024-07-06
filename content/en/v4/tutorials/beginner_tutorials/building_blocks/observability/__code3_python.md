@@ -10,8 +10,8 @@ class MyComponent(IReferenceable):
     def set_references(self, refs: IReferences):
         self._tracer.set_references(refs)
 
-    def do_something(self, correlation_id: str):
-        timing = self._tracer.begin_trace(correlation_id, "mycomponent", "do_something")
+    def do_something(self, context: IContext):
+        timing = self._tracer.begin_trace(context, "mycomponent", "do_something")
         try:
             ...
             timing.end_trace()

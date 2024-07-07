@@ -170,7 +170,7 @@ The RedisCache component offers the necessary methods to manage the interaction 
 
 ##### Create and update
 
-We can use the store() method to create a new entry. This method accepts the correlationId, key, value, and expiration time as inputs. It returns True if the operation was successful and False otherwise. If the key already exists in the database, it updates the old value with the new value. An example of its usage is.
+We can use the store() method to create a new entry. This method accepts the context, key, value, and expiration time as inputs. It returns True if the operation was successful and False otherwise. If the key already exists in the database, it updates the old value with the new value. An example of its usage is.
 
 {{< tabsection >}}
   {{< include "./__code6_node.md" >}}

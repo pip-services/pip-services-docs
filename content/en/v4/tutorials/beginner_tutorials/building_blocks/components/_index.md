@@ -32,7 +32,7 @@ Not available
 {{< /tabsection >}}
 
 {{< tabsection >}}
-Not available
+   {{< include "./__code1_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -142,7 +142,7 @@ Not available
 {{< /tabsection >}}
 
 {{< tabsection >}}
-Not available
+   {{< include "./__code2_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}

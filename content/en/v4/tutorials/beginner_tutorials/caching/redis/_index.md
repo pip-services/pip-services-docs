@@ -226,7 +226,7 @@ We can read a value from the database with the retrieve() method, which given th
 
 ##### Delete
 
-To delete a record from the database, we can use the remove method. This method accepts the context and the key as inputs and returns 1 if the removal was successful and 0 otherwise.
+To delete a record from the database, we can use the remove method. This method accepts the context and a key as inputs and returns 1 if the removal was successful and 0 otherwise.
 
 {{< tabsection >}}
   {{< include "./__code8_node.md" >}}

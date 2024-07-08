@@ -191,5 +191,5 @@ For more information about configurations see:
 - #### [Config file syntax](../../configuration/config_file_syntax)
 - #### [Configurations](../../configuration/configurations)
 - #### [Component configuration](../../configuration/component_configuration)
-- #### [Configuring container](../../../getting_started/tutorials/data_microservice/step6)
+- #### [Configuring container](../../../advanced_tutorials/data_microservice/step6)
 - #### [More about persistences](../../persistences)

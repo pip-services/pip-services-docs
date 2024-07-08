@@ -144,7 +144,7 @@ After that, we define a component that inherits from the IdentifiableMySqlPersis
 
 #### PostgreSQL persistence
 
-Similar to what we did in the previous step, we now define a component that inherits from the IdentifiablePostgrePersistence component and the interface previously defined, and, which implements a set of CRUD operations.
+Similar to what we did in the previous step, we now define a component that inherits from the IdentifiablePostgrePersistence component and the interface previously defined, and implements a set of CRUD operations.
 
 {{< tabsection >}}
    {{< include "./__code5_node.md" >}}

@@ -21,4 +21,5 @@ config = ConfigParams.from_tuples(
 credential = CredentialParams.many_from_config(config) 
 # Returns [{'username': 'user1', 'password': 'userpass123'}, {'username': 'user2',  'password': 'userpass457','my_custom_credential_param': 'myvalue'}]
 
+
 ```

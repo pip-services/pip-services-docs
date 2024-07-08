@@ -30,7 +30,7 @@ In this section, we will see how to use each of the methods available in the Ran
 The RandomArray class provides a way to randomly choose an element from an array via its **pick** method. The following example shows how to use it.
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code1_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -72,7 +72,7 @@ The RandomBoolean class offers two methods namely chance and nextBoolean. The fo
 </table>
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code2_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -114,7 +114,7 @@ The RandomDateTime class contains two methods: **nextDate** and **updateDatetime
 </table>
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code3_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -156,7 +156,7 @@ The RandomDouble class has two methods that can be used to generate random doubl
 </table>
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code4_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -198,7 +198,7 @@ The **RandomFloat** class contains two methods that can be used to obtain random
 </table>
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code5_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -240,7 +240,7 @@ The **RandomInteger** class has two methods for generating random integers. Thei
 </table>
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code6_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -295,7 +295,7 @@ The **RandomString** class presents methods that can be used to create random st
 </table>
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code7_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -373,7 +373,7 @@ The **RandomText** class can be used to generate different types of random texts
 </table>
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code8_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}

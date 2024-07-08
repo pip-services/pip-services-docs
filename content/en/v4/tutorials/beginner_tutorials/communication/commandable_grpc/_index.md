@@ -66,7 +66,7 @@ Three additional files in this project are the container used to wrap the applic
 In order to create the CommandableGrpcService, we need to import this class first. The following code shows how to do this:
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code1_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -92,7 +92,7 @@ In order to create the CommandableGrpcService, we need to import this class firs
 Similarly, we need to import the CommandableGrpcClient:
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code2_node.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -120,7 +120,7 @@ Similarly, we need to import the CommandableGrpcClient:
 The next thing that we need to do is to create a class representing the data to be used in the example. The code below shows the MyData class, which defines the data structure of an identifiable data object containing a key and a content field. Additionally, we define a toString() method, which transforms the data object into a dictionary.
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code3_node.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -146,7 +146,7 @@ The next thing that we need to do is to create a class representing the data to 
 We also need to create a schema for this data class, which will be used by the CommandSet component:
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code4_node.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -172,7 +172,7 @@ We also need to create a schema for this data class, which will be used by the C
 And a factory, which will be used by the container:
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code5_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -200,7 +200,7 @@ And a factory, which will be used by the container:
 Now, we need to create a command set component. We do this by extending the CommandSet class and defining our CRUD commands. 
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code6_node.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -228,7 +228,7 @@ Now, we need to create a command set component. We do this by extending the Comm
 Next, we create a controller to manage the logic of our example. This controller extends an interface where we declare the CRUD methods used. It also links to our command set from where it obtains the collection of commands used and to the gRPC service that receives data from the client. For each of the commands defined in the CommandSet, it defines a method with the operations that are particular to the considered commandable class. The code below shows the controller and its interface:
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code7_node.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -255,7 +255,7 @@ Next, we create a controller to manage the logic of our example. This controller
 
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code8_node.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -283,7 +283,7 @@ Next, we create a controller to manage the logic of our example. This controller
 Next, we define the service that provides an endpoint to our application. The following code shows what this service should look like:
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code9_node.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -311,7 +311,7 @@ Next, we define the service that provides an endpoint to our application. The fo
 To run our service, we define a container that calls the data factory previously defined and the DefaultGrpcFactory component. These classes will create our data objects and gRPC service respectively.
 
 {{< tabsection >}}
-   Not available  
+   {{< include "./__code10_node.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -349,8 +349,8 @@ Our next step is to create a config file that contains information about our com
 - descriptor: "pip-services:logger:console:default:1.0"
   level: "trace"
 
-# Controller
-- descriptor: "service-mydata:controller:default:default:1.0"
+# Service
+- descriptor: "service-mydata:service:default:default:1.0"
 
 # Common GRPC endpoint
 - descriptor: "pip-services:endpoint:grpc:default:1.0"
@@ -360,7 +360,7 @@ Our next step is to create a config file that contains information about our com
     port: 8090
 
 # Commandable GRPC endpoint version 1.0
-- descriptor: "service-mydata:service:commandable-grpc:default:1.0"
+- descriptor: "service-mydata:controller:commandable-grpc:default:1.0"
 
 ```
 
@@ -373,7 +373,7 @@ When using the commandable gRPC classes, we don't need to worry about the proto 
 After defining our service, we need to create a client that calls its methods. For this, we create an interface that declares the used CRUD methods. Then, we construct a class that calls this interface and defines the inherited methods. The code below shows both programs:
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code11_node.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -399,7 +399,7 @@ After defining our service, we need to create a client that calls its methods. F
 
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code12_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -427,7 +427,7 @@ After defining our service, we need to create a client that calls its methods. F
 Now, we start the service. To do this, we run the following code:
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code13_node.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -457,7 +457,7 @@ Which, after execution, produces the following output:
 Once our service is running, we run a program that creates an instance of the client and instances of the MyData class, and calls the CRUD operations available from the service. The following code shows how to do this:
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code14_node.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}

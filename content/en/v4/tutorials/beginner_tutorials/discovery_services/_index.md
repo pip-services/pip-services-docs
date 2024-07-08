@@ -44,7 +44,7 @@ In this tutorial, you will learn how to create and operate a discovery service t
 To create a discovery service, we can use the MemoryDiscovery class, which models a discovery service that stores connections in memory. To import this class, we can use the following code:
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code1_node.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -72,7 +72,7 @@ To create a discovery service, we can use the MemoryDiscovery class, which model
 In order to create our discovery service, we need to create an instance of the MemoryDiscovery  class. Here, we have two options: we add one or more sets of connection parameters to the constructor through a config object
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code2_node.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -98,7 +98,7 @@ In order to create our discovery service, we need to create an instance of the M
 or we add them after instantiation via the configure() method.
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code3_node.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -126,7 +126,7 @@ or we add them after instantiation via the configure() method.
 Once we have created our component, we can use the register() method to add connections to our discovery service. This method takes the connection parameters to be registered as inputs. The following example shows how to use this method.
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code4_node.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -154,7 +154,7 @@ Once we have created our component, we can use the register() method to add conn
 We can obtain a connection with the resolveOne() method, which considers as input parameter the key identifying the connection parameters we are looking for.
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code5_node.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -180,7 +180,7 @@ We can obtain a connection with the resolveOne() method, which considers as inpu
 Alternatively, we can use the resolveAll() method, which asks for the same inputs, but returns a list containing all the sets of connection parameters identified by a common key.
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code6_node.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -210,7 +210,7 @@ In this section, we have an example that illustrates the use of a memory discove
 
 {{< tabsection >}}
   {{< collapse >}}
-  Not available  
+  {{< include "./__code7_node.md" >}} 
   {{< /collapse >}}
 {{< /tabsection >}}
 

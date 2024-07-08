@@ -53,7 +53,7 @@ This component provides us with a lock that can be used to synchronize the execu
 In order to use this component, we need to import it first. The following example shows how to do this:
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code1_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -82,7 +82,7 @@ In order to use this component, we need to import it first. The following exampl
 To create a lock, we just need to instantiate the MemoryLock class. The following line of code demonstrates this:
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code2_node.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -110,7 +110,7 @@ To create a lock, we just need to instantiate the MemoryLock class. The followin
 Once we have an instance of a lock, we can configure the timeout (in milliseconds) to retry the lock acquisition via the configure() method. The default timeout is 100 milliseconds. In the following example, we override this default by setting the timeout to 200 milliseconds:
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code3_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -138,7 +138,7 @@ Once we have an instance of a lock, we can configure the timeout (in millisecond
 After creation, a lock can be acquired through the acquireLock() method. This method accepts the traceId, a key that identifies the lock, a lock timeout (milliseconds), and a lock acquisition timeout (milliseconds) as inputs. In the following example, we define the traceId equal to “123”, a key with the value “mykey”, and we set both timeouts to 1000 milliseconds:
 
 {{< tabsection >}}
-   Not available  
+   {{< include "./__code4_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -166,7 +166,7 @@ After creation, a lock can be acquired through the acquireLock() method. This me
 Once done with, a lock can be released via the releaseLock() method. This method accepts the traceId and the key of a previously acquired lock as inputs. In the following example, we use the same traceId and key as in the previous example. In this manner, we can keep track of the process and identify the previously acquired lock.
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code5_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -196,7 +196,7 @@ Now that we have learned how to use the different methods available in this clas
 In this example, we define a custom component with two methods. The first stores a value in memory, while the second retrieves the stored value and returns it. Both methods use a lock to manage their operations.
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code6_node.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -233,7 +233,7 @@ This component represents a dummy lock that produces no real results. As such, i
 In order to use this component, we need to import it first. The following example shows how to do this:
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code7_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -261,7 +261,7 @@ In order to use this component, we need to import it first. The following exampl
 To create a NullLock, we need to instantiate it. The following line of code demonstrates this:
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code8_node.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -293,7 +293,7 @@ The Null lock class does possess the acquireLock() and releaseLock() methods, wh
 The following example replaces the MemoryLock used in the previous example with a NullLock. Thus, the locking is only simulated and will not actually prevent simultaneous reading of and/or writing to shared memory.
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code9_node.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}

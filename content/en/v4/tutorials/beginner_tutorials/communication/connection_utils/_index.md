@@ -41,7 +41,7 @@ In this tutorial, you will learn how to use a set of utilities offered by Pip.Se
 In order to use these utilities, we need to import them first. The following command shows how to do this:
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code1_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -75,7 +75,7 @@ The syntax of this command is
 And, the following example illustrates how to use it:
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code2_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -113,7 +113,7 @@ __concat(options1: ConfigParams, options2: ConfigParams, *keys: str)__
 The example below shows how to merge the username and password only.
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code3_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -151,7 +151,7 @@ __exclude(options: ConfigParams, *keys: str)__
 In the following example, we create a new ConfigParams object containing all the same fields as the original one with the exemption of username and password:
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code4_node.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -189,7 +189,7 @@ __include(options: ConfigParams, *keys: str)__
 For example, in the code below, a new object is created from an original one which includes the username and password only.
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code5_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -227,7 +227,7 @@ __parseUri(uri: str, default_protocol: str, default_port: str)__
 The following example shows how this utility works:
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code6_node.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -255,7 +255,7 @@ The following example shows how this utility works:
 And, this example illustrates how to use the default values:
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code7_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -286,7 +286,7 @@ The example below shows a practical application of two of these utilities, namel
 
 {{< tabsection >}}
   {{< collapse >}}
-  Not available  
+  {{< include "./__code8_node.md" >}}
   {{< /collapse >}}
 {{< /tabsection >}}
 

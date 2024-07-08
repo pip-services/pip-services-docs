@@ -45,7 +45,7 @@ To create a CommandableHttpService, we need to import this class, create a comma
 In order to create a CommandableHttpService, we need to import this component. This can be done with the following code:
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code1_node.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -74,7 +74,7 @@ In order to create a CommandableHttpService, we need to import this component. T
 The key aspect of a CommandableHttpService is its dependence on a set of predefined commands. Thus, in our example, we define a command set containing one command named greeting, which is used to create the phrase "Hello {name}" for a given name. The following code shows how to do this.
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code2_node.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -101,7 +101,7 @@ The key aspect of a CommandableHttpService is its dependence on a set of predefi
 Now that we have our command set, we can code our CommandableHttpService. For this, we create a subclass of this component and add the controller as a dependency.
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code3_node.md" >}}   
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -130,7 +130,7 @@ Now that we have our command set, we can code our CommandableHttpService. For th
 The next step is to define a controller that contains the definition of our function.
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code4_node.md" >}}    
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -158,7 +158,7 @@ The next step is to define a controller that contains the definition of our func
 Now, we create a factory that builds our service and controller. The code below shows how to do this.
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code5_node.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -187,7 +187,7 @@ Now, we create a factory that builds our service and controller. The code below 
 After we have our controller and factory, we create a process container to manage our service's lifecycle.
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code6_node.md" >}}    
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -213,7 +213,7 @@ After we have our controller and factory, we create a process container to manag
 And, then run it via the run() method.
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code7_node.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -247,7 +247,7 @@ There are several ways to consume our service. In this tutorial, we will conside
 Pip.Services offers the CommandableHttpClient component, which can be used to interact with a CommandableHttpService. In order to use it, we need to import it first.
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code8_node.md" >}}   
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -273,7 +273,7 @@ Pip.Services offers the CommandableHttpClient component, which can be used to in
 Once imported, we can create our client by extending this class. The following example shows how to do this:
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code9_node.md" >}}   
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -299,7 +299,7 @@ Once imported, we can create our client by extending this class. The following e
 Which, we then instantiate, configure, and connect to our previously defined service. 
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code10_node.md" >}}   
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -325,7 +325,7 @@ Which, we then instantiate, configure, and connect to our previously defined ser
 And then, we request a greeting and get our response. 
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code11_node.md" >}}   
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -353,7 +353,7 @@ And then, we request a greeting and get our response.
 We can also call our service via code and obtain a similar result. For example:
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code12_node.md" >}}    
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -384,7 +384,7 @@ Below is the complete code for the service and client.
 
 {{< tabsection >}}
   {{< collapse >}}
-  Not available  
+  {{< include "./__code13_node.md" >}}  
   {{< /collapse >}}
 {{< /tabsection >}}
 
@@ -435,8 +435,8 @@ Below is the complete code for the service and client.
 # Performance counter that post values to log
 - descriptor: "pip-services:counters:log:default:1.0"
      
-# Controller
-- descriptor: "hello-friend:controller:default:default:1.0"
+# Service
+- descriptor: "hello-friend:service:default:default:1.0"
   default_name: "Friend"
      
 # Shared HTTP Endpoint
@@ -446,8 +446,8 @@ Below is the complete code for the service and client.
     host: 0.0.0.0
     port: 8080
      
-# Commandable HTTP service
-- descriptor: "hello-friend:service:commandable-http:default:1.0"
+# Commandable HTTP controller
+- descriptor: "hello-friend:controller:commandable-http:default:1.0"
   swagger:
     enable: true
     auto: true
@@ -455,14 +455,14 @@ Below is the complete code for the service and client.
     name: Friends Service
     description: Commandable REST API
   
-# Heartbeat service
-- descriptor: "pip-services:heartbeat-service:http:default:1.0"
+# Heartbeat controller
+- descriptor: "pip-services:heartbeat-controller:http:default:1.0"
      
-# Status service
-- descriptor: "pip-services:status-service:http:default:1.0"
+# Status controller
+- descriptor: "pip-services:status-controller:http:default:1.0"
 
-# Swagger service
-- descriptor: "pip-services:swagger-service:http:default:1.0"
+# Swagger controller
+- descriptor: "pip-services:swagger-controller:http:default:1.0"
 ```
 {{< /collapse >}}
 
@@ -471,7 +471,7 @@ Below is the complete code for the service and client.
 
 {{< tabsection >}}
   {{< collapse >}}
-  Not available  
+  {{< include "./__code14_node.md" >}}   
   {{< /collapse >}}
 {{< /tabsection >}}
 

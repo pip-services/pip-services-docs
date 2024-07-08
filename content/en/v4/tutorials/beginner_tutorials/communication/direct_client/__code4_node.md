@@ -1,0 +1,4 @@
+
+```ts
+client.myMethod();
+```

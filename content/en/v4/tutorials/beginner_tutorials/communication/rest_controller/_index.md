@@ -29,7 +29,7 @@ This tutorial will help you understand how REST controllerss can be created with
 In order to create our REST controller, we need to import the RestController class, which is available in the Controller library, RPC module. This can be done with the following command:
 
 {{< tabsection >}}
-Not available  
+  {{< include "./__code1_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -63,7 +63,7 @@ We also define the register() method to register the controler's route. We use t
 The first part of our code will look something like this:
 
 {{< tabsection >}}
-Not available  
+  {{< include "./__code2_node.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -91,7 +91,7 @@ Not available
 Now that we have our REST controller defined, we will configure and run it. To configure our component, we first need to create an instance of our class and use the method configure to set up our connection protocol, host and port. As the configure method requires a ConfigParams input type, we import this class and use its method "from_tuples" to define our configuration. Lastly, we open our component. The second part of our code will look something like this:
 
 {{< tabsection >}}
-Not available  
+ {{< include "./__code3_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -119,7 +119,7 @@ Not available
 Our final code will be:
 
 {{< tabsection >}}
-Not available  
+  {{< include "./__code4_node.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}

@@ -119,7 +119,7 @@ After configuring our component, we want to link MyComponentA to another compone
 
 To help define those components that require opening, Pip.Services offers the **IOpenable** interface. This interface is part of the Commons module and offers two methods: **open** and **isOpen**. In our example, we will use the first one to create the code that will open the component, and the second one to verify whether the component is open or not.
 
-Moreover, as the opening of the component marks the start of its usage, we will add an optional parameter called **correlation_id**. This parameter is used to trace the execution of the component through the call chain. It can be any string, such as "123". 
+Moreover, as the opening of the component marks the start of its usage, we will add an optional component called **context**. This component is used to trace the execution of the component through the call chain. It can be a string, such as "123". 
 
 Now, our code expands to this:
 
@@ -207,7 +207,7 @@ As our component already has access to this interface, we will define the **clos
 
 #### Step 7 – Un-referencing
 
-Once our component has been closed, we need to clear the component's previously defined references. PIP.services provides the **IUnreferenceable** interface, which defines the **unset_references** method. In our example this method will be coded as:
+Once our component has been closed, we need to clear the component's previously defined references. Pip.Services provides the **IUnreferenceable** interface, which defines the **unset_references** method. In our example this method will be coded as:
 
 {{< tabsection >}}
   Not available  
@@ -234,7 +234,7 @@ Once our component has been closed, we need to clear the component's previously 
 {{< /tabsection >}}
 
 #### Step 8 – Destruction
-Finally, to complete the process, we need to dispose of the component. For this, we will use a class destructors or other instruments provided by the languages. Our code will look something like this:
+Finally, to complete the process, we need to dispose of the component. For this, we will use a class destructor or other instruments provided by the languages. Our code will look something like this:
 
 {{< tabsection >}}
   Not available  
@@ -263,7 +263,7 @@ Finally, to complete the process, we need to dispose of the component. For this,
 #### Important note
 In this example, we have created a component that accepts configuration parameters, links to other components, opens and executes a process, closes, deletes the links to other components, and destroys itself. 
 
-However, the PIP.services toolkit provides many other components that can be used to add extra functionality, such as connectivity to other services, observability, and other types of persistence. 
+However, the Pip.Services toolkit provides many other components that can be used to add extra functionality, such as connectivity to other services, observability, and other types of persistence. 
 
 #### Final code
 The complete code for our example is:
@@ -328,7 +328,7 @@ Which, after running, results in the following output:
 
 At present, we have a component that is capable of connecting to another component and can execute some actions defined by us. This component is ready for use. However, running it step-by-step can be laborious and inefficient. 
 
-To solve this problem, we can use a container. PIP.Services offers the **ProcessContainer**, which is an Inversion of control (IoC) container that runs as a system process. 
+To solve this problem, we can use a container. Pip.Services offers the **ProcessContainer**, which is an Inversion of control (IoC) container that runs as a system process. 
 
 As this container uses a factory to create the contained components, we will create one via the **Factory** class. Once again, we will use **Descriptor** objects to locate each component, and we will use the method **register_as_type** to register the component in our factory. This method requires the locator and the component's type. Our updated code is:
 
@@ -419,11 +419,11 @@ We have a service, and to use it, we just need to create an instance of our cont
 After running our service, we should see the following output, which confirms that components A and B have been created and linked:
 
 <img src="figure4.png" alt="Console logger messages" style="width:100%">
-     
+
 As our component is complete and fully functional, this step marks the end of our task.
 
 ### Wrapping up
 
 In this tutorial, we have created a component, defined all the necessary methods for managing its lifecycle, and assembled a service from it. We also saw that containers offer a more efficient way to run components.
 
-More complex components will follow a similar structure, but with added functionality. For example, we can add things like different forms of persistence, connectivity to other services, observability, caching, and more. You can find an example of this in the [Data Microservice](../../../getting_started/tutorials/data_microservice/) tutorial.
+More complex components will follow a similar structure, but with added functionality. For example, we can add things like different forms of persistence, connectivity to other services, observability, caching, and more. You can find an example of this in the [Data Microservice](../../../advanced_tutorials/data_microservice/) tutorial.

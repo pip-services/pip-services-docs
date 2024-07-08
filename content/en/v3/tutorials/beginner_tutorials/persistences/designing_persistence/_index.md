@@ -18,7 +18,7 @@ By designing your code in the correct way you can:
 
 In this tutorial, you will understand how to design your persistence in such a way that your code benefits from one of the main features of Pip.Services, which is symmetric code implementation.
 
-In order to see this, we will create an example using two different databases (MySQL and PostgreSQL). Then, we will create a common set of instructions to manage CRUD operations and transfer data from one database into another.
+In order to see this, we will create an example using two different databases (MySQL and PostgreSQL). Then, we will create a common set of instructions to manage CRUD operations and transfer data from one database to another.
 
 ### Designing your persistence components
 
@@ -144,7 +144,7 @@ After that, we define a component that inherits from the IdentifiableMySqlPersis
 
 #### PostgreSQL persistence
 
-Similar to what we did in the previous step, we now define a component that inherits from the IdentifiablePostgrePersistence component and the interface previously defined, and, which implements a set of CRUD operations.
+Similar to what we did in the previous step, we now define a component that inherits from the IdentifiablePostgrePersistence component and the interface previously defined, and implements a set of CRUD operations.
 
 {{< tabsection >}}
    {{< include "./__code5_node.md" >}}

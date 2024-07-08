@@ -27,13 +27,13 @@ class MyComponentB(IReferenceable, IUnreferenceable, IConfigurable, IOpenable):
     def is_open(self):
         pass
 
-    def open(self, correlation_id):
+    def open(self, context):
         pass
 
-    def close(self, correlation_id):
+    def close(self, context):
         pass
         
-    def my_task(self, correlation_id):
+    def my_task(self, context):
         pass
 
     def unset_references(self):
@@ -74,17 +74,17 @@ class MyComponentA(IReferenceable, IUnreferenceable, IConfigurable, IOpenable):
     def is_open(self):
         return self._open
 
-    def open(self, correlation_id):
+    def open(self, context):
         self._open = True
         self._status = "Open"
         print("MyComponentA has been opened.")
 
-    def close(self, correlation_id):
+    def close(self, context):
         self._opened = False
         self._status = "Closed"
         print("MyComponentA has been closed.")
         
-    def my_task(self, correlation_id):
+    def my_task(self, context):
         print("Doing my business task")
         dummy_variable = "dummy value"
 

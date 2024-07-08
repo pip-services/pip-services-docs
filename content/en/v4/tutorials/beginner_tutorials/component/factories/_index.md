@@ -58,7 +58,7 @@ In order to create a factory, we need to import the Factory class. This can be d
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code1_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -86,7 +86,7 @@ Next, we create a basic custom component. This component includes the myTask() m
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code2_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -114,7 +114,7 @@ Once we have our custom component defined, we create a factory for it by definin
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code3_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -144,7 +144,7 @@ Once obtained, we can use this instance to, for example, call one of its methods
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code4_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -188,7 +188,7 @@ For this, we need to first import the default lock factory. In addition, we need
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code5_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -214,7 +214,7 @@ Once we have imported these two components, we can create an instance of the def
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code6_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -240,7 +240,7 @@ And then, we create an instance of MemoryLock by using the corresponding descrip
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code7_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -266,7 +266,7 @@ We can verify that we have created a memory lock by checking the object’s type
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code8_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -304,7 +304,7 @@ In order to create a composite factory, we need to import the CompositeFactory c
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code9_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -332,7 +332,7 @@ Once we have imported the class, we can create an instance of it.
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code10_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -358,7 +358,7 @@ Now, we create a factory for the custom component defined in the previous exampl
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code11_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -384,7 +384,7 @@ Next, we include a factory for a logger by adding the default logger factory.
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code12_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -410,7 +410,7 @@ Once we’ve added all our factories to the composite factory, we can call the l
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code13_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -440,7 +440,7 @@ Similarly, we can call the same composite factory to create an instance of a log
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code14_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}

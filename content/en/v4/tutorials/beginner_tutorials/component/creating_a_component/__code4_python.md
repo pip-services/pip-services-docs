@@ -21,7 +21,7 @@ class MyComponentA(IReferenceable, IConfigurable, IOpenable):
     def is_open(self):
         return self._open
 
-    def open(self, correlation_id):
+    def open(self, context):
         self._open = True
         self._status = "Open"
         print("MyComponentA has been opened.")

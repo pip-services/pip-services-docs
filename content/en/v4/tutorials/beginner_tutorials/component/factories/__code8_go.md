@@ -1,0 +1,4 @@
+
+```go
+reflect.TypeOf(lock)
+```

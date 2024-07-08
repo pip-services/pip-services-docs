@@ -104,7 +104,7 @@ Once we have imported our base class, we instantiate and configure it. Our main 
   Not available  
 {{< /tabsection >}}
 
-Once we have our component, we can connect it to our Memcached store through the open() method. This method requires a correlationId as input parameter only.
+Once we have our component, we can connect it to our Memcached store through the open() method. This method requires a context as input parameter only.
 
 {{< tabsection >}}
   {{< include "./__code4_node.md" >}}
@@ -132,7 +132,7 @@ The MemcachedCache class offers several methods to perform CRUD operations. They
 
 ##### Create and update
 
-The store() method can be used to create a record or update its values if the record already exists. This method accepts the correlationId, the key and value, and the timeout as input parameters. It returns True if the operation was successful, and False otherwise. The following example explains its syntax:
+The store() method can be used to create a record or update its values if the record already exists. This method accepts the context, the key and value, and the timeout as input parameters. It returns True if the operation was successful, and False otherwise. The following example explains its syntax:
 
 {{< tabsection >}}
   {{< include "./__code5_node.md" >}}
@@ -180,7 +180,7 @@ The retrieve() method can be used to obtain a stored record according to a given
 
 ##### Delete
 
-We can use the remove() method to delete a record, which asks for a correlationId and a key as input parameters. An example of its syntax is:
+We can use the remove() method to delete a record, which asks for a context and a key as input parameters. An example of its syntax is:
 
 {{< tabsection >}}
   {{< include "./__code7_node.md" >}}
@@ -286,7 +286,7 @@ To acquire a lock, we have two methods. They are:
 
 ###### tryAcquireLock()
 
-This method makes a single attempt at acquiring a lock. It asks for a correlationId, a key, and a timeout value in milliseconds as input parameters. It returns True if the operation was successful, and False otherwise.
+This method makes a single attempt at acquiring a lock. It asks for a context, a key, and a timeout value in milliseconds as input parameters. It returns True if the operation was successful, and False otherwise.
 
 {{< tabsection >}}
   {{< include "./__code11_node.md" >}}
@@ -310,7 +310,7 @@ This method makes a single attempt at acquiring a lock. It asks for a correlatio
 
 ###### acquireLock()
 
-This method makes multiple attempts at acquiring a log. It accepts a correlationId, a key, a timeout, and a lock acquisition timeout in milliseconds as input parameters. The following example shows how to use it.
+This method makes multiple attempts at acquiring a log. It accepts a context, a key, a timeout, and a lock acquisition timeout in milliseconds as input parameters. The following example shows how to use it.
 
 {{< tabsection >}}
   {{< include "./__code12_node.md" >}}
@@ -334,7 +334,7 @@ This method makes multiple attempts at acquiring a log. It accepts a correlation
 
 ##### Release
 
-Once used, we can release the lock with the releaseLock() method, which takes a correlationId and a key as input parameters. Its usage is as follows:
+Once used, we can release the lock with the releaseLock() method, which takes a context and a key as input parameters. Its usage is as follows:
 
 {{< tabsection >}}
   {{< include "./__code13_node.md" >}}

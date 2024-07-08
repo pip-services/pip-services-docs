@@ -1,19 +1,19 @@
 
 ```python
 from pip_services4_logic.state import IStateStore
-
+from pip_services4_components.context import IContext
 
 class MyComponent:
     _store: IStateStore = None
 
     ...
 
-    def do_something(self, correlation_id: str, object_id: str):
+    def do_something(self, context: IContext, object_id: str):
         # Get state from the store or create a new one if the state wasn't found
-        state: MyState = self._store.load(correlation_id, "mycomponent:" + object_id)
+        state: MyState = self._store.load(context, "mycomponent:" + object_id)
         if state is not None: state = MyState()
         ...
 
-        self._store.save(correlation_id, "mycomponent:" + object_id, state)
+        self._store.save(context, "mycomponent:" + object_id, state)
 
 ```

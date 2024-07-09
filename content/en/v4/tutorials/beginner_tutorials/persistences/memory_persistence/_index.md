@@ -91,7 +91,7 @@ The next step is to create a memory persistence object. Here, we need to use the
 Now that we have a persistence object, we will perform CRUD operations.
 
 #### Create the persisted objects
-To add values to the persistence object, we will use the **create** method. This method asks for two parameters: correlation_id and the object to persist. For the correlation_id we will use None as in our example we are not interested in following a sequence of operations.
+To add values to the persistence object, we will use the **create** method. This method asks for two parameters: context and the object to persist. For the context we will use None as in our example we are not interested in following a sequence of operations.
 
 {{< tabsection >}}
   Not available  

@@ -46,7 +46,7 @@ In order to use the CredentialParams component, we need to import it first. This
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code1_go.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -82,7 +82,7 @@ One method used to create a CredentialParams object is via its constructor. This
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code2_go.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -110,7 +110,7 @@ We can also define our credential parameters in the form of a tuple by using the
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code3_go.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -142,7 +142,7 @@ An example of this approach is:
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code4_go.md" >}}   
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -174,7 +174,7 @@ And, the following example explains how to use this method:
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code5_go.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -207,7 +207,7 @@ The following example shows how to do this. As we can see from it, the ConfigPar
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code6_go.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -234,7 +234,7 @@ We can add a section by using the addSection() method inherited from the ConfigP
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code7_go.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -261,7 +261,7 @@ To extract the values of the different credential parameters, we can use the get
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code8_go.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -287,7 +287,7 @@ Additionally, we can use the get method, which takes the name of the credential 
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code9_go.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -315,7 +315,7 @@ There are several ways to update a parameter's value. One of them is to use the 
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code10_go.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -343,7 +343,7 @@ Another way is to use the put() method, which asks for the name of the parameter
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code11_go.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -369,7 +369,7 @@ Or, to use the setAsObject() method, which also takes the name of the credential
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code12_go.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -395,7 +395,7 @@ Finally, we can use the override() method, which returns a new instance of Crede
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code13_go.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -423,7 +423,7 @@ To delete a credential parameter from a CredentialParams object, we can use the 
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code14_go.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -455,7 +455,7 @@ In order to create a MemoryCredentialStore component, we need to import this cla
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code15_go.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -483,7 +483,7 @@ To create a MemoryCredentialStore, we need to instantiate this class. This prese
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+   {{< include "./__code16_go.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -509,7 +509,7 @@ or we can instantiate the store without any input parameter and use the readCred
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available  
+  {{< include "./__code17_go.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -537,7 +537,7 @@ To add new credentials to a store, we use the store() method. This method accept
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code18_go.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -565,7 +565,7 @@ The lookup() method is used to retrieve stored credentials. It takes a correlati
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code19_go.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -593,7 +593,7 @@ Credentials can be updated with the store() method. This method requires the cor
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code20_go.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -619,7 +619,7 @@ Alternatively, we can change all the stored values with the readCredentials() me
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code21_go.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -647,7 +647,7 @@ We can delete a set of credentials identified by a common key by placing a Null/
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code22_go.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}

@@ -30,7 +30,7 @@ description: >-
 
 ### Introduction
 
-In this tutorial, you will understand how to operate with the CredentialParams component by performing CRUD operations. We will begin by learning how to create an instance of this component using its constructor, a tuple, a string, and the ConfigParam class. Then, we will understand how to extract and update the values of credential parameters stored in the component, and delete those parameters.
+In this tutorial, you will learn how to use the CredentialParams component to perform CRUD operations. We will start by creating an instance of this component using its constructor, a tuple, a string, and the ConfigParam class. Then, we will learn how to extract, update, and delete the values of credential parameters stored in the component.
 
 ### CredentialParams
 
@@ -526,7 +526,7 @@ or we can instantiate the store without any input parameter and use the readCred
 
 #### Adding new credentials
 
-To add new credentials to a store, we use the store() method. This method accepts the correlationId, the identification key and a CredentialParams object containing the set of credentials as inputs. In the example below, we add a new set of credentials identified by a key with value "key3".
+To add new credentials to a store, we use the store() method. This method accepts the context, the identification key and a CredentialParams object containing the set of credentials as inputs. In the example below, we add a new set of credentials identified by a key with value "key3".
 
 {{< tabsection >}}
   {{< include "./__code18_node.md" >}} 
@@ -554,7 +554,7 @@ To add new credentials to a store, we use the store() method. This method accept
 
 #### Reading the credentials
 
-The lookup() method is used to retrieve stored credentials. It takes a correlationId and a key as input parameters and returns a ConfigParams object containing the retrieved credentials. If no credentials were found, it returns an empty ConfigParams object.
+The lookup() method is used to retrieve stored credentials. It takes a context and a key as input parameters and returns a ConfigParams object containing the retrieved credentials. If no credentials were found, it returns an empty ConfigParams object.
 
 {{< tabsection >}}
   {{< include "./__code19_node.md" >}} 
@@ -582,7 +582,7 @@ The lookup() method is used to retrieve stored credentials. It takes a correlati
 
 #### Updating the credentials
 
-Credentials can be updated with the store() method. This method requires the correlationId, the key of the set we want to update and a CredentialParams object containing the updated parameters as inputs. In the following example, we change the value of the user to "joeve3V2". 
+Credentials can be updated with the store() method. This method requires the context, the key of the set we want to update and a CredentialParams object containing the updated parameters as inputs. In the following example, we change the value of the user to "joeve3V2". 
 
 {{< tabsection >}}
   {{< include "./__code20_node.md" >}} 
@@ -662,7 +662,6 @@ We can delete a set of credentials identified by a common key by placing a Null/
   Not available  
 {{< /tabsection >}}
 
-### CredentialResolver
 
 ### Wrapping up
 

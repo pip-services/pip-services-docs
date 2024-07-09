@@ -28,7 +28,7 @@ A component can be made configurable by adding the **IConfigurable** interface a
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available    
+  {{< include "./__code1_go.md" >}}   
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -56,7 +56,7 @@ The only parameter that is passed to the configure method is **ConfigParams** ob
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available    
+  {{< include "./__code2_go.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -83,7 +83,7 @@ The only parameter that is passed to the configure method is **ConfigParams** ob
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available    
+  {{< include "./__code3_go.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -109,7 +109,7 @@ The parameter kets can have a complex structure, grouped by sections using dot n
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available   
+  {{< include "./__code4_go.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -137,7 +137,7 @@ Another helpful option is the ability to set a default configuration.
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available    
+  {{< include "./__code5_go.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -165,7 +165,7 @@ Lastly, **ConfigParams** objects can be serialized/deserialized to/from JSON, YA
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available   
+  {{< include "./__code6_go.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -195,7 +195,7 @@ Below is an example of a configurable component:
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code7_go.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -223,7 +223,7 @@ Manual configuration can be done in the following manner:
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available   
+  {{< include "./__code8_go.md" >}}   
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -268,7 +268,7 @@ Below is a simple example of how it can be used:
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available   
+  {{< include "./__code9_go.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -296,7 +296,7 @@ Below is a simple example of how it can be used:
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code10_go.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -324,7 +324,7 @@ Configuration parameters can be stored in microservice configurations, configura
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available    
+  {{< include "./__code11_go.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -352,7 +352,7 @@ The **MemoryConfigReader** is a **ConfigReader** that stores configuration data 
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code12_go.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -384,7 +384,7 @@ The **JsonConfigReader** is a **ConfigReader** that can read configurations from
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code13_go.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -417,7 +417,7 @@ key2: "ABCD"
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code14_go.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}

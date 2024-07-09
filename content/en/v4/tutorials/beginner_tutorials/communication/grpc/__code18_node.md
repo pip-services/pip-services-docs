@@ -1,49 +1,47 @@
 
-```js
-// GENERATED CODE -- DO NOT EDIT!
+```ts
+// Pre-requisites
+let services = require('../summator_grpc_pb');
+let messages = require('../summator_pb');
 
-'use strict';
-var grpc = require('grpc');
-var summator_pb = require('./summator_pb.js');
+import { ConfigParams, Descriptor, References } from "pip-services4-components-node";
+import { GrpcController } from "pip-services4-grpc-node";
+import { Calculations } from "./calculations";
 
-function serialize_Number1(arg) {
-  if (!(arg instanceof summator_pb.Number1)) {
-    throw new Error('Expected argument of type Number1');
-  }
-  return Buffer.from(arg.serializeBinary());
+// gRPC controller
+export class MyGrpcController extends GrpcController {
+
+    public constructor() {
+        super(services.SummatorService);
+    }
+
+    private async sum(call: any): Promise<any> {
+        let res = Calculations.sum(call.request.getValue1(), call.request.getValue2());
+
+        let response = new messages.Number2();
+        response.setValue(res);
+
+        return response;
+    }
+
+
+    public register(): void {
+        this.registerMethod(
+            "sum",
+            null,
+            this.sum
+        );
+    }
 }
+    
+let controller = new MyGrpcController();
+controller.configure(ConfigParams.fromTuples(
+    "connection.protocol", "http",
+    "connection.host", "localhost",
+    "connection.port", 50055
+));
 
-function deserialize_Number1(buffer_arg) {
-  return summator_pb.Number1.deserializeBinary(new Uint8Array(buffer_arg));
-}
+controller.setReferences(new References());
 
-function serialize_Number2(arg) {
-  if (!(arg instanceof summator_pb.Number2)) {
-    throw new Error('Expected argument of type Number2');
-  }
-  return Buffer.from(arg.serializeBinary());
-}
-
-function deserialize_Number2(buffer_arg) {
-  return summator_pb.Number2.deserializeBinary(new Uint8Array(buffer_arg));
-}
-
-
-var SummatorService = exports.SummatorService = {
-  sum: {
-    path: '/Summator/sum',
-    requestStream: false,
-    responseStream: false,
-    requestType: summator_pb.Number1,
-    responseType: summator_pb.Number2,
-    requestSerialize: serialize_Number1,
-    requestDeserialize: deserialize_Number1,
-    responseSerialize: serialize_Number2,
-    responseDeserialize: deserialize_Number2,
-  },
-};
-
-exports.SummatorClient = grpc.makeGenericClientConstructor(SummatorService);
-
-
+await controller.open(null);
 ```

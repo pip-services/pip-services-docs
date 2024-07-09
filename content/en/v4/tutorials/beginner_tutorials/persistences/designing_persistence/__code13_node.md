@@ -1,0 +1,5 @@
+
+```ts
+persistence = database1;
+
+```

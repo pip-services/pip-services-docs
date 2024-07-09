@@ -118,8 +118,8 @@ When using a configuration file, the container looks like this:
 And the configuration file includes the controller’s descriptor:
 
 ```yml
-# Controller 
-- descriptor: "mygroup:controller:default:controller:1.0"
+# Service 
+- descriptor: "mygroup:service:default:service:1.0"
 ```
 
 When adding the controller as a dependency, the container looks like this:
@@ -455,10 +455,10 @@ with the configuration file containing the descriptors of the service and contro
 # Console logger
 - descriptor: "pip-services:logger:console:default:1.0"
   level: "trace"  
+# Service
+- descriptor: "mygroup:service:default:service:1.0"
 # Controller
-- descriptor: "mygroup:controller:default:controller:1.0"
-# Service 
-- descriptor: "mygroup:service:gcp-function:function:1.0"
+- descriptor: "mygroup:controller:gcp-function:function:1.0"
 ```
 
 And, in the second case, the container adds the dependencies via the dependency resolver:
@@ -515,7 +515,7 @@ In either case, both components must be registered in the factory:
 
 The actions are registered in the service, which also adds the controller as a dependency:
 
-{{{< tabsection >}}
+{{< tabsection >}}
   {{< include "./__code15_node.md" >}}
 {{< /tabsection >}}
 
@@ -637,10 +637,10 @@ In the first case, the container looks like this:
 And loads a configuration file that includes the descriptors of the service and the controller:
 
 ```yml
-# Controller
-- descriptor: "mygroup:controller:default:controller:1.0"
-# Service 
-- descriptor: "mygroup:service:commandable-gcp-function:function:1.0"
+# Service
+- descriptor: "mygroup:service:default:service:1.0"
+# Controller 
+- descriptor: "mygroup:controller:commandable-gcp-function:function:1.0"
 ```
 
 When considering the service and controller as dependencies of the container, the code is:
@@ -887,14 +887,14 @@ Where the configuration file is:
 - descriptor: "pip-services:logger:console:default:1.0"
   level: "trace"
 
-# Service
-- descriptor: "mygroup:service:gcp-function:*:1.0"
+# controller
+- descriptor: "mygroup:controller:gcp-function:*:1.0"
 
-# Controller 1
-- descriptor: "mygroup:controller:default:controller1:1.0"
+# service 1
+- descriptor: "mygroup:service:default:service1:1.0"
 
-# Controller 2
-- descriptor: "mygroup:controller:default:controller2:1.0"
+# service 2
+- descriptor: "mygroup:service:default:service2:1.0"
 ```
 
 ### Testing

@@ -1,6 +1,5 @@
 
 ```ts
-let services = require('../summator_grpc_pb');
-let messages = require('../summator_pb');
+npx grpc_tools_node_protoc  --js_out=import_style=commonjs,binary:./ --grpc_out=.  ./summator.proto
 
 ```

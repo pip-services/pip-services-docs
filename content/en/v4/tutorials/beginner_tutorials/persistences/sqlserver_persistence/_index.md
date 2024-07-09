@@ -37,7 +37,7 @@ The Pip.Services toolkit contains the sqlserver module, which has three persiste
 In order to use this module, we need to install it first. This can be done with the following command:
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code1_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -65,7 +65,7 @@ In order to use this module, we need to install it first. This can be done with 
 Throughout this tutorial, we will work with examples based on the following data structure
 
 {{< tabsection >}}
-   Not available 
+  {{< include "./__code2_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -91,7 +91,7 @@ Throughout this tutorial, we will work with examples based on the following data
 and the following implementations of it
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code3_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -123,7 +123,7 @@ This is the most basic persistence component for SQLServer databases and is used
 In order to use this component, we must import it with the following command:
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code4_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -151,7 +151,7 @@ In order to use this component, we must import it with the following command:
 Once the component has been imported, we create a persistence class that inherits it. In our example, we will work with a table named **mydata**. Our code will look something like this 
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code5_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -177,7 +177,7 @@ Once the component has been imported, we create a persistence class that inherit
 Now, we create an instance of this class and configure it according to our database's configuration parameters via the configure() method.
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code6_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -205,7 +205,7 @@ Now, we create an instance of this class and configure it according to our datab
 Once that our component has been configured, we can connect it to our database.
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code7_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -237,7 +237,7 @@ This component presents several methods for CRUD operations. The following secti
 To add a new record to our table, we use the create() method. This method accepts the correlationId and the data object containing the record to be created as input parameters, and returns a SqlServerPersistence object containing the added record. The example below illustrates its usage.
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code8_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -263,7 +263,7 @@ To add a new record to our table, we use the create() method. This method accept
 Where
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code9_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -295,7 +295,7 @@ In order to retrieve records from our table, we can use three different methods,
 This method retrieves a random record according to a given filter. The next example shows how to use it.
 
 {{< tabsection >}}
-   Not available 
+  {{< include "./__code10_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -321,7 +321,7 @@ This method retrieves a random record according to a given filter. The next exam
 Where
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code11_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -349,7 +349,7 @@ Where
 This method returns a set of records in accordance with a given filter. It accepts the correlationId, a filter, and sorting and projection parameters as inputs. It returns a SqlServerPersistence object with the returned records. The following example illustrates how to use it.
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code12_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -375,7 +375,7 @@ This method returns a set of records in accordance with a given filter. It accep
 Where
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code13_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -403,7 +403,7 @@ Where
 This method retrieves a set of records that comply with a given filter's conditions. It takes the correlationId, paging parameters, and JSON strings for sorting and projecting as input values. It returns a DataPage object with the retrieved records in its data field. The example below explains its usage.
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code14_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -429,7 +429,7 @@ This method retrieves a set of records that comply with a given filter's conditi
 Where
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code15_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -457,7 +457,7 @@ Where
 This method returns an integer representing the number of records that comply with some given conditions. The example below shows how to use it.
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code16_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -489,7 +489,7 @@ This class doesn't present any method to update records in a table.
 This component has the deleteByFilter() method, which is used to delete one or more records in a table. It accepts the correlationId and a filter as input parameters, and once the execution has been successfully completed, it returns None.
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code17_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -521,7 +521,7 @@ This persistence component stores data in SQL Server databases and implements se
 In order to use this component, we need to import it first. We use the following command to do this.
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code18_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -549,7 +549,7 @@ In order to use this component, we need to import it first. We use the following
 Once the component has been imported, we can create a persistence component by creating a child class of IdentifiableSqlServerPersistence. 
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code19_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -575,7 +575,7 @@ Once the component has been imported, we can create a persistence component by c
 After defining our component, we create an instance of it. Then, we configure this instance according to our database details with the configure() method.
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code20_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -603,7 +603,7 @@ After defining our component, we create an instance of it. Then, we configure th
 Now that we have our component ready for use, we can connect it to our database by using the open() method.
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code21_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -635,7 +635,7 @@ This component presents several methods that can be used to perform CRUD operati
 To insert a new record into a table, we use the create() method. It accepts the correlationId parameter and a data object as inputs and returns a SqlServerPersistence object containing the inserted record. The following example explains how to use it.
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code22_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -661,7 +661,7 @@ To insert a new record into a table, we use the create() method. It accepts the 
 Where
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code23_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -693,14 +693,14 @@ This class contains several methods to retrieve records from a database. They ar
 This method retrieves a record according to a given id. It accepts the correlationId and the record's id as input parameters and returns a SqlServerPersistence object with the retrieved record. The following example explains its usage.
 
 {{< tabsection >}}
-   Not available 
+  {{< include "./__code24_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
   Not available 
 {{< /tabsection >}}
 
-{{{< tabsection >}}
+{{< tabsection >}}
   Not available 
 {{< /tabsection >}}
 
@@ -719,7 +719,7 @@ This method retrieves a record according to a given id. It accepts the correlati
 Where
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code25_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -747,7 +747,7 @@ Where
 This method retrieves a set of records according to a set of given ids. It takes the correlationId and a list with the ids of the records to be retrieved as input parameters. It returns a list of SqlServerPersistence objects, each containing a retrieved record. The example below explains how to use it.
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code26_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -773,7 +773,7 @@ This method retrieves a set of records according to a set of given ids. It takes
 Where
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code27_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -805,7 +805,7 @@ This class has two methods that can be used to update records. These methods are
 This method updates a complete record. It takes the correlationId and a data object as input parameters. It returns a SqlServerPersistence object with the updated record. The following example illustrates its usage.
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code28_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -831,7 +831,7 @@ This method updates a complete record. It takes the correlationId and a data obj
 Where
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code29_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -859,7 +859,7 @@ Where
 This method updates one or more given fields in a record. It accepts the correlationId, the record's id, and a dictionary containing the fields to be updated as input parameters. It returns a SqlServerPersistence object containing the updated record. The following example explains how to use it.
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code30_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -885,7 +885,7 @@ This method updates one or more given fields in a record. It accepts the correla
 Where
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code31_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -916,7 +916,7 @@ This class contains two methods that can be used to delete records. These are:
 
 This method deletes a record according to a given id. It accepts the correlationId and the id of the record to be deleted as input parameters, and returns a SqlServerPersistence object with the deleted record. The following example shows how to use it.
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code32_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -941,7 +941,7 @@ This method deletes a record according to a given id. It accepts the correlation
 
 Where
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code33_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -968,7 +968,7 @@ Where
 This method deletes a set of records from a table according to a given list of ids. It accepts the correlationId and a list containing the ids of the records to be deleted as input parameters. Once it has executed the query, it returns None.
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code34_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -1000,7 +1000,7 @@ This component is similar to the previous one, but considers identifiable JSON o
 In order to use this component, we need to import it first. This can be done with the following command
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code35_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -1028,7 +1028,7 @@ In order to use this component, we need to import it first. This can be done wit
 In order to implement this component, we create a class that inherits it. In addition, we need to define the method defineSchema(), which will allow us to use a table with two fields, namely id and data, where the data field will store the JSON values. Our class will look something like this
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code36_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -1064,7 +1064,7 @@ In general, CRUD operations return an object with the same fields that were pass
 For example, if we use the getOneRandom() method, 
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code37_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -1090,7 +1090,7 @@ For example, if we use the getOneRandom() method,
 we can obtain the record values as
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code38_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}

@@ -1,4 +1,4 @@
 
-```ts
-import { GrpcController } from "pip-services4-grpc-node";
+```bash
+npm install pip-services4-grpc-node --save
 ```

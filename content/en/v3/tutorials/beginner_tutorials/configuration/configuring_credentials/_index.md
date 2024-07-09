@@ -662,8 +662,6 @@ We can delete a set of credentials identified by a common key by placing a Null/
   Not available  
 {{< /tabsection >}}
 
-### CredentialResolver
-
 ### Wrapping up
 
 In this tutorial, we have learned how to create CredentialParams components and manage them by extracting and updating the stored values of the credentials, and deleting their parameters. We have also seen how to create and work with a MemoryCredentialStore component. 

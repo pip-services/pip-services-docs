@@ -40,7 +40,7 @@ The code will look something like this:
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code1_go.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -69,7 +69,7 @@ The next step is to create a memory persistence object. Here, we need to use the
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available   
+  {{< include "./__code2_go.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -102,7 +102,7 @@ To add values to the persistence object, we will use the **create** method. This
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code3_go.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -139,7 +139,7 @@ To read the persisted values, we can use the **getPageByFilter** method that we 
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code4_go.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -171,7 +171,7 @@ Similarly, we can obtain all the persisted objects by using None as our filter.
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code5_go.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -204,7 +204,7 @@ To update a value in the persistence object, we need to use the **update** metho
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code6_go.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -232,7 +232,7 @@ To verify the change, we can extract the dummy2 object by applying a filter:
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+   {{< include "./__code7_go.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -263,7 +263,7 @@ We can also use the **updatePartially** function. In this case, we need to speci
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code8_go.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -291,7 +291,7 @@ To verify the change, we can use the filter defined earlier.
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code9_go.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -325,7 +325,7 @@ Similarly, we can delete an object stored in the persistence object by using the
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code10_go.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -352,7 +352,7 @@ To verify that the object has been deleted, we can apply a filter and search for
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code11_go.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}

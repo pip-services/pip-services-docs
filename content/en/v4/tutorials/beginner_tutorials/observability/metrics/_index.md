@@ -14,7 +14,7 @@ description: >-
 <table class="full-width-table">
   <tr>
     <td>Performance metrics</td>
-    <td>Values that result from the measurement of an application's non-functional traits, which can provide useful insight into how the application performs.</td>
+    <td>Values that result from the measurement of an application's non-functional traits, which can provide useful insight into how an application performs.</td>
   </tr>
   <tr>
     <td>ICounters</td>

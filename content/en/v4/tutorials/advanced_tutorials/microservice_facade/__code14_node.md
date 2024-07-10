@@ -1,4 +1,5 @@
 
 ```ts
+npm run test
 
 ```

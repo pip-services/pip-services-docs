@@ -23,14 +23,14 @@ Create a folder for the project and, inside it, a directory structure to match t
 └───/container
 └───/data
 │   └───/version1
-└───/logic
-└───/persistence
 └───/service
+└───/persistence
+└───/controller
     └───/version1
 /test
-└───/logic
-└───/persistence
 └───/service
+└───/persistence
+└───/controller
     └───/version1
 
 ```

@@ -9,12 +9,12 @@ Next, in the factory's constructor, we'll be registering descriptors and their c
 constructor() {
     super();
     this.registerAsType(
-        new commons.Descriptor('hello-world', 'controller', 'default', '*', '1.0'),
-        controller.HelloWorldController
+        new commons.Descriptor('hello-world', 'service', 'default', '*', '1.0'),
+        controller.HelloWorldService
     );
     this.registerAsType(
-        new commons.Descriptor('hello-world', 'service', 'http', '*', '1.0'),
-        restService.HelloWorldRestService
+        new commons.Descriptor('hello-world', 'controller', 'http', '*', '1.0'),
+        restService.HelloWorldRestController
     );
 }
 ```
@@ -28,21 +28,20 @@ Full listing of the factory's code found in the file:
 ```typescript
 "use strict";
 
-const components = require("pip-services3-components-nodex");
-const commons = require("pip-services3-commons-nodex");
-const controller = require("./HelloWorldController");
-const restService = require("./HelloWorldRestService");
+const components = require("pip-services4-components-node");
+const service = require("./HelloWorldService");
+const restController= require("./HelloWorldRestController");
 
 class HelloWorldServiceFactory extends components.Factory {
     constructor() {
         super();
         this.registerAsType(
-            new commons.Descriptor('hello-world', 'controller', 'default', '*', '1.0'),
-            controller.HelloWorldController
+            new components.Descriptor('hello-world', 'service', 'default', '*', '1.0'),
+            service.HelloWorldService
         );
         this.registerAsType(
-            new commons.Descriptor('hello-world', 'service', 'http', '*', '1.0'),
-            restService.HelloWorldRestService
+            new components.Descriptor('hello-world', 'controller', 'http', '*', '1.0'),
+            restController.HelloWorldRestController
         );
     }
 }

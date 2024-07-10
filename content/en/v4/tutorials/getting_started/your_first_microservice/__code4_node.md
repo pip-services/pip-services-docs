@@ -16,8 +16,8 @@ configure(config) {
 Parameters will be read by the microservice from the configuration file and passed to the "configure" method of the corresponding component. Here's an example of the configuration:
 
 ```yml
-# Controller
-- descriptor: "hello-world:controller:default:default:1.0"
+# Service
+- descriptor: "hello-world:service:default:default:1.0"
   default_name: "World"
 ```
 
@@ -25,12 +25,12 @@ More details on this mechanism can be found in [Component Configuration](../../t
 
 This is all the code of the service in the file:
 
-**/HelloWorldController.js**
+**/HelloWorldService.js**
 
 ```typescript
 "use strict";
 
-class HelloWorldController {
+class HelloWorldService {
   constructor() {
     this._defaultName = "Pip User";
   }
@@ -44,6 +44,6 @@ class HelloWorldController {
   }
 }
 
-exports.HelloWorldController = HelloWorldController
+exports.HelloWorldService = HelloWorldService
 
 ```

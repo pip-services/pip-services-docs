@@ -4,8 +4,8 @@
 ```typescript
 "use strict";
 
-const rpc = require("pip-services3-rpc-nodex");
-const container = require('pip-services3-container-nodex');
+const http = require("pip-services4-http-node");
+const container = require('pip-services4-container-node');
 const factory = require("./HelloWorldServiceFactory");
 
 class HelloWorldProcess extends container.ProcessContainer {
@@ -13,7 +13,7 @@ class HelloWorldProcess extends container.ProcessContainer {
         super('hello-world', 'HelloWorld microservice');
         this._configPath = './config.yaml';
         this._factories.add(new factory.HelloWorldServiceFactory());
-        this._factories.add(new rpc.DefaultRpcFactory());
+        this._factories.add(new http.DefaultHttpFactory());
     }
 }
 

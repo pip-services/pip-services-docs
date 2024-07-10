@@ -110,8 +110,8 @@ Before we run the microservice, we need to prepare an initial configuration for 
     database: {{MONGO_DB}}{{#unless MONGO_DB}}"test"{{/unless}}
 {{/if}}
 
-# Controller
-- descriptor: "beacons:controller:default:default:1.0"
+# Service
+- descriptor: "beacons:service:default:default:1.0"
 
 # Shared HTTP Endpoint
 - descriptor: "pip-services:endpoint:http:default:1.0"
@@ -120,19 +120,19 @@ Before we run the microservice, we need to prepare an initial configuration for 
     host: 0.0.0.0
     port: {{HTTP_PORT}}{{#unless HTTP_PORT}}8080{{/unless}}
 
-# HTTP Service V1
-- descriptor: "beacons:service:http:default:1.0"
+# HTTP controller V1
+- descriptor: "beacons:controller:http:default:1.0"
   swagger:
     enable: true
 
-# Hearbeat service
-- descriptor: "pip-services:heartbeat-service:http:default:1.0"
+# Hearbeat controller
+- descriptor: "pip-services:heartbeat-controller:http:default:1.0"
 
-# Status service
-- descriptor: "pip-services:status-service:http:default:1.0"
+# Status controller
+- descriptor: "pip-services:status-controller:http:default:1.0"
 
-# Swagger service
-- descriptor: "pip-services:swagger-service:http:default:1.0"
+# Swagger controller
+- descriptor: "pip-services:swagger-controller:http:default:1.0"
 
 ```
 

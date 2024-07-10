@@ -35,21 +35,21 @@ const BEACON2: BeaconV1 = {
 
 suite('BeaconsService', () => {
     let persistence: BeaconsMemoryPersistence;
-    let controller: BeaconsService;
+    let service: BeaconsService;
 
     setup(async () => {
         persistence = new BeaconsMemoryPersistence();
         persistence.configure(new ConfigParams());
 
-        controller = new BeaconsService();
-        controller.configure(new ConfigParams());
+        service = new BeaconsService();
+        service.configure(new ConfigParams());
 
         let references = References.fromTuples(
             new Descriptor('beacons', 'persistence', 'memory', 'default', '1.0'), persistence,
-            new Descriptor('beacons', 'controller', 'default', 'default', '1.0'), controller
+            new Descriptor('beacons', 'service', 'default', 'default', '1.0'), service
         );
 
-        controller.setReferences(references);
+        service.setReferences(references);
 
         await persistence.open(null);
     });
@@ -60,7 +60,7 @@ suite('BeaconsService', () => {
 
     test('CRUD Operations', async () => {
         // Create the first beacon
-        let beacon = await controller.createBeacon(
+        let beacon = await service.createBeacon(
             null,
             BEACON1
         );
@@ -72,7 +72,7 @@ suite('BeaconsService', () => {
         assert.isNotNull(beacon.center);
 
         // Create the second beacon
-        beacon = await controller.createBeacon(
+        beacon = await service.createBeacon(
             null,
             BEACON2
         );
@@ -84,7 +84,7 @@ suite('BeaconsService', () => {
         assert.isNotNull(beacon.center);
 
         // Get all beacons
-        let page = await controller.getBeacons(
+        let page = await service.getBeacons(
             null,
             new FilterParams(),
             new PagingParams()
@@ -97,7 +97,7 @@ suite('BeaconsService', () => {
         // Update the beacon
         beacon1.label = 'ABC';
 
-        beacon = await controller.updateBeacon(
+        beacon = await service.updateBeacon(
             null,
             beacon1
         );
@@ -106,7 +106,7 @@ suite('BeaconsService', () => {
         assert.equal('ABC', beacon.label);
 
         // Get beacon by udi
-        beacon = await controller.getBeaconByUdi(
+        beacon = await service.getBeaconByUdi(
             null, 
             beacon1.udi
         );
@@ -114,7 +114,7 @@ suite('BeaconsService', () => {
         assert.equal(beacon1.id, beacon.id);
 
         // Delete the beacon
-        beacon = await controller.deleteBeaconById(
+        beacon = await service.deleteBeaconById(
             null,
             beacon1.id
         );
@@ -122,7 +122,7 @@ suite('BeaconsService', () => {
         assert.equal(beacon1.id, beacon.id);
 
         // Try to get deleted beacon
-        beacon = await controller.getBeaconById(
+        beacon = await service.getBeaconById(
             null,
             beacon1.id
         );
@@ -132,7 +132,7 @@ suite('BeaconsService', () => {
 
     test('Calculate Positions', async () => {
         // Create the first beacon
-        let beacon = await controller.createBeacon(
+        let beacon = await service.createBeacon(
             null,
             BEACON1
         );
@@ -144,7 +144,7 @@ suite('BeaconsService', () => {
         assert.isNotNull(beacon.center);
 
         // Create the second beacon
-        beacon = await controller.createBeacon(
+        beacon = await service.createBeacon(
             null,
             BEACON2
         );
@@ -156,7 +156,7 @@ suite('BeaconsService', () => {
         assert.isNotNull(beacon.center);
 
         // Calculate position for one beacon
-        let position = await controller.calculatePosition(
+        let position = await service.calculatePosition(
             null, '1', ['00001']
         );
         assert.isObject(position);
@@ -166,7 +166,7 @@ suite('BeaconsService', () => {
         assert.equal(0, position.coordinates[1]);
 
         // Calculate position for two beacons
-        position = await controller.calculatePosition(
+        position = await service.calculatePosition(
             null, '1', ['00001', '00002']
         );
         assert.isObject(position);

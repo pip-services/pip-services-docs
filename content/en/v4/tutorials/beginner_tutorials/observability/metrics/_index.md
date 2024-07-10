@@ -107,7 +107,7 @@ The following subsections aim to explain how different components can be used to
      
 The CachedCounters class is used to create performance counters and store their values in memory. This is an abstract class that is generally used to implement other counters, such as LogCounters, PrometheusCounters and DatadogCounters. 
 
-An important method declared in this class is save(), which, as the name would suggest, saves the current counters’ measurements. This method is abstract and therefore needs to be implemented by all subclasses. Another notable method of this class is dump(), which saves metrics data at certain time intervals.
+An important method declared in this class is save(), which, as the name suggests, saves the current counters’ measurements. This method is abstract and therefore needs to be implemented by all subclasses. Another notable method of this class is dump(), which saves metrics data at certain time intervals.
 
 In the example below, we use the previously defined component with CachedCounters. For this, we create a subclass of CachedCounters with a version of the save() method that simply prints a message. When developing real microservices, it is within this method that we can define what we want to do with our performance metrics. 
 

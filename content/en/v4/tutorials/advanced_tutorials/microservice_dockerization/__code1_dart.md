@@ -1,3 +1,4 @@
+To perform the build process for a Dart project, we'll be creating a Docker container build scenario in a file named **Dockerfile.build**. Copy the following into this file:         
 
 ```dockerfile
 FROM google/dart

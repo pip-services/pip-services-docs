@@ -1,3 +1,4 @@
+To perform the build process for a ,NET project, we'll be creating a Docker container build scenario in a file named **Dockerfile.build**. Copy the following into this file:     
 
 ```dockerfile
 FROM mcr.microsoft.com/dotnet/core/sdk:3.1

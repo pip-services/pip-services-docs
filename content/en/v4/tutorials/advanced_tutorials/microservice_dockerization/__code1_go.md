@@ -1,4 +1,4 @@
-To perform the build process for a Python project, we'll be creating a Docker container build scenario in a file named **Dockerfile.build**. Copy the following into this file:      
+To perform the build process for a Golang project, we'll be creating a Docker container build scenario in a file named **Dockerfile.build**. Copy the following into this file:      
 
 ```dockerfile
 FROM golang:1.13

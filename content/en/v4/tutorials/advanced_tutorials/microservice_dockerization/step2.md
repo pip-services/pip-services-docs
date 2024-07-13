@@ -100,7 +100,7 @@ To run the script, simply type:
 
 When run, this script will perform an automatic build of the test image and run it in the Docker Compose environment we've set up. While it runs, the testing process's progress will be outputted to the console. When finished, the container will automatically be stopped, regardless of the test's results.
 
-Now that we have automated testing all set up, we can move on to [Step 4](../step3) to package our microserviceinto a Docker container, before we publish it.
+Now that we have automated testing all set up, we can move on to [Step 4](../step3) to package our microservice into a Docker container, before we publish it.
 
 
 <span class="hide-title-link">

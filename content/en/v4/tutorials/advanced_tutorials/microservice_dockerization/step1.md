@@ -9,7 +9,7 @@ linkTitle: "Step 2. Build"
 
 Some of the programming languages used in the Pip.Services Toolkit require a project to be built, yielding executable files. A separate stage is used for this, which builds a special "build" Docker image. The project's source code is copied to the image, after which the container is run and the project is compiled from inside the container. If the project compiles successfully, the generated files will be copied from the container back to the project for further use.
 
-Python is an interpreted language and does not require compilation. But to save an identical pipeline, a stub script is used.
+
 
 {{< tabsection >}}
   {{< include "../__code1_node.md" >}}  

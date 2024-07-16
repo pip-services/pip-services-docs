@@ -12,7 +12,7 @@ The Pip.Services toolkit is divided into a few dozen modules. A small part of th
 
 The general structure of the Pip.Services toolkit is shown on the following diagram:
 
-![Toolkit architecture diagram](/images/getting_started/toolkit_architecture/toolkit_diagram.svg)
+![Toolkit architecture diagram](figure1.svg)
 
 The foundation of the toolkit is shown in grey. It is made up of the stacks for the 6 supported programming languages: Java, Node.js, .NET Core, Python, Dart, and Golang.
 

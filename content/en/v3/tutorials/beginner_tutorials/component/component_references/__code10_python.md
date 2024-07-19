@@ -1,5 +1,5 @@
 
-See: [Referencer](../../../toolkit_api/python/components/refer/referencer/)
+See: [Referencer](../../../toolkit_api/python/commons/refer/referencer/)
 
 ```python
 class Reference(object):

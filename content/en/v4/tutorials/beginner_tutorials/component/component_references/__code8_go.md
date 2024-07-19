@@ -1,5 +1,5 @@
 
-See: [DependencyResolver](../../../toolkit_api/golang/commons/refer/dependency_resolver/)
+See: [DependencyResolver](../../../toolkit_api/golang/components/refer/dependency_resolver/)
 
 ```go
 type DependencyResolver struct {

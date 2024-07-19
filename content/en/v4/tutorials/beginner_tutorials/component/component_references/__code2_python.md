@@ -1,4 +1,4 @@
-See: [IReferenceable](../../../toolkit_api/python/commons/refer/ireferenceable/)
+See: [IReferenceable](../../../toolkit_api/python/components/refer/ireferenceable/)
 ```python
 class IUnreferenceable(ABC):
 

@@ -142,7 +142,7 @@ Which, after running, produces the following output:
  
 ![figure 3](./figure3A.png)   
    
-As we can see, the save() method was called automatically. Since the Increment counter was only counting the number of times MyMethod was called, it returns the invocation count, but does not supply any statistics data (i.e. minimum, maximum, average). On the other hand, the Interval counter, which measures the execution time, does provide these statistics.
+As we can see, the save() method was called automatically. Since the Increment counter was only counting the number of times MyMethod was called, it returns the invocation count, but does not supply any statistics data (i.e. minimum, maximum, average). On the other hand, the Interval counter, which measures the execution time, provides these statistics.
       
 ##### LogCounters
 

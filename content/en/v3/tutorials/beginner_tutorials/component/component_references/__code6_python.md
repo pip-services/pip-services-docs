@@ -1,5 +1,5 @@
 
-See: [Descriptor](../../../toolkit_api/python/commons/refer/descriptor/)
+See: [Descriptor](../../../toolkit_api/python/components/refer/descriptor/)
 
 ```python
 class Descriptor:

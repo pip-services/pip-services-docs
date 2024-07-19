@@ -265,6 +265,6 @@ Which, after running, produces the following output:
  
 ### Wrapping up
 
-In this tutorial, we have seen how to create, calculate, store and use performance metrics. We built an example where we created a call-counter and an execution time counter, added these metrics to one of our component’s methods, and demonstrated how to save the obtained values to memory and a logger. We also learned how to create NullCounters, which is a dummy component that performs no real measurements, but is useful for testing and modeling purposes. Finally, we understood how to group several counters via the CompositeCounters class and send the measured values to other tools for future use.
+In this tutorial, we have seen how to create, calculate, store and use performance metrics. We built an example where we created a call-counter and an execution-time counter, added these metrics to one of our component’s methods, and demonstrated how to save the obtained values to memory and a logger. We also learned how to create NullCounters, which is a dummy component that performs no real measurements, but is useful for testing and modeling purposes. Finally, we understood how to group several counters via the CompositeCounters class and send the measured values to other tools for future use.
    
      

@@ -101,7 +101,7 @@ First, we define a class that has two performance metrics: the number of times a
 
 Once we have defined the performance metrics in our class, we need to make the obtained values available. This can be done in several ways, such as storing them in memory for later use, showing them in the console, or using an external tool like Prometheus or Datadog for metric analysis.
 
-The following subsections aim to explain how different components can be used to achieve various results. First up will be CachedCounters, which stores performance metrics in memory. Second will be LogCounters, which sends metrics to a logger. After that will come NullCounters - a dummy component often used for testing and modeling purposes. A few components that are capable of sending metrics to external tools will also be briefly mentioned, and then we’ll wrap up the tutorial with CompositeCounters - a component that allows counters measuring the same metrics but used differently to be grouped into a single counter.
+The following subsections aim to explain how different components can be used to achieve various results. First, we will discuss CachedCounters, which store performance metrics in memory. Next, we will cover LogCounters, which send metrics to a logger. After that, we will introduce NullCounters, a dummy component often used for testing and modeling purposes. We will also briefly mention a few components capable of sending metrics to external tools, and then wrap up the tutorial with CompositeCounters, a component that groups counters measuring the same metrics but used differently into a single counter.
      
 ##### CachedCounters
      

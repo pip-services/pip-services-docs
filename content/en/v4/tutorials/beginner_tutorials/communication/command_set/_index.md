@@ -206,7 +206,7 @@ Alternatively, we can add a CommandSet containing one or more commands. This can
 
 #### Executing a command
 
-Once our command set is ready, we can create an instance of it and execute any of the commands it contains with the execute() method. This method accepts as inputs the correlation id, the name of the command to be executed, and the parameters that this command requires.
+Once our command set is ready, we can create an instance of it and execute any of the commands it contains with the execute() method. This method accepts as inputs the context, the name of the command to be executed, and the parameters that this command requires.
 
 {{< tabsection >}}
   {{< include "./__code6_node.md" >}}

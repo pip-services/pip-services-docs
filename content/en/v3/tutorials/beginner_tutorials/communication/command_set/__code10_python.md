@@ -5,8 +5,7 @@ class MyEventSet(CommandSet):
     _event = None
     def __init__(self, controller):
         super(MyEventSet, self).__init__()
-
-    self.add_events([self._event2(),self._event3()])
+        self.add_events([self._event2(),self._event3()])
     
     def _event2(self):
         return Event("event2")

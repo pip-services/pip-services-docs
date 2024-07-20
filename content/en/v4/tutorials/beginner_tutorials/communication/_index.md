@@ -21,7 +21,7 @@ This tutorial will guide you through creating a commandable gRPC client and cont
 
 In this tutorial, you will learn how to create and use CommandableHttpControllers. This type of controller is characterized by containing a set of commands that can be called via the HTTP/REST protocol.
 
-To explain its functionality, the tutorial begins by outlining the necessary prerequisites for working with this component. Then, it demonstrates how to create a command set and a controller that uses it. Finally, it describes how to include the controller in a ProcessContainer to complete the setup.
+To explain its functionality, the tutorial begins by outlining the necessary prerequisites for working with this component. Then, it demonstrates how to create a command set and a controller that uses it. Finally, it describes how to include the controller in a ProcessContainer.
 
 ### [Connection utils](connection_utils)
 

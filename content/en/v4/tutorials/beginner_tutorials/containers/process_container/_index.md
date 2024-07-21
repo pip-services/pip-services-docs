@@ -134,7 +134,7 @@ Once our container and factory are ready, we create a configuration file that wi
 ---
 # Context information
 - descriptor: "pip-services:context-info:default:default:1.0"
-  name: myservice
+  name: mycontroller
   description: My controller is running in a process container
 
 # Console logger

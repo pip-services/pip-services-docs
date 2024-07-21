@@ -49,7 +49,7 @@ Our service class is very simple and, for the purpose of this example, has a fun
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code1_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -79,7 +79,7 @@ To achieve this, we do the following process. First, we create a reference to th
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code2_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -107,7 +107,7 @@ The next step is to define the association between our reference in the client a
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code3_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -135,7 +135,7 @@ Our aim is to call "my_method" from the client. We have made this possible by co
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code4_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -167,7 +167,7 @@ The following code summarizes all the previous steps:
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available  
+  {{< include "./__code5_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}

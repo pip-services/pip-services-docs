@@ -70,8 +70,7 @@ The following sections show several configuration examples for the most common c
 ```yml
 # Console logger
 - descriptor: "pip-services:logger:console:default:1.0"
-  level: "trace"
-  
+  level: "trace"  
 ```
 
 #### Container
@@ -84,11 +83,11 @@ The following sections show several configuration examples for the most common c
   
 ```
 
-#### Controller
+#### Service
 
 ```yml
-# Controller
-- descriptor: "pip-service-data:controller:default:default:1.0"
+# Service
+- descriptor: "pip-service-data:service:default:default:1.0"
 ```
 
 #### Couchbase
@@ -106,7 +105,6 @@ The following sections show several configuration examples for the most common c
     username: {{COUCHBASE_USER}}{{#unless COUCHBASE_USER}}Administrator{{/unless}}
     password: {{COUCHBASE_PASS}}{{#unless COUCHBASE_PASS}}password{{/unless}}
 {{/if}}
-
 ```
 
 #### DataDog
@@ -177,12 +175,12 @@ The following sections show several configuration examples for the most common c
 # Commandable GRPC version 1.0
 - descriptor: "pip-service-data:service:commandable-grpc:default:1.0"
 {{/if}}
-
 ```
 
 #### HTTP
 
 ```yml
+
 {{#if HTTP_ENABLED}}
 # Common HTTP endpoint
 - descriptor: "pip-services:endpoint:http:default:1.0"
@@ -191,8 +189,8 @@ The following sections show several configuration examples for the most common c
     host: 0.0.0.0
     port: {{HTTP_PORT}}{{#unless HTTP_PORT}}8080{{/unless}}
 
-# HTTP service version 1.0
-- descriptor: "pip-service-data:service:commandable-http:default:1.0"
+# HTTP controller version 1.0
+- descriptor: "pip-service-data:controller:commandable-http:default:1.0"
   swagger:
     enable: true
     auto: true
@@ -200,14 +198,14 @@ The following sections show several configuration examples for the most common c
     name: {{SWAGGER_NAME}}{{#unless SWAGGER_NAME}}Entities Service V1{{/unless}}
     description: {{SWAGGER_DESCRIPTION}}{{#unless SWAGGER_DESCRIPTION}}microservice to demonstrate works with data microservices{{/unless}}
 
-# Hearbeat service
-- descriptor: "pip-services:heartbeat-service:http:default:1.0"
+# Hearbeat controller
+- descriptor: "pip-services:heartbeat-controller:http:default:1.0"
 
-# Status service
-- descriptor: "pip-services:status-service:http:default:1.0"
+# Status controller
+- descriptor: "pip-services:status-controller:http:default:1.0"
 
-# Swagger service
-- descriptor: "pip-services:swagger-service:http:default:1.0"
+# Swagger controller
+- descriptor: "pip-services:swagger-controller:http:default:1.0"
 {{/if}}
 
 ```
@@ -216,8 +214,8 @@ The following sections show several configuration examples for the most common c
 
 ```yml
 {{#if LAMBDA_ENABLED}}
-# Commandable Lambda service version 1.0
-- descriptor: "pip-service-data:service:commandable-lambda:default:1.0"
+# Commandable Lambda controller version 1.0
+- descriptor: "pip-service-data:controller:commandable-lambda:default:1.0"
 {{/if}}
 
 ```

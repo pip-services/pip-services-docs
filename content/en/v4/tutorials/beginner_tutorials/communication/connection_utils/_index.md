@@ -49,7 +49,7 @@ In order to use these utilities, we need to import them first. The following com
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code1_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -83,7 +83,7 @@ And, the following example illustrates how to use it:
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code2_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -121,7 +121,7 @@ The example below shows how to merge the username and password only.
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code3_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -159,7 +159,7 @@ In the following example, we create a new ConfigParams object containing all the
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code4_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -197,7 +197,7 @@ For example, in the code below, a new object is created from an original one whi
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code5_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -235,7 +235,7 @@ The following example shows how this utility works:
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code6_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -263,7 +263,7 @@ And, this example illustrates how to use the default values:
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code7_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -298,7 +298,7 @@ The example below shows a practical application of two of these utilities, namel
 
 {{< tabsection >}}
   {{< collapse >}}
-  Not available  
+  {{< include "./__code8_go.md" >}} 
   {{< /collapse >}}
 {{< /tabsection >}}
 

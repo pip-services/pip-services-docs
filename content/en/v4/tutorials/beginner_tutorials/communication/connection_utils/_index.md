@@ -326,6 +326,3 @@ We learned that these utilities help us to compose a URI from a set of parameter
 
 In the end, we saw an example that illustrated the practical use of some of these utilities.
  
-```python
-
-```

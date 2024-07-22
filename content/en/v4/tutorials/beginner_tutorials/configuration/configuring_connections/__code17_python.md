@@ -1,4 +1,4 @@
 
 ```python
-
+connection.remove('uri')
 ```

@@ -1,4 +1,4 @@
 
 ```python
-
+connection.get('uri')
 ```

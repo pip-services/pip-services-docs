@@ -43,7 +43,7 @@ In order to use the ConnectionParams component, we must first import it. This ca
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+   {{< include "./__code1_go.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -79,7 +79,7 @@ A ConnectionParams object can be created via its constructor in two different wa
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+   {{< include "./__code2_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -105,7 +105,7 @@ In the second approach, we instantiate this class without any input and then we 
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+   {{< include "./__code3_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -131,7 +131,7 @@ Or, we can add new parameters and their values using the put() method from the S
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available  
+   {{< include "./__code4_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -159,7 +159,7 @@ In this case, we declare our parameters and their values in a tuple and use the 
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+   {{< include "./__code5_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -195,7 +195,7 @@ An example is:
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+   {{< include "./__code6_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -229,7 +229,7 @@ And, an example of its usage is:
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+   {{< include "./__code7_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -259,7 +259,7 @@ As we can see in the next example, the ConfigParam object can also include other
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+   {{< include "./__code8_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -287,7 +287,7 @@ We can add different sections to our ConnectionParamter object by using the addS
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+   {{< include "./__code9_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -315,7 +315,7 @@ Once our connection parameters have been defined, we can read them via the get m
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+   {{< include "./__code10_go.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -341,7 +341,7 @@ As the ConnectionParams object has the form of a StringValueMap, we can also use
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+   {{< include "./__code11_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -367,7 +367,7 @@ Furthermore, we can get all the parameters from a section and their values by us
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+   {{< include "./__code12_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -393,7 +393,7 @@ And, to get all the section names, we have the getSectionNames() method:
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+   {{< include "./__code13_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -421,7 +421,7 @@ There are three main ways to update the value of a parameter previously defined.
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+   {{< include "./__code14_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -447,7 +447,7 @@ The second is to use the put() method from the StringValueMap class with the upd
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+   {{< include "./__code15_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -474,7 +474,7 @@ Finally, we can use the override() method, which returns a new instance of Conne
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+   {{< include "./__code16_go.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -501,7 +501,7 @@ We can remove a parameter and its value from the ConnectionParams object via the
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+   {{< include "./__code17_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}

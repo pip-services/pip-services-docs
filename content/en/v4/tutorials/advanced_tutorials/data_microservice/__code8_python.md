@@ -6,9 +6,10 @@ from typing import Optional, Any, Callable
 
 from pip_services4_data.query import FilterParams, DataPage, PagingParams
 from pip_services4_persistence.persistence import IdentifiableMemoryPersistence
+from pip_services4_components.context import IContext
 
-from .IBeaconsPersistence import IBeaconsPersistence
-from ..data.version1 import BeaconV1
+#from .IBeaconsPersistence import IBeaconsPersistence
+#from ..data.version1 import BeaconV1
 
 
 class BeaconsMemoryPersistence(IdentifiableMemoryPersistence, IBeaconsPersistence):
@@ -43,16 +44,17 @@ class BeaconsMemoryPersistence(IdentifiableMemoryPersistence, IBeaconsPersistenc
 
         return filter_beacons
 
-    def get_page_by_filter(self, correlation_id: Optional[str], filter: FilterParams, paging: PagingParams,
+    def get_page_by_filter(self, context: Optional[IContext], filter: FilterParams, paging: PagingParams,
                            sort: Any = None, select: Any = None) -> DataPage:
 
-        return super(BeaconsMemoryPersistence, self).get_page_by_filter(correlation_id,
+        return super(BeaconsMemoryPersistence, self).get_page_by_filter(context,
                                                                         self.__compose_filter(filter), paging=paging)
 
-    def get_one_by_udi(self, correlation_id: Optional[str], udi: str) -> BeaconV1:
+    def get_one_by_udi(self, context: Optional[IContext], udi: str) -> BeaconV1:
         if udi is None:
             return None
         for item in self._items:
             if udi == item.udi:
                 return item
+
 ```

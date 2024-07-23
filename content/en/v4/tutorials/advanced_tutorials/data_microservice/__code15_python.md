@@ -1,5 +1,5 @@
 
-**/test/logic/test_BeaconsController.py**
+**/test/logic/test_BeaconsService.py**
 
 ```python
 from pip_services4_data.query import FilterParams, PagingParams

@@ -8,8 +8,8 @@ from pip_services4_data.query import FilterParams, DataPage, PagingParams
 from pip_services4_persistence.persistence import IdentifiableMemoryPersistence
 from pip_services4_components.context import IContext
 
-#from .IBeaconsPersistence import IBeaconsPersistence
-#from ..data.version1 import BeaconV1
+from .IBeaconsPersistence import IBeaconsPersistence
+from ..data.version1 import BeaconV1
 
 
 class BeaconsMemoryPersistence(IdentifiableMemoryPersistence, IBeaconsPersistence):

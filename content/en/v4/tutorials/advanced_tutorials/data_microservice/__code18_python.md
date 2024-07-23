@@ -5,11 +5,11 @@
 from pip_services4_components.refer import Descriptor
 from pip_services4_components.build import Factory
 
-#from ..logic.BeaconsService import BeaconsService
-#from ..persistence.BeaconsFilePersistence import BeaconsFilePersistence
-#from ..persistence.BeaconsMemoryPersistence import BeaconsMemoryPersistence
-#from ..persistence.BeaconsMongoDbPersistence import BeaconsMongoDbPersistence
-#from ..controllers.version1.BeaconsHttpControllersV1 import BeaconsHttpControllerV1
+from ..logic.BeaconsService import BeaconsService
+from ..persistence.BeaconsFilePersistence import BeaconsFilePersistence
+from ..persistence.BeaconsMemoryPersistence import BeaconsMemoryPersistence
+from ..persistence.BeaconsMongoDbPersistence import BeaconsMongoDbPersistence
+from ..controllers.version1.BeaconsHttpControllersV1 import BeaconsHttpControllerV1
 
 
 class BeaconsControllerFactory(Factory):

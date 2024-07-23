@@ -6,6 +6,7 @@ from typing import Any, Optional
 
 from pip_services4_data.query import FilterParams, PagingParams, DataPage
 from pip_services4_mongodb.persistence import IdentifiableMongoDbPersistence
+from pip_services4_components.context import IContext
 
 from .IBeaconsPersistence import IBeaconsPersistence
 from ..data.version1 import BeaconV1
@@ -39,22 +40,22 @@ class BeaconsMongoDbPersistence(IdentifiableMongoDbPersistence, IBeaconsPersiste
             criteria.append({"udi": {"$in": udis}})
         return {"$and": criteria} if len(criteria) > 0 else None
 
-    def get_page_by_filter(self, correlation_id: Optional[str], filter: FilterParams, paging: PagingParams,
+    def get_page_by_filter(self, context: Optional[IContext], filter: FilterParams, paging: PagingParams,
                            sort: Any = None, select: Any = None) -> DataPage:
         filter = filter if filter is not None else FilterParams()
-        return super(BeaconsMongoDbPersistence, self).get_page_by_filter(correlation_id, self.compose_filter(filter),
+        return super(BeaconsMongoDbPersistence, self).get_page_by_filter(context, self.compose_filter(filter),
                                                                          paging, None, None)
 
-    def get_one_by_udi(self, correlation_id: Optional[str], udi: str) -> BeaconV1:
+    def get_one_by_udi(self, context: Optional[IContext], udi: str) -> BeaconV1:
         if udi is None:
             return None
         item = self._collection.find_one({'udi': udi})
         item = self._convert_to_public(item)
 
         if item is None:
-            self._logger.trace(correlation_id, "Found beacon by %s", udi)
+            self._logger.trace(context, "Found beacon by %s", udi)
         else:
-            self._logger.trace(correlation_id, "Cannot find beacon by %s", udi)
+            self._logger.trace(context, "Cannot find beacon by %s", udi)
 
         return item
 ```

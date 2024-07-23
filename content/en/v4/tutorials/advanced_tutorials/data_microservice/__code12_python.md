@@ -1,5 +1,5 @@
 
-**/src/logic/IBeaconsController.py**
+**/src/logic/IBeaconsService.py**
 
 ```python
 from typing import Any, List, Optional

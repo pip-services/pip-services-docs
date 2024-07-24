@@ -1,14 +1,14 @@
 ---
 type: docs
 no_list: true
-title: "Step 5. Implementing a controller"
-linkTitle: "Step 5. Controller"
+title: "Step 5. Implementing a service"
+linkTitle: "Step 5. Service"
 gitUrl: "https://github.com/pip-services-samples"
 ---
 
 {{< tabselector "Node" ".NET" "Golang" "Dart" "Python" "Java" >}}
 
-Now that we know a bit about how we are going to be storing data and how microservice configuration works, it's time to add some logic to our service. Our microservice needs to be able to calculate a device's position based on the beacons it "sees", as well as initiate CRUD operations for the data it handles. Let's create a **logic** folder under the **src** directory and start by defining an interface:
+Now that we know a bit about how we are going to be storing data and how microservice configuration works, it's time to add some logic to our microsservice. Our microservice needs to be able to calculate a device's position based on the beacons it "sees", as well as initiate CRUD operations for the data it handles. Let's create a **logic** folder under the **src** directory and start by defining an interface:
 
 {{< tabsection >}}
   {{< include "../__code12_node.md" >}}  
@@ -35,7 +35,7 @@ Now that we know a bit about how we are going to be storing data and how microse
 {{< /tabsection >}}
 
 
-Once our interface is ready, we can move on to implementing the actual controller. Its code is also going to be quite simple, as all we need to write is one method for calculating a device's position, and the other methods will just be wrappers for the methods we wrote in our persistence components.
+Once our interface is ready, we can move on to implementing the actual service. Its code is also going to be quite simple, as all we need to write is one method for calculating a device's position, and the other methods will just be wrappers for the methods we wrote in our persistence components.
 
 {{< tabsection >}}
   {{< include "../__code13_node.md" >}}  
@@ -68,7 +68,7 @@ Pay special attention to the following two methods in the code above:
 
 The first one sets a dependency upon a persistence using the descriptor **beacons:persistence:*:*:1.0.** This descriptor reads: we don't necessarily care which persistence we are given, as long as it implements the IBeaconsPersistence interface via the Referenceable pattern. This way, our controller can be used with the memory persistence, the mongoDB one, or any other one that meets this requirement.
 
-The second method is used to get a set of commands, with which we can control this controller using the Commandable pattern. In our case, it will be used by the commandable HTTP service. If you're not yet familiar with the Commandable pattern, make sure to find some time and read about it [here](../../../../toolkit_api/node/commons/commands/icommandable). To complete this pattern, lets implement a class called `BeaconsCommandSet`:
+The second method is used to get a set of commands, with which we can control this controller using the Commandable pattern. In our case, it will be used by the commandable HTTP service. If you're not yet familiar with the Commandable pattern, make sure to find some time and read about it [here](../../../../toolkit_api/node/rpc/commands/icommandable). To complete this pattern, lets implement a class called `BeaconsCommandSet`:
 
 {{< tabsection >}}
   {{< include "../__code14_node.md" >}}  
@@ -95,13 +95,13 @@ The second method is used to get a set of commands, with which we can control th
 {{< /tabsection >}}
 
 
-To sum up this class's code: we're creating commands for each of the controller's methods, and then registering them in the constructor. To create a command, we give it a name, a validation schema (if needed), and a callback function with the following three parameters:
+To sum up this class's code: we're creating commands for each of the service's methods, and then registering them in the constructor. To create a command, we give it a name, a validation schema (if needed), and a callback function with the following three parameters:
 
-- `correlationId`: string – used to identify the operation,
+- `context`: IContext – used to identify the operation,
 - `args`: Parameters - the set of parameters received from the command being called,
 - `callback` – callback function for returning the command's result, or an error, if one occurs.
 
-To be sure that our new methods are working correctly, let's add some tests for the controller. The code for testing the controller is listed below:
+To be sure that our new methods are working correctly, let's add some tests for the service. The code for testing the service is listed below:
 
 {{< tabsection >}}
   {{< include "../__code15_node.md" >}}  

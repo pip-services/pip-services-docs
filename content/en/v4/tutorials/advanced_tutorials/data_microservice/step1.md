@@ -23,14 +23,14 @@ Create a folder for the project and, inside it, a directory structure to match t
 └───/container
 └───/data
 │   └───/version1
-└───/service
-└───/persistence
 └───/controller
+└───/persistence
+└───/service
     └───/version1
 /test
-└───/service
-└───/persistence
 └───/controller
+└───/persistence
+└───/service
     └───/version1
 
 ```
@@ -49,12 +49,12 @@ Create a folder for the project and, inside it, a directory structure to match t
 │   └───/version1
 └───/logic
 └───/persistence
-└───/service
+└───/controller
     └───/version1
 /test
 └───/logic
 └───/persistence
-└───/service
+└───/controller
     └───/version1
 
 ```
@@ -73,13 +73,13 @@ Create a folder for the project and, inside it, a directory structure to match t
 └───/version1
 /logic
 /persistence
-/service
+/controller
 └───/version1
 
 /test
 └───/logic
 └───/persistence
-└───/service
+└───/controller
     └───/version1
 
 ```
@@ -98,12 +98,12 @@ Create a folder for the project and, inside it, a directory structure to match t
 │   └───/version1
 └───/logic
 └───/persistence
-└───/service
+└───/controller
     └───/version1
 /test
 └───/logic
 └───/persistence
-└───/service
+└───/controller
     └───/version1
 
 ```
@@ -122,12 +122,12 @@ Create a folder for the project and, inside it, a directory structure to match t
 │   └───/version1
 └───/logic
 └───/persistence
-└───/service
+└───/controller
     └───/version1
 /test
 └───/logic
 └───/persistence
-└───/service
+└───/controller
     └───/version1
 
 ```

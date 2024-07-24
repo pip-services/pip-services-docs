@@ -6,8 +6,9 @@ Create a requirements.txt file at the root of the project with the following con
 ```
 pytest
 
-pip-services3-commons
-pip-services3-components
-pip-services3-container
-pip-services3-rpc
+pip-services4-commons
+pip-services4-components
+pip-services4-container
+pip-services4-rpc
+pip-services4-data
 ```

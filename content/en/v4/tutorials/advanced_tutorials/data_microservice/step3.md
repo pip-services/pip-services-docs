@@ -39,7 +39,7 @@ The first thing we are going to do is define what functionality our persistent s
 {{< /tabsection >}}
 
 
-The first persistence to implement this interface will be the memory persistence, which we will name **BeaconsMemoryPersistence**. This class will need to extend the `IdentifiableMemoryPersistence` class from the **pip-services3-data** module, and have a few additional functions added to it. One of these functions will be used to create filters for the `getPageByFilter` method that we're going to override from the parent class. This function will be called `composeFilter`, as it's going to allow us to filter data in accordance with the received filtering parameters. The overriding `getPageByFilter` method then simply calls the parent's method, passing the `composeFilter` function as a filter parameter. The second function that we will need to implement is the `getOneByUdi` method, whose purpose will be to retrieve a beacon by its `udi`.
+The first persistence to implement this interface will be the memory persistence, which we will name **BeaconsMemoryPersistence**. This class will need to extend the `IdentifiableMemoryPersistence` class from the **pip-services4-persistence** module, and have a few additional functions added to it. One of these functions will be used to create filters for the `getPageByFilter` method that we're going to override from the parent class. This function will be called `composeFilter`, as it's going to allow us to filter data in accordance with the received filtering parameters. The overriding `getPageByFilter` method then simply calls the parent's method, passing the `composeFilter` function as a filter parameter. The second function that we will need to implement is the `getOneByUdi` method, whose purpose will be to retrieve a beacon by its `udi`.
 
 The resulting code for this class is listed below:
 
@@ -70,7 +70,7 @@ The resulting code for this class is listed below:
 
 And that's pretty much it for the memory persistence.
 
-Now let's move on to something a bit more sophisticated - a MongoDB persistence. Here we're also going to use an already existing base class, `IdentifiableMongoDbPersistence`, from the **pip-services3-mongodb** module, and write a few functions, the most important of which will be `composeFilter`. This time around, its implementation is going to contain syntax for creating database requests. The resulting code for this class is listed below: 
+Now let's move on to something a bit more sophisticated - a MongoDB persistence. Here we're also going to use an already existing base class, `IdentifiableMongoDbPersistence`, from the **pip-services4-mongodb** module, and write a few functions, the most important of which will be `composeFilter`. This time around, its implementation is going to contain syntax for creating database requests. The resulting code for this class is listed below: 
 
 {{< tabsection >}}
   {{< include "../__code9_node.md" >}}  
@@ -159,7 +159,7 @@ To run these tests, run the command npm test from a terminal at the root of the 
 
 *"But where exactly is the data going to be stored when we get the service actually up and running?"* you may ask. Jumping ahead, we'll tell you that the config.yml configuration file takes care of that. It contains configurations for all of the service's components, such as: which logger to use, where performance counter output should be, what database to connect to and using what parameters, etc. We'll discuss this in more detail later on in this tutorial.
 
-Now that we can persist our data, let's move on to [Step 5. Implementing a controller.](../step4)
+Now that we can persist our data, let's move on to [Step 5. Implementing a service.](../step4)
 
 <span class="hide-title-link">
 

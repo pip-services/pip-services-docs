@@ -40,7 +40,7 @@ Before starting, create a folder for the project. The directory structure of fac
 /docker
 /test
 └───/fixture
-└───/services
+└───/controllers
     └───/version1
 
 /src
@@ -48,7 +48,7 @@ Before starting, create a folder for the project. The directory structure of fac
 └───/container
 └───/operations
     └───/version1
-└───/services
+└───/controllers
     └───/version1
 ```
 {{< /tabsection >}}

@@ -127,29 +127,29 @@ Now let's request the status URL from our browser: `http://localhost:8080/status
 
 ```json
 {
-  "id": "microservice-server",
-  "name": "beacons",
-  "description": "Beacons microservice",
-  "start_time": "2021-05-25T16:46:30.079416Z",
-  "current_time": "2021-05-25T16:47:07.027093Z",
-  "uptime": 36947.676999999996,
-  "properties": {},
   "components": [
-    "pip-services:context-info:default:*:1.0",
+    "pip-services:context-info:default:default:1.0",
     "pip-services:factory:container:default:1.0",
     "pip-services:context-info:default:default:1.0",
     "pip-services:logger:console:default:1.0",
     "pip-services:tracer:log:default:1.0",
     "pip-services:counters:log:default:1.0",
     "beacons:persistence:memory:default:1.0",
-    "beacons:controller:default:default:1.0",
+    "beacons:service:default:default:1.0",
     "pip-services:endpoint:http:default:1.0",
-    "beacons:service:http:default:1.0",
-    "pip-services:swagger-service:*:*:1.0",
-    "pip-services:heartbeat-service:http:default:1.0",
-    "pip-services:status-service:http:default:1.0",
-    "pip-services:swagger-service:http:default:1.0"
-  ]
+    "beacons:controller:http:default:1.0",
+    "pip-services:heartbeat-controller:http:default:1.0",
+    "pip-services:status-controller:http:default:1.0"
+  ],
+  "current_time": "2024-04-25T14:57:38+03:00",
+  "description": "Beacons microservice",
+  "id": "microservice-server",
+  "name": "beacons",
+  "properties": {
+
+  },
+  "start_time": "2024-04-25T14:52:45+03:00",
+  "uptime": 292457319100
 }
 ```
 
@@ -157,7 +157,7 @@ Let's move on to testing the main functionality of our microservice. Our set of 
 
 We could use a REST client to test our microservice, but for the sake of this example, we'll be using curl instead.
 
-Let's check the availability of our commands - the very same ones we defined in our [CommandSet](../../../../toolkit_api/node/commons/commands/command_set/).
+Let's check the availability of our commands - the very same ones we defined in our [CommandSet](../../../../toolkit_api/node/rpc/commands/command_set/).
 
 First, we'll attempt to create a few beacons in the system:
 

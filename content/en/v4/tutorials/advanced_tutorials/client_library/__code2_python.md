@@ -5,7 +5,7 @@ from typing import Optional, List, Any
 from pip_services4_data.query import PagingParams, DataPage, FilterParams
 from pip_services4_components.context import IContext
 
-#from src.data.version1 import BeaconV1
+from src.data.version1 import BeaconV1
 
 
 class IBeaconsClientV1:

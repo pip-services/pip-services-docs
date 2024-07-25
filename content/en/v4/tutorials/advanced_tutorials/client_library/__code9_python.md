@@ -1,4 +1,5 @@
 
-```python
+```bash
+python test.py
 
 ```

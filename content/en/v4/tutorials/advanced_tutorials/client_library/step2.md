@@ -10,7 +10,7 @@ gitUrl: "https://github.com/pip-services-samples"
 
 Oftentimes systems that are created using a microservices architecture end up being assembled and installed as monoliths. Sometimes this is required as a transitional step, when the operations department isn't quite yet ready to install and support such a fragmented system. It's also common for startups, who usually have to deal with limited financial resources, to use this approach. Packing a large amount of microservices into a monolith allows teams to significantly reduce the amount of containers needed to get the system up and running. Such a system can easily be broken up into microservices in the future, when the startup is ready to support an increasing number of clients.
 
-Direct clients are key to creating microservice-based monoliths. A direct client uses direct calls to the microservice's controller from the shared address space, bypassing external interfaces in the process. On this step, we are going to create such a client. We'll be placing our code in the **src/version1** folder.
+Direct clients are key to creating microservice-based monoliths. A direct client uses direct calls to the microservice's service from the shared address space, bypassing external interfaces in the process. On this step, we are going to create such a client. We'll be placing our code in the **src/version1** folder.
 
 First off, let's define an interface for our clients to implement. This interface should contain a list of all the methods that are provided by our microservice's API. As a result, we get the following code:
 
@@ -38,7 +38,7 @@ First off, let's define an interface for our clients to implement. This interfac
   Not available  
 {{< /tabsection >}}
 
-Let's start writing our direct client. This will be a class that implements the interface we defined above, that has our controller set as a dependency in the controller, and that will call the controller's methods when asked to. To learn more about the referencing and linking mechanisms, be sure to read [The Component References](../../../../tutorials/beginner_tutorials/component/component_references/). Ultimately, this will just be a wrapper class for the container. 
+Let's start writing our direct client. This will be a class that implements the interface we defined above, that has our service set as a dependency in the service, and that will call the service's methods when asked to. To learn more about the referencing and linking mechanisms, be sure to read [The Component References](../../../../tutorials/beginner_tutorials/component/component_references/). Ultimately, this will just be a wrapper class for the container. 
 The direct client's code is listed below:
 
 {{< tabsection >}}

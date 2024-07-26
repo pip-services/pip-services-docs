@@ -45,8 +45,6 @@ The code for this client is showed below:
 
 Now let's test the client we've created. We'll be using the set of tests that we developed in one of the previous steps, and adding just one test file that will bring it all together. The source of this file is presented below:
 
-**/test/version1/test_BeaconsMockClientV1.py**
-
 {{< tabsection >}}
   {{< include "../__code6_node.md" >}}  
 {{< /tabsection >}}

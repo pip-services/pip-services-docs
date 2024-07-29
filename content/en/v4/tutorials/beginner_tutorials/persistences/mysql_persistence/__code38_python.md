@@ -1,5 +1,5 @@
 
-```code
+```python
 class MyMySqlPersistence(IdentifiableJsonMySqlPersistence):
 
     def __init__(self):

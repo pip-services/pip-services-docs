@@ -2,6 +2,7 @@
 ```python
 from typing import Optional, Any, List
 from pip_services4_data.query import PagingParams, DataPage
+from pip_services4_components.context import IContext
 
 class MyMySqlPersistence(MySqlPersistence):
 
@@ -17,18 +18,19 @@ class MyMySqlPersistence(MySqlPersistence):
         # create an index
         self._ensure_index(self._table_name + '_key', {'key': 1}, {'unique': True})
 
-    def get_one_random(self, correlation_id: Optional[str], filter: Any) -> MyData:
+    def get_one_random(self, context: Optional[IContext], filter: Any) -> MyData:
         return super().get_one_random(correlation_id, filter)
 
-    def get_list_by_filter(self, correlation_id: Optional[str], filter: Any, sort: Any, select: Any) -> List[MyData]:
+    def get_list_by_filter(self, context: Optional[IContext], filter: Any, sort: Any, select: Any) -> List[MyData]:
         return super().get_list_by_filter(correlation_id, filter, sort, select)
 
-    def get_count_by_filter(self, correlation_id: Optional[str], filter: Any) -> int:
+    def get_count_by_filter(self, context: Optional[IContext], filter: Any) -> int:
         return super().get_count_by_filter(correlation_id, filter)
 
-    def get_page_by_filter(self, correlation_id: Optional[str], filter: Any, paging: PagingParams, sort: Any, select: Any) -> DataPage: 
+    def get_page_by_filter(self, context: Optional[IContext], filter: Any, paging: PagingParams, sort: Any, select: Any) -> DataPage: 
         return super().get_page_by_filter(correlation_id, filter, paging, sort, select)
 
-    def delete_by_filter(self, correlation_id: Optional[str], filter: Any) -> int:
-        return super().delete_by_filter(correlation_id, filter)
+    def delete_by_filter(self, context: Optional[IContext], filter: Any) -> int:
+        return super().delete_by_filter(context, filter)
+
 ```

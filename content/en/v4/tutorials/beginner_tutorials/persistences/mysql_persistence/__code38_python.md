@@ -15,15 +15,15 @@ class MyMySqlPersistence(IdentifiableJsonMySqlPersistence):
         # create an index
         self._ensure_index(self._table_name + '_json_key', {"data_key": 1}, {'unique': True})
 
-    def get_one_random(self, correlation_id: Optional[str], filter: Any) -> MyData:
+    def get_one_random(self, context: Optional[IContext], filter: Any) -> MyData:
         return super().get_one_random(correlation_id, filter)
 
-    def get_list_by_filter(self, correlation_id: Optional[str], filter: Any, sort: Any, select: Any) -> List[MyData]:
-        return super().get_list_by_filter(correlation_id, filter, sort, select)
+    def get_list_by_filter(self, context: Optional[IContext], filter: Any, sort: Any, select: Any) -> List[MyData]:
+        return super().get_list_by_filter(context, filter, sort, select)
 
-    def get_count_by_filter(self, correlation_id: Optional[str], filter: Any) -> int:
-        return super().get_count_by_filter(correlation_id, filter)
+    def get_count_by_filter(self, context: Optional[IContext], filter: Any) -> int:
+        return super().get_count_by_filter(context, filter)
 
-    def get_page_by_filter(self, correlation_id: Optional[str], filter: Any, paging: PagingParams, sort: Any, select: Any) -> DataPage: 
-        return super().get_page_by_filter(correlation_id, filter, paging, sort, select)
+    def get_page_by_filter(self, context: Optional[IContext], filter: Any, paging: PagingParams, sort: Any, select: Any) -> DataPage: 
+        return super().get_page_by_filter(context, filter, paging, sort, select)
 ```

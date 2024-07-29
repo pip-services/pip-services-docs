@@ -46,7 +46,7 @@ In order to work with the MySQL persistence module, we need to install it. This 
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+   {{< include "./__code1_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -74,7 +74,7 @@ In the examples of this tutorial, we will use the following data structure
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+   {{< include "./__code2_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -100,7 +100,7 @@ And the following instances of it.
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+   {{< include "./__code3_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -132,7 +132,7 @@ In order to use this component, we need to import the corresponding library with
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+   {{< include "./__code4_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -161,7 +161,7 @@ To implement this component, we define a class that inherits the methods from th
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+   {{< include "./__code5_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -187,7 +187,7 @@ Once our persistence component has been defined, we need to create an instance o
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+   {{< include "./__code6_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -206,7 +206,7 @@ Once our persistence component has been defined, we need to create an instance o
 After implementing our persistence component, we need to connect it to our database with the open() method.
 
 {{< tabsection >}}
-  {{< include "./__code7_node.md" >}}
+  {{< include "./__code9_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -214,7 +214,7 @@ After implementing our persistence component, we need to connect it to our datab
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available  
+   {{< include "./__code9_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -238,7 +238,7 @@ This class presents several methods that can be used to perform CRUD operations.
 This method is used to insert a record in a database. It accepts the correlation_id and the data object as input parameters and returns a MyData object containing the stored record. The following is an example of its usage.
 
 {{< tabsection >}}
-  {{< include "./__code8_node.md" >}}
+  {{< include "./__code10_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -246,7 +246,7 @@ This method is used to insert a record in a database. It accepts the correlation
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+   {{< include "./__code10_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -264,7 +264,7 @@ This method is used to insert a record in a database. It accepts the correlation
 Where
 
 {{< tabsection >}}
-  {{< include "./__code9_node.md" >}}
+  {{< include "./__code11_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -272,7 +272,7 @@ Where
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+   {{< include "./__code11_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -296,7 +296,7 @@ There are four methods that can be used to retrieve records from a database. The
 This method retrieves a random record based on a given filter and returns a MySqlPersistence object with the retrieved record. In the example below, we ask for a random record with an id value of '1'.
 
 {{< tabsection >}}
-  {{< include "./__code10_node.md" >}}
+  {{< include "./__code12_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -304,7 +304,7 @@ This method retrieves a random record based on a given filter and returns a MySq
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+   {{< include "./__code12_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -322,7 +322,7 @@ This method retrieves a random record based on a given filter and returns a MySq
 Where
 
 {{< tabsection >}}
-  {{< include "./__code11_node.md" >}}
+  {{< include "./__code13_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -330,7 +330,7 @@ Where
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+   {{< include "./__code13_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -350,7 +350,7 @@ Where
 his method returns a set of records that comply with a given filter. The result is in the form of a list of MySqlPersistence objects containing the retrieved records. The following example retrieves all records with an id equal to '1'.
 
 {{< tabsection >}}
-  {{< include "./__code12_node.md" >}}
+  {{< include "./__code14_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -358,7 +358,7 @@ his method returns a set of records that comply with a given filter. The result 
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+   {{< include "./__code14_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -376,7 +376,7 @@ his method returns a set of records that comply with a given filter. The result 
 Where
 
 {{< tabsection >}}
-  {{< include "./__code13_node.md" >}}
+  {{< include "./__code15_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -384,7 +384,7 @@ Where
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+   {{< include "./__code15_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -404,7 +404,7 @@ Where
 Similar to the previous one, this method retrieves a set of records that comply with a given filter. The input parameters are the correlation_id, a filter, and sorting and projection JSON objects. The output is in the form of a DataPage object, and the records are contained in the data field of this object. The following example shows how to extract those records with an id equal to '1'.
 
 {{< tabsection >}}
-  {{< include "./__code14_node.md" >}}
+  {{< include "./__code16_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -412,7 +412,7 @@ Similar to the previous one, this method retrieves a set of records that comply 
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+   {{< include "./__code16_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -430,7 +430,7 @@ Similar to the previous one, this method retrieves a set of records that comply 
 Where
 
 {{< tabsection >}}
-  {{< include "./__code15_node.md" >}}
+  {{< include "./__code17_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -438,7 +438,7 @@ Where
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+   {{< include "./__code17_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -458,7 +458,7 @@ Where
 This method returns an integer indicating the number of records that comply with a given filter. The example below shows how to obtain the number of records with a key equal to 'key 1'.
 
 {{< tabsection >}}
-  {{< include "./__code16_node.md" >}}
+  {{< include "./__code17_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -466,7 +466,7 @@ This method returns an integer indicating the number of records that comply with
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+   {{< include "./__code17_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -491,7 +491,7 @@ This class doesn't contain an update method. However, we can create one by using
 This method deletes the record specified by the given id. The following example shows how to delete a record with an id equal to '1'.
 
 {{< tabsection >}}
-  {{< include "./__code17_node.md" >}}
+  {{< include "./__code19_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -499,7 +499,7 @@ This method deletes the record specified by the given id. The following example 
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+   {{< include "./__code19_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -523,7 +523,7 @@ This component allows us to store data in MySQL databases and implement several 
 In order to use this method, we must first import it. We can use the following command to do this.
 
 {{< tabsection >}}
-  {{< include "./__code18_node.md" >}}
+  {{< include "./__code20_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -531,7 +531,7 @@ In order to use this method, we must first import it. We can use the following c
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available  
+   {{< include "./__code20_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -551,7 +551,7 @@ In order to use this method, we must first import it. We can use the following c
 To implement an identifiable persistence component, we need to define a subclass of the IdentifiableMySqlPersistence class. Our code will look something like the one below, where mydata is the name of the table we are going to use to perform CRUD operations.
 
 {{< tabsection >}}
-  {{< include "./__code19_node.md" >}}
+  {{< include "./__code21_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -559,7 +559,7 @@ To implement an identifiable persistence component, we need to define a subclass
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available  
+   {{< include "./__code21_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -577,7 +577,7 @@ To implement an identifiable persistence component, we need to define a subclass
 Once the persistence component has been created, we configure it according to our database configuration details.
 
 {{< tabsection >}}
-  {{< include "./__code20_node.md" >}}
+  {{< include "./__code22_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -585,7 +585,7 @@ Once the persistence component has been created, we configure it according to ou
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+   {{< include "./__code22_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -605,7 +605,7 @@ Once the persistence component has been created, we configure it according to ou
 Next to defining our persistence component, we connect to our database by using the open() method.
 
 {{< tabsection >}}
-  {{< include "./__code21_node.md" >}}
+  {{< include "./__code23_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -613,7 +613,7 @@ Next to defining our persistence component, we connect to our database by using 
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+   {{< include "./__code23_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -637,7 +637,7 @@ This class presents several methods for CRUD operations. They are explained in t
 To create a new record in our table, we can use the create() method, which takes the correlation_id and the data object to be stored as input parameters. Once executed, it returns a MyData object containing the stored record. The following example shows how to use it.
 
 {{< tabsection >}}
-  {{< include "./__code22_node.md" >}}
+  {{< include "./__code24_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -645,7 +645,7 @@ To create a new record in our table, we can use the create() method, which takes
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+   {{< include "./__code4_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -663,7 +663,7 @@ To create a new record in our table, we can use the create() method, which takes
 Where
 
 {{< tabsection >}}
-  {{< include "./__code23_node.md" >}}
+  {{< include "./__code25_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -671,7 +671,7 @@ Where
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+   {{< include "./__code25_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -695,7 +695,7 @@ This class presents several methods that can be used to retrieve one or more rec
 This method returns a record from the database. It accepts the correlation_id and the id of the record as input parameters. The following example shows how to use it.
 
 {{< tabsection >}}
-  {{< include "./__code24_node.md" >}}
+  {{< include "./__code26_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -703,7 +703,7 @@ This method returns a record from the database. It accepts the correlation_id an
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+   {{< include "./__code26_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -721,7 +721,7 @@ This method returns a record from the database. It accepts the correlation_id an
 Where
 
 {{< tabsection >}}
-  {{< include "./__code25_node.md" >}}
+  {{< include "./__code27_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -729,7 +729,7 @@ Where
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+   {{< include "./__code27_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -749,7 +749,7 @@ Where
 This method returns a set of records from a database. It accepts the correlation_id and a list containing record ids as input parameters. The result is in the form of a list of MySqlPersistence objects, each containing a record. The example below shows how to use it.
 
 {{< tabsection >}}
-  {{< include "./__code26_node.md" >}}
+  {{< include "./__code28_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -757,7 +757,7 @@ This method returns a set of records from a database. It accepts the correlation
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+   {{< include "./__code28_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -775,7 +775,7 @@ This method returns a set of records from a database. It accepts the correlation
 Where 
 
 {{< tabsection >}}
-  {{< include "./__code27_node.md" >}}
+  {{< include "./__code29_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -783,7 +783,7 @@ Where
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+   {{< include "./__code29_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -807,7 +807,7 @@ This class provides two different methods that can be used to update records in 
 This method updates a record in a database. It takes the correlation_id and a data object as input parameters. If the update was successful, it returns the updated record. Otherwise, it returns None. The following example illustrates how to use it.
 
 {{< tabsection >}}
-  {{< include "./__code28_node.md" >}}
+  {{< include "./__code30_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -815,7 +815,7 @@ This method updates a record in a database. It takes the correlation_id and a da
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+   {{< include "./__code30_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -833,7 +833,7 @@ This method updates a record in a database. It takes the correlation_id and a da
 Where
 
 {{< tabsection >}}
-  {{< include "./__code29_node.md" >}}
+  {{< include "./__code31_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -841,7 +841,7 @@ Where
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+   {{< include "./__code31_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -861,7 +861,7 @@ Where
 This method updates one or more fields of a given record. It takes the correlation_id, the id of the record to be updated, and a dictionary containing the fields and their updated values as input parameters. If the update was successful, it returns the updated record. Otherwise, it returns None.
 
 {{< tabsection >}}
-  {{< include "./__code30_node.md" >}}
+  {{< include "./__code32_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -869,7 +869,7 @@ This method updates one or more fields of a given record. It takes the correlati
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+   {{< include "./__code32_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -887,7 +887,7 @@ This method updates one or more fields of a given record. It takes the correlati
 Where
 
 {{< tabsection >}}
-  {{< include "./__code31_node.md" >}}
+  {{< include "./__code33_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -895,7 +895,7 @@ Where
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+   {{< include "./__code33_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -919,7 +919,7 @@ This class presents two different methods that can be used to delete records fro
 This method deletes a record specified by its id. It also requires the correlation_id as input parameter. If the delete was successful, it returns the deleted record. Otherwise, it returns None. The example below explains how to use it.
 
 {{< tabsection >}}
-  {{< include "./__code32_node.md" >}}
+  {{< include "./__code34_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -927,7 +927,7 @@ This method deletes a record specified by its id. It also requires the correlati
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+   {{< include "./__code34_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -944,7 +944,7 @@ This method deletes a record specified by its id. It also requires the correlati
 
 Where
 {{< tabsection >}}
-  {{< include "./__code33_node.md" >}}
+  {{< include "./__code35_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -952,7 +952,7 @@ Where
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+   {{< include "./__code35_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -972,7 +972,7 @@ Where
 This method deletes a set of records whose ids are specified in the form of a list. It also requires the correlation_id as input parameter. After execution, it returns None. The following example shows how to use it. 
 
 {{< tabsection >}}
-  {{< include "./__code34_node.md" >}}
+  {{< include "./__code36_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -980,7 +980,7 @@ This method deletes a set of records whose ids are specified in the form of a li
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+   {{< include "./__code36_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -1003,7 +1003,7 @@ This method deletes a set of records whose ids are specified in the form of a li
 In order to use this component, we need to import it first. This can be done with the following command
 
 {{< tabsection >}}
-  {{< include "./__code35_node.md" >}}
+  {{< include "./__code37_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -1011,7 +1011,7 @@ In order to use this component, we need to import it first. This can be done wit
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+   {{< include "./__code37_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -1031,7 +1031,7 @@ In order to use this component, we need to import it first. This can be done wit
 In order to implement this component, we create a class that inherits it. In addition, we need to define the method defineSchema(), which will allow us to use a table with two fields, namely id and data, where the data field will store the JSON values. Our class will look something like this
 
 {{< tabsection >}}
-  {{< include "./__code36_node.md" >}}
+  {{< include "./__code38_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -1039,7 +1039,7 @@ In order to implement this component, we create a class that inherits it. In add
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+   {{< include "./__code38_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -1067,7 +1067,7 @@ In general, CRUD operations return an object with the same fields that were pass
 For example, if we use the getOneRandom() method, 
 
 {{< tabsection >}}
-  {{< include "./__code37_node.md" >}}
+  {{< include "./__code7_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -1075,7 +1075,7 @@ For example, if we use the getOneRandom() method,
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+   {{< include "./__code7_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -1093,7 +1093,7 @@ For example, if we use the getOneRandom() method,
 we can obtain the record values as
 
 {{< tabsection >}}
-  {{< include "./__code38_node.md" >}}
+  {{< include "./__code8_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -1101,7 +1101,7 @@ we can obtain the record values as
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+   {{< include "./__code8_go.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}

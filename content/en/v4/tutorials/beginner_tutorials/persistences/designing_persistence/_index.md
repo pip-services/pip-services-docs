@@ -26,7 +26,7 @@ Pip.Services helps reduce the amount of code with its consistent implementation.
 
 #### Pre-conditions
 
-With a view to create our example, we need to import the following components. Among them, the two most important ones are IdentifiableMySqlPersistence and IdentifiablePostgrePersistence from Pip.Services, which will be used to define our persistence components.
+With a view to create our example, we need to import the following components: 
 
 {{< tabsection >}}
   Not available  
@@ -52,6 +52,7 @@ With a view to create our example, we need to import the following components. A
   Not available  
 {{< /tabsection >}} 
 
+Among them, the two most important ones are IdentifiableMySqlPersistence and IdentifiablePostgrePersistence, which will be used to define our persistence components.
 
 #### Data object
 

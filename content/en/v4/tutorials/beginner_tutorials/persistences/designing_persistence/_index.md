@@ -22,7 +22,7 @@ In order to see this, we will create an example using two different databases (M
 
 ### Designing your persistence components
 
-Pip.Services helps reduce the amount of code with its consistent implementation. In this tutorial, we will demonstrate how this principle works by performing CRUD operations using shared code for two different databases: PostgreSQL and MySQL.
+Pip.Services helps reduce the amount of code with its symmetric implementation principle. In this tutorial, we will demonstrate how this principle works by performing CRUD operations using shared code for two different databases: PostgreSQL and MySQL.
 
 #### Pre-conditions
 
@@ -87,7 +87,7 @@ Thus, our tables will have three columns: id, key and content.
 
 #### Common interface
 
-Now, we create an interface that will be used to create persistence objects for both databases and, which states a set of CRUD operations for identifiable persistence objects:
+Then, we create an interface that will be used to create persistence objects for both databases and, which states a set of CRUD operations for identifiable persistence objects:
 
 {{< tabsection >}}
   Not available  

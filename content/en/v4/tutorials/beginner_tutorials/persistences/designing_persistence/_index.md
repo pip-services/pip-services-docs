@@ -623,7 +623,7 @@ Or with the deleteByFilter() method
 
 This approach defines an easy and practical way to migrate tables from one database to another. Let's suppose that we want to transfer the data existing in our MySQL database to a table in our PostgreSQL database. 
 
-To achieve this, first, we retrieve the data from the table in MySQL and we obtain a list with elements of type MyData, which we call **myDataList**. As both databases use the same data structure, we just need to insert those rows via the create() method, which accepts a correlationID and a list of MyData elements as inputs. The following code shows this:
+To achieve this, first, we retrieve the data from the table in MySQL and we obtain a list with elements of type MyData, which we call **myDataList**. As both databases use the same data structure, we just need to insert those rows via the create() method, which accepts a list of MyData elements as input. The following code shows this:
 
 {{< tabsection >}}
   Not available  

@@ -418,7 +418,7 @@ Or, if we prefer to use our PostgreSQL database, we use
 
 
 #### CRUD operations
-Whatever database we decide to use, we can now perform different CRUD operations by using the persistence object and any of the methods defined in our interface or inherited from the base classes. As our implementations were symmetric, both databases call methods with the same names.
+Whatever database we decide to use, we can now perform different CRUD operations by using the persistence object and any of the methods defined in our interface or inherited from the base classes. As our implementations are symmetric, both databases call methods with the same names.
 
 For example
 

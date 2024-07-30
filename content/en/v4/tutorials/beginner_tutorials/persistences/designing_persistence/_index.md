@@ -83,7 +83,7 @@ We define the following data object, which corresponds to the tables that we wil
 {{< /tabsection >}} 
 
 
-Thus, our tables will have three columns, namely id, key and content.
+Thus, our tables will have three columns: id, key and content.
 
 #### Common interface
 

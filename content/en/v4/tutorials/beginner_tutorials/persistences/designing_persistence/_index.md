@@ -22,7 +22,7 @@ In order to see this, we will create an example using two different databases (M
 
 ### Designing your persistence components
 
-Pip.services allows you to reduce the amount of code through its symmetric implementation. In this tutorial, we will see how to perform CRUD operations using one set of common code for two different databases.  In order to understand this, we will use an example that considers PostgreSQL and MySQL. 
+Pip.Services helps reduce the amount of code with its consistent implementation. In this tutorial, we will demonstrate how this principle works by performing CRUD operations using shared code for two different databases: PostgreSQL and MySQL.
 
 #### Pre-conditions
 

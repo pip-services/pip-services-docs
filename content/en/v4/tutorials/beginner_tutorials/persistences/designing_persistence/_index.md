@@ -174,7 +174,7 @@ Similar to what we did in the previous step, we now define a component that inhe
 
 #### Defining the working database
 
-In order to connect to our databases, we need to define our connection parameters. For our MySQL database, they will look like this:
+In order to connect to our databases, we need to define our connection parameters. For our MySQL database, the following example applies:
 
 {{< tabsection >}}
   Not available  

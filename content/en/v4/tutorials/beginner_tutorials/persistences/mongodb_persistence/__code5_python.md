@@ -7,7 +7,7 @@ class MyMongoDbPersistence(MongoDbPersistence):
         
 persistence = MyMongoDbPersistence()
 
-from pip_services3_commons.config import ConfigParams
+from pip_services4_components.config import ConfigParams
 
 config = ConfigParams.from_tuples(
     'connection.host', 'localhost', 

@@ -39,7 +39,7 @@ In order to use any of these two components, we need to install the MongoDB modu
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code1_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -65,7 +65,7 @@ Throughout the examples, we will use the data structure that appears below. It c
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code2_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -91,7 +91,7 @@ In addition, we create three instances of this class, which we will use in the e
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code3_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -122,7 +122,7 @@ To use the MongoDbPersistence component we need to insert it first. This can be 
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code4_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -150,7 +150,7 @@ To create our MongoDB persistence component, we create a class that extends the 
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code5_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -176,7 +176,7 @@ Later on, once all operations have been completed, we can close our persistence 
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code6_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -205,7 +205,7 @@ To store a document, we use the create method. This method asks for the correlat
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code7_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -231,7 +231,7 @@ Which returns:
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code7P2_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -262,7 +262,7 @@ As its name suggests, this method retrieves a random document based on a given f
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+   {{< include "./__code8_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -288,7 +288,7 @@ Which returns:
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code9_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -316,7 +316,7 @@ This method gets a list of data items retrieved according to a given filter. In 
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code10_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -342,7 +342,7 @@ Once we have our class defined, we can call it to get our search results. For ex
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code11_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -368,7 +368,7 @@ Which returns:
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code12_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -397,7 +397,7 @@ Similar to what we did in the previous example, we override this method in our p
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code13_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -423,7 +423,7 @@ And, an example of get_page_by_filter() is:
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code14_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -449,7 +449,7 @@ Now, we can call this method from our persistence object. For example, to obtain
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code15_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -475,7 +475,7 @@ which returns the searched values in a DataPage object:
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code16_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -503,7 +503,7 @@ This method gets the number of data items that will be retrieved based on a give
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code17_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -529,7 +529,7 @@ Now, we can call it from our code and get the returned amount of records that co
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code18_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -561,7 +561,7 @@ The MongoDbPersistence class provides the deleteByFilter() method, which deletes
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code19_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -589,7 +589,7 @@ After overriding and adding the methods specified in the previous examples, our 
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code5P2_go.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -616,7 +616,7 @@ Now, we will see a simple example that puts most of the learned concepts togethe
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code20_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -652,7 +652,7 @@ To use the IdentifiableMongoDbPersistence component we need to import it first. 
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code21_go.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -680,7 +680,7 @@ To create an identifiable MongoDB persistence component, we create a subclass of
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code22_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -706,7 +706,7 @@ And, after creating it, we open the connection.
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code23_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -732,7 +732,7 @@ Later on, once we have finished using this persistence component, we can close i
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code24_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -770,7 +770,7 @@ To add a new document to our collection, we can use the create() method, which a
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available  
+  {{< include "./__code25_go.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -796,7 +796,7 @@ Which returns:
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code25P2_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -824,7 +824,7 @@ This method updates an existing data item. If the item doesn't exist, it creates
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code26_go.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -850,7 +850,7 @@ Which returns:
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code26P2_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -878,7 +878,7 @@ To retrieve a data object, we can use the get_one_by_id method, which allows for
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code27_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -904,7 +904,7 @@ Which returns:
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code28_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -932,7 +932,7 @@ We can also use the getListByIds() method, which is similar to the previous one,
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code29_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -958,7 +958,7 @@ Which returns:
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code30_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -988,7 +988,7 @@ This method updates the data stored in a record. It accepts the correlationId an
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code31_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -1014,7 +1014,7 @@ Which returns:
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code32_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -1042,7 +1042,7 @@ This method also updates an item, but only the specified fields. It takes the id
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code33_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -1068,7 +1068,7 @@ Which returns:
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code34_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -1098,7 +1098,7 @@ We can delete a stored data object by using the delete() method. Here, we need t
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code35_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -1124,7 +1124,7 @@ Which returns:
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code36_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -1152,7 +1152,7 @@ This method accepts a list containing the ids of the documents to be deleted. Th
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code37_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -1180,7 +1180,7 @@ To summarize, we put everything together in one comprehensive example. In it, we
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code38_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}

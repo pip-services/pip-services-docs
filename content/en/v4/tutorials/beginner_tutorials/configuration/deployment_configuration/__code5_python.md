@@ -40,7 +40,7 @@ class HelloFriendRestController(RestController):
         return self.send_result(result)
 
     def create(self):
-        correlation_id = self._get_trace_id()
+        trace_id = self._get_trace_id()
         item = MyFriend(
             bottle.request.query["id"],
             bottle.request.query["type"],

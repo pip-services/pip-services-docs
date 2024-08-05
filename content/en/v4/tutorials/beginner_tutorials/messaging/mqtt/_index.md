@@ -161,7 +161,7 @@ Now that our component has been defined, we can connect it to our MQTT app throu
   Not available  
 {{< /tabsection >}}
 
-Once the queue has been used, we can close it to free resources with the close()/closeAsync() method, which takes the correlationId as its input parameter. The example below shows its usage.
+Once the queue has been used, we can close it to free resources with the close()/closeAsync() method, which takes the context as its input parameter. The example below shows its usage.
 
 {{< tabsection >}}
   {{< include "./__code6_node.md" >}}

@@ -1,4 +1,4 @@
 
 ```go
-
+queue := mqttqueue.NewMqttMessageQueue("")
 ```

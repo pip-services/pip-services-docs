@@ -1,4 +1,4 @@
 
 ```python
-
+queue.close(None)
 ```

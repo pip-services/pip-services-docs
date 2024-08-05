@@ -135,7 +135,7 @@ and then, define the topic as a configuration parameter
 
 #### Connecting to our app
 
-Now that our component has been defined, we can connect it to our MQTT app through the open()/openAsync() method, which takes the correlationId as its input parameter. The following example illustrates how to use it.
+Now that our component has been defined, we can connect it to our MQTT app through the open()/openAsync() method, which takes the context as its input parameter. The following example illustrates how to use it.
 
 {{< tabsection >}}
   {{< include "./__code5_node.md" >}}
@@ -190,9 +190,9 @@ Once the queue has been used, we can close it to free resources with the close()
 
 #### Creating and sending a message
 
-After our connection is ready, we can create a message and send it to our app. To create a message, we use the MessageEnvelope component from the messaging module. This class takes the correlationId, the message type, and the message as input parameters. 
+After our connection is ready, we can create a message and send it to our app. To create a message, we use the MessageEnvelope component from the messaging module. This class takes the context, the message type, and the message as input parameters. 
 
-Once we have our message envelope, we can use the send()/sendAsync() to send a message to our app. This method has the correlationId and the message envelope as input parameters. The example below shows how to send a message of type "mymessage" containing the text "ABC123".
+Once we have our message envelope, we can use the send()/sendAsync() to send a message to our app. This method has the context and the message envelope as input parameters. The example below shows how to send a message of type "mymessage" containing the text "ABC123".
 
 {{< tabsection >}}
   {{< include "./__code7_node.md" >}}
@@ -225,7 +225,7 @@ This component contains several methods that can be used to read a message from 
 
 ##### receive()
 
-This method receives an incoming message and removes it from the queue. It takes the correlationId and a waiting timeout in milliseconds as input parameters. It returns a message envelope containing the received message. 
+This method receives an incoming message and removes it from the queue. It takes the context and a waiting timeout in milliseconds as input parameters. It returns a message envelope containing the received message. 
 
 {{< tabsection >}}
   {{< include "./__code8_node.md" >}}
@@ -335,7 +335,7 @@ Where
 
 ##### peekBatch()
 
-This method peeks multiple incoming messages from the queue in the form of a list and without removing them. If there are no messages available in the queue, it returns an empty list. As input parameters, it takes the correlationId and the maximum number of messages to peek. The following example peeks up to three messages. As we had sent only one message, it retrieves it and then stores its content in a message envelope contained in a list. 
+This method peeks multiple incoming messages from the queue in the form of a list and without removing them. If there are no messages available in the queue, it returns an empty list. As input parameters, it takes the context and the maximum number of messages to peek. The following example peeks up to three messages. As we had sent only one message, it retrieves it and then stores its content in a message envelope contained in a list. 
 
 {{< tabsection >}}
   {{< include "./__code12_node.md" >}}

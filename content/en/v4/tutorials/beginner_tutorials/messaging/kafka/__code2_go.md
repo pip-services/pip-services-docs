@@ -1,4 +1,4 @@
 
 ```go
-
+ok := kc.IsOpen()
 ```

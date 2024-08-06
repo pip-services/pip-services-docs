@@ -138,7 +138,7 @@ Once our component has been configured, we can connect it to the database via th
   Not available  
 {{< /tabsection >}}
 
-Once our task has been completed, we can free used resources by closing this component with the close() method, which takes the correlationId as its only input parameter.
+Once our task has been completed, we can free used resources by closing this component with the close() method, which takes the context as its only input parameter.
 
 {{< tabsection >}}
   {{< include "./__code5_node.md" >}}
@@ -170,7 +170,7 @@ The RedisCache component offers the necessary methods to manage the interaction 
 
 ##### Create and update
 
-We can use the create() method to create a new entry. This method accepts the correlationId, key, value, and expiration time as inputs. It returns True if the operation was successful and False otherwise. If the key already exists in the database, it updates the old value with the new value. An example of its usage is.
+We can use the create() method to create a new entry. This method accepts the context, key, value, and expiration time as inputs. It returns True if the operation was successful and False otherwise. If the key already exists in the database, it updates the old value with the new value. An example of its usage is.
 
 {{< tabsection >}}
   {{< include "./__code6_node.md" >}}
@@ -198,7 +198,7 @@ We can use the create() method to create a new entry. This method accepts the co
 
 ##### Read
 
-We can read a value from the database with the retrieve() method, which given a correlationId and a key, returns the corresponding value.
+We can read a value from the database with the retrieve() method, which given a context and a key, returns the corresponding value.
 
 {{< tabsection >}}
   {{< include "./__code7_node.md" >}}
@@ -226,7 +226,7 @@ We can read a value from the database with the retrieve() method, which given a 
 
 ##### Delete
 
-To delete a record from the database, we can use the remove method. This method accepts the correlationId and the key as inputs and returns 1 if the removal was successful and 0 otherwise.
+To delete a record from the database, we can use the remove method. This method accepts the context and the key as inputs and returns 1 if the removal was successful and 0 otherwise.
 
 {{< tabsection >}}
   {{< include "./__code8_node.md" >}}
@@ -312,7 +312,7 @@ Now, we can create our lock by defining an instance of the class and configuring
   Not available  
 {{< /tabsection >}}
 
-Once our component has been defined, we can connect it to the Redis database with the open() method, which accepts the correlationId as an input parameter.
+Once our component has been defined, we can connect it to the Redis database with the open() method, which accepts the context as an input parameter.
 
 {{< tabsection >}}
   {{< include "./__code11_node.md" >}}
@@ -372,7 +372,7 @@ Here, we have two different methods. They are as follows:
 
 ###### tryAcquireLock()
 
-To acquire our lock, we can use the try_acquire_lock() method. This method makes a single attempt to acquire the lock and returns a Boolean value indicating success or failure. It accepts the correlationId, the key, and the timeout in milliseconds as input parameters. The following code explains its usage.
+To acquire our lock, we can use the try_acquire_lock() method. This method makes a single attempt to acquire the lock and returns a Boolean value indicating success or failure. It accepts the context, the key, and the timeout in milliseconds as input parameters. The following code explains its usage.
 
 {{< tabsection >}}
   {{< include "./__code13_node.md" >}}
@@ -402,7 +402,7 @@ To acquire our lock, we can use the try_acquire_lock() method. This method makes
 
 Alternatively, we could use the acquireLock() method, which makes multiple attempts to acquire the lock. This class inherits this method from the Lock class, which it extends. 
 
-This method accepts the correlationId, key, timeout, and acquisition timeout as input parameters. The following example shows how to use it.
+This method accepts the context, key, timeout, and acquisition timeout as input parameters. The following example shows how to use it.
 
 {{< tabsection >}}
   {{< include "./__code14_node.md" >}}
@@ -430,7 +430,7 @@ This method accepts the correlationId, key, timeout, and acquisition timeout as 
 
 ##### Release
 
-Once the lock has completed its function, it needs to be released. This can be done with the releaseLock() method, which takes the correlationId and the key as input parameters. The following example shows how to release a lock.
+Once the lock has completed its function, it needs to be released. This can be done with the releaseLock() method, which takes the context and the key as input parameters. The following example shows how to release a lock.
 
 {{< tabsection >}}
   {{< include "./__code15_node.md" >}}

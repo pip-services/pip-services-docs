@@ -1,4 +1,4 @@
 
 ```go
-
+result := counters.GetAll()
 ```

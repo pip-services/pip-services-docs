@@ -134,7 +134,7 @@ To configure our object, we use the configure() method, which accepts a ConfigPa
 
 #### Connecting to RabbitMQ
 
-To connect to RabbitMQ, we use the OpenAsync() method, which requires the correlation_id as an input parameter. The following example shows how to connect our previously defined queue:
+To connect to RabbitMQ, we use the Open() method, which requires the context as an input parameter. The following example shows how to connect our previously defined queue:
 
 {{< tabsection >}}
   {{< include "./__code4_node.md" >}}
@@ -162,7 +162,7 @@ To connect to RabbitMQ, we use the OpenAsync() method, which requires the correl
 
 #### Creating and sending a message
 
-Once connected, we can send a message to RabbitMQ. For this, we use the SendAsync() method, which accepts the correlation_id and a MessageEnvelope object as inputs. This last object contains the correlation_id, message type, and message content as inputs. The following code shows how to do this:
+Once connected, we can send a message to RabbitMQ. For this, we use the SendAsync() method, which accepts the corntext and a MessageEnvelope object as inputs. This last object contains the context, message type, and message content as inputs. The following code shows how to do this:
 {{< tabsection >}}
   {{< include "./__code5_node.md" >}}
 {{< /tabsection >}}
@@ -189,7 +189,7 @@ Once connected, we can send a message to RabbitMQ. For this, we use the SendAsyn
 
 #### Receiving a message
 
-To receive a message, we use the RecevieAsync() method, which has the correlation_id and the waiting time in milliseconds as input parameters. The following example shows how to use it:
+To receive a message, we use the RecevieAsync() method, which has the context and the waiting time in milliseconds as input parameters. The following example shows how to use it:
 
 {{< tabsection >}}
   {{< include "./__code6_node.md" >}}

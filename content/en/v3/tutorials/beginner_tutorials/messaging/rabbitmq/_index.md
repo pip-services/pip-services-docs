@@ -134,7 +134,7 @@ To configure our object, we use the configure() method, which accepts a ConfigPa
 
 #### Connecting to RabbitMQ
 
-To connect to RabbitMQ, we use the OpenAsync() method, which requires the correlation_id as an input parameter. The following example shows how to connect our previously defined queue:
+To connect to RabbitMQ, we use the Open() method, which requires the correlation_id as an input parameter. The following example shows how to connect our previously defined queue:
 
 {{< tabsection >}}
   {{< include "./__code4_node.md" >}}

@@ -97,7 +97,7 @@ Once imported, we can create an instance of this class and configure it. In the 
 
 #### Connecting to NATS
 
-Now that we have defined our component, we connect to the NATS server via the open() method, which takes the correlation_id as an input parameter. The following code shows how to perform this operation:
+Now that we have defined our component, we connect to the NATS server via the open() method, which takes the context as an input parameter. The following code shows how to perform this operation:
 
 {{< tabsection >}}
   {{< include "./__code3_node.md" >}}
@@ -125,7 +125,7 @@ Now that we have defined our component, we connect to the NATS server via the op
 
 #### Creating and sending a message
 
-Once connected, we send a message to our NATS server via the send() method. This method accepts a correlation_id and a MessageEnvelope object as inputs. And, this last object requires a correlation_id, a message type, and the data being sent as inputs. The code below exemplifies how to perform this task:
+Once connected, we send a message to our NATS server via the send() method. This method accepts a context and a MessageEnvelope objects as inputs. And, this last object requires a context, a message type, and the data being sent as inputs. The code below exemplifies how to perform this task:
 
 {{< tabsection >}}
   {{< include "./__code4_node.md" >}}
@@ -153,7 +153,7 @@ Once connected, we send a message to our NATS server via the send() method. This
 
 #### Receiving a message
 
-We can receive messages from our subscribed topic via the receive() method, which accepts a correlation_id and a timeout in milliseconds as input parameters. The code below gives an example of its usage:
+We can receive messages from our subscribed topic via the receive() method, which accepts a context and a timeout in milliseconds as input parameters. The code below gives an example of its usage:
 
 {{< tabsection >}}
   {{< include "./__code5_node.md" >}}

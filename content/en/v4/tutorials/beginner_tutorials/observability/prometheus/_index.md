@@ -16,7 +16,7 @@ description: >-
     <td>Component used to create different metrics or counters.</td>
   </tr>
   <tr>
-    <td>PrometheusMetricsService</td>
+    <td>PrometheusMetricsController</td>
     <td>Component used to send metrics to /metrics.</td>
   </tr>
   <tr>
@@ -269,11 +269,11 @@ Finally, to finish our code, we close the counters object to free resources.
 
 ### Sending metrics to /metrics
 
-Another option presented by Prometheus is to store the metric values on a page located at /metrics. For this purpose, Pip.Services offers the PrometheusMetricsService. Its use is explained in the following sections.
+Another option presented by Prometheus is to store the metric values on a page located at /metrics. For this purpose, Pip.Services offers the PrometheusMetricsController. Its use is explained in the following sections.
 
 #### Pre-requisites
 
-In order to use the **PrometheusMetricsService** component, we need to import it first. This can be done with the following command:
+In order to use the **PrometheusMetricsController** component, we need to import it first. This can be done with the following command:
 
 {{< tabsection >}}
   {{< include "./__code8_node.md" >}}
@@ -326,9 +326,9 @@ As we did in the previous example, to send metrics to Prometheus, we need to cre
   Not available  
 {{< /tabsection >}}
 
-#### Creating the service
+#### Creating the controller
 
-To create the /metrics page, we need to create an instance of the PrometheusMetricsService component and configure it. In the following example, we specify that our /metrics page will be located on our machine and connected via port 8080. We also say that this page will show the results obtained from the counters object. Our code is as follows:
+To create the /metrics page, we need to create an instance of the PrometheusMetricsController component and configure it. In the following example, we specify that our /metrics page will be located on our machine and connected via port 8080. We also say that this page will show the results obtained from the counters object. Our code is as follows:
 
 {{< tabsection >}}
   {{< include "./__code10_node.md" >}}
@@ -356,7 +356,7 @@ To create the /metrics page, we need to create an instance of the PrometheusMetr
 
 #### Setting the references
 
-To relate the service and the counters, we need to set the references for the contextInfo, counters and service objects. This is done with the following code:
+To relate the controller and the counters, we need to set the references for the contextInfo, counters and controller objects. This is done with the following code:
 
 {{< tabsection >}}
   {{< include "./__code11_node.md" >}}
@@ -384,7 +384,7 @@ To relate the service and the counters, we need to set the references for the co
 
 #### Connecting and calling the method
 
-Now, as we did in the previous example, we connect to Prometheus and call the method twice. In this case, we need to connect both, the counters and service objects. Then, we call mymethod() with a loop. The code is as follows:
+Now, as we did in the previous example, we connect to Prometheus and call the method twice. In this case, we need to connect both, the counters and controller objects. Then, we call mymethod() with a loop. The code is as follows:
 
 {{< tabsection >}}
   {{< include "./__code12_node.md" >}}
@@ -412,7 +412,7 @@ Now, as we did in the previous example, we connect to Prometheus and call the me
 
 #### Closing the resources
 
-Finally, we can free resources by closing both, the counters and service objects.
+Finally, we can free resources by closing both, the counters and controller objects.
 
 {{< tabsection >}}
   {{< include "./__code13_node.md" >}}

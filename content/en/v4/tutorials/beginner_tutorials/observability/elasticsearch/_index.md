@@ -124,7 +124,7 @@ Now, we can create a custom component that sends log messages. As we want to sen
 
 #### Creating a ElasticSearchLogger component
 
-Once we have our custom component, we create an instance of the ElasticSearchLogger, and configure and connect it to Elasticsearch via the open() method. In our example, we have Elasticsearch running on our machine, and we connect to it via the port 9200. The open() method requires a correlation_id, which we define as "123".
+Once we have our custom component, we create an instance of the ElasticSearchLogger, and configure and connect it to Elasticsearch via the open() method. In our example, we have Elasticsearch running on our machine, and we connect to it via the port 9200. The open() method only requires a context.
 
 {{< tabsection >}}    
   {{< include "./__code3_node.md" >}}     

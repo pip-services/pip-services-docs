@@ -26,13 +26,13 @@ description: >-
 
 ### Introduction
 
-In this tutorial, you will learn how to generate Swagger documentation for a REST service. We will see three different cases. The first is a common REST service, which is documented via a YAML file containing a description of its methods. The second is a commandable REST service, which has a defined set of commands that is used to define the Swagger document. Finally, the last case considers a commandable REST component with a command set and a Swagger UI defined by a YAML file. 
+In this tutorial, you will learn how to generate Swagger documentation for a REST controller. We will see three different cases. The first is a common REST controller, which is documented via a YAML file containing a description of its methods. The second is a commandable REST controller, which has a defined set of commands that is used to define the Swagger document. Finally, the last case considers a commandable REST component with a command set and a Swagger UI defined by a YAML file. 
 
 ### Swagger document generation
 
-Pip.Services offers two types of REST services, which are defined by two different classes. The first is an ordinary REST service and is defined by the RestService component. The second is a REST service that contains a set of predefined commands (or methods) that can be called from other services and is defined by the CommandableHttpService class. 
+Pip.Services offers two types of REST controllers, which are defined by two different classes. The first is an ordinary REST controller and is defined by the RestController component. The second is a REST controller that contains a set of predefined commands (or methods) that can be called from other controllers and is defined by the CommandableHttpController class. 
 
-As such, they represent two different approaches when it comes to Swagger documentation: A REST service needs a YAML file that describes its UI in order to generate its documentation, whereas a commandable service allows for automatic generation via a description of the command set or via a YAML file if the path to it is included in the configuration file. Moreover, it should be noted that an automatically-generated description always considers an HTTP method as POST.
+As such, they represent two different approaches when it comes to Swagger documentation: A REST controller needs a YAML file that describes its UI in order to generate its documentation, whereas a commandable controller allows for automatic generation via a description of the command set or via a YAML file if the path to it is included in the configuration file. Moreover, it should be noted that an automatically-generated description always considers an HTTP method as POST.
 
 To explain these cases, we will create an app that given a name returns the phrase "Hello {name}" by calling a method named greeting. In this app, we will include the necessary elements to create a Swagger UI that documents this method. The following sections teach the steps to achieve this goal.
 
@@ -64,15 +64,15 @@ First of all, to create a Swagger UI, we need to install the swagger module. Thi
   Not available  
 {{< /tabsection >}}
 
-#### Document 1: REST service
+#### Document 1: REST controller
 
-In this case, we want to document the greeting method as part of a REST service. For this, we need to define a YAML file containing the information necessary to create the Swagger UI. 
+In this case, we want to document the greeting method as part of a REST controller. For this, we need to define a YAML file containing the information necessary to create the Swagger UI. 
 
-##### Service
+##### Controller
 
-Our REST service is called HelloFriendService. It is defined by a class that inherits from the RestService component and has a method named greetings, which given a name, returns "Hello {name}" on a web page. 
+Our REST controller is called HelloFriendController. It is defined by a class that inherits from the RestController component and has a method named greetings, which given a name, returns "Hello {name}" on a web page. 
 
-It also contains a reference to the controller and a method named register that defines the necessary elements for the Swagger UI. Its code is as follows:
+It also contains a reference to the service and a method named register that defines the necessary elements for the Swagger UI. Its code is as follows:
 
 {{< tabsection >}}
   {{< include "./__code2_node.md" >}}
@@ -100,7 +100,7 @@ It also contains a reference to the controller and a method named register that 
 
 ##### Configuration
 
-As we will use a process container to run the example, we need to describe this service in the configuration file. In this description, we set the Swagger's enable field to true to specify that we want to generate a Swagger UI for the service, and we define the path to our YAML file containing the Swagger UI description.
+As we will use a process container to run the example, we need to describe this controller in the configuration file. In this description, we set the Swagger's enable field to true to specify that we want to generate a Swagger UI for the controller, and we define the path to our YAML file containing the Swagger UI description.
 
 {{< tabsection >}}
   {{< include "./__code3_node.md" >}}
@@ -128,12 +128,12 @@ As we will use a process container to run the example, we need to describe this 
 
 ##### Swagger YAML file
 
-Now, we create a YAML file that will be used by Swagger to define the UI. In our case, the service has the greeting method only, which we consider of type GET. An example of this file is:
+Now, we create a YAML file that will be used by Swagger to define the UI. In our case, the controller has the greeting method only, which we consider of type GET. An example of this file is:
 
 ```yaml
 openapi: '3.0.2'
 info:
-  title: 'Friends Service'
+  title: 'Friends Controller'
   description: 'REST API from YAML file'
   version: '1'
 paths:
@@ -156,9 +156,9 @@ paths:
                 type: 'object'
 ```
 
-#### Documents 2 & 3: Commandable REST service
+#### Documents 2 & 3: Commandable REST controller
 
-These two cases document the same commandable REST service. The difference between them is that the first automatically generates the Swagger UI based on a command set, and the second uses a YAML file.
+These two cases document the same commandable REST controller. The difference between them is that the first automatically generates the Swagger UI based on a command set, and the second uses a YAML file.
 
 ##### Command set
 
@@ -188,9 +188,9 @@ To create a command set, we extend the CommandSet class and define our greeting 
   Not available  
 {{< /tabsection >}}
 
-##### Service for document 2
+##### Controller for document 2
 
-Once our command set has been defined, we create our commandable REST service by extending the CommandableHttpService class and we link it to our controller. This service checks for a YAML file in the configuration file. If not found, it builds the Swagger UI from the command set. In our example, the configuration file doesn't include a path to a YAML file, and the Swagger UI is generated from the command set previously defined.
+Once our command set has been defined, we create our commandable REST controller by extending the CommandableHttpController class and we link it to our controller. This controller checks for a YAML file in the configuration file. If not found, it builds the Swagger UI from the command set. In our example, the configuration file doesn't include a path to a YAML file, and the Swagger UI is generated from the command set previously defined.
 
 {{< tabsection >}}
   {{< include "./__code5_node.md" >}} 
@@ -226,13 +226,13 @@ To be able to generate a Swagger UI, we need to set the swagger's enable field t
     enable: true
     auto: true
     route: swagger
-    name: Friends Service
+    name: Friends Controller
     description: Commandable REST API - Automatic
 ```
 
-##### Service for document 3
+##### Controller for document 3
 
-Similar to the previous one, this service builds the Swagger UI from the YAML file defined in the configuration file.
+Similar to the previous one, this controller builds the Swagger UI from the YAML file defined in the configuration file.
 
 {{< tabsection >}}
   {{< include "./__code6_node.md" >}}
@@ -293,7 +293,7 @@ Here, we use the YAML file below to describe the UI. As we can see, the main dif
 ```yaml
 openapi: '3.0.2'
 info:
-  title: 'Friends Service'
+  title: 'Friends Controller'
   description: 'Commandable REST API from YAM file'
   version: '1'
 paths:
@@ -323,11 +323,11 @@ paths:
 
 #### Containerization
 
-Now that our REST services are defined, we want to create a process container to run them. For this, we need to define our factory of components and a class extending ProcessContainer. The following sections explain how to do this.
+Now that our REST controllers are defined, we want to create a process container to run them. For this, we need to define our factory of components and a class extending ProcessContainer. The following sections explain how to do this.
 
 ##### Factory
 
-To create our factory of components, we extend the Factory class and register our REST and commandable REST services. 
+To create our factory of components, we extend the Factory class and register our REST and commandable REST controllers. 
 
 {{< tabsection >}}
   {{< include "./__code7_node.md" >}}
@@ -355,7 +355,7 @@ To create our factory of components, we extend the Factory class and register ou
 
 ##### Process container
 
-Once we have our factory, we define our process container by extending the ProcessContainer class and adding the factories for the services and Swagger. Our code will look something like this:
+Once we have our factory, we define our process container by extending the ProcessContainer class and adding the factories for the controllers and Swagger. Our code will look something like this:
 
 {{< tabsection >}}
   {{< include "./__code8_node.md" >}}
@@ -426,19 +426,19 @@ The generated Swagger UI presents a drop-down menu that can be used to select an
 
 ![figure 2](./figure2.png)
 
-#### Document 1: REST service
+#### Document 1: REST controller
 
 If we select the hello_friend option, we will see a UI that presents all the information defined in the Swagger YAML file.
 
 ![figure 3](./figure3.png)
 
-#### Document 2: Commandable REST service
+#### Document 2: Commandable REST controller
 
 Alternatively, if we choose the commandable_hello_friend1 option, we will be presented by a UI showing the information automatically generated from the command set.
 
 ![figure 4](./figure4.png)
 
-#### Document 3: Commandable REST service.
+#### Document 3: Commandable REST controller.
 
 Finally, if we select commandable_hello_friend2, we get a similar UI but generated from our YAML file.
 
@@ -523,4 +523,4 @@ In this section, we show the complete code and the corresponding configuration Y
 
 ### Wrapping up
 
-In this tutorial, we have seen how to create Swagger UIs from a REST service and a commandable REST service. First, we created a REST service that is Swagger enabled and obtained all the information necessary to create the UI from a YAML file. After that, we created a commandable REST service, which developed a UI from a set of commands or a YAML file. Finally, we created a process container used to run our app. Once run, our app produced Swagger UIs documenting the greeting method for each case.
+In this tutorial, we have seen how to create Swagger UIs from a REST controller and a commandable REST controller. First, we created a REST controller that is Swagger enabled and obtained all the information necessary to create the UI from a YAML file. After that, we created a commandable REST controller, which developed a UI from a set of commands or a YAML file. Finally, we created a process container used to run our app. Once run, our app produced Swagger UIs documenting the greeting method for each case.

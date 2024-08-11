@@ -234,7 +234,7 @@ This component presents several methods for CRUD operations. The following secti
 
 ###### Create
 
-To add a new record to our table, we use the create() method. This method accepts the correlationId and the data object containing the record to be created as input parameters, and returns a SqlServerPersistence object containing the added record. The example below illustrates its usage.
+To add a new record to our table, we use the create() method. This method accepts the context and the data object containing the record to be created as input parameters, and returns a SqlServerPersistence object containing the added record. The example below illustrates its usage.
 
 {{< tabsection >}}
   {{< include "./__code8_node.md" >}}
@@ -346,7 +346,7 @@ Where
 
 ###### getListByFilter()
 
-This method returns a set of records in accordance with a given filter. It accepts the correlationId, a filter, and sorting and projection parameters as inputs. It returns a SqlServerPersistence object with the returned records. The following example illustrates how to use it.
+This method returns a set of records in accordance with a given filter. It accepts the context, a filter, and sorting and projection parameters as inputs. It returns a SqlServerPersistence object with the returned records. The following example illustrates how to use it.
 
 {{< tabsection >}}
   {{< include "./__code12_node.md" >}}
@@ -400,7 +400,7 @@ Where
 
 ###### getPageByFilter()
 
-This method retrieves a set of records that comply with a given filter's conditions. It takes the correlationId, paging parameters, and JSON strings for sorting and projecting as input values. It returns a DataPage object with the retrieved records in its data field. The example below explains its usage.
+This method retrieves a set of records that comply with a given filter's conditions. It takes the context, paging parameters, and JSON strings for sorting and projecting as input values. It returns a DataPage object with the retrieved records in its data field. The example below explains its usage.
 
 {{< tabsection >}}
   {{< include "./__code14_node.md" >}}
@@ -486,7 +486,7 @@ This class doesn't present any method to update records in a table.
 
 ###### Delete
 
-This component has the deleteByFilter() method, which is used to delete one or more records in a table. It accepts the correlationId and a filter as input parameters, and once the execution has been successfully completed, it returns None.
+This component has the deleteByFilter() method, which is used to delete one or more records in a table. It accepts the context and a filter as input parameters, and once the execution has been successfully completed, it returns None.
 
 {{< tabsection >}}
   {{< include "./__code17_node.md" >}}
@@ -632,7 +632,7 @@ This component presents several methods that can be used to perform CRUD operati
 
 ###### Create
 
-To insert a new record into a table, we use the create() method. It accepts the correlationId parameter and a data object as inputs and returns a SqlServerPersistence object containing the inserted record. The following example explains how to use it.
+To insert a new record into a table, we use the create() method. It accepts the context parameter and a data object as inputs and returns a SqlServerPersistence object containing the inserted record. The following example explains how to use it.
 
 {{< tabsection >}}
   {{< include "./__code22_node.md" >}}
@@ -690,7 +690,7 @@ This class contains several methods to retrieve records from a database. They ar
 
 ###### getOneById()
 
-This method retrieves a record according to a given id. It accepts the correlationId and the record's id as input parameters and returns a SqlServerPersistence object with the retrieved record. The following example explains its usage.
+This method retrieves a record according to a given id. It accepts the context and the record's id as input parameters and returns a SqlServerPersistence object with the retrieved record. The following example explains its usage.
 
 {{< tabsection >}}
   {{< include "./__code24_node.md" >}}
@@ -744,7 +744,7 @@ Where
 
 ###### getListByIds()
 
-This method retrieves a set of records according to a set of given ids. It takes the correlationId and a list with the ids of the records to be retrieved as input parameters. It returns a list of SqlServerPersistence objects, each containing a retrieved record. The example below explains how to use it.
+This method retrieves a set of records according to a set of given ids. It takes the context and a list with the ids of the records to be retrieved as input parameters. It returns a list of SqlServerPersistence objects, each containing a retrieved record. The example below explains how to use it.
 
 {{< tabsection >}}
   {{< include "./__code26_node.md" >}}
@@ -802,7 +802,7 @@ This class has two methods that can be used to update records. These methods are
 
 ###### update()
 
-This method updates a complete record. It takes the correlationId and a data object as input parameters. It returns a SqlServerPersistence object with the updated record. The following example illustrates its usage.
+This method updates a complete record. It takes the context and a data object as input parameters. It returns a SqlServerPersistence object with the updated record. The following example illustrates its usage.
 
 {{< tabsection >}}
   {{< include "./__code28_node.md" >}}
@@ -856,7 +856,7 @@ Where
 
 ###### updatePartially()
 
-This method updates one or more given fields in a record. It accepts the correlationId, the record's id, and a dictionary containing the fields to be updated as input parameters. It returns a SqlServerPersistence object containing the updated record. The following example explains how to use it.
+This method updates one or more given fields in a record. It accepts the context, the record's id, and a dictionary containing the fields to be updated as input parameters. It returns a SqlServerPersistence object containing the updated record. The following example explains how to use it.
 
 {{< tabsection >}}
   {{< include "./__code30_node.md" >}}
@@ -914,7 +914,7 @@ This class contains two methods that can be used to delete records. These are:
 
 ###### deleteById()
 
-This method deletes a record according to a given id. It accepts the correlationId and the id of the record to be deleted as input parameters, and returns a SqlServerPersistence object with the deleted record. The following example shows how to use it.
+This method deletes a record according to a given id. It accepts the context and the id of the record to be deleted as input parameters, and returns a SqlServerPersistence object with the deleted record. The following example shows how to use it.
 {{< tabsection >}}
   {{< include "./__code32_node.md" >}}
 {{< /tabsection >}}
@@ -965,7 +965,7 @@ Where
 {{< /tabsection >}}
 
 ###### deleteByIds()
-This method deletes a set of records from a table according to a given list of ids. It accepts the correlationId and a list containing the ids of the records to be deleted as input parameters. Once it has executed the query, it returns None.
+This method deletes a set of records from a table according to a given list of ids. It accepts the context and a list containing the ids of the records to be deleted as input parameters. Once it has executed the query, it returns None.
 
 {{< tabsection >}}
   {{< include "./__code34_node.md" >}}

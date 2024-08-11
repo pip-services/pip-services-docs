@@ -1,4 +1,4 @@
 
 ```python
-
+persistence.open(None)
 ```

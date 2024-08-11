@@ -1,6 +1,6 @@
 
 ```python
-from pip_services3_commons.config import ConfigParams
+from pip_services4_components.config import ConfigParams
 
 persistence = MySqlServerPersistence()
 persistence.configure(ConfigParams.from_tuples(

@@ -26,7 +26,7 @@ This tutorial will help you understand how REST controllerss can be created with
 
 #### Pre-requisites
 
-In order to create our REST controller, we need to import the RestController class, which is available in the Controller library, RPC module. This can be done with the following command:
+In order to create our REST controller, we need to import the RestController class, which is available in the Controller library, controller module. This can be done with the following command:
 
 {{< tabsection >}}
   {{< include "./__code1_node.md" >}}
@@ -54,7 +54,7 @@ Not available
 
 #### REST Controller
 
-First, we need to create our REST controller. For this, we will create a class that inherits the Pip. Services' component RestController, which has different methods that can be used to handle REST controller. The most important one is configure, and we will use it to set up our microservice.
+First, we need to create our REST controller. For this, we will create a class that inherits the Pip. Services' component RestController, which has different methods that can be used to handle REST controllers. The most important one is configure, and we will use it to set up our microservice.
 
 In this class, we first define a method to be used as a handler. In it, we define some parameters that will help us to connect to our application . In our example, this method is called my_page and the parameters are name and message.
 

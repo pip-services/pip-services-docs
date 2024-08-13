@@ -196,7 +196,7 @@ Our facade will need to be configured before running, so create a **config-distr
 
 For demonstration purposes, we'll be running our system in a distributed mode, with all of its components running in their own, individual containers. The configuration above is designed specifically for this type of distributed deployment.
 
-The process of running a controller in a Docker container is described in detail in the [Microservice Dockerization](../../microservice_dockerization) tutorial.
+The process of running a service in a Docker container is described in detail in the [Microservice Dockerization](../../microservice_dockerization) tutorial.
 
 To run our system using Docker Compose, create a docker-compose.yml file with the following:
 
@@ -291,7 +291,7 @@ services:
 
 Build and run the facade using the respective scripts (described in the [Microservice Dockerization](../../microservice_dockerization) we mentioned above) tutorial, which can be found in this example project's [repository (facade-sample-*)](https://github.com/pip-services-samples).
 
-To build the facade's image and load the rest of the controllers' images, run the "package" script using the command below:
+To build the facade's image and load the rest of the services' images, run the "package" script using the command below:
 
 ```
 .\package.ps1

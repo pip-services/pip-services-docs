@@ -144,7 +144,7 @@ Not available
 
 ### Running our REST controller
 
-With our REST controller complete, we can now proceed to run it.To see the result of our code, we use the following URL:
+With our REST controller complete, we can now proceed to run it. To see the result of our code, we use the following URL:
 
 
 ```bash

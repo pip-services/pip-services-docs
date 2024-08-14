@@ -8,10 +8,10 @@ gitUrl: "https://github.com/pip-services-samples"
 
 {{< tabselector "Node" ".NET" "Golang" "Dart" "Python" "Java" >}}
 
-Since facades are usually the point of entry into a system, they can contain dozens or even hundreds of REST operations. The classic microservices structure, when all the logic is contained in a single controller, becomes quite impractical in this case. Furthermore, it's critical for a facade to support versioning. When the interface is changed, the facade must continue to provide stability for existing clients using interface versioning. Usually around 80% of the logic remains the same when an interface is changed, so duplicating the logic would just increase the amount of code and make it more difficult to support.
+Since facades are usually the point of entry into a system, they can contain dozens or even hundreds of REST operations. The classic microservices structure, when all the logic is contained in a single service, becomes quite impractical in this case. Furthermore, it's critical for a facade to support versioning. When the interface is changed, the facade must continue to provide stability for existing clients using interface versioning. Usually around 80% of the logic remains the same when an interface is changed, so duplicating the logic would just increase the amount of code and make it more difficult to support.
 
 
-To solve these problems, the Pip.Services Toolkit offers a new pattern that breaks up logic into separate operations. The operations can be developed and tested individually, and then integrated into the RESTful service using unique routes. When implementing a new version, only the operations that require changes need to be rewritten. The remaining operations are simply imported from the old version by being reregistered in the new RESTful service.
+To solve these problems, the Pip.Services Toolkit offers a new pattern that breaks up logic into separate operations. The operations can be developed and tested individually, and then integrated into the RESTful controller using unique routes. When implementing a new version, only the operations that require changes need to be rewritten. The remaining operations are simply imported from the old version by being reregistered in the new RESTful controller.
 
 
 The example facade in this tutorial will contain just 2 sets of operations:

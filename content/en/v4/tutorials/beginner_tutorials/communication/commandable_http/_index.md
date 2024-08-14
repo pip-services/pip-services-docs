@@ -30,7 +30,7 @@ description: >-
 
 In this tutorial, you will learn how to create and consume CommandableHttpControllers. This type of service is characterized by containing a set of commands that can be called via the HTTP/REST protocol. 
 
-In order to explain its functionality, this tutorial begins by explaining the necessary pre-requisites to work with this component. Then, it shows how to create a command set and a controller that uses it. To complete the controller, it describes how to include it in a ProcessContainer.
+In order to explain its functionality, this tutorial begins by explaining the necessary pre-requisites to work with this component. Then, it shows how to create a command set and a controller that uses it. To complete the task, it describes how to include it in a ProcessContainer.
 
 Once the controller has been constructed, the tutorial shows how to consume it via a CommandableHttpClient and from any other application.
 Finally, it provides a full version of the controller and client and a summary of what was learned. 

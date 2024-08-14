@@ -155,7 +155,7 @@ curl -X GET http://localhost:8080/api/v1/beacons
 }
 ```
 
-Feel free to explore the rest of the system's functionality on your own using the routes we registered in the facade's service and the sample data from the [Data Microservice](../../data_microservice) tutorial.
+Feel free to explore the rest of the system's functionality on your own using the routes we registered in the facade's controller and the sample data from the [Data Microservice](../../data_microservice) tutorial.
 
 Congratulations! Having completed all of the steps of this tutorial, you've created your first full-fledged facade and are now capable of creating your own using the Pip.Services Toolkit!
 

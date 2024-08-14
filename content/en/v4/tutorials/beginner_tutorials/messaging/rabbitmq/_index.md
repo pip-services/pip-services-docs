@@ -17,15 +17,15 @@ description: >-
     <td>Component used to send and receive messages via RabbitMQ.</td>
   </tr>
   <tr>
-    <td>OpenAsync()</td>
+    <td>Open()</td>
     <td>Method used to connect to RabbitMQ.</td>
   </tr>
   <tr>
-    <td>SendAsync()</td>
+    <td>Send()</td>
     <td>Method used to send messages to RabbitMQ.</td>
   </tr>
   <tr>
-    <td>ReceiveAsync()</td>
+    <td>Receive()</td>
     <td>Method used to receive messages from RabbitMQ.</td>
   </tr>
   <tr>
@@ -162,7 +162,7 @@ To connect to RabbitMQ, we use the Open() method, which requires the context as 
 
 #### Creating and sending a message
 
-Once connected, we can send a message to RabbitMQ. For this, we use the SendAsync() method, which accepts the corntext and a MessageEnvelope object as inputs. This last object contains the context, message type, and message content as inputs. The following code shows how to do this:
+Once connected, we can send a message to RabbitMQ. For this, we use the Send() method, which accepts the corntext and a MessageEnvelope object as inputs. This last object contains the context, message type, and message content as inputs. The following code shows how to do this:
 {{< tabsection >}}
   {{< include "./__code5_node.md" >}}
 {{< /tabsection >}}
@@ -189,7 +189,7 @@ Once connected, we can send a message to RabbitMQ. For this, we use the SendAsyn
 
 #### Receiving a message
 
-To receive a message, we use the RecevieAsync() method, which has the context and the waiting time in milliseconds as input parameters. The following example shows how to use it:
+To receive a message, we use the Receive() method, which has the context and the waiting time in milliseconds as input parameters. The following example shows how to use it:
 
 {{< tabsection >}}
   {{< include "./__code6_node.md" >}}

@@ -58,8 +58,9 @@ Gets locators for all registered component references in this reference map.
 #### getOneOptional
 Gets an optional component reference that matches a specified locator.
 
-> `public` Object getOneOptional(Object locator)
+> `public` <T> T getOneOptional(Class<T> type, Object locator)
 
+- **type**: the Class type that defined the type of the result.
 - **locator**: Object - locator to find references by.
 - **returns**: Object - matching component reference or null if nothing was found.
 
@@ -67,18 +68,19 @@ Gets an optional component reference that matches a specified locator.
 Gets a required component reference that matches specified locator.  
 throws a [ReferenceException](../reference_exception) when no references found.
 
-> `public` getOneRequired\<T\>(locator: any): T
+> `public` <T> T getOneRequired(Class<T> type, Object locator) throws ReferenceException
 
-- **locator**: any - locator to find a reference by.	 
+- **type**: the Class type that defined the type of the result.
+- **locator**: Object - locator to find a reference by.	 
 - **returns**: T - matching component reference.
 
 #### getOptional
 Gets all component references that match a specified locator.
 
-> `public` getOptional\<T\>(locator: any): T[]
+> `public` List<Object> getOptional(Object locator)
 
-- **locator**: any - locator to find references by.	 
-- **returns**: T[] - list with matching component references or empty list if nothing was found.
+- **locator**: Object - locator to find references by.	 
+- **returns**: List<Object> - list with matching component references or empty list if nothing was found.
 
 #### getRequired
 Gets all component references that match a specified locator.
@@ -102,7 +104,7 @@ Puts a new reference into this reference map.
 
 #### remove
 Removes a previously added reference that matches specified locator.
-If many references match the locator, it removes only the first one.
+If mObject references match the locator, it removes only the first one.
 When all references shall be removed, use [removeAll](#removeall) method instead.
 
 > `public` Object remove(Object locator)

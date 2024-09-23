@@ -4,12 +4,11 @@ title: "UserPrincipal"
 linkTitle: "UserPrincipal"
 gitUrl: "https://github.com/pip-services4/pip-services4-java/tree/main/pip-services4-http-java"
 description: >
-    Role authorizer.
+    User principal
 ---
 
 ### Description
 
-To Do.
 
 ### Instance methods
 

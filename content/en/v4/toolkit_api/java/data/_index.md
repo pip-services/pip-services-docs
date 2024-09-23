@@ -25,5 +25,12 @@ The module contains the following packages:
 
 
 ### Use
-
+Add dependency to the pom.xml:
+```xml
+<dependency>
+  <groupId>org.pipservices</groupId>
+  <artifactId>pip-services4-data</artifactId>
+  <version>[0.0.1,)</version>
+</dependency>
+```
 

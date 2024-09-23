@@ -166,5 +166,44 @@ Updates only few selected fields in a data item.
 - **returns**: T - updated item.
 
 ### Examples
-
+```java
+ public MyMongoDbPersistence() {
+          super("mydata", MyData.class);
+      }
+   
+      private Bson composeFilter(FilterParams filter) {
+          filter = filter != null ? filter : new FilterParams();
+          ArrayList<Bson> filters = new ArrayList<Bson>();
+          String name = filter.getAsNullableString('name');
+          if (name != null)
+              filters.add(Filters.eq("name", name));
+          return Filters.and(filters);
+      }
+   
+      public getPageByFilter(IContext context, FilterParams filter, PagingParams paging) {
+          super.getPageByFilter(context, this.composeFilter(filter), paging, null, null);
+      }
+   
+    }
+   
+    MyMongoDbPersistence persistence = new MyMongoDbPersistence();
+    persistence.configure(ConfigParams.fromTuples(
+        "host", "localhost",
+        "port", 27017
+    ));
+   
+    persitence.open("123");
+   
+    persistence.create("123", new MyData("1", "ABC"));
+    DataPage<MyData> mydata = persistence.getPageByFilter(
+            "123",
+            FilterParams.fromTuples("name", "ABC"),
+            null,
+            null);
+    System.out.println(mydata.getData().toString());          // Result: { id: "1", name: "ABC" }
+   
+    persistence.deleteById("123", "1");
+    ...
+    }
+```
 

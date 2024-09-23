@@ -98,8 +98,48 @@ Updates only few selected fields in a data item.
 - **context**: [IContext](../../../components/context/icontext) - (optional) a context to trace execution through a call chain.
 - **id**: K - id of the data item to be updated.
 - **data**: [AnyValueMap](../../../commons/data/any_value_map) - map with fields to be updated.
-- **return**: Promise\<T\> - updated item
+- **return**: <T> - updated item
 
 ### Examples
+```java
+{@code
+ public class MyJsonMySqlPersistence extends IdentifiableMySqlJsonPersistence<MyData, String> {
 
+     public MyJsonMySqlPersistence() {
+         super(MyData.class, "dummies", null);
+     }
 
+     @Override
+     protected void defineSchema() {
+         this.clearSchema();
+         this.ensureTable();
+         this.ensureSchema("ALTER TABLE `" + this._tableName + "` ADD `data_key` VARCHAR(50) AS (JSON_UNQUOTE(`data`->\"$.key\"))");
+         this.ensureIndex(this._tableName + "_json_key", Map.of("data_key", 1), Map.of("unique", true));
+     }
+
+     public DataPage<MyData> getPageByFilter(IContext context, FilterParams filter, PagingParams paging) {
+         filter = filter != null ? filter : new FilterParams();
+         var key = filter.getAsNullableString("key");
+
+         String filterCondition = null;
+         if (key != null)
+             filterCondition = "data->'$.key'='" + key + "'";
+
+         return super.getPageByFilter(context, filterCondition, paging, null, null);
+     }
+ }
+ ...
+ var persistence = new MyJsonMySqlPersistence(MyData.class);
+ persistence.configure(ConfigParams.fromTuples(
+         "host", "localhost",
+         "port", 3306
+ ));
+
+ persistence.open(null);
+
+ persistence.create("123", new MyData("1", "ABC", "content"));
+ var page = persistence.getPageByFilter("123", FilterParams.fromTuples("key", "ABC"), null);
+
+ var deletedItem = persistence.deleteById("123", "1");
+ }
+```

@@ -21,4 +21,4 @@ Gets a list of data items using a query string.
 - **context**: [IContext](../../../components/context/icontext) - (optional) a context to trace execution through a call chain.
 - **query**: String - (optional) query string
 - **sort**: [SortParams](../../../data/query/sort_params) - (optional) sorting parameters
-- **returns**: Promise\<T[]\> - list of items
+- **returns**: List<T> - list of items

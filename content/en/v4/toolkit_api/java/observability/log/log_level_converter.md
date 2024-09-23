@@ -16,10 +16,10 @@ The LogLevelConverter class is used to convert log level values.
 #### toInteger
 Converts log level to a number.
 
-> `public static` toInteger(level: [LogLevel](../log_level)): number
+> `public static` int toInteger([LogLevel](../log_level) level)
 
 - **level**: [LogLevel](../log_level) - a log level to convert.
-- **returns**: number - log level number value.
+- **returns**: int - log level number value.
 
 
 #### toLogLevel

@@ -248,3 +248,43 @@ receives [FilterParams](../../../data/query/filter_params) and converts them int
 
 
 ### Examples
+```java
+{@code
+class MyMongoDbPersistence extends MongoDbPersistence<MyData> {
+
+  public MyMongoDbPersistence() {
+      super("mydata", MyData.class);
+  }
+
+  public MyData getByName(IContext context, String name) {
+  	Bson filter = Filters.eq("name", name);
+  	MyData item = _collection.find(filter).first();
+  	return item;
+  }
+
+  public MyData set(IContext context, MyData item) {
+      Bson filter = Filters.eq("name", item.getName());
+
+      FindOneAndReplaceOptions options = new FindOneAndReplaceOptions();
+      options.returnDocument(ReturnDocument.AFTER);
+      options.upsert(true);
+
+      MyData result = _collection.findOneAndReplace(filter, item, options);
+      return result;
+  }
+
+}
+
+MyMongoDbPersistence persistence = new MyMongoDbPersistence();
+persistence.configure(ConfigParams.fromTuples(
+    "host", "localhost",
+    "port", 27017
+));
+
+persitence.open("123");
+MyData mydata = new MyData("ABC");
+persistence.set("123", mydata);
+persistence.getByName("123", "ABC");
+System.out.println(item);                   // Result: { name: "ABC" }
+}
+```

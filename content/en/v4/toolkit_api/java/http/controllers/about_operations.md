@@ -19,9 +19,9 @@ The AboutOperations class is used to obtain information about running services.
 Gets information from a service.
 Send JSON string with information about the service.
 
-> `public` about(req, res): void 
-- **req**: any - an HTTP request
-- **res**: any - an HTTP response
+> `public` Response about(ContainerRequestContext req) throws SocketException, UnknownHostException
+- **req**: ContainerRequestContext - an HTTP request
+- **returns**: Response - an HTTP response
 
 
 #### getAboutOperation

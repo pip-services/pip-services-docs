@@ -2,7 +2,7 @@
 type: docs
 title: "NameResolver"
 linkTitle: "NameResolver"
-gitUrl: "https://github.com/pip-services4/pip-services4-node/tree/main/pip-services4-components-node"
+gitUrl: "https://github.com/pip-services4/pip-services4-java/tree/main/pip-services4-components-java"
 description: > 
     A helper class that allows to extract a component's "name" from its configuration parameters.
     

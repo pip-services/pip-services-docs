@@ -48,6 +48,22 @@ Registers all actions in this lambda function.
 
 ### Examples
 
+```java
+class MyLambdaFunction extends CommandableLambdaFunction {
+    private IMyController _controller;
+    ...
+    public MyLambdaFunction() {
+        super("mygroup", "MyGroup lambda function");
+        this._dependencyResolver.put(
+            "controller",
+            new Descriptor("mygroup","controller","*","*","1.0")
+        );
+    }
+}
+    var lambda = new MyLambdaFunction();
+    *     
+    lambda.run();
+```
 
 
 ### See also

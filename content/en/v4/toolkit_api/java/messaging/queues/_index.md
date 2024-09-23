@@ -42,7 +42,7 @@ Message queue that sends and receives messages within the same process by using 
 This queue is typically used for testing to mock real queues.
 
 #### [MessageEnvelope](message_envelope)
-Allows adding additional information to messages. A correlation id, message id, and a message type are added to the data being sent/received. Additionally, a MessageEnvelope can reference a lock token.     
+Allows adding additional information to messages. A string id, message id, and a message type are added to the data being sent/received. Additionally, a MessageEnvelope can reference a lock token.     
     
 Side note: a MessageEnvelope's message is stored as a buffer, so strings are converted using utf8 conversions.
 

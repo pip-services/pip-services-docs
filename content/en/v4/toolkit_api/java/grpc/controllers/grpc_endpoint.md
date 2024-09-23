@@ -93,7 +93,6 @@ Registers a service with related implementation
 > `public` void registerService(ServerServiceDefinition service)
 
 - **service**: ServerServiceDefinition - a GRPC service object.
-- **implementation**: any - the service implementation methods.
 
 #### setReferences
 Sets references to this endpoint's logger, counters, and connection resolver.

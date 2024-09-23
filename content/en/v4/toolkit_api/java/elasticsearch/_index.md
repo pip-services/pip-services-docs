@@ -18,39 +18,45 @@ The module contains the following packages:
 
 
 ### Use
-
-Install the Node.js package as
-```bash
-npm install pip-services4-elasticsearch-node --save
-```
+Add dependency to the pom.xml:
+```xml
+<dependency>
+  <groupId>org.pipservices</groupId>
+  <artifactId>pip-services4-elasticsearch</artifactId>
+  <version>[0.0.1,)</version>
+</dependency>
 
 Microservice components shall perform logging usual way using CompositeLogger component.
 The CompositeLogger will get ElasticSearchLogger from references and will redirect log messages
 there among other destinations.
 
-```typescript
-import { ConfigParams } from 'pip-services3-commons-nodex'; 
-import { IConfigurable } from 'pip-services3-commons-nodex'; 
-import { IReferences } from 'pip-services3-commons-nodex'; 
-import { IReferenceable } from 'pip-services3-commons-nodex'; 
-import { CompositeLogger } from 'pip-services3-components-nodex'; 
+```java
+import org.pipservices4.commons.config.ConfigParams;
+import org.pipservices4.components.config.IConfigurable;
+import org.pipservices4.components.refer.IReferences;
+import org.pipservices4.components.refer.IReferenceable;
+import org.pipservices4.components.log.CompositeLogger;
+import org.pipservices4.components.context.IContext;
 
-export class MyComponent implements IConfigurable, IReferenceable {
-  private _logger: CompositeLogger = new CompositeLogger();
-  
-  public configure(config: ConfigParams): void {
-    this._logger.configure(config);
-  }
-  
-  public setReferences(refs: IReferences): void {
-    this._logger.setReferences(refs);
-  }
-  
-  public async myMethod(correlationId: string, param1: any): Promise<any> {
-    this._logger.trace(correlationId, "Executed method mycomponent.mymethod");
-    ....
-  }
+public class MyComponent implements IConfigurable, IReferenceable {
+    private CompositeLogger _logger = new CompositeLogger();
+
+    @Override
+    public void configure(ConfigParams config) {
+        _logger.configure(config);
+    }
+
+    @Override
+    public void setReferences(IReferences refs) {
+        _logger.setReferences(refs);
+    }
+
+    public void myMethod(IContext context, Object param1) {
+        _logger.trace(context, "Executed method mycomponent.mymethod");
+        // Add the rest of your logic here
+    }
 }
+
 ```
 
 Configuration for your microservice that includes ElasticSearch logger may look the following way.

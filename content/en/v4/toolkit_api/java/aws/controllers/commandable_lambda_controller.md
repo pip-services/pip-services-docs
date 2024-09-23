@@ -43,6 +43,28 @@ Registers all actions in AWS Lambda function.
 
 
 ### Examples
+```java
+class MyCommandableLambdaController extends CommandableLambdaController {
+   private IMyService _service;
+
+   public MyCommandableLambdaController() {
+      super();
+      this._dependencyResolver.put(
+          "service",
+          new Descriptor("mygroup","service","*","*","1.0")
+      );
+   }
+}
+
+var controller = new MyCommandableLambdaController();
+controller.configure(ConfigParams.fromTuples(
+      "connection.protocol", "http",
+      "connection.host", "localhost",
+      "connection.port", 8080
+ ));
+
+controller.open("123");
+```
 
 
 ### See also

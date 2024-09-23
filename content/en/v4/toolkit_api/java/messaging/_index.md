@@ -18,5 +18,12 @@ The module contains the following packages:
 - [**Test**](test) - contains a class used to test message reception
 
 ### Use
-
+Add dependency to the pom.xml:
+```xml
+<dependency>
+  <groupId>org.pipservices</groupId>
+  <artifactId>pip-services4-messaging</artifactId>
+  <version>[0.0.1,)</version>
+</dependency>
+```
 

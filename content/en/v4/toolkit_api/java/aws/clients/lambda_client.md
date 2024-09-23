@@ -2,7 +2,7 @@
 type: docs
 title: "LambdaClient"
 linkTitle: "LambdaClient"
-gitUrl: "https://github.com/pip-services4/pip-services4-node/tree/main/pip-services4-aws-node"
+gitUrl: "https://github.com/pip-services4/pip-services4-java/tree/main/pip-services4-aws-java"
 description: >
     Abstract client that calls AWS Lambda Functions.
 ---
@@ -36,7 +36,7 @@ other parameters are passed to the action itself.
 ### Constructors
 Creates a new instance of this client.
 
-> `public` constructor(name: string)
+> `public` LambdaClient(String name)
 
 - **name**: string - service name.
 
@@ -47,36 +47,40 @@ Creates a new instance of this client.
 
 #### _connection
 AWS connection parameters
-> `protected` **_connection**: [AwsConnectionParams](../../connect/aws_connection_params)
+> `protected` [AwsConnectionParams](../../connect/aws_connection_params) **_connection**
 
 ### _connectionResolver
 The connection resolver.
-> `protected` **_connectionResolver**: [AwsConnectionResolver](../../connect/aws_connection_resolver)
+> `protected` [AwsConnectionResolver](../../connect/aws_connection_resolver) **_connectionResolver**
 
 ### _counters
 Performance counters.
-> `protected` **_counters**: [CompositeCounters](../../../observability/count/composite_counters)
+> `protected` [CompositeCounters](../../../observability/count/composite_counters) **_counters**
 
 
 ### _dependencyResolver
 Dependencies resolver.
-> `protected` **_dependencyResolver**: [DependencyResolver](../../../components/refer/dependency_resolver)
+> `protected` [DependencyResolver](../../../components/refer/dependency_resolver) **_dependencyResolver**
 
-### _lambda
-Reference to AWS Lambda Function.
-> `protected` **_lambda**: any
+### _client
+AWS Lambda Client.
+> `protected` software.amazon.awssdk.services.lambda.LambdaClient **_client**
 
 ### _logger
 Logger.
-> `protected` **_logger**: [CompositeLogger](../../../observability/log/composite_logger)
+> `protected` [CompositeLogger](../../../observability/log/composite_logger) **_logger**
+
+### _connectTimeout
+The connection timeout in milliseconds.
+> `protected` long **_connectTimeout** = 10000;
 
 ### _opened
 Opened flag.
-> `protected` **_opened**: boolean
+> `protected` boolean **_opened**
 
 ### _tracer
 Tracer.
-> `protected` **_tracer**: [CompositeTracer](../../../observability/trace/composite_tracer)
+> `protected` [CompositeTracer](../../../observability/trace/composite_tracer) **_tracer**
 
 </span>
 
@@ -87,7 +91,7 @@ Calls an AWS Lambda Function action.
 
 > `protected` <T> T call(TypeReference<T> type, String cmd, IContext context, Map<String, Object> params) throws ApplicationException
 
-- **cmd**: string - action name to be called.
+- **cmd**: String - action name to be called.
 - **context**: [IContext](../../../components/context/icontext) - (optional) a context to trace execution through a call chain.
 - **params**: Map<String, Object> - (optional) action parameters.
 - **returns**: \<T\> - action result.
@@ -98,7 +102,7 @@ Calls a AWS Lambda Function action asynchronously without waiting for response.
 
 > `protected` <T> T callOneWay(Class<T> type, String cmd,  [IContext](../../../components/context/icontext) context, Map<String, Object> params) throws ApplicationException
 
-- **cmd**: string - an action name to be called.
+- **cmd**: String - an action name to be called.
 - **context**: [IContext](../../../components/context/icontext) - (optional) a context to trace execution through a call chain.
 - **params**: Map<String, Object> - (optional) action parameters.
 - **returns**: \<T\> - action result.
@@ -112,7 +116,7 @@ Closes component and frees used resources.
 #### configure
 Configures a component by passing its configuration parameters.
 
-> `public`  void configure([ConfigParams](../../../components/config/config_params) config) throws ConfigException
+> `public` void configure([ConfigParams](../../../components/config/config_params) config) throws ConfigException
 - **config**: [ConfigParams](../../../components/config/config_params) - configuration parameters to be set.
 
 #### instrument
@@ -122,7 +126,7 @@ It returns a InstrumentTiming object that is used to end the time measurement.
 > `protected` [InstrumentTiming](../../../rpc/trace/instrument_timing) instrument([IContext](../../../components/context/icontext) context, String name)
 
 - **context**: [IContext](../../../components/context/icontext) - (optional) a context to trace execution through a call chain.
-- **name**: string - a method name.
+- **name**: String - a method name.
 - **returns**: [InstrumentTiming](../../../rpc/trace/instrument_timing) - object to end the time measurement.
 
 #### invoke
@@ -130,10 +134,10 @@ Performs AWS Lambda Function invocation.
 
 > `protected` <T> T invoke(Class<T> type, String invocationType, String cmd, IContext context, Map<String, Object> args) throws ApplicationException
 
-- **invocationType**: string - invocation type: "RequestResponse" or "Event"
-- **cmd**: string - action name to be called.
+- **invocationType**: String - invocation type: "RequestResponse" or "Event"
+- **cmd**: String - action name to be called.
 - **context**: [IContext](../../../components/context/icontext) - (optional) a context to trace execution through a call chain.
-- **args**: any - action arguments
+- **args**: Map<String, Object> - action arguments
 - **returns**: \<T\> - action result.
 
 #### isOpen
@@ -159,7 +163,28 @@ Sets references to dependent components.
 
 
 ### Examples
-
+```java
+class MyLambdaClient extends LambdaClient implements IMyClient {
+    ...
+ 
+    public MyData getData(IContext context, String id) {
+        Timing timing = this.instrument(context, "myclient.get_data");
+        MyData result = this.call(MyData.class, "get_data", context, new MyData(id));
+        timing.endTiming();
+        return result;
+    }
+    ...
+}
+    MyLambdaClient  client = new MyLambdaClient();
+    client.configure(ConfigParams.fromTuples(
+        "connection.region", "us-east-1",
+        "connection.access_id", "XXXXXXXXXXX",
+        "connection.access_key", "XXXXXXXXXXX",
+        "connection.arn", "YYYYYYYYYYYYY"
+    ));
+ 
+    MyData result = client.getData("123", "1");
+```
 
 ### See also
 - #### [LambdaFunction](../../containers/lambda_function)

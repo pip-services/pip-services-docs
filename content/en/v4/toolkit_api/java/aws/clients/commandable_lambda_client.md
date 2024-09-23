@@ -2,7 +2,7 @@
 type: docs
 title: "CommandableLambdaClient"
 linkTitle: "CommandableLambdaClient"
-gitUrl: "https://github.com/pip-services4/pip-services4-node/tree/main/pip-services4-aws-node"
+gitUrl: "https://github.com/pip-services4/pip-services4-java/tree/main/pip-services4-aws-java"
 description: >
     Abstract client that calls commandable AWS Lambda Functions.
 ---
@@ -36,9 +36,9 @@ Each command is exposed as an action determined by the "cmd" parameter.
 ### Constructors
 Creates a new instance of this client.
 
-> `public` constructor(name: string)
+> `public` CommandableLambdaClient(String name)
 
-- **name**: string - a service name.
+- **name**: String - a service name.
 
 ### Instance methods
 
@@ -49,15 +49,34 @@ to the action parameters.
 
 > `public` <T> T callCommand(Class<T> type, String cmd, IContext context, Map<String, Object> params)
 
-- **cmd**: string - action name
+- **cmd**: String - action name
 - **context**: [IContext](../../../components/context/icontext) - (optional) a context to trace execution through a call chain.
-- **params**: any - command parameters.
-- **returns**: Promise\<any\> - action result.
-
+- **params**: Map<String, Object> - command parameters.
+- **returns**: \<T\> - action result.
 
 
 ### Examples
 
+```java
+class MyLambdaClient extends CommandableLambdaClient implements IMyClient {
+    ...
+ 
+    public MyData getData(IContext context, String id) {
+        return this.callCommand(MyData.class, "get_data", context, new MyData(id));
+    }
+    ...
+}
+    let client = new MyLambdaClient();
+    client.configure(ConfigParams.fromTuples(
+        "connection.region", "us-east-1",
+        "connection.access_id", "XXXXXXXXXXX",
+        "connection.access_key", "XXXXXXXXXXX",
+        "connection.arn", "YYYYYYYYYYYYY"
+    ));
+        
+    MyData result = client.getData("123", "1");
+...
+```
 
 ### See also
 - #### [LambdaFunction](../../containers/lambda_function)

@@ -98,7 +98,7 @@ from Discovery service it finds a [IDiscovery](../idiscovery) and resolves the c
 > `public` List<ConnectionParams> resolveAll([IContext](../../../components/context/icontext) context) throws ApplicationException
 
 - **context**: [IContext](../../../components/context/icontext) - (optional) a context to trace execution through call chain.
-- **returns**: Promise<[ConnectionParams](../connection_params)[]> - a list of resolved connections.
+- **returns**: [ConnectionParams](../connection_params)[] - a list of resolved connections.
 
 
 #### setReferences

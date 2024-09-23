@@ -2,7 +2,7 @@
 type: docs
 title: "MemcachedCache"
 linkTitle: "MemcachedCache"
-gitUrl: "https://github.com/pip-services4/pip-services4-node/tree/main/pip-services4-memcached-node"
+gitUrl: "https://github.com/pip-services4/pip-services4-java/tree/main/pip-services4-memcached-java"
 description: >
     Distributed cache that stores values in Memcached's caching service.
 ---
@@ -70,7 +70,7 @@ Checks if the component is open.
 Opens the component.
 > `public` void open([IContext](../../../components/context/icontext) context) throws ApplicationException
 
-- **correlation**: [IContext](../../../components/context/icontext) - (optional) a context to trace execution through a call chain.
+- **context**: [IContext](../../../components/context/icontext) - (optional) a context to trace execution through a call chain.
 
 
 #### remove

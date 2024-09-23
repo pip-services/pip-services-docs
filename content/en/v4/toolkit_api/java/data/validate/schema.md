@@ -108,7 +108,7 @@ See [ValidationResult](../validation_result)
 
 > `public` List<[ValidationResult](../validation_result)> validate(Object value)
 
-- **value**: any - value to be validated.
+- **value**: Object - value to be validated.
 - **returns**: List<[ValidationResult](../validation_result)> - list with validation results.
 
 

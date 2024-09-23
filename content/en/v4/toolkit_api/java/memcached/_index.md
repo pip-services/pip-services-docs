@@ -17,5 +17,11 @@ The module contains the following packages:
 - [**Lock**](lock) - components of working with locks in Memcached
 
 ### Use
-
-
+Add dependency to the pom.xml:
+```xml
+<dependency>
+  <groupId>org.pipservices</groupId>
+  <artifactId>pip-services4-memcached</artifactId>
+  <version>[0.0.1,)</version>
+</dependency>
+```

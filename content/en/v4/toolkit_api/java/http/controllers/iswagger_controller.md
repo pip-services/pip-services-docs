@@ -2,7 +2,7 @@
 type: docs
 title: "ISwaggerController"
 linkTitle: "ISwaggerController"
-gitUrl: "https://github.com/pip-services4/pip-services4-node/tree/main/pip-services4-http-node"
+gitUrl: "https://github.com/pip-services4/pip-services4-java/tree/main/pip-services4-http-java"
 description: >
     Interface to perform Swagger registrations.
 ---

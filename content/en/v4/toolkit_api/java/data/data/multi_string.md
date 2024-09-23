@@ -2,7 +2,7 @@
 type: docs
 title: "MultiString"
 linkTitle: "MultiString"
-gitUrl: "https://github.com/pip-services4/pip-services4-node/tree/main/pip-services4-data-node"
+gitUrl: "https://github.com/pip-services4/pip-services4-java/tree/main/pip-services4-data-java"
 description: > 
     Class used to create objects that contain string translations for multiple languages.
     

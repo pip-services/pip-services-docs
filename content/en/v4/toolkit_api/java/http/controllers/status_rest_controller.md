@@ -58,7 +58,7 @@ The service responds on /status route (can be changed) with a JSON object:
 #### configure
 Configures the component by passing its configuration parameters.
 
-> `public` configure(config: [ConfigParams](../../../components/config/config_params)): void
+> `public` void configure(config: [ConfigParams](../../../components/config/config_params))
 
 - **config**: [ConfigParams](../../../components/config/config_params) - configuration parameters to be set.
 

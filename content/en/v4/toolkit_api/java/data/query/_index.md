@@ -3,7 +3,7 @@ type: docs
 title: "Query"
 linkTitle: "Query"
 no_list: true
-gitUrl: "https://github.com/pip-services4/pip-services4-node/tree/main/pip-services4-data-node"
+gitUrl: "https://github.com/pip-services4/pip-services4-java/tree/main/pip-services4-data-java"
 description: >
     Todo: Rewrite this description
 ---

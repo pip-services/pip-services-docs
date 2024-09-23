@@ -110,7 +110,7 @@ Gets the connection.
 
 > `public` MongoClient getConnection()
 
-- **return**: any - connection to a MongoDB database
+- **return**: MongoClient - connection to a MongoDB database
 
 
 #### getDatabase
@@ -118,7 +118,7 @@ Gets the MongoDB database.
 
 > `public` MongoDatabase getDatabase() 
 
-- **return**: any - MongoDB database
+- **return**: MongoDatabase - MongoDB database
 
 
 #### isOpen

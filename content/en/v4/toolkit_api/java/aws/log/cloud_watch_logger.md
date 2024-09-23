@@ -39,7 +39,7 @@ The CloudWatchLogger class allows you to create loggers that write log messages 
 ### Constructors
 Creates a new instance of this logger.
 
-> `public` constructor()
+> `public` CloudWatchLogger()
 
 
 ### Instance methods
@@ -100,6 +100,27 @@ Writes a log message to the logger destination.
 
 
 ### Examples
+```java
+var logger = new Logger();
+logger.config(ConfigParams.fromTuples(
+    "stream", "mystream",
+    "group", "mygroup",
+    "connection.region", "us-east-1",
+    "connection.access_id", "XXXXXXXXXXX",
+    "connection.access_key", "XXXXXXXXXXX"
+));
+logger.setReferences(References.fromTuples(
+    new Descriptor("pip-services", "logger", "console", "default", "1.0"), 
+    new ConsoleLogger()
+));
+    
+logger.open("123");
+    
+logger.setLevel(LogLevel.debug);
+    
+logger.error("123", ex, "Error occured: %s", ex.message);
+logger.debug("123", "Everything is OK.");
+```
 
 
 

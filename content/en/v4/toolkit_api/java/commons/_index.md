@@ -1,7 +1,7 @@
 ---
 type: docs
 title: "Commons module"
-gitUrl: "https://github.com/pip-services4/pip-services4-java/tree/main/pip-services4-aws-java"
+gitUrl: "https://github.com/pip-services4/pip-services4-java/tree/main/pip-services4-commons-java"
 no_list: true
 weight: 30
 description: > 
@@ -25,5 +25,12 @@ The module contains the following packages:
 
 
 ### Use
-
+Add dependency to the pom.xml:
+```xml
+<dependency>
+  <groupId>org.pipservices</groupId>
+  <artifactId>pip-services4-commons</artifactId>
+  <version>[0.0.1,)</version>
+</dependency>
+```
 

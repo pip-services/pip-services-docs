@@ -70,7 +70,7 @@ Resolves a MySQL configuration from connection and credential parameters.
 > `public` String resolve([IContext](../../../components/context/icontext) context) throws ApplicationException
 
 - **context**: [IContext](../../../components/context/icontext) - (optional) a context to trace execution through a call chain.
-- **returns**: Promise\<string\> - resolved connection config or raise error
+- **returns**: String - resolved connection config or raise error
 
 
 #### setReferences

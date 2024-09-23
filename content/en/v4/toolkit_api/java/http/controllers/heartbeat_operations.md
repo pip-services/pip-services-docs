@@ -20,8 +20,8 @@ Creates a heartbeat.
 Send request with the current time in UTC.
 
 > `public` Response heartbeat(ContainerRequestContext req)
-- **req**: any - an HTTP request
-- **res**: any - an HTTP response
+- **req**: ContainerRequestContext - an HTTP request
+- **res**: Response - an HTTP response
 
 
 #### getHeartbeatOperation

@@ -94,7 +94,7 @@ Creates a data item.
 
 - **context**: [IContext](../../../components/context/icontext) - (optional) a context to trace execution through a call chain.
 - **item**: T - item to be created.
-- **returns**: Promise\<T\> - created item
+- **returns**: T - created item
 
 
 #### deleteByFilter
@@ -105,7 +105,7 @@ receives [FilterParams](../../../data/query/filter_params) and converts them int
 > `protected` void deleteByFilter([IContext](../../../components/context/icontext) context, Predicate<T> filter) throws ApplicationException
 
 - **context**: [IContext](../../../components/context/icontext) - (optional) a context to trace execution through a call chain.
-- **filter**: any - (optional) filter function used to filter items.
+- **filter**: Predicate<T> - (optional) filter function used to filter items.
 
 
 #### getCountByFilter
@@ -114,11 +114,11 @@ Gets the number of items retrieved by a given filter.
 This method shall be called by a public **getCountByFilter** method from a child class that
 receives [FilterParams](../../../data/query/filter_params) and converts them into a filter function.
 
-> `protected` List<T> getListByFilter([IContext](../../../components/context/icontext) context, Predicate<T> filter, Comparator<T> sort,  Function<T, T> select) throws ApplicationException
+> `protected` int getListByFilter([IContext](../../../components/context/icontext) context, Predicate<T> filter) throws ApplicationException
 
 - **context**: [IContext](../../../components/context/icontext) - (optional) a context to trace execution through a call chain.
-- **filter**: Predicate<T> -  id of the item to be deleted
-- **returns**: List<T> - number of data items that satisfy the filter.
+- **filter**: Predicate<T> -  (optional) a filter function to filter items
+- **returns**: int - number of data items that satisfy the filter.
 
 
 #### getListByFilter
@@ -127,13 +127,26 @@ Gets a list of data items retrieved by a given filter and sorted according to so
 This method shall be called by a public **getListByFilter** method from a child class that
 receives [FilterParams](../../../data/query/filter_params) and converts them into a filter function.
 
-> `protected` getListByFilter(context: [IContext](../../../components/context/icontext), filter: any, sort: any, select: any): Promise\<T[]\>
+> `protected` List<T> getListByFilter(context: [IContext](../../../components/context/icontext), Predicate<T> filter, Comparator<T> sort)
 
 - **context**: [IContext](../../../components/context/icontext) - (optional) a context to trace execution through a call chain.
-- **filter**: any - (optional) filter function used to filter items
-- **sort**: any - (optional) sorting parameters
-- **select**: any - (optional) projection parameters (not used yet)
-- **returns**: Promise\<T[]\> - data list of filtered results.
+- **filter**: Predicate<T> - (optional) filter function used to filter items
+- **sort**: Comparator<T> - (optional) sorting parameters
+- **returns**: List<T> - data list of filtered results.
+
+#### getListByFilter
+Gets a list of data items retrieved by a given filter and sorted according to sorting parameters.
+
+This method shall be called by a public **getListByFilter** method from a child class that
+receives [FilterParams](../../../data/query/filter_params) and converts them into a filter function.
+
+> `protected` List<T> getListByFilter(context: [IContext](../../../components/context/icontext), Predicate<T> filter, Comparator<T> sort,  Function<T, T> select)
+
+- **context**: [IContext](../../../components/context/icontext) - (optional) a context to trace execution through a call chain.
+- **filter**: Predicate<T> - (optional) filter function used to filter items
+- **sort**: Comparator<T> - (optional) sorting parameters
+- **select**: Function<T, T> - (optional) projection parameters (not used yet)
+- **returns**: List<T> - data list of filtered results.
 
 
 #### getOneRandom
@@ -184,7 +197,7 @@ Loads items.
 #### open
 Opens the component.
 
-> `public` open(context: [IContext](../../../components/context/icontext)): Promise\<void\>
+> `public` void open(context: [IContext](../../../components/context/icontext))
 
 - **context**: [IContext](../../../components/context/icontext) - (optional) a context to trace execution through a call chain.
 

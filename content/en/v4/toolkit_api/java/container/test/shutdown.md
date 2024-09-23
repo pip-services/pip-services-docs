@@ -2,7 +2,7 @@
 type: docs
 title: "Shutdown"
 linkTitle: "Shutdown"
-gitUrl: "https://github.com/pip-services4/pip-services4-node/tree/main/pip-services4-container-node"
+gitUrl: "https://github.com/pip-services4/pip-services4-java/tree/main/pip-services4-container-java"
 description: >
     Random shutdown component that crashes a process
     using various methods.

@@ -41,11 +41,11 @@ The AwsConnectionResolver class allows you to retrieve AWS connection and creden
 
 #### _connectionResolver
 Connection resolver.
-> `protected` **_connectionResolver**: [ConnectionResolver](../../../config/connect/connection_resolver)
+> `protected` [ConnectionResolver](../../../config/connect/connection_resolver) **_connectionResolver**
 
 #### _credentialResolver
 Credential resolver.
-> `protected` **_credentialResolver**: [CredentialResolver](../../../config/auth/credential_resolver)
+> `protected` [CredentialResolver](../../../config/auth/credential_resolver) **_credentialResolver** 
 
 </span>
 
@@ -62,8 +62,7 @@ Configures a component by passing its configuration parameters.
 Resolves a connection and credential parameters and generates a single
 AWSConnectionParams value.
 
-> `public` resolve(context: [IContext](../../../components/context/icontext)): Promise<[AwsConnectionParams](../aws_connection_params)>
-[AwsConnectionParams](../aws_connection_params) resolve([IContext](../../../components/context/icontext)) context) throws ApplicationException
+> `public` [AwsConnectionParams](../aws_connection_params)resolve(context: [IContext](../../../components/context/icontext)) throws ApplicationException
 - **context**: [IContext](../../../components/context/icontext) - (optional) a context to trace execution through a call chain. 
 - **returns**: [AwsConnectionParams](../aws_connection_params) - receives an AWSConnectionParams value or error.
 
@@ -77,6 +76,21 @@ Sets references to dependent components.
 
 
 ### Examples
+```java
+var config = ConfigParams.fromTuples(
+    "connection.region", "us-east1",
+    "connection.service", "s3",
+    "connection.bucket", "mybucket",
+    "credential.access_id", "XXXXXXXXXX",
+    "credential.access_key", "XXXXXXXXXX"
+);
+     
+var connectionResolver = new AwsConnectionResolver();
+connectionResolver.configure(config);
+connectionResolver.setReferences(references);
+    
+const connectionParams = await connectionResolver.resolve("123");
+```
 
 
 ### See also

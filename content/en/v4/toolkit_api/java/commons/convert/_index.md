@@ -3,7 +3,7 @@ type: docs
 title: "Convert"
 linkTitle: "Convert"
 no_list: true
-gitUrl: "https://github.com/pip-services4/pip-services4-node/tree/main/pip-services4-commons-node"
+gitUrl: "https://github.com/pip-services4/pip-services4-java/tree/main/pip-services4-commons-java"
 description: >
    
     This package contains "soft" data converters. Soft data converters differ from the data conversion algorithms 

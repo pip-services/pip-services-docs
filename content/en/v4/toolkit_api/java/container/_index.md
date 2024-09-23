@@ -29,6 +29,11 @@ The module contains the following packages:
 * [**Test**](test) - minimal set of test components to make testing easier
 
 ### Use
-
-
-
+Add dependency to the pom.xml:
+```xml
+<dependency>
+  <groupId>org.pipservices</groupId>
+  <artifactId>pip-services4-container</artifactId>
+  <version>[0.0.1,)</version>
+</dependency>
+```

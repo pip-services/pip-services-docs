@@ -175,7 +175,7 @@ receives [FilterParams](../../../data/query/filter_params) and converts them int
 > `protected` void deleteByFilter([IContext](../../../components/context/icontext) context, String filter)
 
 - **context**: [IContext](../../../components/context/icontext) - (optional) a context to trace execution through a call chain.
-- **filter**: any - (optional) filter function to filter items.
+- **filter**: String - (optional) filter function to filter items.
 
 
 #### ensureIndex
@@ -231,8 +231,8 @@ receives [FilterParams](../../../data/query/filter_params) and converts them int
 > `protected` long getCountByFilter([IContext](../../../components/context/icontext) context, Object filter)
 
 - **context**: [IContext](../../../components/context/icontext) - (optional) a context to trace execution through a call chain.
-- **filter**: any - (optional) JSON object filter
-- **returns**: Promise\<number\> - number of filtered items.
+- **filter**: Object - (optional) JSON object filter
+- **returns**: long - number of filtered items.
 
 
 #### getListByFilter
@@ -244,10 +244,10 @@ receives [FilterParams](../../../data/query/filter_params) and converts them int
 > `protected` List<T> getListByFilter([IContext](../../../components/context/icontext) context, String filter, String sort, String select)
 
 - **context**: [IContext](../../../components/context/icontext) - (optional) a context to trace execution through a call chain.
-- **filter**: any - (optional) filter function to filter items
-- **sort**: any - (optional) sorting parameters
-- **select**: any - (optional) projection parameters (not used yet)
-- **returns**: Promise\<T[]\> - data list of results by filter.
+- **filter**: String - (optional) filter function to filter items
+- **sort**: String - (optional) sorting parameters
+- **select**: String - (optional) projection parameters (not used yet)
+- **returns**: List<T> - data list of results by filter.
 
 
 #### getOneRandom
@@ -256,11 +256,11 @@ Gets a random item from items that match to a given filter.
 This method shall be called by a public **getOneRandom** method from a child class
 that receives [FilterParams](../../../data/query/filter_params) and converts them into a filter function.
 
-> `protected` getOneRandom(context: [IContext](../../../components/context/icontext), filter: any): Promise\<T\>
+> `protected` T getOneRandom(context: [IContext](../../../components/context/icontext), String filter)
 
 - **context**: [IContext](../../../components/context/icontext) - (optional) a context to trace execution through a call chain.
-- **filter**: any - (optional) a filter JSON object
-- **returns**: Promise\<T\> - a random item.
+- **filter**: String - (optional) a filter JSON object
+- **returns**: <T> - a random item.
 
 
 #### getPageByFilter
@@ -269,21 +269,21 @@ Gets a page of data items retrieved by a given filter and sorted according to so
 This method shall be called by a public **getPageByFilter** method from the a child class that
 receives [FilterParams](../../../data/query/filter_params) and converts them into a filter function.
 
-> `protected` getPageByFilter(context: [IContext](../../../components/context/icontext), filter: any, paging: PagingParams, sort: any, select: any): Promise<[DataPage<T>](../../../data/query/data_page)>
+> `protected` [DataPage<T>](../../../data/query/data_page) getPageByFilter(context: [IContext](../../../components/context/icontext), String filter, paging: PagingParams, String sort, String select)
 
 - **context**: [IContext](../../../components/context/icontext) - (optional) a context to trace execution through a call chain.
-- **filter**: any - (optional) filter for JSON objects.
+- **filter**: String - (optional) filter for JSON objects.
 - **paging**: [PagingParams](../../../data/query/paging_params) - (optional) paging parameters
-- **sort**: any - (optional) sorting JSON object
-- **select**: any - (optional) projection JSON object
-- **returns**: Promise<[DataPage<T>](../../../data/query/data_page)> - a data page of result by filter
+- **sort**: String - (optional) sorting JSON object
+- **select**: String - (optional) projection JSON object
+- **returns**: [DataPage<T>](../../../data/query/data_page) - a data page of result by filter
 
 
 
 #### isOpen
 Checks if the component is opened.
 
-> `public` isOpen(): boolean
+> `public` boolean isOpen()
 
 - **returns**: boolean - True if the component has been opened and False otherwise.
 
@@ -291,7 +291,7 @@ Checks if the component is opened.
 #### open
 Opens the component.
 
-> `public` open(context: [IContext](../../../components/context/icontext)): Promise\<void\>
+> `public` void open(context: [IContext](../../../components/context/icontext))
 
 - **context**: [IContext](../../../components/context/icontext) - (optional) transaction id used to trace execution through the call chain.
 
@@ -299,7 +299,7 @@ Opens the component.
 #### quoteIdentifier
 Adds single quotes to a string.
 
-> `protected` quoteIdentifier(value: string): string
+> `protected` String quoteIdentifier(value: string)
 
 - **value**: string - string where quotes need to be added
 - **returns**: string - string with added quotes
@@ -308,7 +308,7 @@ Adds single quotes to a string.
 #### quotedTableName
 Joins schema and database name in dot notation
 
-> `protected` quotedTableName(): string
+> `protected` String quotedTableName()
 
 - **returns**: string - string with added quotes
 
@@ -316,7 +316,7 @@ Joins schema and database name in dot notation
 #### setReferences
 Sets references to dependent components.
 
-> `public` setReferences(references: [IReferences](../../../components/refer/ireferences)): void
+> `public` void setReferences(references: [IReferences](../../../components/refer/ireferences))
 
 - **references**: [IReferences](../../../components/refer/ireferences) - references to locate the component dependencies.
 
@@ -324,8 +324,86 @@ Sets references to dependent components.
 #### unsetReferences
 Unsets (clears) previously set references to dependent components.
 
-> `public` unsetReferences(): void
+> `public` void unsetReferences()
 
 ### Examples
+```java
+{@code
+public class MyMySqlPersistence extends MySqlPersistence<MyData> {
 
+
+   public MyMySqlPersistence(Class<MyData> documentClass) {
+       super(documentClass, "mydata", null);
+   }
+
+   public MyData getByName(IContext context, String name) {
+       MyData item;
+       var resultMap = new HashMap<String, Object>();
+
+       var query = "SELECT * FROM " + this.quotedTableName() + " WHERE name=" + "'" + name + "'";
+
+       try (var stmt = this._client.createStatement()) {
+           var rs = stmt.executeQuery(query);
+
+           if (rs.next())
+               for (int columnIndex = 1; columnIndex <= rs.getMetaData().getColumnCount(); columnIndex++)
+                   resultMap.put(rs.getMetaData().getColumnName(columnIndex), rs.getObject(columnIndex));
+       } catch (SQLException ex) {
+           throw new RuntimeException(ex);
+       }
+
+       item = this.convertToPublic(resultMap);
+
+       return item;
+   }
+
+   public MyData set(IContext context, MyData item) {
+       if (item == null)
+           return null;
+
+       var row = this.convertFromPublic(item);
+       var columns = this.generateColumns(row);
+       var params = this.generateParameters(row);
+       var setParams = this.generateSetParameters(row);
+
+       var query = "INSERT INTO " + this.quotedTableName() + " (" + columns + ") VALUES (" + params + ")";
+       query += " ON DUPLICATE KEY UPDATE " + setParams + ";";
+
+       MyData newItem;
+       var resultMap = new HashMap<String, Object>();
+
+       try (var stmt = this._client.createStatement()) {
+           stmt.execute(query);
+
+           query = "SELECT * FROM " + this.quotedTableName() + " WHERE id=" + "'" + item.getId().toString() + "'";
+
+           var rs = stmt.executeQuery(query);
+
+           // fetch results
+           if (rs.next())
+               for (int columnIndex = 1; columnIndex <= rs.getMetaData().getColumnCount(); columnIndex++)
+                   resultMap.put(rs.getMetaData().getColumnName(columnIndex), rs.getObject(columnIndex));
+       } catch (SQLException ex) {
+           throw new RuntimeException(ex);
+       }
+
+       newItem = this.convertToPublic(resultMap);
+       return newItem;
+   }
+ }
+ ...
+ var persistence = new MyMySqlPersistence(MyData.class);
+ persistence.configure(ConfigParams.fromTuples(
+       "host", "localhost",
+       "port", 3306
+ ));
+
+ persistence.open(null);
+
+ persistence.set("123", new MyData("1", "ABC", "content"));
+ var item = persistence.getByName("123", "ABC");
+ System.out.println(item.getName());
+ }
+   
+```
 

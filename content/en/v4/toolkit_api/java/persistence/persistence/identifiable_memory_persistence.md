@@ -65,7 +65,7 @@ Deletes a data item based on it's unique id.
 #### deleteByIds
 Deletes multiple data items based on their unique ids.
 
-> `public` deleteByIds(context: [IContext](../../../components/context/icontext), ids: K[]): Promise\<void\>
+> `public` void deleteByIds(context: [IContext](../../../components/context/icontext), ids: K[])
 
 - **context**: [IContext](../../../components/context/icontext) - (optional) a context to trace execution through a call chain.
 - **ids**: K[] -  ids of data items to be deleted.

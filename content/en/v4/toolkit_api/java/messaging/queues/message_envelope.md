@@ -18,7 +18,7 @@ Important points
 
 ### Constructors
 
-Creates a new [MessageEnvelope](), which adds a correlation id, message id, and a type to the data being sent/received.
+Creates a new [MessageEnvelope](), which adds a trace id, message id, and a type to the data being sent/received.
 
 > `public` MessageEnvelope([IContext](../../../components/context/icontext) context, String messageType, String message)
 

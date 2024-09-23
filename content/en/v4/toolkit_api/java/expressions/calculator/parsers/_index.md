@@ -4,7 +4,7 @@ title: "Parsers"
 linkTitle: "Parsers"
 no_list: true
 weight: 1
-gitUrl: "https://github.com/pip-services4/pip-services4-node/tree/main/pip-services4-expressions-node"
+gitUrl: "https://github.com/pip-services4/pip-services4-java/tree/main/pip-services4-expressions-java"
 description: >
     This sub-package contains classes used to create expression parsers and expression token holders.
 ---

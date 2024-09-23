@@ -63,13 +63,13 @@ Closes the component and frees used resources.
 #### isOpen
 Checks if the component is open.
 
-> `public` isOpen(): boolean
+> `public` boolean isOpen()
 - **returns**: boolean - True if the component is open and False otherwise.
 
 #### open
 Opens the component.
 
-> `public` open(correlationId: string): Promise\<void\>
+> `public` void open([IContext](../../../components/context/icontext) context) throws ApplicationException
 - **context**: [IContext](../../../components/context/icontext) - (optional) a context to trace execution through a call chain.
 
 ### Static methods

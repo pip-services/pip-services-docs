@@ -120,7 +120,7 @@ to the invocation parameter map.
 
 - **params**: route -  route.
 - **filter**: FilterParams -  (optional) filter parameters
-- **returns**: any - invocation parameters with added filter parameters.
+- **returns**: String - invocation parameters with added filter parameters.
 
 
 #### addPagingParams

@@ -36,20 +36,20 @@ See [StringValueMap.constructors](../../../commons/data/string_value_map/#constr
 Adds parameters into this ConfigParams under a specified section.
 Keys for the new parameters are appended with section dot prefix.
 
-> `public` void addSection(String section, [ConfigParams]() sectionParams)
+> `public` void addSection(String section, [ConfigParams] sectionParams)
 
 - **section**: String - name of the section where add new parameters
-- **sectionParams**: [ConfigParams]() - new parameters to be added.
+- **sectionParams**: [ConfigParams] - new parameters to be added.
 
 
 #### getSection
 Gets parameters from specific section stored in this ConfigMap.
 The section name is removed from parameter keys.
 
-> `public` [ConfigParams]() getSection(String section)
+> `public` [ConfigParams] getSection(String section)
 
 - **section**: String - name of the section to retrieve configuration parameters from.
-- **returns**: [ConfigParams]() - all configuration parameters that belong to the section named 'section'. 
+- **returns**: [ConfigParams] - all configuration parameters that belong to the section named 'section'. 
 
 #### getSectionNames
 Gets a list with all 1st level section names.
@@ -59,51 +59,51 @@ Gets a list with all 1st level section names.
 - **returns**: List<String> - list of section names stored in this ConfigMap.
 
 #### override
-Overrides parameters with new values from a specified [ConfigParams]() object
-and returns a new [ConfigParams]() object.
+Overrides parameters with new values from a specified [ConfigParams] object
+and returns a new [ConfigParams] object.
 
-> `public` [ConfigParams]() override([ConfigParams]() configParams)
+> `public` [ConfigParams] override([ConfigParams] configParams)
 
-- **configParams**: [ConfigParams]() - ConfigMap with parameters to override the current values.
-- **returns**: [ConfigParams]() - new ConfigParams object.
+- **configParams**: [ConfigParams] - ConfigMap with parameters to override the current values.
+- **returns**: [ConfigParams] - new ConfigParams object.
 
 #### setDefaults
 Set default values from a specified ConfigParams object and returns a new ConfigParams object.
 
-> `public` setDefaults(defaultConfigParams: [ConfigParams]()): [ConfigParams]()
+> `public` [ConfigParams] setDefaults([ConfigParams] defaultConfigParams)
 
-- **defaultConfigParams**: [ConfigParams]() - ConfigMap object with default parameter values.
-- **returns**: [ConfigParams]() - new ConfigParams object.
+- **defaultConfigParams**: [ConfigParams] - ConfigMap object with default parameter values.
+- **returns**: [ConfigParams] - new ConfigParams object.
 
 ### Static methods   
 
 #### fromString
 Creates a new ConfigParams object filled with key-value pairs serialized as a string.
 
-> `public static` [ConfigParams]() fromString(String line)
+> `public static` [ConfigParams] fromString(String line)
 
 - **line**: String - string with serialized key-value pairs as "key1=value1;key2=value2;..."  
 Example: *"Key1=123;Key2=ABC;Key3=2016-09-16T00:00:00.00Z"*
-- **returns**: [ConfigParams]() - new ConfigParams object.
+- **returns**: [ConfigParams] - new ConfigParams object.
 
 #### fromTuples
 Creates a new ConfigParams object filled with provided key-value pairs called tuples.
 Tuples parameters contain a sequence of key1, value1, key2, value2, ... pairs.  
 See [StringValueMap.fromTuplesArray](../../../commons/data/string_value_map/#fromtuplesarray)
 
-> `public static` fromTuples(...tuples: any[]): [ConfigParams]()
+> `public static` [ConfigParams] fromTuples(Object... tuples)
 
-- **tuples**: any[] - tuples to fill a new ConfigParams object.
-- **returns**: [ConfigParams]() - new ConfigParams object.
+- **tuples**: tuples to fill a new ConfigParams object.
+- **returns**: [ConfigParams] - new ConfigParams object.
 
 
 #### fromValue
 Creates a new ConfigParams object filled with key-value pairs from specified object.
 
-> `public static` [ConfigParams]() fromValue(Object value)
+> `public static` [ConfigParams] fromValue(Object value)
 
 - **value**: Object - object with key-value pairs used to initialize a new ConfigParams.
-- **returns**: [ConfigParams]() - new ConfigParams object.
+- **returns**: [ConfigParams] - new ConfigParams object.
 
 
 #### mergeConfigs
@@ -111,10 +111,10 @@ Merges two or more ConfigParams into one. The following ConfigParams override
 previously defined parameters.  
 See [StringValueMap.fromMaps](../../../commons/data/string_value_map/#frommaps)
 
-> `public static`[ConfigParams]() mergeConfigs([ConfigParams]()... configs)
+> `public static`[ConfigParams] mergeConfigs([ConfigParams]... configs)
 
-- **configs**: [ConfigParams]()... - list of ConfigParams objects to be merged.
-- **returns**: [ConfigParams]() - new ConfigParams object.
+- **configs**: [ConfigParams]... - list of ConfigParams objects to be merged.
+- **returns**: [ConfigParams] - new ConfigParams object.
 
 ### Examples   
 

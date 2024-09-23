@@ -20,5 +20,5 @@ Gets a data item by its unique id.
 
 - **context**: [IContext](../../../components/context/icontext) - (optional) a context to trace execution through a call chain.
 - **id**: K - id of the item to be retrieved.
-- **returns**: Promise\<T\> - returned item.
+- **returns**: T - returned item.
 

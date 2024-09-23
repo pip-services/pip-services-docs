@@ -2,7 +2,7 @@
 type: docs
 title: "ITrackable"
 linkTitle: "ITrackable"
-gitUrl: "https://github.com/pip-services4/pip-services4-node/tree/main/pip-services4-data-node"
+gitUrl: "https://github.com/pip-services4/pip-services4-java/tree/main/pip-services4-data-java"
 description: > 
     Interface for data objects that can track their changes, including logical deletion.
 ---

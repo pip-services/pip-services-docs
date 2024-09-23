@@ -37,7 +37,7 @@ The CloudWatchCounters class allows you to create performance counters that peri
 ### Constructors
 Creates a new instance of this counters.
 
-> `public` constructor()
+> `public` CloudWatchCounters()
 
 
 ### Instance methods
@@ -88,6 +88,30 @@ Sets references to dependent components.
 
 
 ### Examples
+```java
+var counters = new CloudWatchCounters();
+counters.config(ConfigParams.fromTuples(
+    "connection.region", "us-east-1",
+    "connection.access_id", "XXXXXXXXXXX",
+    "connection.access_key", "XXXXXXXXXXX"
+));
+counters.setReferences(References.fromTuples(
+    new Descriptor("pip-services", "logger", "console", "default", "1.0"), 
+    new ConsoleLogger()
+));
+  
+counters.open("123");
+   
+counters.increment("mycomponent.mymethod.calls");
+var timing = counters.beginTiming("mycomponent.mymethod.exec_time");
+try {
+    ...
+} finally {
+    timing.endTiming();
+}
+    
+counters.dump();
+```
 
 
 

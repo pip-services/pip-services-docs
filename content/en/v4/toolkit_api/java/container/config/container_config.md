@@ -27,17 +27,17 @@ Creates a new instance of ContainerConfig.
 Creates a new ContainerConfig object based on configuration parameters.
 Each section in the configuration parameters is converted into a component configuration.
 
-> `public static` [ContainerConfig]() fromConfig([ConfigParams](../../../commons/config/config_params) config) throws ConfigException
+> `public static` [ContainerConfig] fromConfig([ConfigParams](../../../commons/config/config_params) config) throws ConfigException
 
 - **config**: [ConfigParams](../../../commons/config/config_params) - object with key-value pairs used to initialize a new ContainerConfig.
-- **returns**: [ContainerConfig]() - created ContainerConfig object.
+- **returns**: [ContainerConfig] - created ContainerConfig object.
 
 
 #### fromValue
 Creates a new ContainerConfig object filled with key-value pairs from a specified object.
 The value is converted into ConfigParams object which is used to create the new object.
 
-> `public static` fromValue(value: any): [ContainerConfig]()
+> `public static` [ContainerConfig] fromValue(value: Object)
 
-- **value**: any - object with key-value pairs used to initialize a new ContainerConfig.
-- **returns**: [ContainerConfig]() - created ContainerConfig object.
+- **value**: Object - object with key-value pairs used to initialize a new ContainerConfig.
+- **returns**: [ContainerConfig] - created ContainerConfig object.

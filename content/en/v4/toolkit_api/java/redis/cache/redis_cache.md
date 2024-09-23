@@ -80,7 +80,6 @@ Removes a value from the cache by its key.
 
 - **context**: [IContext](../../../components/context/icontext) - (optional) a context to trace execution through a call chain.
 - **key**: string - unique value key.
-- **returns**: Promise\<any\> - removed value.
 
 #### retrieve
 Retrieves a cached value from the cache using its key.

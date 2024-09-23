@@ -21,7 +21,7 @@ Logs high-level debug information for troubleshooting.
 
 - **context**: [IContext](../../../components/context/icontext) - (optional) a context to trace execution through call chain.
 - **message**: String - a human-readable message to log.
-- **args**: any[] - arguments to parameterize the message.
+- **args**: Object - arguments to parameterize the message.
 
 
 
@@ -74,7 +74,7 @@ Logs an important information message
 
 - **context**: [IContext](../../../components/context/icontext) - (optional) a context to trace execution through call chain.
 - **message**: string - a human-readable message to log.
-- **args**: any[] - arguments to parameterize the message.
+- **args**: Object - arguments to parameterize the message.
 
 
 #### setLevel

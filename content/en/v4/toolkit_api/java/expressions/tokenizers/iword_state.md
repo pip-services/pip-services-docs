@@ -17,7 +17,7 @@ The IWordState interface is used by tokenizer states that process words, identif
 #### clearWordChars
 Clears definitions of word chars.
 
-> clearWordChars(): void
+> void clearWordChars()
 
 
 #### setWordChars

@@ -27,7 +27,7 @@ See [toDoubleWithDefault](#todoublewithdefault)
 
 > `public static` double toDouble(Object value)
 
-- **value**: any - value to convert.
+- **value**: Object - value to convert.
 - **returns**: number - double value or 0 when the conversion is not supported.
 
 #### toDoubleWithDefault

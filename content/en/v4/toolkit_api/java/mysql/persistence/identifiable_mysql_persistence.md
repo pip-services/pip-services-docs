@@ -130,7 +130,7 @@ Gets a data item by its unique id.
 
 - **context**: [IContext](../../../components/context/icontext) - (optional) a context to trace execution through a call chain.
 - **id**: K - id of the data item to be retrieved.
-- **returns**: Promise\<T\> - data item
+- **returns**: <T> - data item
 
 
 #### set
@@ -165,4 +165,37 @@ Updates only a few selected fields in a data item.
 - **returns**: T - updated item
 
 ### Examples
+```java
+{@code
+  public class MyMySqlPersistence extends IdentifiableMySqlPersistence<MyData, String> {
 
+     public MyMySqlPersistence() {
+         super(MyData.class, "dummies", null);
+     }
+
+     @Override
+     protected void defineSchema() {
+         this.clearSchema();
+         this.ensureSchema("CREATE TABLE `" + this._tableName + "` (id VARCHAR(32) PRIMARY KEY, `key` VARCHAR(50), `content` TEXT)");
+         this.ensureIndex(this._tableName + "_key", Map.of("key", 1), Map.of("unique", true));
+     }
+
+     private String composeFilter(FilterParams filter) {
+         filter = filter != null ? filter : new FilterParams();
+         String filterCondition = null;
+
+         var key = filter.getAsNullableString("key");
+
+         if (key != null)
+             filterCondition = "`key`='" + key + "'";
+
+         return filterCondition;
+
+     }
+
+     public DataPage<MyData> getPageByFilter(IContext context, FilterParams filter, PagingParams paging) {
+         return super.getPageByFilter(context, composeFilter(filter), paging, null, null);
+     }
+ }
+ }
+```

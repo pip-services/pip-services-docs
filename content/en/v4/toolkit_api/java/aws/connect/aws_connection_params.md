@@ -30,9 +30,9 @@ In addition to standard parameters, [CredentialParams](../../../config/auth/cred
 ### Constructors
 Creates an new instance of the connection parameters.
 
-> `public` AwsConnectionParams(Map<?, ?> map)
+> `public` AwsConnectionParams(Map<?, ?> values)
 
-- **values**: any - (optional) object to be converted into key-value pairs to initialize this connection.
+- **values**: Map<?, ?> - (optional) object to be converted into key-value pairs to initialize this connection.
 
 ### Instance methods
 
@@ -90,7 +90,7 @@ Gets the AWS resource id.
 #### getResourceType
 Gets the AWS resource type.
 
-> `public` getResourceType(): string
+> `public` String getResourceType()
 
 - **returns**: string - AWS resource type.
 
@@ -210,6 +210,20 @@ The values are retrieved from "connection" and "credential" sections.
 
 ### Examples
 
+```java
+var connection = AwsConnectionParams.fromTuples(
+    "region", "us-east-1",
+    "access_id", "XXXXXXXXXXXXXXX",
+    "secret_key", "XXXXXXXXXXXXXXX",
+    "service", "s3",
+    "bucket", "mybucket"
+);
+ 
+var region = connection.getRegion();                     // Result: "us-east-1"
+var accessId = connection.getAccessId();                 // Result: "XXXXXXXXXXXXXXX"
+var secretKey = connection.getAccessKey();               // Result: "XXXXXXXXXXXXXXX"
+var pin = connection.getAsNullableString("bucket");      // Result: "mybucket"   
+```
 
 
 ### See also

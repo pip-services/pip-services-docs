@@ -264,7 +264,7 @@ Gets the value stored in this object without any conversion.
 
 > `public` Object getAsObject()
 
-- **returns**: any - object value. 
+- **returns**: Object - object value. 
 
 
 #### getAsString

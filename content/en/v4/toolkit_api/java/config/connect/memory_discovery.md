@@ -76,7 +76,7 @@ Resolves a single connection parameters by its key.
 
 - **context**: [IContext](../../../components/context/icontext) - (optional) a context to trace execution through call chain.
 - **key**: String - a key to uniquely identify the connection. 
-- **returns**: Promise<[ConnectionParams](../connection_params)> - a resolved connection.
+- **returns**: [ConnectionParams](../connection_params) - a resolved connection.
 
 ### Examples
 

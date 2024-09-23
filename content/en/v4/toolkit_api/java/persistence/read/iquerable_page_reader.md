@@ -22,4 +22,4 @@ Gets a page of data items using a query string.
 - **query**: string - (optional) query string
 - **paging**: [PagingParams](../../../data/query/paging_params) - (optional) paging parameters
 - **sort**: [SortParams](../../../data/query/sort_params) - (optional) sorting parameters
-- **returns**: Promise<[DataPage](../../../data/query/data_page)\<T\>> - list of items
+- **returns**: [DataPage](../../../data/query/data_page)\<T\> - list of items

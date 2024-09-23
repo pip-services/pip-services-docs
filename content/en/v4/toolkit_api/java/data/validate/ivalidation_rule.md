@@ -21,5 +21,5 @@ Validates a given value against this rule.
 
 - **path**: string - dot notation path to the value.
 - **schema**: [Schema](../schema) - schema this rule is called from
-- **value**: any - value to be validated.
+- **value**: Object - value to be validated.
 - **results**: List<[ValidationResult](../validation_result)> - list with validation results.

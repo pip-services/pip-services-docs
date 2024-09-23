@@ -41,7 +41,7 @@ Returns the character from the top of the stream without moving the stream point
 #### peekColumn
 Gets the next character column number.
 
-> peekColumn(): number
+> int peekColumn()
 
 - **returns**: number - next character column number in the stream.
 

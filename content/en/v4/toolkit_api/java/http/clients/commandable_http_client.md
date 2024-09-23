@@ -62,7 +62,7 @@ Calls a remote method via the HTTP commadable protocol. The call is made via a P
 - **route**: String - route of the command to call.
 - **context**: [IContext](../../../components/context/icontext) - (optional) a context to trace execution through call chain.
 - **entity**: Object - entity.
-- **returns**: Promise\<T\> - result of the command.
+- **returns**: <T> - result of the command.
 
 
 ### Examples

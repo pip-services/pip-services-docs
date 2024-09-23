@@ -2,7 +2,7 @@
 type: docs
 title: "IVersioned"
 linkTitle: "IVersioned"
-gitUrl: "https://github.com/pip-services4/pip-services4-node/tree/main/pip-services4-data-node"
+gitUrl: "https://github.com/pip-services4/pip-services4-java/tree/main/pip-services4-data-java"
 description: > 
     Interface used to define data objects that can be versioned.
 

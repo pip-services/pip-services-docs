@@ -43,11 +43,11 @@ The object can be a user defined object, map or array.
 The property name correspondently must be an object property,
 map key or array index.
 
-> `public static` getProperty(obj: any, name: string): any
+> `public static` Object getProperty(Object obj, String name)
 
-- **obj**: any - object to read property from.
+- **obj**: Object - object to read property from.
 - **name**: string - name of the property to get.
-- **returns**: any - property value or null if  the property doesn't exist or introspection failed.
+- **returns**: Object - property value or null if  the property doesn't exist or introspection failed.
 
 #### getPropertyNames
 Gets the names of all the properties implemented in a specified object.

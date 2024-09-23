@@ -26,7 +26,7 @@ Converts a value into an object of the type specified by a TypeCode or returns n
 #### toString
 Converts a [TypeCode](../type_code) into its string name.
 
-> `public static` toString(type: [TypeCode](../type_code)): string
+> `public static` String toString([TypeCode](../type_code) type)
 
 - **type**: [TypeCode](../type_code) - TypeCode to convert into a string.
 - **returns**: string - name of the [TypeCode](../type_code) passed as a string value.

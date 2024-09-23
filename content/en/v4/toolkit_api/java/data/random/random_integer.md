@@ -16,7 +16,7 @@ The RandomInteger class allows you to generate random integer values.
 #### nextInteger
 Generates an integer in the range ['min', 'max']. If 'max' is omitted, then the range will be set to [0, 'min'].
 
-> `public static` nextInteger(min: number, max: number = null): number
+> `public static` int nextInteger(min: number, max: number = null)
 
 - **min**: number - minimum value of the integer that will be generated. 
 If 'max' is omitted, then 'max' is set to 'min' and 'min' is set to 0.

@@ -29,7 +29,7 @@ The LambdaFunction class allows you to create an abstract AWS Lambda function th
 ### Constructors
 Creates a new instance of this lambda function.
 
-> `public` constructor(name: string, description?: string)
+> `public` LambdaFunction(String name, String description)
 
 - **name**: string - (optional) a container name (accessible via [ContextInfo](../../../components/context/context_info)).
 - **description**: string - (optional) container description (accessible via [ContextInfo](../../../components/context/context_info)).
@@ -60,7 +60,7 @@ Map of registred validation schemas.
 
 #### _tracer
 Tracer.
-> `protected` CompositeTracer **_tracer**: [CompositeTracer](../../../observability/trace/composite_tracer) = new [CompositeTracer()](../../../observability/trace/composite_tracer)
+> `protected` CompositeTracer **_tracer** = new [CompositeTracer()](../../../observability/trace/composite_tracer)
 
 
 </span>
@@ -103,7 +103,7 @@ Gets entry point into this lambda function.
 > `protected` [InstrumentTiming](../../../rpc/trace/instrument_timing) instrument([IContext](../../../components/context/icontext) context, String name)
 
 - **context**: [IContext](../../../components/context/icontext) - (optional) a context to trace execution through a call chain.
-- **name**: string - method name.
+- **name**: String - method name.
 - **returns**: [InstrumentTiming](../../../rpc/trace/instrument_timing) - object to end the time measurement.
 
 #### open
@@ -128,7 +128,7 @@ Registers an action in this lambda function.
 
 > `protected` void registerAction(String cmd, [Schema](../../../data/validate/schema) schema, Function<Map<String, Object>, ?> action)
 
-- **cmd**: string - action/command name.
+- **cmd**: String - action/command name.
 - **schema**: [Schema](../../../data/validate/schema) - validation schema used to validate received parameters.
 - **action**: Function<Map<String, Object>, ?> - action function that is called when the action is invoked.
 
@@ -157,6 +157,19 @@ Sets references to dependent components.
 
 
 ### Examples
+
+```java
+class MyLambdaFunction extends LambdaFunction {
+    public MyLambdaFunction() {
+        super("mygroup", "MyGroup lambda function");
+    }
+}
+
+var lambda = new MyLambdaFunction();
+ 
+lambda.run();
+
+```
 
 
 ### See also

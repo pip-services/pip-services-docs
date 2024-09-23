@@ -80,8 +80,7 @@ Logs recoverable application error.
 - **context**: [IContext](../../../components/context/icontext) - (optional) a context to trace execution through a call chain.
 - **error**: Exception - an error object associated with this message.
 - **message**: String - a human-readable message to log.
-- **args**: Any - arguments to parameterize the message.
-- **kwargs**: Any - arguments to parameterize the message.
+- **args**: Object - arguments to parameterize the message.
 
 
 #### fatal
@@ -126,8 +125,7 @@ Gets the source (context) name.
 #### info
 Logs an important information message
 
-> info(context: Optional[IContext], message: str, *args: Any, **kwargs: Any)
-void info([IContext](../../../components/context/icontext) context, String message, Object... args)
+> void info([IContext](../../../components/context/icontext) context, String message, Object... args)
 - **context**: [IContext](../../../components/context/icontext) - (optional) a context to trace execution through a call chain.
 - **message**: String - a human-readable message to log.
 - **args**: Object - arguments to parameterize the message.
@@ -165,8 +163,7 @@ Logs a low-level debug information for troubleshooting.
 #### warn
 Logs a warning that may or may not have a negative impact.
 
-> warn(context: Optional[IContext], message: str, *args: Any, **kwargs: Any)
-void warn([IContext](../../../components/context/icontext) context, String message, Object... args)
+> void warn([IContext](../../../components/context/icontext) context, String message, Object... args)
 - **context**: [IContext](../../../components/context/icontext) - (optional) a context to trace execution through a call chain.
 - **message**: String - a human-readable message to log.
 - **args**: Object - arguments to parameterize the message.
@@ -176,7 +173,7 @@ void warn([IContext](../../../components/context/icontext) context, String messa
 #### _write
 Writes a log message to the logger destination.
 
-> `abstractmethod` void write([LogLevel](../log_level) level, [IContext](../../../components/context/icontext) context, Exception error, String message)
+> `abstract method` void write([LogLevel](../log_level) level, [IContext](../../../components/context/icontext) context, Exception error, String message)
 
 - **level**: [LogLevel](../log_level) - a log level.
 - **context**: [IContext](../../../components/context/icontext) - (optional) a context to trace execution through a call chain.

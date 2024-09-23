@@ -22,5 +22,5 @@ Gets a page of data items using filter parameters.
 - **filter**: [FilterParams](../../../data/query/filter_params) - (optional) filter parameters
 - **paging**: [PagingParams](../../../data/query/paging_params) -  (optional) paging parameters
 - **sort**: [SortParams](../../../data/query/sort_params) - (optional) sort parameters
-- **returns**: Promise<[DataPage](../../../data/query/data_page)\<T\>> - list of items
+- **returns**: [DataPage](../../../data/query/data_page)\<T\> - list of items
 

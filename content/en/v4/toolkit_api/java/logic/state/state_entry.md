@@ -17,7 +17,7 @@ Creates a new instance of the state entry and assigns its values.
 > `public` StateEntry(String key, Object value)
 
 - **key**: string - a unique key to locate the value.
-- **value**: any - a value to be stored.
+- **value**: Object - a value to be stored.
 
 
 ### Instance methods

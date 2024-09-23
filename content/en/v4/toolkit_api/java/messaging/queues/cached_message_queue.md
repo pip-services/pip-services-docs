@@ -118,7 +118,7 @@ If there are no messages available in the queue it returns null.
 > `public` [MessageEnvelope](../message_envelope) peek([IContext](../../../components/context/icontext) context) throws InvalidStateException
 
 - **context**: [IContext](../../../components/context/icontext) - (optional) a context to trace execution through a call chain.
-- **returns**: Promise<[MessageEnvelope](../message_envelope)> - peeked message or **null**.
+- **returns**: [MessageEnvelope](../message_envelope) - peeked message or **null**.
 
 
 #### peekBatch

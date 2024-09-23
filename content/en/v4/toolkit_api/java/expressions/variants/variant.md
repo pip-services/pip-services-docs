@@ -25,168 +25,31 @@ Constructs this class and assignes a variant value.
 <span class="hide-title-link">
 Empty
 
-> `public static` **Empty** = new [Variant(null)]()
+> `public static` **Empty** = new [Variant()]
 
 </span>
 
 
 ### Properties
 
-#### asArray
-Gets a variant value as a variant array.
-
-> `public` asArray(): [Variant[]]()
-
-- **returns**: [Variant[]]() - value as variant array.
-
-
-Sets a variant value as variant array.
-
-> `public` asArray(value: [Variant[]]())
-
-- **value**: [Variant[]]() - value to be set.
-
-#### asBoolean
-Gets a variant value as boolean.
-
-> `public` asBoolean(): boolean 
-
-- **returns**: boolean - value as boolean.
-
-Sets a variant value as boolean.
-> `public` asBoolean(value: boolean)
-
-- **value**: boolean - value to be set
-
-
-#### asDateTime
-Gets a variant value as DateTime.
-
-> `public` asDateTime(): Date
-
-- **returns**: Date - value as DateTime.
-
-Sets a variant value as DateTime.
-
-> `public` asDateTime(value: Date)
-
-- **value**: Date - value to be set
-
-#### asDouble
-Gets a variant value as double.
-
-> `public` asDouble(): number
-
-- **returns**: number - value as double.
-
-Sets a variant value as double.
-
-> `public` asDouble(value: number)
-
-- **value**: number - value to be set.
-
-
-#### asFloat
-Gets a variant value as float.
-
-> `public` asFloat(): number
-
-- **returns**: number - value as float.
-
-Sets a variant value as float.
-
-> `public` asFloat(value: number)
-
-- **value**: number - value to be set..
-
-#### asInteger
-Gets a variant value as integer.
-
-> `public` asInteger(): number
-
-- **returns**: number - value as integer.
-
-Sets a variant value as integer.
-
-> `public` asInteger(value: number)
-
-- **value**: number - value to be set.
-
-
-#### asLong
-Gets a variant value as long.
-
-> `public` asLong(): number
-
-- **returns**: number - value as long.
-
-Sets a variant value as long
-
-> `public` asLong(value: number)
-
-- **value**: number - value to be set.
-
-
-#### asObject
-Gets a variant value as object.
-
-> `public` asObject(): any
-
-- **returns**: any - value as object.
-
-Sets a variant value as object
-
-> `public` asObject(value: any)
-
-- **value**: any - value to be set.
-
-
-#### asString
-Gets a variant value as string.
-
-> `public` asString(): string
-
-- **returns**: string - value as string.
-
-Sets a variant value as string.
-
-> `public` asString(value: string)
-
-- **value**: string - value to be set.
-
-
-#### asTimeSpan
-Gets a variant value as TimeSpan.
-
-> `public` asTimeSpan(): number
-
-- **returns**: number - value as TimeSpan.
-
-Sets a variant value as TimeSpan.
-
-> `public` asTimeSpan(value: number)
-
-- **value**: number - value as TimeSpan.
-
-
 #### length
 Gets the length of the array
 
-> `public` length(): number
+> `public` Integer getLength()
 
 - **returns**: number - length of the array or 0.
 
 Sets a new array length
 
-> `public` length(value: number)
+> `public` Integer setLength(Integer value)
 
-- **value**: number - new array length
+- **value**: Integer - new array length
 
 
 #### type
 Gets a type of the variant value
 
-> `public` type(): [VariantType](../variant_type)
+> `public` [VariantType](../variant_type) getType()
 
 - **returns**: [VariantType](../variant_type) - variant value type.
 

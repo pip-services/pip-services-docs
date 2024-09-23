@@ -106,7 +106,7 @@ Peeks a single incoming message from the queue without removing it. If there are
 > `public` [MessageEnvelope](../message_envelope)e peek([IContext](../../../components/context/icontext) context)
 
 - **context**: [IContext](../../../components/context/icontext) - a context to trace execution through a call chain.
-- **returns**: Promise<[MessageEnvelope](../message_envelope)> - peeked message or *null*.
+- **returns**: [MessageEnvelope](../message_envelope) - peeked message or *null*.
 
 #### peekBatch
 Peeks multiple incoming messages from the queue without removing them. If there are no messages available in the queue, it returns an empty list.
@@ -115,7 +115,7 @@ Peeks multiple incoming messages from the queue without removing them. If there 
 
 - **context**: [IContext](../../../components/context/icontext) - (optional) a context to trace execution through a call chain.
 - **messageCount**: number - maximum number of messages to peek.
-- **returns**: Promise<[MessageEnvelope](../message_envelope)[]> - list with peeked messages.
+- **returns**: [MessageEnvelope](../message_envelope)[] - list with peeked messages.
 
 #### readMessageCount
 Reads the current number of messages in the queue to be delivered.

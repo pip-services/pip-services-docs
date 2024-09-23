@@ -2,7 +2,7 @@
 type: docs
 title: "Lock"
 linkTitle: "Lock"
-gitUrl: "https://github.com/pip-services4/pip-services4-node/tree/main/pip-services4-logic-node"
+gitUrl: "https://github.com/pip-services4/pip-services4-java/tree/main/pip-services4-logic-java"
 description: >
     Abstract lock that implements the default lock acquisition routine.
 ---

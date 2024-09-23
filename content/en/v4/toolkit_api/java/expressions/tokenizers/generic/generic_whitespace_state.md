@@ -33,7 +33,7 @@ Clears definitions of whitespace characters.
 #### nextToken
 Ignores whitespace (such as blanks and tabs), and returns the tokenizer's next token.
 
-> `public` nextToken(scanner: [IScanner](../../../io/iscanner), tokenizer: [ITokenizer](../../itokenizer)): [Token](../../token)
+> `public` [Token](../../token) nextToken(scanner: [IScanner](../../../io/iscanner), tokenizer: [ITokenizer](../../itokenizer))
 
 - **scanner**: [IScanner](../../../io/iscanner) - text string to be tokenized.
 - **tokenizer**: [ITokenizer](../../itokenizer) - tokenizer class that controls the process.

@@ -108,7 +108,7 @@ Sends the deleted result in JSON format.
 
 > `protected` Response sendDeletedResult(Object result) 
 
-- **result**: Object - execution result or a promise with execution result.
+- **result**: Object - execution result or a Response with execution result.
 - **returns**: Response - response
 
 #### sendEmptyResult

@@ -40,7 +40,7 @@ Gets the stored component locator.
 
 > `public` Object getLocator()
 
-- **returns**: any - component's locator.
+- **returns**: Object - component's locator.
 
 #### match
 Matches locator to this reference locator.

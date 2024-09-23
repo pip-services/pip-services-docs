@@ -112,7 +112,7 @@ Performs the '<<' operation for two variants.
 #### mod
 Performs the '%' operation for two variants.
 
-> mod(value1: [Variant](../variant), value2: [Variant](../variant)): [Variant](../variant)
+>[Variant](../variant) mod(value1: [Variant](../variant), value2: [Variant](../variant))
 
 - **value1**: [Variant](../variant) - first operand for this operation.
 - **value2**: [Variant](../variant) - second operand for this operation.

@@ -42,4 +42,4 @@ Reads configuration and parameterizes it with given values.
 
 - **context**: [IContext](../../../components/context/icontext) - (optional) a context to trace execution through a call chain.
 - **parameters**: [ConfigParams](../../../components/config/config_params) - values to parameters the configuration or null to skip parameterization.
-- **returns**: Promise<[ConfigParams](../../../components/config/config_params)> - ConfigParams configuration.
+- **returns**: [ConfigParams](../../../components/config/config_params) - ConfigParams configuration.

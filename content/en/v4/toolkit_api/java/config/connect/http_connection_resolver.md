@@ -73,19 +73,19 @@ Registers the given connection in all referenced discovery services. This method
 Resolves a single component connection. If the connections are configured to be retrieved from Discovery service,
 it finds a IDiscovery and resolves the connection there.
 
-> `public` resolve(context: [IContext](../../../components/context/icontext)): Promise<[ConfigParams](../../../components/config/config_params)>
+> `public` [ConnectionParams](../../../components/config/connection_params) resolve(context: [IContext](../../../components/context/icontext))
 
 - **context**: [IContext](../../../components/context/icontext) - (optional) a context to trace execution through a call chain.
-- **returns**: Promise<[ConfigParams](../../../components/config/config_params)> - resolved connection.
+- **returns**: [ConnectionParams](../../../components/config/connection_params) - resolved connection.
 
 
 #### resolveAll
 Resolves all component connections. If connections are configured to be retrieved from Discovery service it finds a IDiscovery and resolves the connection there.
 
-> [ConfigParams](../../../components/config/config_params) resolveAll([IContext](../../../components/context/icontext) context) throws ApplicationException
+> [ConnectionParams](../../../components/config/connection_params) resolveAll([IContext](../../../components/context/icontext) context) throws ApplicationException
 
 - **context**: [IContext](../../../components/context/icontext) - (optional) a context to trace execution through a call chain.
-- **returns**: [ConfigParams](../../../components/config/config_params) - resolved connections.
+- **returns**: [ConnectionParams](../../../components/config/connection_params) - resolved connections.
 
 
 #### setReferences

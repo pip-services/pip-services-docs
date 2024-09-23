@@ -33,8 +33,7 @@ Logs high-level debug information for troubleshooting.
 #### error
 Logs recoverable application error.
 
-> error(context: Optional[IContext], error: Exception, message: str, *args: Any, **kwargs: Any)
-void error([IContext](../../../components/context/icontext) context, Exception error, String message, Object... args)
+> void error([IContext](../../../components/context/icontext) context, Exception error, String message, Object... args)
 - **context**: [IContext](../../../components/context/icontext) - (optional) a context to trace execution through a call chain.
 - **error**: Exception - an error object associated with this message.
 - **message**: String - a human-readable message to log.
@@ -44,8 +43,7 @@ void error([IContext](../../../components/context/icontext) context, Exception e
 #### fatal
 Logs fatal (unrecoverable) message that caused the process to crash.
 
-> fatal(context: Optional[IContext], error: Exception, message: str, *args: Any, **kwargs: Any)
-void fatal([IContext](../../../components/context/icontext) context, Exception error, String message, Object... args)
+> void fatal([IContext](../../../components/context/icontext) context, Exception error, String message, Object... args)
 - **context**: [IContext](../../../components/context/icontext) - (optional) a context to trace execution through a call chain.
 - **error**: Exception - an error object associated with this message.
 - **message**: String - a human-readable message to log.
@@ -63,8 +61,7 @@ Gets the maximum log level. Messages with higher log level are filtered out.
 #### info
 Logs an important information message
 
-> info(context: Optional[IContext], message: str, *args: Any, **kwargs: Any)
-void info([IContext](../../../components/context/icontext) context, String message, Object... args)
+> void info([IContext](../../../components/context/icontext) context, String message, Object... args)
 - **context**: [IContext](../../../components/context/icontext) - (optional) a context to trace execution through a call chain.
 - **message**: String - a human-readable message to log.
 - **args**: Object - arguments to parameterize the message.
@@ -85,8 +82,7 @@ Logs a message at specified log level.
 #### trace
 Logs low-level debug information for troubleshooting.
 
-> trace(context: Optional[IContext], message: str, *args: Any, **kwargs: Any)
-void trace([IContext](../../../components/context/icontext) context, String message, Object... args)
+> void trace([IContext](../../../components/context/icontext) context, String message, Object... args)
 - **context**: [IContext](../../../components/context/icontext) - (optional) a context to trace execution through a call chain.
 - **message**: String - a human-readable message to log.
 - **args**: Object - arguments to parameterize the message.

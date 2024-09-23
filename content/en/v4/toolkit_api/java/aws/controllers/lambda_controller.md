@@ -85,11 +85,10 @@ Applies given action to the interseptors
 #### applyValidation
 Applies a validation according to a given schema.
 
-> `protected` applyValidation(schema: [Schema](../../../data/validate/schema), action: (params: any) => Promise\<any\>): (params: any) => Promise\<any\>
-Function<Map<String, Object>, ?> applyValidation([Schema](../../../data/validate/schema) schema, Function<Map<String, Object>, ?> action)
+> `protected` Function<Map<String, Object>, ?> applyValidation([Schema](../../../data/validate/schema) schema, Function<Map<String, Object>, ?> action)
 - **schema**: [Schema](../../../data/validate/schema) - validation schema
-- **action**: (params: any) => Promise\<any\> - action
-- **returns**: (params: any) => Promise\<any\> - results
+- **action**: Function<Map<String, Object>, ?> - action
+- **returns**: Function<Map<String, Object>, ?> - results
 
 #### close
 Closes a component and frees used resources.
@@ -195,7 +194,44 @@ in child classes.
 
 
 ### Examples
+```java
+class MyLambdaController extends LambdaController {
+   private IMyService _service;
+   ...
+   public MyLambdaController() {
+      super('v1.myservice');
+      this._dependencyResolver.put(
+          "service",
+          new Descriptor("mygroup","controller","*","*","1.0")
+      );
+   }
+   public void setReferences(references: ) {
+      super.setReferences(references);
+      this._service = this._dependencyResolver.getRequired(IDummyService.class, "service");
+   }
 
+   private MyData getData(IContext context, String id) {
+        return this._service.getMyData(context, id);
+   }
+
+   public void register() {
+       this.registerAction("/get_mydata",
+                  null,
+                  this::getData
+         );
+       ...
+   }
+}
+
+var controller = new MyLambdaController();
+controller.configure(ConfigParams.fromTuples(
+    "connection.protocol", "http",
+    "connection.host", "localhost",
+    "connection.port", 8080
+));
+
+controller.open("123");
+```
 
 
 ### See also

@@ -108,12 +108,12 @@ Configures a component by passing its configuration parameters.
 
 
 #### getTraceId
-Returns correlationId from a request
+Returns trace(correlation) ID from a request
 
 > `protected` gString getTraceId(ContainerRequestContext req)
 
 - **req**: ContainerRequestContext - an HTTP request
-- **returns**: String - the correlation id from request.
+- **returns**: String - the trace(correlation) ID from request.
 
 
 #### instrument
@@ -168,7 +168,6 @@ Registers the open api spec from a file.
 - **path**: String - path to the file
 
 
-
 #### registerRoute
 Registers a route in HTTP endpoint.
 
@@ -178,7 +177,7 @@ Registers a route in HTTP endpoint.
 - **method**: string - HTTP method: "get", "head", "post", "put", "delete"
 - **route**: string - command route. The base route will be added to this route
 - **schema**: [Schema](../../../data/validate/schema) - validation schema to validate received parameters.
-- **action**: (req: any, res: any) => void - action function that is called when an operation is invoked.
+- **action**: Inflector<ContainerRequestContext, Response> - action function that is called when an operation is invoked.
 
 
 #### registerRouteWithAuth
@@ -192,7 +191,7 @@ Registers a route with authorization in HTTP endpoint.
 - **route**: String - command route. The base route will be added to this route
 - **schema**: [Schema](../../../data/validate/schema) - validation schema to validate received parameters.
 - **authorize**: AuthorizeFunction<ContainerRequestContext, Inflector<ContainerRequestContext, Response>, Response> - authorization interceptor
-- **action**: (req: any, res: any) => void - action function that is called when an operation is invoked.
+- **action**: Inflector<ContainerRequestContext, Response> - action function that is called when an operation is invoked.
 
 
 #### sendCreatedResult

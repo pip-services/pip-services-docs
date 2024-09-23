@@ -2,7 +2,7 @@
 type: docs
 title: "ICloneable"
 linkTitle: "ICloneable"
-gitUrl: "https://github.com/pip-services4/pip-services4-node/tree/main/pip-services4-commons-node"
+gitUrl: "https://github.com/pip-services4/pip-services4-java/tree/main/pip-services4-commons-java"
 description: > 
     Interface to create objects with binary clones.
 ---

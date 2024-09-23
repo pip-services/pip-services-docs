@@ -3,7 +3,7 @@ type: docs
 title: "Tokenizers"
 linkTitle: "Tokenizers"
 no_list: true
-gitUrl: "https://github.com/pip-services4/pip-services4-node/tree/main/pip-services4-expressions-node"
+gitUrl: "https://github.com/pip-services4/pip-services4-java/tree/main/pip-services4-expressions-java"
 description: >
     This package provides different sub-packages containing classes used to define and manage tokenizers.
 ---

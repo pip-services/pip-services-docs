@@ -2,7 +2,7 @@
 type: docs
 title: "SymbolNode"
 linkTitle: "SymbolNode"
-gitUrl: "https://github.com/pip-services4/pip-services4-node/tree/main/pip-services4-expressions-node"
+gitUrl: "https://github.com/pip-services4/pip-services4-java/tree/main/pip-services4-expressions-java"
 description: > 
     Constructs a SymbolNode.
 ---

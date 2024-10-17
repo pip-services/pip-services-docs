@@ -1,5 +1,5 @@
 
 ```python
-import summator2_pb2
-import summator2_pb2_grpc
+import summator_pb2
+import summator_pb2_grpc
 ```

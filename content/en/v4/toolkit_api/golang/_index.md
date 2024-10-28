@@ -1,7 +1,7 @@
 ---
 type: docs
 title: "Pip.Services Toolkit for Golang"
-linkTitle: "Goland"
+linkTitle: "Golang"
 table_view: true
 weight: 30
 ---
